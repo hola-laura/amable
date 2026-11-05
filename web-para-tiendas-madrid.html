@@ -421,6 +421,19 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 .secc{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.secc a{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:15px;text-decoration:none}.secc a:hover{background:var(--c2)}.mas{display:inline-block;margin-top:10px;font-size:16px;color:inherit}.dis-g h3 a{color:inherit;text-decoration:none}.dis-g h3 a:hover{text-decoration:underline}
 @media (max-width:760px){.local .loc-g{grid-template-columns:minmax(0,1fr)}}
 /* fin seo2 */
+.redes{background:var(--a);color:var(--on)}.redes .lead{color:var(--on);opacity:.86}.redes .fondo{color:var(--on);opacity:.09}
+.pista{height:clamp(430px,40vw,520px)}
+.post,.post:nth-child(odd),.post:nth-child(even){width:clamp(236px,23vw,280px);aspect-ratio:auto;padding:12px 12px 14px;border-radius:14px;overflow:visible;background:#fff;color:#111;box-shadow:0 22px 44px -24px rgba(0,0,0,.55);transform:none}.post:hover{transform:translateY(-6px)}
+.post::after{display:none}.post .foto{position:relative;display:block;aspect-ratio:1;border-radius:9px;overflow:hidden;background:var(--c2)}
+.post video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}.post video.ya{opacity:1}
+.acc{display:flex;align-items:center;gap:6px;margin:6px 0 4px -6px}.ic{display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;background:none;color:#111}button.ic{cursor:pointer}.ic svg{display:block;width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.vista .ic{animation:icsube .55s var(--bote) both}.vista .ic:nth-child(2){animation-delay:.09s}.vista .ic:nth-child(3){animation-delay:.18s}
+@keyframes icsube{from{opacity:0;transform:translateY(16px) rotate(-8deg)}to{opacity:1;transform:none}}
+.ic.si svg{fill:#ED4956;stroke:#ED4956;animation:latido .5s var(--bote)}@keyframes latido{0%{transform:scale(.5)}60%{transform:scale(1.28)}100%{transform:scale(1)}}
+.post p{position:static;padding:0 2px;font:400 15px/1.3 var(--sans);min-height:2.6em;text-wrap:pretty}
+@media (max-width:860px){.pista{height:auto;padding:22px 0 64px}}
+@media (prefers-reduced-motion:reduce){.vista .ic,.ic.si svg{animation:none}}
+/* fin posts */
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Página web para tiendas locales","serviceType":"Diseño web y reservas online","description":"Muchos clientes miran en Google antes de salir de casa. Preparo webs para tiendas locales que muestran lo que tienes, tus horarios y cómo encargar sin tener que venir antes a preguntar.","url":"https://amableagencia.com/web-para-tiendas-madrid","provider":{"@id":"https://amableagencia.com/#negocio","name":"Amable","url":"https://amableagencia.com/"},"areaServed":{"@type":"City","name":"Madrid"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Amable","item":"https://amableagencia.com/"},{"@type":"ListItem","position":2,"name":"Web para tiendas locales","item":"https://amableagencia.com/web-para-tiendas-madrid"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Necesito vender online?","acceptedAnswer":{"@type":"Answer","text":"No siempre. A muchas tiendas les basta con que las encuentren y les hagan encargos."}},{"@type":"Question","name":"¿Puedo enseñar mis productos?","acceptedAnswer":{"@type":"Answer","text":"Sí. Con un catálogo sencillo que puedas actualizar tú."}},{"@type":"Question","name":"¿Sirve para alimentación o papelería?","acceptedAnswer":{"@type":"Answer","text":"Sí. Sirve para cualquier comercio de barrio."}}]}]}</script>
 </head>
@@ -811,7 +824,7 @@ $('rec').textContent=s.rec;$('sText').textContent=s.sText;
 $('horas').innerHTML=s.opts.map((o)=>'<button class="hora" type="button">'+o+'</button>').join('');
 $('agenda').innerHTML=s.agenda.map((a)=>'<div class="fila"><b>'+a[0]+'</b><span>'+a[1]+'</span></div>').join('');
 $('ruta').innerHTML=s.flow.map((f)=>'<li><i></i>'+f+'</li>').join('');
-$('posts').innerHTML=s.posts.map((p)=>'<article class="post"><img loading="lazy" alt="'+p[0].replace(/"/g,'')+'" src="https://images.pexels.com/photos/'+p[1]+'/pexels-photo-'+p[1]+'.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop"><i class="pt"></i><p>'+p[0]+'</p></article>').join('');
+$('posts').innerHTML=s.posts.map((p,i)=>'<article class="post"><span class="foto"><img loading="lazy" alt="'+p[0].replace(/"/g,'')+'" src="https://images.pexels.com/photos/'+p[1]+'/pexels-photo-'+p[1]+'.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop">'+(i===1&&!quieto?'<video muted loop playsinline preload="none" aria-hidden="true" data-src="'+VID+(CLIPS[s.id]||CLIPS.otro)+'"></video>':'')+'</span><div class="acc"><button class="ic" type="button" aria-label="Me gusta" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.6a4.7 4.7 0 0 1 8.5 2.6c0 6.2-8.5 11.3-8.5 11.3Z"/></svg></button><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.6a8.4 8.4 0 0 1 7.3 12.6l1.1 4.2-4.2-1.1A8.4 8.4 0 1 1 12 3.6Z"/></svg></span><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 3.5 10.4 14M21 3.5l-6.6 17-4-6.5-6.9-3.9L21 3.5Z"/></svg></span></div><p>'+p[0]+'</p></article>').join('');if($('pista').classList.contains('vista'))redVive();
 document.querySelectorAll('.chip').forEach((c)=>{const on=c.dataset.id===s.id;c.setAttribute('aria-pressed',on);if(on&&innerWidth<=860)$('chips').scrollLeft=c.offsetLeft-$('chips').clientWidth/2+c.clientWidth/2});
 try{const u=new URL(location.href);u.searchParams.set('sector',s.id);history.replaceState(null,'',u)}catch(e){}
 };
@@ -857,7 +870,10 @@ $('veinte').innerHTML=Array.from({length:20},(_,i)=>'<i style="transition-delay:
 
 /* cinta de palabras y fotos que nacen del punto */
 const pal=['Diseño','Marca','Webs','Aplicaciones','Reservas','Redes','Automatización'].map((w)=>'<span>'+w+'</span><i></i>').join('');$('cinta').innerHTML=pal+pal+pal+pal;
-new IntersectionObserver((es,o)=>es.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('vista');o.disconnect()}}),{threshold:.25}).observe($('pista'));
+function redVive(){const c=[...$('posts').querySelectorAll('.post')];c.forEach((p,i)=>{if(i%3===1)setTimeout(()=>{if(!p.isConnected)return;const b=p.querySelector('button.ic');b.classList.add('si');b.setAttribute('aria-pressed','true')},quieto?0:900+i*240)});
+const v=$('posts').querySelector('video');if(v){v.addEventListener('playing',()=>v.classList.add('ya'),{once:true});v.src=v.dataset.src;v.play&&v.play().catch(()=>{})}}
+$('posts').addEventListener('click',(e)=>{const b=e.target.closest('button.ic');if(!b)return;const on=b.classList.toggle('si');b.setAttribute('aria-pressed',on)});
+new IntersectionObserver((es,o)=>es.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('vista');redVive();o.disconnect()}}),{threshold:.25}).observe($('pista'));
 
 /* frase palabra a palabra */
 $('frase').innerHTML=$('frase').textContent.split(' ').map((w)=>'<span>'+w+'</span>').join(' ');
