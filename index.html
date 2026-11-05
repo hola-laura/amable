@@ -390,6 +390,9 @@ section{padding:clamp(120px,16vw,216px) 0}
 .auto{margin:clamp(72px,10vw,128px) 0 clamp(96px,12vw,160px)}.auto figcaption{max-width:34em;margin-bottom:clamp(28px,4vw,48px)}.auto .mono{display:block;margin-bottom:16px}.auto h3{font-size:clamp(32px,3.8vw,46px);line-height:1.06;margin-bottom:16px}.auto p{color:var(--mut)}
 .auto-img{overflow-x:auto;border-radius:24px;background:#F4F4F4}.auto-img img{display:block;width:100%;min-width:760px}
 /* fin auto */
+.via{border:0;padding:0;margin:0 0 20px}.via legend{padding:0;font-size:15px;color:#BDB5AD;margin-bottom:8px}.vias{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.1)}.vias label{position:relative;cursor:pointer}.vias input{position:absolute;inset:0;margin:0;opacity:0;cursor:pointer}.vias span{display:flex;align-items:center;min-height:44px;padding:0 22px;border-radius:999px;font-size:16px;font-weight:500;color:#fff;transition:background .2s,color .2s}.vias input:checked+span{background:#fff;color:#111}.vias input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+#cI::placeholder{color:rgba(255,255,255,.45)}
+/* fin via */
 </style>
 </head>
 <body>
@@ -523,7 +526,8 @@ section{padding:clamp(120px,16vw,216px) 0}
 <input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
 <label class="campo"><span>Tu negocio</span><input name="negocio" required autocomplete="organization"></label>
 <label class="campo"><span>Qué quieres mejorar</span><textarea name="mejora" rows="3" required></textarea></label>
-<label class="campo"><span>Tu teléfono o email</span><input name="contacto" required></label>
+<fieldset class="via"><legend>Cómo prefieres que te responda</legend><div class="vias"><label><input type="radio" name="via" value="email" checked><span>Email</span></label><label><input type="radio" name="via" value="tel"><span>Teléfono</span></label></div></fieldset>
+<label class="campo"><span id="cL">Tu email</span><input name="contacto" id="cI" type="email" inputmode="email" autocomplete="email" placeholder="nombre@negocio.es" required></label>
 <p class="priv">Responsable: Laura Sampedro de la Rosa. Usaré estos datos solo para responderte y los conservaré hasta seis meses después del último contacto. <a href="privacidad.html" target="_blank" rel="noopener">Lee la política de privacidad</a>.</p>
 <label class="ack"><input type="checkbox" name="privacy_ack"><span>He leído la información de privacidad.</span></label>
 <button class="btn" data-mag id="enviar" type="submit" style="--bg:#fff;--fg:var(--ink)">Enviar</button>
@@ -815,10 +819,11 @@ const anda=()=>{cx+=(x-cx)*.2;cy+=(y-cy)*.2;c.style.transform='translate('+cx+'p
 document.querySelectorAll('[data-mag]').forEach((b)=>{b.addEventListener('mousemove',(e)=>{const r=b.getBoundingClientRect();b.style.transform='translate('+(e.clientX-r.left-r.width/2)*.14+'px,'+(e.clientY-r.top-r.height/2)*.22+'px)'});b.addEventListener('mouseleave',()=>{b.style.transform=''})});}
 
 /* formulario real */
+document.querySelectorAll('[name=via]').forEach((r)=>r.addEventListener('change',()=>{const t=r.value==='tel',i=$('cI');$('cL').textContent=t?'Tu teléfono':'Tu email';i.type=t?'tel':'email';i.inputMode=t?'tel':'email';i.autocomplete=t?'tel':'email';i.placeholder=t?'+34 600 000 000':'nombre@negocio.es';i.value='';$('err').hidden=true;i.focus()}));
 $('f').addEventListener('submit',async(e)=>{e.preventDefault();const f=e.target,er=$('err'),b=$('enviar');er.hidden=true;
 const v=(k)=>f.elements[k].value.trim();
 if(!v('negocio')||!v('mejora')||!v('contacto')){er.textContent='Rellena los tres campos, por favor.';er.hidden=false;return}
-const ct=v('contacto'),tl=ct.replace(/[\s().-]/g,'');if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(ct)&&!/^\+?\d{9,15}$/.test(tl)){er.textContent='Escribe un email o un teléfono válido, por favor.';er.hidden=false;return}
+const ct=v('contacto'),esTel=f.elements.via.value==='tel';if(esTel?!/^\+?\d{9,15}$/.test(ct.replace(/[\s().-]/g,'')):!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(ct)){er.textContent=esTel?'Escribe un teléfono válido, con prefijo si no es español.':'Escribe un email válido, por favor.';er.hidden=false;return}
 b.disabled=true;b.style.width=b.offsetWidth+'px';void b.offsetWidth;b.classList.add('va');b.lastChild.textContent='Enviando…';
 try{const r=await fetch(FORM_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({origen:'Formulario amable',sector:cur.label,negocio:v('negocio'),mensaje:v('mejora'),contacto:v('contacto'),web:v('web')})});
 const d=await r.json();if(!d.ok)throw 0;f.innerHTML='<p class="gracias">He recibido tu consulta<i class="pt"></i></p><p class="lead" style="margin-top:10px;color:#BDB5AD">Te contesto lo antes posible.</p>'}
