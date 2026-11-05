@@ -410,6 +410,10 @@ section{padding:clamp(120px,16vw,216px) 0}
 .local{padding:clamp(72px,9vw,120px) 0}.local h2{margin-bottom:24px}.local p{max-width:36em;color:var(--mut);font-size:clamp(18px,1.7vw,21px);margin-bottom:16px}
 .secs{display:flex;flex-wrap:wrap;gap:8px 20px;padding:0 0 28px;margin-top:24px}.secs a{font-size:15px;color:#fff;text-decoration:none;opacity:.8}.secs a:hover{opacity:1;text-decoration:underline}
 /* fin seo */
+.diseno{background:var(--dark);color:#fff}.diseno h2{max-width:13em;margin-bottom:24px}.diseno .lead{color:rgba(255,255,255,.82);max-width:34em;margin-bottom:clamp(48px,6vw,72px)}.dis-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(28px,4vw,56px);padding-top:clamp(32px,4vw,48px);border-top:1px solid rgba(255,255,255,.22);margin-bottom:clamp(48px,6vw,72px)}.dis-g h3{font-size:clamp(23px,2.2vw,27px);line-height:1.12;margin-bottom:12px}.dis-g p{color:rgba(255,255,255,.76);font-size:17px}
+@media (max-width:1000px){.dis-g{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:560px){.dis-g{grid-template-columns:minmax(0,1fr)}}
+@media (min-width:861px){.extras{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* fin diseno */
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Web y reservas para electricistas","serviceType":"Diseño web y reservas online","description":"Cuando alguien necesita un electricista, busca en Google desde el móvil y llama al primero que le da confianza. Te hago una web clara, con tus servicios y tu zona de trabajo, para que te elijan a ti.","url":"https://amableagencia.com/web-para-electricistas-madrid","provider":{"@id":"https://amableagencia.com/#negocio","name":"Amable","url":"https://amableagencia.com/"},"areaServed":{"@type":"City","name":"Madrid"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Amable","item":"https://amableagencia.com/"},{"@type":"ListItem","position":2,"name":"Web para electricistas","item":"https://amableagencia.com/web-para-electricistas-madrid"}]}]}</script>
 </head>
@@ -417,7 +421,7 @@ section{padding:clamp(120px,16vw,216px) 0}
 <nav class="nav" aria-label="Principal">
 <i class="prog" id="prog"></i>
 <a class="logo" href="#inicio" aria-label="amable., inicio">amable<i class="pt"></i></a>
-<ul><li><a href="#prueba">Cómo funciona</a></li><li><a href="#trabajos">Trabajos</a></li><li><a href="#precios">Precios</a></li><li><a href="#laura">Quién soy</a></li></ul>
+<ul><li><a href="#prueba">Cómo funciona</a></li><li><a href="#trabajos">Trabajos</a></li><li><a href="#diseno">Diseño</a></li><li><a href="#precios">Precios</a></li><li><a href="#laura">Quién soy</a></li></ul>
 <a class="btn" data-mag href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Reservar 15 min</a>
 </nav>
 
@@ -472,6 +476,17 @@ section{padding:clamp(120px,16vw,216px) 0}
 <template id="t-flujo"><ol class="flujo"><li>Entra un contacto<small>09:12</small></li><li>Recibe un mensaje<small>09:12</small></li><li>Elige su hora<small>09:30</small></li><li>Se guarda en el calendario<small>09:30</small></li><li>Recordatorio el día antes<small>Auto</small></li></ol></template>
 </section>
 
+<section class="diseno" id="diseno"><div class="wrap">
+<div class="r"><h2>Y antes que nada, diseño</h2><p class="lead">Llevo años diseñando para empresas grandes y ahora lo hago para negocios del barrio. Si quieres que tu negocio se vea tan bien como trabaja, empezamos por ahí.</p></div>
+<div class="dis-g">
+<div class="r"><h3>Logo y marca</h3><p>Un logo, unos colores y un estilo que sean tuyos y se reconozcan.</p></div>
+<div class="r"><h3>Webs y aplicaciones</h3><p>Pantallas claras, pensadas para la gente que las va a usar.</p></div>
+<div class="r"><h3>Cartas, carteles y tarjetas</h3><p>Lo que se imprime, listo para la imprenta o para colgar en tu local.</p></div>
+<div class="r"><h3>Redes</h3><p>Plantillas y publicaciones con tu marca, para que todo parezca de lo mismo.</p></div>
+</div>
+<div class="r"><button class="btn claro" data-mag data-pide="Diseño para mi negocio">Cuéntame qué necesitas</button></div>
+</div></section>
+
 <dialog id="pm" aria-labelledby="pmT"><button class="pm-x" id="pmX" type="button" aria-label="Cerrar"></button><div class="pm-g"><div class="pm-v en" id="pmV"></div><div class="pm-t"><span class="mono" id="pmR"></span><h3 id="pmT"></h3><p id="pmP"></p><div id="pmS"></div><p class="tuyo" id="pmY"></p><div class="lks" id="pmL"></div><button class="lk sig" id="pmN" type="button"><i></i>Siguiente proyecto</button></div></div></dialog>
 
 <section id="precios"><div class="wrap">
@@ -494,6 +509,7 @@ section{padding:clamp(120px,16vw,216px) 0}
 <button class="extra" data-pide="Automatización sencilla"><span>Automatización sencilla<small>Una tarea, de principio a fin</small></span><span>175€</span></button>
 <button class="extra" data-pide="Calendario de contenidos"><span>Calendario de contenidos<small>Todo el mes planificado</small></span><span>100€</span></button>
 <button class="extra" data-pide="4 publicaciones"><span>4 publicaciones<small>Listas para publicar</small></span><span>80€</span></button>
+<button class="extra" data-pide="Diseño para mi negocio"><span>Diseño<small>Logo, carteles, cartas o lo que necesites</small></span><span>A medida</span></button>
 </div>
 <p class="mono sinIva">Precio de lanzamiento para los 20 primeros negocios. Precio normal de los extras: 350€, 200€ y 160€. Todos los precios son sin IVA.</p>
 </div></section>
@@ -532,6 +548,7 @@ section{padding:clamp(120px,16vw,216px) 0}
 <div class="r">
 <details open><summary>¿Tengo que entender de tecnología?<i></i></summary><p>No. Me cuentas cómo trabajas y yo me encargo del resto.</p></details>
 <details><summary>¿Cómo funciona el 50%?<i></i></summary><p>Los 20 primeros negocios del barrio pagan la mitad en su primer servicio.</p></details>
+<details><summary>¿Puedo pedirte solo diseño?<i></i></summary><p>Sí. Si solo necesitas un logo, una carta o unos carteles, te lo diseño aunque no quieras nada más.</p></details>
 <details><summary>¿Los precios llevan IVA?<i></i></summary><p>No, todos los precios son sin IVA.</p></details>
 <details><summary>¿Y si no sé qué necesito?<i></i></summary><p>Reserva 15 minutos, me cuentas tu caso y te digo por dónde empezaría.</p></details>
 </div>
@@ -557,7 +574,7 @@ section{padding:clamp(120px,16vw,216px) 0}
 
 <footer class="pie"><div class="wrap">
 <div class="gigante" id="gigante" aria-hidden="true">amable<i class="pt"></i></div>
-<nav class="secs" aria-label="Sectores"><a href="/web-para-peluquerias-madrid">Web para peluquerías</a><a href="/web-para-restaurantes-madrid">Web para restaurantes y bares</a><a href="/web-para-academias-madrid">Web para academias de idiomas</a><a href="/web-para-electricistas-madrid">Web para electricistas</a><a href="/web-para-fontaneros-madrid">Web para fontaneros</a><a href="/web-para-talleres-madrid">Web para talleres mecánicos</a><a href="/web-para-clinicas-madrid">Web para fisios y clínicas</a><a href="/web-para-gimnasios-madrid">Web para gimnasios y estudios</a><a href="/web-para-tiendas-madrid">Web para tiendas locales</a></nav>
+<nav class="secs" aria-label="Sectores"><a href="/web-para-peluquerias-madrid">Web para peluquerías</a><a href="/web-para-restaurantes-madrid">Web para restaurantes y bares</a><a href="/web-para-academias-madrid">Web para academias</a><a href="/web-para-electricistas-madrid">Web para electricistas</a><a href="/web-para-fontaneros-madrid">Web para fontaneros</a><a href="/web-para-talleres-madrid">Web para talleres mecánicos</a><a href="/web-para-clinicas-madrid">Web para fisios y clínicas</a><a href="/web-para-gimnasios-madrid">Web para gimnasios y estudios</a><a href="/web-para-dentistas-madrid">Web para dentistas</a><a<a href="/web-para-farmacias-madrid">Web para farmacias</a><a<a href="/web-para-veterinarias-madrid">Web para veterinarias</a><a<a href="/web-para-administradores-de-fincas-madrid">Web para administradores de fincas</a><a<a href="/web-para-gestorias-madrid">Web para gestorías</a><a<a href="/web-para-inmobiliarias-madrid">Web para inmobiliarias</a><a<a href="/web-para-reformas-madrid">Web para reformas y carpintería</a><a href="/web-para-tiendas-madrid">Web para tiendas locales</a></nav>
 <div class="legal"><span class="mono">Design · AI · Automation</span><a class="mono" href="privacidad.html">Privacidad</a><span class="mono">Urgel · Oporto · Marqués de Vadillo, Madrid</span></div>
 </div></footer>
 
@@ -586,16 +603,14 @@ const SECTORS = [
     posts: [['El plato de la semana', 27287003], ['Menú del día: ya está aquí', 5531093], ['Para compartir', 14823753], ['Conoce nuestra cocina', 7160695], ['Reserva tu mesa para el sábado', 12181619], ['Abrimos también los domingos', 24433378]],
     fText: 'Confirmamos cada reserva y recordamos la mesa a tu cliente para evitar sillas vacías.',
     flow: ['Entra una reserva de mesa', 'Se añade a tu calendario', 'Tu cliente recibe la confirmación', 'Recordatorio el mismo día'], rec: 'Web sencilla con tu carta' },
-  { id: 'idio', label: 'Academia de idiomas', h1a: 'Más alumnos.', h1b: 'Menos papeleo.',
-    sub: 'Que cada interesado encuentre su grupo, pida su prueba de nivel y se inscriba sin que tengas que contestar uno a uno.',
-    dh: 'Así llega un alumno nuevo. Elige un horario.', c1: 'Prueba de nivel de inglés', c2: 'Lunes · 20 minutos',
+  { id: 'idio', label: 'Academia', h1a: 'Más alumnos.', h1b: 'Menos papeleo.',
+    sub: 'Que cada interesado encuentre su curso, pida una clase de prueba y se inscriba sin que tengas que contestar uno a uno.',
+    dh: 'Así llega un alumno nuevo. Elige un horario.', c1: 'Clase de prueba', c2: 'Lunes · 30 minutos',
     opts: ['10:00', '12:00', '17:30', '19:00'], btn: 'Reservar lunes a las', got: 'Nueva prueba, lunes', note: 'En tu correo y en tu calendario. Instrucciones ya enviadas.',
-    agenda: [['09:00', 'Javier, francés B1'], ['11:00', 'Clara, inglés A2'], ['18:00', 'Hugo, inglés B2']], newRow: 'Nuevo alumno, inglés',
-    wText: 'Con tus cursos, niveles y horarios claros, y un formulario para pedir la prueba de nivel.', wNav: 'Cursos · Horarios · Prueba de nivel', wHead: 'Empieza el nuevo trimestre', wBtn: 'Pedir prueba de nivel',
-    sText: 'Consejos para aprender, novedades de cursos y plazas abiertas para que piensen en ti cuando las necesiten.',
-    posts: [['Abierta la matrícula', 37739901], ['5 frases para tu próximo viaje', 7235900], ['¿Qué nivel tienes?', 14814047], ['Plazas libres en inglés B1', 7092523], ['Vocabulario de la semana', 8500618], ['Grupos reducidos por las tardes', 37368295]],
-    fText: 'Inscripciones, recordatorios de clase y avisos de cambios de horario sin escribir a cada alumno.',
-    flow: ['Entra una solicitud', 'Se añade a tu lista de alumnos', 'El alumno recibe la información', 'Recordatorio antes de la prueba'], rec: 'Automatización sencilla' },
+    agenda: [['09:00', 'Javier, oposiciones'], ['11:00', 'Clara, inglés'], ['18:00', 'Hugo, repaso']], newRow: 'Nuevo alumno',
+    sText: 'Consejos para estudiar, novedades de cursos y plazas abiertas para que piensen en ti cuando las necesiten.',
+    posts: [['Abierta la matrícula', 34526416], ['Consejo de estudio de la semana', 771317], ['¿Qué curso te encaja?', 5905554], ['Plazas libres', 8617994], ['Un día en clase', 8199151], ['Grupos reducidos por las tardes', 3807755]],
+    flow: ['Entra una solicitud', 'Se añade a tu lista de alumnos', 'El alumno recibe la información', 'Recordatorio antes de la clase'], rec: 'Automatización sencilla' },
   { id: 'elec', label: 'Electricista', h1a: 'Que te encuentren.', h1b: 'Que te llamen.',
     sub: 'Una web clara para que te elijan cuando busquen electricista cerca y un formulario para no perder avisos mientras trabajas.',
     dh: 'Así llega un aviso. Elige cuándo.', c1: 'Revisar cuadro eléctrico', c2: 'Con foto de la avería',
@@ -626,7 +641,7 @@ const SECTORS = [
     posts: [['Prepara tu coche para el invierno', 8478259], ['Cuándo cambiar el aceite', 4489758], ['Trabajo de la semana', 6870319], ['Revisión antes de la ITV', 35828170], ['Te lo dejamos listo', 8478228], ['Pide cita desde el móvil', 33814734]],
     fText: 'Avisa automáticamente de que el coche está listo y recuerda la próxima revisión.',
     flow: ['Entra una cita', 'Se añade a tu calendario', 'Aviso de coche listo', 'Recordatorio de próxima revisión'], rec: 'Reservas online' },
-  { id: 'clin', label: 'Fisio o clínica', h1a: 'Agenda llena.', h1b: 'Menos ausencias.',
+  { id: 'clin', label: 'Fisioterapia', h1a: 'Agenda llena.', h1b: 'Menos ausencias.',
     sub: 'Tus pacientes piden cita sin llamar, reciben su recordatorio y tu consulta deja de vivir pegada al teléfono.',
     dh: 'Así llega una cita. Elige una hora.', c1: 'Sesión de fisioterapia', c2: 'Martes · 50 minutos',
     opts: ['9:00', '11:00', '16:30', '18:00'], btn: 'Reservar martes a las', got: 'Nueva cita, martes', note: 'En tu correo y en tu calendario. Confirmación ya enviada.',
@@ -656,6 +671,62 @@ const SECTORS = [
     posts: [['Novedades de esta semana', 14933973], ['Hoy recomendamos', 8475171], ['Conócenos', 8475169], ['Promoción del fin de semana', 36729740], ['Gente del barrio', 36729739], ['Haz tu encargo por WhatsApp', 8117465]],
     fText: 'Encargos ordenados, aviso cuando están listos y catálogo fácil de actualizar.',
     flow: ['Entra un encargo', 'Se guarda en tu lista', 'Tu cliente recibe la confirmación', 'Aviso cuando esté listo'], rec: 'Web sencilla' },
+  { id: 'dent', label: 'Dentista', h1a: 'Sin huecos.', h1b: 'Menos llamadas.',
+    sub: 'Tus pacientes piden cita desde el móvil, reciben su recordatorio y tu recepción deja de pasar el día al teléfono.',
+    dh: 'Así llega una cita. Elige una hora.', c1: 'Revisión y limpieza', c2: 'Miércoles · 30 minutos',
+    opts: ['9:30', '12:00', '16:30', '18:30'], btn: 'Reservar miércoles a las', got: 'Nueva cita, miércoles', note: 'En tu correo y en tu calendario. Confirmación ya enviada.',
+    agenda: [['09:30', 'Paciente, revisión'], ['12:30', 'Paciente, limpieza'], ['17:00', 'Paciente, primera visita']], newRow: 'Paciente, revisión',
+    sText: 'Consejos de cuidado, tu equipo y novedades de la clínica, revisados por ti antes de publicarlos.',
+    posts: [['Cada cuánto hacer una revisión', 19879741], ['Conoce a tu equipo', 19976560], ['Así es tu primera visita', 7800666], ['Horarios de tarde disponibles', 8413334], ['Mitos sobre la limpieza dental', 16430838], ['Pide cita desde el móvil', 6121110]],
+    flow: ['Entra una cita', 'Se añade a tu calendario', 'El paciente recibe la confirmación', 'Recordatorio el día antes'], rec: 'Reservas online' },
+  { id: 'farm', label: 'Farmacia', h1a: 'Tu farmacia,', h1b: 'a un mensaje.',
+    sub: 'Encargos sin hacer cola, horarios y guardias siempre al día y un aviso cuando el pedido está listo para recoger.',
+    dh: 'Así llega un encargo. Elige cuándo recogerlo.', c1: 'Encargo para recoger', c2: 'Hoy · En el mostrador',
+    opts: ['12:00', '14:00', '17:00', '20:00'], btn: 'Recoger hoy a las', got: 'Nuevo encargo, hoy', note: 'En tu lista de encargos. Aviso ya enviado.',
+    agenda: [['10:30', 'Carmen, encargo'], ['13:00', 'Luis, toma de tensión'], ['18:00', 'Pilar, encargo']], newRow: 'Encargo para recoger',
+    sText: 'Consejos de temporada, servicios de la farmacia y guardias, revisados por ti antes de publicarlos.',
+    posts: [['Esta semana estamos de guardia', 14797864], ['Consejos para la temporada de alergia', 19471016], ['Conoce a tu equipo', 8657293], ['Toma de tensión en la farmacia', 8657290], ['Lo que no debe faltar en tu botiquín', 6129587], ['Haz tu encargo y recógelo sin esperar', 8657287]],
+    flow: ['Entra un encargo', 'Se guarda en tu lista', 'Tu cliente recibe la confirmación', 'Aviso cuando esté listo'], rec: 'Web sencilla' },
+  { id: 'vet', label: 'Veterinaria', h1a: 'Mascotas al día.', h1b: 'Menos llamadas.',
+    sub: 'Las familias piden cita desde el móvil y reciben el aviso de vacunas y revisiones sin que tengas que llamar una a una.',
+    dh: 'Así llega una cita. Elige una hora.', c1: 'Vacuna anual', c2: 'Martes · 20 minutos',
+    opts: ['10:00', '12:30', '17:00', '19:00'], btn: 'Reservar martes a las', got: 'Nueva cita, martes', note: 'En tu correo y en tu calendario. Confirmación ya enviada.',
+    agenda: [['10:00', 'Luna, vacuna'], ['12:30', 'Toby, revisión'], ['17:30', 'Nala, consulta']], newRow: 'Tu paciente, vacuna',
+    sText: 'Consejos de cuidado, recordatorios de temporada y los pacientes más simpáticos de la semana.',
+    posts: [['Paciente de la semana', 6235023], ['Calendario de vacunas', 6235225], ['Conoce a tu veterinario', 7468978], ['Qué hacer si no quiere comer', 6235114], ['Cachorros en casa', 16395150], ['Pide cita desde el móvil', 46024]],
+    flow: ['Entra una cita', 'Se añade a tu calendario', 'La familia recibe la confirmación', 'Aviso de la próxima vacuna'], rec: 'Reservas online' },
+  { id: 'fincas', label: 'Gestor de fincas', h1a: 'Menos llamadas.', h1b: 'Vecinos al día.',
+    sub: 'Las incidencias entran por un formulario, te llegan ordenadas y cada vecino sabe en qué punto está sin tener que llamarte.',
+    dh: 'Así llega una incidencia. Elige el tipo.', c1: 'Avisar de una incidencia', c2: 'Portal 3 · Ahora',
+    opts: ['Ascensor', 'Limpieza', 'Fontanería', 'Otra'], btn: 'Avisar de:', got: 'Nueva incidencia', note: 'En tu lista de incidencias. Vecino avisado.',
+    agenda: [['09:15', 'Ascensor, portal 3'], ['11:40', 'Gotera, 2.º B'], ['16:00', 'Preparar acta de la junta']], newRow: 'Aviso de un vecino',
+    sText: 'Noticias útiles para comunidades, consejos y cómo trabajas, para que las juntas te conozcan antes de llamarte.',
+    posts: [['Qué hace un administrador de fincas', 35417629], ['Cómo avisar de una incidencia', 20230757], ['Qué mirar antes de una junta', 36537092], ['Conócenos', 13847074], ['Comunidades que cuidamos', 36642178], ['Pide presupuesto para tu comunidad', 15949268]],
+    flow: ['Entra una incidencia', 'Se guarda en tu lista', 'El vecino recibe la confirmación', 'Aviso cuando esté resuelta'], rec: 'Automatización sencilla' },
+  { id: 'gest', label: 'Gestoría', h1a: 'Menos correos.', h1b: 'Todo a tiempo.',
+    sub: 'Tus clientes te envían sus documentos en un solo sitio, reciben un aviso antes de cada plazo y tú dejas de perseguirlos.',
+    dh: 'Así llega un cliente nuevo. Elige una hora.', c1: 'Primera consulta', c2: 'Viernes · 20 minutos',
+    opts: ['9:30', '11:00', '13:00', '16:30'], btn: 'Reservar viernes a las', got: 'Nueva consulta, viernes', note: 'En tu correo y en tu calendario. Confirmación ya enviada.',
+    agenda: [['09:00', 'Facturas de Marta'], ['12:00', 'Alta de autónomo'], ['17:00', 'Trimestre de Taller Ruiz']], newRow: 'Cliente nuevo, consulta',
+    sText: 'Plazos que importan, novedades explicadas en palabras sencillas y consejos para autónomos.',
+    posts: [['Fechas clave de este trimestre', 33175651], ['Qué guardar para tu declaración', 8296977], ['Cómo darte de alta como autónomo', 7658352], ['Gastos que debes conservar', 8296974], ['Conócenos', 10376245], ['Pide tu primera consulta', 8927687]],
+    flow: ['Entran los documentos', 'Se guardan en su carpeta', 'Tu cliente recibe la confirmación', 'Recordatorio antes del plazo'], rec: 'Automatización sencilla' },
+  { id: 'inmo', label: 'Inmobiliaria', h1a: 'Más visitas.', h1b: 'Menos llamadas.',
+    sub: 'Tus pisos bien presentados en tu propia web y las visitas se piden solas, sin que tengas que estar al teléfono.',
+    dh: 'Así se pide una visita. Elige una hora.', c1: 'Visita, piso de 2 habitaciones', c2: 'Sábado · 30 minutos',
+    opts: ['10:00', '11:00', '12:30', '17:00'], btn: 'Reservar sábado a las', got: 'Nueva visita, sábado', note: 'En tu correo y en tu calendario. Confirmación ya enviada.',
+    agenda: [['10:00', 'Ana, piso en Oporto'], ['12:00', 'Jorge, piso en Urgel'], ['17:30', 'Sara, firma de arras']], newRow: 'Visita al piso',
+    sText: 'Pisos nuevos, vendidos del mes y consejos para comprar o alquilar, listos para publicar.',
+    posts: [['Piso nuevo en el barrio', 7511695], ['Ya tiene dueños', 8293781], ['Cuánto vale tu piso', 7599735], ['Luz y dos habitaciones', 6077368], ['Consejos para vender mejor', 19239905], ['Pide tu visita desde el móvil', 7511693]],
+    flow: ['Entra una solicitud de visita', 'Se añade a tu calendario', 'Tu cliente recibe la confirmación', 'Recordatorio antes de la visita'], rec: 'Web sencilla' },
+  { id: 'refo', label: 'Reformas o carpintería', h1a: 'Más obras.', h1b: 'Menos papeles.',
+    sub: 'Te piden presupuesto desde el móvil con fotos, lo envías en minutos y enseñas tus trabajos terminados.',
+    dh: 'Así llega un presupuesto. Elige un día.', c1: 'Visita para presupuesto', c2: 'Lunes · En la obra',
+    opts: ['9:00', '11:30', '16:00', '18:00'], btn: 'Reservar lunes a las', got: 'Nueva visita, lunes', note: 'En tu correo y en tu calendario. Confirmación ya enviada.',
+    agenda: [['08:30', 'Cocina, medición'], ['12:00', 'Baño, presupuesto'], ['17:00', 'Armario, entrega']], newRow: 'Visita de presupuesto',
+    sText: 'Antes y después, obras en marcha y consejos, sin que tengas que sacar tiempo entre trabajo y trabajo.',
+    posts: [['Antes y después', 5691533], ['Obra de esta semana', 36035073], ['Hecho a medida', 37178416], ['Detalles que se notan', 33005110], ['Así trabajamos', 5691550], ['Pide tu presupuesto', 4756489]],
+    flow: ['Entra una solicitud', 'Se guarda en tu lista', 'Tu cliente recibe el presupuesto', 'Recordatorio de seguimiento'], rec: 'Web sencilla' },
   { id: 'otro', label: 'Otro negocio', h1a: 'Menos tareas.', h1b: 'Más clientes.',
     sub: 'Cuéntame qué haces y buscamos juntos qué te ayudaría más: tu web, tus reservas, tus redes o quitarte tareas repetitivas.',
     dh: 'Así llega un cliente nuevo. Elige cuándo.', c1: 'Primera consulta', c2: 'Jueves · 30 minutos',
@@ -700,11 +771,18 @@ const THEMES = {
   tien: mkTheme('#2E7D32', '#FFFFFF', '#2E7D32', '#12331A', '#47644C', '#D3EBCF', '#F2FAF0', '18, 51, 26'),
   otro: mkTheme('#004833', '#FFFFFF', '#004833', '#3A120A', '#6E4A40', '#FFD9C7', '#FFEFE6', '58, 18, 10'),
   pilates: mkTheme('#3F7265', '#FFFFFF', '#3F7265', '#14302A', '#47635C', '#D5E8E2', '#F1F8F5', '20, 48, 42'),
-  academiapeluqueria: mkTheme('#8E2D6F', '#FFFFFF', '#8E2D6F', '#340D29', '#68445E', '#F3D3E9', '#FCF0F8', '52, 13, 41')
+  academiapeluqueria: mkTheme('#8E2D6F', '#FFFFFF', '#8E2D6F', '#340D29', '#68445E', '#F3D3E9', '#FCF0F8', '52, 13, 41'),
+  dent: mkTheme('#0284A8', '#FFFFFF', '#0284A8', '#06303D', '#3F6673', '#CBEBF5', '#EEF9FC', '6, 48, 61'),
+  farm: mkTheme('#00875A', '#FFFFFF', '#00875A', '#04331F', '#3C6452', '#C4F0DC', '#EEFBF5', '4, 51, 31'),
+  vet: mkTheme('#A65A12', '#FFFFFF', '#A65A12', '#3A1F06', '#6E5236', '#FBE2BE', '#FFF6E9', '58, 31, 6'),
+  fincas: mkTheme('#3B4BA3', '#FFFFFF', '#3B4BA3', '#151C47', '#4C527A', '#D7DBF7', '#F2F3FE', '21, 28, 71'),
+  gest: mkTheme('#7A2E3A', '#FFFFFF', '#7A2E3A', '#33101A', '#6B454E', '#F5D6DC', '#FDF1F3', '51, 16, 26'),
+  inmo: mkTheme('#5F6B1E', '#FFFFFF', '#5F6B1E', '#262B0A', '#5A5F3C', '#E6EBBE', '#F9FAE9', '38, 43, 10'),
+  refo: mkTheme('#7C4A21', '#FFFFFF', '#7C4A21', '#2F1A09', '#66503D', '#EEDCC8', '#FAF4EC', '47, 26, 9')
 };
 const FORM_URL='https://script.google.com/macros/s/AKfycbyzG0kePIy7Br2kr5oX7gncFMFjbJXAxXtv6JI6gpeqZ8cgGsO2_MjK0cDdbmXMshV0/exec';
 const VID='https://videos.pexels.com/video-files/';
-const CLIPS={pelu:'8830235/8830235-hd_1920_1080_25fps.mp4',rest:'8428490/8428490-hd_1366_720_25fps.mp4',idio:'6671805/6671805-hd_1920_1080_24fps.mp4',elec:'18780266/18780266-hd_1920_1080_30fps.mp4',font:'7584762/7584762-hd_1920_1080_25fps.mp4',tall:'8986894/8986894-hd_1920_1080_30fps.mp4',clin:'5793444/5793444-hd_1920_1080_25fps.mp4',gym:'4944087/4944087-hd_1366_720_24fps.mp4',tien:'12511385/12511385-hd_1366_720_24fps.mp4',otro:'5893642/5893642-hd_1920_1080_24fps.mp4',pilates:'6023196/6023196-hd_1920_1080_25fps.mp4',academiapeluqueria:'4177954/4177954-hd_1920_1080_30fps.mp4'};
+const CLIPS={pelu:'8830235/8830235-hd_1920_1080_25fps.mp4',rest:'8428490/8428490-hd_1366_720_25fps.mp4',idio:'5200348/5200348-hd_1920_1080_25fps.mp4',elec:'18780266/18780266-hd_1920_1080_30fps.mp4',font:'7584762/7584762-hd_1920_1080_25fps.mp4',tall:'8986894/8986894-hd_1920_1080_30fps.mp4',clin:'5793444/5793444-hd_1920_1080_25fps.mp4',gym:'4944087/4944087-hd_1366_720_24fps.mp4',tien:'12511385/12511385-hd_1366_720_24fps.mp4',otro:'5893642/5893642-hd_1920_1080_24fps.mp4',pilates:'6023196/6023196-hd_1920_1080_25fps.mp4',academiapeluqueria:'4177954/4177954-hd_1920_1080_30fps.mp4',dent:'5356404/5356404-hd_1920_1080_25fps.mp4',farm:'8657655/8657655-hd_1366_720_25fps.mp4',vet:'6235740/6235740-hd_1920_1080_25fps.mp4',fincas:'4693665/4693665-hd_1920_1080_24fps.mp4',gest:'7821801/7821801-hd_1920_1080_30fps.mp4',inmo:'7348146/7348146-hd_1920_1080_25fps.mp4',refo:'20374770/20374770-hd_1920_1080_30fps.mp4'};
 const $=(id)=>document.getElementById(id);
 const quieto=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fino=matchMedia('(hover:hover) and (pointer:fine)').matches;
@@ -740,7 +818,8 @@ pinta(id);$('h1').classList.remove('vivo');void $('h1').offsetWidth;
 b.animate([{transform:'scale('+R+')',opacity:1},{transform:'scale('+R+')',opacity:0}],{duration:300,fill:'forwards'}).onfinish=()=>b.getAnimations().forEach((a)=>a.cancel());
 requestAnimationFrame(()=>requestAnimationFrame(()=>$('h1').classList.add('vivo')));};};
 
-$('chips').innerHTML=SECTORS.filter((s)=>!s.hidden).map((s)=>'<button class="chip" type="button" data-id="'+s.id+'" aria-pressed="false">'+s.label+'</button>').join('');
+const ORDEN=['pelu','rest','clin','dent','farm','vet','idio','tall','fincas','gest','inmo','refo','elec','font','gym','tien','otro'];
+$('chips').innerHTML=SECTORS.filter((s)=>!s.hidden).sort((x,y)=>ORDEN.indexOf(x.id)-ORDEN.indexOf(y.id)).map((s)=>'<button class="chip" type="button" data-id="'+s.id+'" aria-pressed="false">'+s.label+'</button>').join('');
 $('chips').addEventListener('click',(e)=>{const c=e.target.closest('.chip');if(!c||c.dataset.id===(cur&&cur.id))return;barre(e.clientX||innerWidth/2,e.clientY||innerHeight/2,c.dataset.id)});
 
 /* demo: la hora vuela a la agenda y se enciende el recorrido */
@@ -769,7 +848,7 @@ f.elements.mejora.value='Me interesa: '+b.dataset.pide;$('contacto').scrollIntoV
 $('veinte').innerHTML=Array.from({length:20},(_,i)=>'<i style="transition-delay:'+i*35+'ms"></i>').join('');
 
 /* cinta de palabras y fotos que nacen del punto */
-const pal=['Webs','Aplicaciones','Reservas','Redes','Automatización','Diseño'].map((w)=>'<span>'+w+'</span><i></i>').join('');$('cinta').innerHTML=pal+pal+pal+pal;
+const pal=['Diseño','Marca','Webs','Aplicaciones','Reservas','Redes','Automatización'].map((w)=>'<span>'+w+'</span><i></i>').join('');$('cinta').innerHTML=pal+pal+pal+pal;
 new IntersectionObserver((es,o)=>es.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('vista');o.disconnect()}}),{threshold:.25}).observe($('pista'));
 
 /* frase palabra a palabra */
