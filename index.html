@@ -525,7 +525,7 @@ section{padding:clamp(120px,16vw,216px) 0}
 <label class="campo"><span>Qué quieres mejorar</span><textarea name="mejora" rows="3" required></textarea></label>
 <label class="campo"><span>Tu teléfono o email</span><input name="contacto" required></label>
 <p class="priv">Responsable: Laura Sampedro de la Rosa. Usaré estos datos solo para responderte y los conservaré hasta seis meses después del último contacto. <a href="privacidad.html" target="_blank" rel="noopener">Lee la política de privacidad</a>.</p>
-<label class="ack"><input type="checkbox" name="privacy_ack" required><span>He leído la información de privacidad.</span></label>
+<label class="ack"><input type="checkbox" name="privacy_ack"><span>He leído la información de privacidad.</span></label>
 <button class="btn" data-mag id="enviar" type="submit" style="--bg:#fff;--fg:var(--ink)">Enviar</button>
 <p class="err" id="err" hidden role="alert"></p>
 </form>
@@ -818,7 +818,6 @@ document.querySelectorAll('[data-mag]').forEach((b)=>{b.addEventListener('mousem
 $('f').addEventListener('submit',async(e)=>{e.preventDefault();const f=e.target,er=$('err'),b=$('enviar');er.hidden=true;
 const v=(k)=>f.elements[k].value.trim();
 if(!v('negocio')||!v('mejora')||!v('contacto')){er.textContent='Rellena los tres campos, por favor.';er.hidden=false;return}
-if(!f.elements.privacy_ack.checked){er.textContent='Marca la casilla de privacidad, por favor.';er.hidden=false;return}
 b.disabled=true;b.style.width=b.offsetWidth+'px';void b.offsetWidth;b.classList.add('va');b.lastChild.textContent='Enviando…';
 try{const r=await fetch(FORM_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({origen:'Formulario amable',sector:cur.label,negocio:v('negocio'),mensaje:v('mejora'),contacto:v('contacto'),web:v('web')})});
 const d=await r.json();if(!d.ok)throw 0;f.innerHTML='<p class="gracias">He recibido tu consulta<i class="pt"></i></p><p class="lead" style="margin-top:10px;color:#BDB5AD">Te contesto lo antes posible.</p>'}
