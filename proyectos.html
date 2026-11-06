@@ -392,6 +392,31 @@ html{scroll-behavior:auto}
 @media(max-width:860px){.ram-project{grid-template-columns:minmax(0,1fr)}.ram-visual{min-height:clamp(340px,82vw,560px);padding:16px}.ram-main{max-height:min(72vw,480px)}.ram-controls{gap:16px;padding:14px 14px 18px}.ram-arrow{width:50px;height:50px}}
 @media(max-width:480px){.ram-visual{min-height:340px}.ram-main{max-height:300px}.ram-controls{gap:12px}.ram-arrow{width:46px;height:46px}}
 @media(prefers-reduced-motion:reduce){.ram-main,.ram-arrow{transition:none}}
+
+/* ALCOLEA · iPHONE GALLERY */
+.alcolea-case{grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr)}
+.alcolea-case.inv .txt{order:2}
+.alcolea-case .txt h3{max-width:590px}
+.alcolea-stage{position:relative;display:block;min-height:0;height:clamp(500px,43vw,590px);padding:0;overflow:hidden;border-radius:28px;background:linear-gradient(145deg,#dce9f8,#a8c8f8)}
+.alco-halo{position:absolute;left:50%;top:43%;width:min(76%,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#f8fbffbb 0%,#d9e9ff70 54%,transparent 72%);transform:translate(-50%,-50%);pointer-events:none}
+.alco-phones{position:absolute;inset:24px 0 68px;perspective:1100px}
+.alco-phone{position:absolute;left:50%;top:49%;width:clamp(185px,17vw,224px);height:clamp(350px,34vw,420px);padding:6px;border:1px solid #ffffff88;border-radius:38px;background:linear-gradient(140deg,#48505d,#101319 35%,#5c6270 52%,#171a20);box-shadow:0 28px 54px -20px #14283b8c,0 2px 4px #fff8 inset;transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .35s ease,filter .35s ease;will-change:transform}
+.alco-screen{position:relative;width:100%;height:100%;overflow:hidden;border-radius:32px;background:#f3f7fb}
+.alco-screen img{display:block;width:100%;height:100%;object-fit:cover;user-select:none}
+.alco-island{position:absolute;z-index:2;left:50%;top:9px;width:46px;height:12px;border-radius:99px;background:#090b0e;transform:translateX(-50%);box-shadow:0 1px 2px #0006}
+.alco-phone[data-slot="center"]{z-index:3;opacity:1;filter:none;transform:translate(-50%,-49%) scale(1.03) rotateY(0)}
+.alco-phone[data-slot="left"]{z-index:1;opacity:.86;filter:saturate(.88);transform:translate(-128%,-47%) scale(.84) rotate(-8deg) rotateY(5deg)}
+.alco-phone[data-slot="right"]{z-index:2;opacity:.9;filter:saturate(.9);transform:translate(28%,-47%) scale(.84) rotate(8deg) rotateY(-5deg)}
+.alco-stage.is-shuffling .alco-phone{opacity:.52;filter:blur(1px);transform:translate(-50%,-53%) scale(.95)}
+.alco-controls{position:absolute;z-index:5;left:50%;bottom:15px;display:flex;align-items:center;gap:18px;padding:7px 9px;border:1px solid #fff9;border-radius:999px;background:#ffffffd9;box-shadow:0 8px 22px #17355520;transform:translateX(-50%);backdrop-filter:blur(8px)}
+.alco-arrow{display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:#fff;color:#004833;font:23px/1 'DM Sans',sans-serif;cursor:pointer;transition:transform .2s ease,background .2s ease}
+.alco-arrow:hover{transform:scale(1.08);background:#edf4ff}
+.alco-arrow:focus-visible{outline:3px solid #004833;outline-offset:3px}
+.alco-count{min-width:48px;text-align:center;color:#405b73;font:11px 'DM Mono',monospace;letter-spacing:.05em}
+@media(max-width:860px){.alcolea-case{grid-template-columns:minmax(0,1fr)}.alcolea-case.inv .txt{order:0}.alcolea-stage{height:490px}.alco-phone{width:min(42vw,186px);height:min(86vw,344px)}.alco-phone[data-slot="left"]{transform:translate(-125%,-47%) scale(.81) rotate(-7deg)}.alco-phone[data-slot="right"]{transform:translate(25%,-47%) scale(.81) rotate(7deg)}}
+@media(max-width:480px){.alcolea-stage{height:430px}.alco-phones{inset:16px 0 60px}.alco-phone{width:min(42vw,164px);height:min(88vw,306px);padding:5px;border-radius:30px}.alco-screen{border-radius:25px}.alco-island{top:7px;width:40px;height:10px}.alco-phone[data-slot="left"]{transform:translate(-125%,-47%) scale(.78) rotate(-7deg)}.alco-phone[data-slot="right"]{transform:translate(25%,-47%) scale(.78) rotate(7deg)}}
+@media(prefers-reduced-motion:reduce){.alco-phone,.alco-arrow{transition:none}}
+
 </style>
 </head>
 <body>
@@ -408,13 +433,18 @@ html{scroll-behavior:auto}
 <div class="lienzo doble r"><div class="web"><img loading="lazy" src="https://hola-laura.github.io/laura/assets/mountain-guide/website.webp" alt="Página de inicio de la web de Mattern Guide"></div><div class="web flota" data-par=".06"><img loading="lazy" src="https://hola-laura.github.io/laura/assets/mountain-guide/panel.webp" alt="Panel de gestión de contenidos de Mattern Guide"></div></div>
 </article>
 
-<article class="caso inv">
-<div class="txt r"><span class="mono">SOFTWARE A MEDIDA · EMPRESA DE CONSTRUCCIÓN</span><h3>Presupuestos en un solo sitio, no en mil hojas</h3>
-<p>Diseñé un software para que una empresa de construcción prepare sus presupuestos: partidas, cantidades, precios y total, listo para enviar al cliente.</p>
-<p class="tuyo"><b>En tu negocio:</b> si repites una tarea cada semana, puede tener su propia herramienta sencilla.</p></div>
-<div class="lienzo r"><div class="pres"><header><h4>Reforma de baño</h4><span class="mono" style="margin:0">Nº 204</span></header>
-<div class="fp"><span>Demolición y retirada</span><span>640€</span></div><div class="fp"><span>Fontanería</span><span>980€</span></div><div class="fp"><span>Alicatado, 18 m²</span><span>1.080€</span></div><div class="fp"><span>Pintura, 24 m²</span><span>288€</span></div><div class="fp"><span>IVA 21%</span><span>627,48€</span></div>
-<footer><div class="tot"><span data-de="0" data-a="3615">3.615</span>,48€</div><span class="ui">Enviar al cliente</span></footer></div></div>
+<article class="caso inv alcolea-case">
+<div class="txt r"><span class="mono">WEB APP · ALCOLEA · PRESUPUESTOS</span><h3>Presupuestos listos, sin dejar la obra</h3>
+<p>Habla o escribe el trabajo; Alcolea lo convierte en partidas editables y un presupuesto listo para enviar desde el móvil.</p></div>
+<div class="lienzo r alcolea-stage" data-alcolea-gallery aria-label="Alcolea en tres pantallas de iPhone" tabindex="0">
+<div class="alco-halo" aria-hidden="true"></div>
+<div class="alco-phones">
+<div class="alco-phone" data-slot="left" aria-hidden="true"><div class="alco-screen"><img src="/img/alcolea/03-client-view.jpg" alt="" draggable="false" loading="lazy"><span class="alco-island"></span></div></div>
+<div class="alco-phone" data-slot="center" aria-hidden="false"><div class="alco-screen"><img src="/img/alcolea/01-voice-entry.jpg" alt="Pantalla de Alcolea para dictar por voz el trabajo que irá al presupuesto" draggable="false" fetchpriority="high"><span class="alco-island"></span></div></div>
+<div class="alco-phone" data-slot="right" aria-hidden="true"><div class="alco-screen"><img src="/img/alcolea/02-budget-items.jpg" alt="" draggable="false" loading="lazy"><span class="alco-island"></span></div></div>
+</div>
+<div class="alco-controls"><button class="alco-arrow prev" type="button" aria-label="Pantalla anterior">←</button><span class="alco-count" aria-live="polite">01 / 03</span><button class="alco-arrow next" type="button" aria-label="Pantalla siguiente">→</button></div>
+</div>
 </article>
 
 <article class="caso">
@@ -443,11 +473,10 @@ html{scroll-behavior:auto}
 </article>
 
 <article class="caso inv">
-<div class="txt r"><span class="mono">APP PROPIA · DRIVO TEST</span><h3>Mi propia app, publicada en el App Store</h3>
-<p>Investigué, diseñé y construí una app gratuita para ayudar a estudiantes en España a entender la teoría de conducir.</p>
-<p class="tuyo"><b>En tu negocio:</b> lo que te propongo, sé hacerlo y lanzarlo de principio a fin.</p>
-<div class="lks"><a class="lk" href="https://apps.apple.com/es/app/drivo-test/id6813126362" target="_blank" rel="noopener"><i></i>Ver en el App Store</a><a class="lk" href="https://hola-laura.github.io/laura/case-study-drivo.html" target="_blank" rel="noopener"><i></i>Leer la historia</a></div></div>
-<div class="lienzo dos r"><img class="movil" loading="lazy" src="https://hola-laura.github.io/laura/assets/drivo/home-ios.png" alt="Inicio de Drivo Test"><img class="movil" loading="lazy" src="https://hola-laura.github.io/laura/assets/drivo/library-ios.png" alt="Biblioteca de preguntas de Drivo Test"></div>
+<div class="txt r"><span class="mono">iOS APP · DRIVING TEST</span><h3>Aplicación de exámenes de conducir para iPhone</h3>
+<p>Tests, explicaciones y recursos visuales ayudan a futuros conductores a entender la teoría y preparar el examen desde el iPhone.</p>
+<div class="lks"><a class="lk" href="https://hola-laura.github.io/carnet-conducir-app/" target="_blank" rel="noopener"><i></i>Probar Drivo Test</a><a class="lk" href="https://hola-laura.github.io/laura/case-study-drivo.html?lang=es" target="_blank" rel="noopener"><i></i>Ver el caso en español</a></div></div>
+<div class="lienzo dos r"><img class="movil" loading="lazy" src="https://hola-laura.github.io/laura/assets/drivo/home-ios.png" alt="Inicio de Drivo Test en iPhone"><img class="movil" loading="lazy" src="https://hola-laura.github.io/laura/assets/drivo/library-ios.png" alt="Biblioteca de preguntas de Drivo Test en iPhone"></div>
 </article>
 
 <article class="caso"><div class="txt r"><span class="mono">STARTUP · CORRECTO</span><h3>Un corrector especializado en español</h3><p>Trabajé con Correcto, un corrector ortográfico y parafraseador especializado en español.</p></div><div class="lienzo dos r"><img class="movil" loading="lazy" src="img/correcto-gramatica.jpg" alt="Corrector de Correcto" onerror="this.remove()"><img class="movil" loading="lazy" src="img/correcto-reescribir.jpg" alt="Parafraseador de Correcto" onerror="this.remove()"></div></article>
@@ -526,6 +555,35 @@ document.querySelectorAll('[data-ram-gallery]').forEach((gallery)=>{
  gallery.addEventListener('keydown',(e)=>{if(e.key==='ArrowLeft'){e.preventDefault();show(current-1,-1)}if(e.key==='ArrowRight'){e.preventDefault();show(current+1,1)}});
  let touchX=null;gallery.querySelector('.ram-visual').addEventListener('pointerdown',(e)=>{if(e.target.closest('button'))return;touchX=e.clientX});
  gallery.querySelector('.ram-visual').addEventListener('pointerup',(e)=>{if(touchX===null)return;const delta=e.clientX-touchX;touchX=null;if(Math.abs(delta)>60)show(current+(delta<0?1:-1),delta<0?1:-1)});
+});
+
+document.querySelectorAll('[data-alcolea-gallery]').forEach((gallery)=>{
+ const slides=[
+  {src:'/img/alcolea/01-voice-entry.jpg',alt:'Pantalla de Alcolea para dictar por voz el trabajo que irá al presupuesto'},
+  {src:'/img/alcolea/02-budget-items.jpg',alt:'Partidas y cantidades de un presupuesto de instalación en Alcolea'},
+  {src:'/img/alcolea/03-client-view.jpg',alt:'Vista de un presupuesto preparado para enviar al cliente'}
+ ];
+ const left=gallery.querySelector('[data-slot="left"] img'),center=gallery.querySelector('[data-slot="center"] img'),right=gallery.querySelector('[data-slot="right"] img'),count=gallery.querySelector('.alco-count');
+ let current=0,timer;
+ const render=(direction=1)=>{
+  const order=[(current+slides.length-1)%slides.length,current,(current+1)%slides.length],images=[left,center,right];
+  gallery.classList.add('is-shuffling');clearTimeout(timer);
+  const preload=order.map(i=>{const img=new Image();img.src=slides[i].src;return new Promise(resolve=>{img.onload=()=>resolve(true);img.onerror=()=>resolve(false)})});
+  Promise.all(preload).then(()=>{timer=setTimeout(()=>{
+   images.forEach((img,i)=>{img.src=slides[order[i]].src;img.alt=i===1?slides[order[i]].alt:''});
+   gallery.querySelector('[data-slot="center"]').setAttribute('aria-hidden','false');
+   gallery.querySelector('[data-slot="left"]').setAttribute('aria-hidden','true');
+   gallery.querySelector('[data-slot="right"]').setAttribute('aria-hidden','true');
+   count.textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
+   requestAnimationFrame(()=>gallery.classList.remove('is-shuffling'));
+  },170)});
+ };
+ const move=(step)=>{current=(current+step+slides.length)%slides.length;render(step)};
+ gallery.querySelector('.prev').addEventListener('click',()=>move(-1));
+ gallery.querySelector('.next').addEventListener('click',()=>move(1));
+ gallery.addEventListener('keydown',(e)=>{if(e.key==='ArrowLeft'){e.preventDefault();move(-1)}if(e.key==='ArrowRight'){e.preventDefault();move(1)}});
+ let startX=null;gallery.querySelector('.alco-phones').addEventListener('pointerdown',(e)=>{startX=e.clientX});
+ gallery.querySelector('.alco-phones').addEventListener('pointerup',(e)=>{if(startX===null)return;const dx=e.clientX-startX;startX=null;if(Math.abs(dx)>55)move(dx<0?1:-1)});
 });
 
 </script>
