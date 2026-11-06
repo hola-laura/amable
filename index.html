@@ -453,7 +453,7 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Puedo pedirte solo diseño?","acceptedAnswer":{"@type":"Answer","text":"Sí. Si solo necesitas un logo, una carta o unos carteles, te lo diseño aunque no quieras nada más."}},{"@type":"Question","name":"¿Tengo que entender de tecnología?","acceptedAnswer":{"@type":"Answer","text":"No. Me cuentas cómo trabajas y yo me encargo del resto."}},{"@type":"Question","name":"¿Cómo funciona el 50%?","acceptedAnswer":{"@type":"Answer","text":"Los 20 primeros negocios del barrio pagan la mitad en su primer servicio."}},{"@type":"Question","name":"¿Los precios llevan IVA?","acceptedAnswer":{"@type":"Answer","text":"No, todos los precios son sin IVA."}},{"@type":"Question","name":"¿Y si no sé qué necesito?","acceptedAnswer":{"@type":"Answer","text":"Reserva 15 minutos, me cuentas tu caso y te digo por dónde empezaría."}}]}</script>
 <style>
 /* Selector de sector: compacto, claro y con opciones bajo demanda */
-.sector-select{position:relative;z-index:12;width:min(100%,460px);margin-bottom:clamp(24px,4vh,40px)}
+.hero .elige{text-align:center}\n.sector-select{position:relative;z-index:12;width:min(100%,460px);margin:0 auto clamp(24px,4vh,40px)}
 .sector-trigger{width:100%;min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 19px;border:1px solid rgba(255,255,255,.82);border-radius:19px;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(247,250,255,.94));color:var(--ink);text-align:left;box-shadow:0 15px 36px -25px rgba(23,38,58,.55),0 1px 2px rgba(23,38,58,.08);cursor:pointer;transition:transform .25s var(--bote),box-shadow .25s,border-color .25s}
 .sector-trigger:hover{transform:translateY(-2px);border-color:#fff;box-shadow:0 20px 40px -25px rgba(23,38,58,.55),0 0 0 3px rgba(255,255,255,.22)}
 .sector-trigger:focus-visible{outline:3px solid var(--dark);outline-offset:4px}
@@ -469,7 +469,7 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 .sector-select .chip[aria-pressed=true]{background:var(--dark);color:var(--on);border-color:var(--dark)}
 .sector-select .chip[aria-pressed=true]::after{content:'✓';font-size:14px;opacity:.9}
 @keyframes sector-drop{from{opacity:0;transform:translateY(-7px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
-@media(max-width:860px){.hero .elige{text-align:center}.sector-select{margin-inline:auto}}\n@media(max-width:560px){.sector-select .chips{grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:4px;padding:8px;border-radius:18px}.sector-select .chip{min-height:36px;padding:0 8px;font-size:12px}}
+@media(max-width:560px){.sector-select .chips{grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:4px;padding:8px;border-radius:18px}.sector-select .chip{min-height:36px;padding:0 8px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){.sector-trigger,.sector-chevron{transition:none}.sector-select.abierto .chips{animation:none}}
 </style>
 </head>
