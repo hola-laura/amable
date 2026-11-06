@@ -372,32 +372,26 @@ html{scroll-behavior:auto}
 /* fin seo */
 
 /* RAM² ADVENTLAUF */
-.ram-galeria{display:block;padding:0;min-height:0;align-items:initial;justify-content:initial;margin-top:1.5rem;overflow:hidden;border-radius:20px;background:#e9edf1}
-.ram-visual{position:relative;display:grid;place-items:center;min-height:clamp(330px,52vw,640px);padding:clamp(16px,3vw,38px);background:linear-gradient(145deg,#e4e9ef,#f1f3f5);isolation:isolate}
-.ram-visual:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 52% 45%,rgba(255,255,255,.85),transparent 65%);z-index:-1}
-.ram-main{display:block;width:100%;height:clamp(290px,49vw,590px);object-fit:contain;filter:drop-shadow(0 16px 24px rgba(15,28,42,.12));transition:opacity .24s ease,transform .38s cubic-bezier(.2,.75,.25,1)}
-.ram-main.is-changing{opacity:0;transform:translateY(8px) scale(.99)}
-.ram-arrow{position:absolute;z-index:2;top:50%;display:grid;place-items:center;width:46px;height:46px;border:1px solid rgba(0,72,51,.15);border-radius:50%;background:rgba(255,255,255,.9);color:#004833;font:24px/1 'DM Sans',sans-serif;cursor:pointer;box-shadow:0 5px 18px #152b2420;transition:transform .2s ease,background .2s ease}
-.ram-arrow:hover{transform:translateY(-50%) scale(1.08);background:white}
-.ram-arrow:focus-visible,.ram-thumb:focus-visible{outline:3px solid #004833;outline-offset:3px}
-.ram-arrow.prev{left:18px;transform:translateY(-50%)}
-.ram-arrow.prev:hover{transform:translateY(-50%) scale(1.08)}
-.ram-arrow.next{right:18px;transform:translateY(-50%)}
-.ram-arrow.next:hover{transform:translateY(-50%) scale(1.08)}
-.ram-meta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px 12px;background:#fff}
-.ram-caption{margin:0;color:#234339;font-size:.92rem}
-.ram-count{flex:none;color:#687b73;font:11px 'DM Mono',monospace;letter-spacing:.05em}
-.ram-thumbs{display:flex;gap:9px;overflow-x:auto;padding:0 16px 16px;background:#fff;scrollbar-width:thin;scrollbar-color:#a8c8f8 transparent;scroll-snap-type:x mandatory}
-.ram-thumb{position:relative;flex:0 0 76px;height:72px;padding:3px;border:1px solid transparent;border-radius:8px;background:#f0f2f3;cursor:pointer;scroll-snap-align:start;transition:border-color .2s ease,transform .2s ease,opacity .2s ease;opacity:.72}
-.ram-thumb:hover{opacity:1;transform:translateY(-2px)}
-.ram-thumb[aria-current="true"]{border-color:#004833;opacity:1;box-shadow:0 0 0 2px #00483315}
-.ram-thumb img{width:100%;height:100%;object-fit:cover;border-radius:5px}
-.ram-thumb[data-wide="true"] img{object-fit:contain;background:#e6eaf0}
-.ram-project .txt h3{max-width:620px}
-.ram-project .txt .ram-intro{font-size:1.08rem;line-height:1.7}
-@media(max-width:760px){.ram-visual{min-height:310px;padding:12px}.ram-main{height:min(112vw,520px);min-height:285px}.ram-arrow{width:40px;height:40px}.ram-arrow.prev{left:10px}.ram-arrow.next{right:10px}.ram-meta{padding:12px 14px}.ram-thumb{flex-basis:66px;height:64px}}
-@media(prefers-reduced-motion:reduce){.ram-main,.ram-arrow,.ram-thumb{transition:none}}
-
+.ram-project{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(28px,4vw,64px)}
+.ram-project .txt h3{max-width:520px}
+.ram-galeria{display:block;padding:0;min-height:0;align-items:initial;justify-content:initial;margin-top:1.5rem;overflow:hidden;border-radius:22px;background:#e9edf1}
+.ram-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:clamp(430px,58vw,700px);padding:clamp(18px,3vw,38px);background:linear-gradient(145deg,#e4e9ef,#f1f3f5);touch-action:pan-y;cursor:grab}
+.ram-visual:active{cursor:grabbing}
+.ram-visual:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 52% 45%,rgba(255,255,255,.85),transparent 65%);pointer-events:none}
+.ram-main{display:block;width:auto;height:auto;max-width:100%;max-height:clamp(340px,50vw,570px);object-fit:contain;filter:drop-shadow(0 16px 24px rgba(15,28,42,.12));transition:opacity .22s ease,transform .28s cubic-bezier(.2,.75,.25,1);user-select:none}
+.ram-main.is-changing{opacity:0;transform:translateX(var(--ram-shift,18px)) rotate(var(--ram-tilt,1deg))}
+.ram-controls{display:flex;align-items:center;justify-content:center;gap:clamp(16px,3vw,36px);padding:18px clamp(14px,2.5vw,28px) 22px;background:#fff}
+.ram-meta{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center}
+.ram-caption{margin:0;color:#234339;font-size:.92rem;line-height:1.4}
+.ram-count{color:#687b73;font:11px 'DM Mono',monospace;letter-spacing:.06em}
+.ram-arrow{position:static;display:grid;place-items:center;flex:none;width:58px;height:58px;border:1px solid rgba(0,72,51,.17);border-radius:50%;background:#f5f7f4;color:#004833;font:26px/1 'DM Sans',sans-serif;cursor:pointer;box-shadow:0 5px 18px #152b2418;transition:transform .2s ease,background .2s ease,color .2s ease,box-shadow .2s ease}
+.ram-arrow.next{border-color:#004833;background:#004833;color:white}
+.ram-arrow:hover{transform:scale(1.08);background:#eaf1ed;box-shadow:0 8px 24px #152b2426}
+.ram-arrow.next:hover{background:#05644a;color:white}
+.ram-arrow:focus-visible{outline:3px solid #a8c8f8;outline-offset:4px}
+@media(max-width:860px){.ram-project{grid-template-columns:minmax(0,1fr)}.ram-visual{min-height:clamp(340px,82vw,560px);padding:16px}.ram-main{max-height:min(72vw,480px)}.ram-controls{gap:16px;padding:14px 14px 18px}.ram-arrow{width:50px;height:50px}}
+@media(max-width:480px){.ram-visual{min-height:340px}.ram-main{max-height:300px}.ram-controls{gap:12px}.ram-arrow{width:46px;height:46px}.ram-caption{font-size:.83rem}}
+@media(prefers-reduced-motion:reduce){.ram-main,.ram-arrow{transition:none}}
 </style>
 </head>
 <body>
@@ -407,27 +401,18 @@ html{scroll-behavior:auto}
 <div class="tit r"><h1 style="margin:0">Todos los proyectos<i class="pt"></i></h1><p class="lead">He diseñado para empresas grandes y para profesionales que trabajan solos. Esa experiencia es la que pongo al servicio de tu negocio.</p></div>
 
 <article class="caso ram-project">
-<div class="txt r"><span class="mono">MARCA APLICADA · EVENTO INFANTIL · MÖDLING, AUSTRIA</span><h3>Una marca que también se pone las zapatillas</h3>
-<p class="ram-intro">¿Cómo se convierte el patrocinio de una inmobiliaria en algo que los niños recuerdan? Llevando la identidad de Ram² más allá del logo: a la camiseta de carrera, la sudadera, la braga de cuello y la mochila que les acompaña durante el día.</p>
-<p>Para el Altstadt Adventlauf imaginé un pequeño universo de carrera alrededor de la casita de la marca. El azul corporativo da unidad y reconocimiento; la mascota pone el acento cercano y juguetón. En las prendas, el personaje toma protagonismo. En las etiquetas y el banner, la marca respira y se lee de lejos.</p>
-<p class="tuyo"><b>En tu negocio:</b> una identidad bien aplicada hace que tu marca esté presente en cada punto de contacto y se convierta en parte de una experiencia que la gente quiere recordar.</p>
+<div class="txt r"><span class="mono">MARCA APLICADA · EVENTO INFANTIL · MÖDLING, AUSTRIA</span><h3>Una marca que corre con ellos</h3>
+<p>Ram² Immobilien lleva la casita de su marca al Altstadt Adventlauf de Mödling: equipación, accesorios y presencia de evento para acompañar a los pequeños corredores.</p>
+<p class="tuyo"><b>En tu negocio:</b> una identidad que se adapta a cada momento y se recuerda mucho después del evento.</p>
 </div>
-<div class="lienzo r ram-galeria" data-ram-gallery aria-label="Galería de aplicaciones de marca para Ram² Immobilien">
-<div class="ram-visual"><button class="ram-arrow prev" type="button" aria-label="Imagen anterior">‹</button><img class="ram-main" src="/img/ram2-adventlauf/ram2-01-event-banner.jpg" alt="Banner de Ram² Immobilien en una carrera infantil navideña en Mödling" fetchpriority="high"><button class="ram-arrow next" type="button" aria-label="Imagen siguiente">›</button></div>
+<div class="lienzo r ram-galeria" data-ram-gallery aria-label="Galería de aplicaciones de marca para Ram² Immobilien" tabindex="0">
+<div class="ram-visual"><img class="ram-main" src="/img/ram2-adventlauf/ram2-01-event-banner.jpg" alt="Banner de Ram² Immobilien en una carrera infantil navideña en Mödling" fetchpriority="high" draggable="false"></div>
+<div class="ram-controls">
+<button class="ram-arrow prev" type="button" aria-label="Imagen anterior">←</button>
 <div class="ram-meta"><p class="ram-caption" aria-live="polite">La marca da la bienvenida en la línea de meta</p><span class="ram-count" aria-live="polite">01 / 11</span></div>
-<div class="ram-thumbs" role="group" aria-label="Elige una imagen de la galería">
-<button class="ram-thumb" type="button" data-wide="true" aria-label="Ver banner del evento" aria-current="true" data-src="/img/ram2-adventlauf/ram2-01-event-banner.jpg" data-alt="Banner de Ram² Immobilien en una carrera infantil navideña en Mödling" data-caption="La marca da la bienvenida en la línea de meta"><img src="/img/ram2-adventlauf/ram2-01-event-banner.jpg" alt="" loading="lazy"></button>
-<button class="ram-thumb" type="button" aria-label="Ver camiseta infantil vista trasera" aria-current="false" data-src="/img/ram2-adventlauf/ram2-02-shirt-back.jpg" data-alt="Niño en la carrera con la camiseta de Ram² y la mascota de la casita" data-caption="Una camiseta de carrera con la casita como protagonista"><img src="/img/ram2-adventlauf/ram2-02-shirt-back.jpg" alt="" loading="lazy"></button>
-<button class="ram-thumb" type="button" aria-label="Ver sudadera infantil" aria-current="false" data-src="/img/ram2-adventlauf/ram2-03-kids-hoodie.jpg" data-alt="Sudadera infantil negra con el logotipo de Ram² en el pecho" data-caption="Sudadera infantil con una aplicación sutil del logotipo"><img src="/img/ram2-adventlauf/ram2-03-kids-hoodie.jpg" alt="" loading="lazy"></button>
-<button class="ram-thumb" type="button" aria-label="Ver braga de cuello en una niña" aria-current="false" data-src="/img/ram2-adventlauf/ram2-04-neck-warmer-girl-front.jpg" data-alt="Niña con la braga de cuello estampada con la mascota de Ram²" data-caption="La mascota y el estampado llevan el calor al accesorio"><img src="/img/ram2-adventlauf/ram2-04-neck-warmer-girl-front.jpg" alt="" loading="lazy"></button>
-<button class="ram-thumb" type="button" aria-label="Ver braga de cuello de perfil" aria-current="false" data-src="/img/ram2-adventlauf/ram2-05-neck-warmer-girl-profile.jpg" data-alt="Detalle de perfil de la braga de cuello Ram² en una niña" data-caption="El estampado mantiene su ritmo también en movimiento"><img src="/img/ram2-adventlauf/ram2-05-neck-warmer-girl-profile.jpg" alt="" loading="lazy"></button>
-<button class="ram-thumb" type="button" aria-label="Ver braga de cuello en un niño" aria-current="false" data-src="/img/ram2-adventlauf/ram2-06-neck-warmer-boy.jpg" data-alt="Niño con braga de cuello de Ram² durante una carrera infantil" data-caption="Una pieza cálida y reconocible para los pequeños corredores"><img src="/img/ram2-adventlauf/ram2-06-neck-warmer-boy.jpg" alt="" loading="lazy"></button>
-<button class="ram-thumb" type="button" aria-label="Ver mochila infantil" aria-current="false" data-src="/img/ram2-adventlauf/ram2-07-kids-backpack.jpg" data-alt="Mochila infantil azul marino con la casita y el logotipo de Ram²" data-caption="La casita se convierte en un parche para llevar a todas partes"><img src="/img/ram2-adventlauf/ram2-07-kids-backpack.jpg" alt="" loading="lazy"></button>
-<button class="ram-thumb" type="button" aria-label="Ver detalle de camiseta blanca" aria-current="false" data-src="/img/ram2-adventlauf/ram2-08-shirt-detail.jpg" data-alt="Detalle del logotipo Ram² aplicado en una camiseta blanca" data-caption="Un detalle limpio que deja respirar la identidad"><img src="/img/ram2-adventlauf/ram2-08-shirt-detail.jpg" alt="" loading="lazy"></button>
-<button class="ram-thumb" type="button" aria-label="Ver etiqueta blanca" aria-current="false" data-src="/img/ram2-adventlauf/ram2-09-white-label.jpg" data-alt="Etiqueta negra Ram² cosida a una prenda blanca" data-caption="La etiqueta negra firma la prenda en contraste"><img src="/img/ram2-adventlauf/ram2-09-white-label.jpg" alt="" loading="lazy"></button>
-<button class="ram-thumb" type="button" aria-label="Ver etiqueta negra" aria-current="false" data-src="/img/ram2-adventlauf/ram2-10-black-label.jpg" data-alt="Etiqueta Ram² Immobilien en una camiseta negra" data-caption="Una versión tonal para las prendas oscuras"><img src="/img/ram2-adventlauf/ram2-10-black-label.jpg" alt="" loading="lazy"></button>
-<button class="ram-thumb" type="button" aria-label="Ver braga de cuello como producto" aria-current="false" data-src="/img/ram2-adventlauf/ram2-11-neck-warmer-product.jpg" data-alt="Braga de cuello blanca con estampado de la casita y el logotipo de Ram²" data-caption="El producto, visto de cerca: personaje, color y repetición"><img src="/img/ram2-adventlauf/ram2-11-neck-warmer-product.jpg" alt="" loading="lazy"></button>
-</div></div>
+<button class="ram-arrow next" type="button" aria-label="Imagen siguiente">→</button>
+</div>
+</div>
 </article>
 
 <article class="caso">
@@ -512,10 +497,33 @@ const mueve=()=>{if(quieto)return;if(innerWidth>860)document.querySelectorAll('[
 addEventListener('scroll',()=>requestAnimationFrame(mueve),{passive:true});mueve();
 
 document.querySelectorAll('[data-ram-gallery]').forEach((gallery)=>{
- const main=gallery.querySelector('.ram-main'), thumbs=[...gallery.querySelectorAll('.ram-thumb')], caption=gallery.querySelector('.ram-caption'), count=gallery.querySelector('.ram-count');let current=0,timer;
- const show=(n)=>{current=(n+thumbs.length)%thumbs.length;const t=thumbs[current];main.classList.add('is-changing');clearTimeout(timer);timer=setTimeout(()=>{main.src=t.dataset.src;main.alt=t.dataset.alt;main.onload=()=>main.classList.remove('is-changing');caption.textContent=t.dataset.caption;count.textContent=String(current+1).padStart(2,'0')+' / '+String(thumbs.length).padStart(2,'0');thumbs.forEach((x,i)=>{x.setAttribute('aria-current',i===current?'true':'false')});t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'nearest',inline:'nearest'});},130)};
- thumbs.forEach((t,i)=>t.addEventListener('click',()=>show(i)));gallery.querySelector('.prev').addEventListener('click',()=>show(current-1));gallery.querySelector('.next').addEventListener('click',()=>show(current+1));
- gallery.addEventListener('keydown',(e)=>{if(e.key==='ArrowLeft'){e.preventDefault();show(current-1)}if(e.key==='ArrowRight'){e.preventDefault();show(current+1)}});
+ const slides=[
+ {src:'/img/ram2-adventlauf/ram2-01-event-banner.jpg',alt:'Banner de Ram² Immobilien en una carrera infantil navideña en Mödling',caption:'La marca da la bienvenida en la línea de meta'},
+ {src:'/img/ram2-adventlauf/ram2-02-shirt-back.jpg',alt:'Niño en la carrera con la camiseta de Ram² y la mascota de la casita',caption:'La casita, protagonista de la camiseta de carrera'},
+ {src:'/img/ram2-adventlauf/ram2-03-kids-hoodie.jpg',alt:'Sudadera infantil negra con el logotipo de Ram² en el pecho',caption:'Una firma sutil para la sudadera infantil'},
+ {src:'/img/ram2-adventlauf/ram2-04-neck-warmer-girl-front.jpg',alt:'Niña con braga de cuello estampada con la mascota de Ram²',caption:'La mascota acompaña a los pequeños corredores'},
+ {src:'/img/ram2-adventlauf/ram2-05-neck-warmer-girl-profile.jpg',alt:'Detalle de perfil de la braga de cuello Ram² en una niña',caption:'Un estampado pensado para verse en movimiento'},
+ {src:'/img/ram2-adventlauf/ram2-06-neck-warmer-boy.jpg',alt:'Niño con braga de cuello Ram² durante una carrera infantil',caption:'Calidez e identidad en una misma pieza'},
+ {src:'/img/ram2-adventlauf/ram2-07-kids-backpack.jpg',alt:'Mochila infantil azul marino con la casita y el logotipo de Ram²',caption:'La casita se convierte en un parche para llevar'},
+ {src:'/img/ram2-adventlauf/ram2-08-shirt-detail.jpg',alt:'Detalle del logotipo Ram² aplicado en una camiseta blanca',caption:'Un detalle limpio que deja respirar la marca'},
+ {src:'/img/ram2-adventlauf/ram2-09-white-label.jpg',alt:'Etiqueta negra Ram² cosida a una prenda blanca',caption:'La etiqueta negra firma la prenda en contraste'},
+ {src:'/img/ram2-adventlauf/ram2-10-black-label.jpg',alt:'Etiqueta Ram² Immobilien en una camiseta negra',caption:'Una versión tonal para las prendas oscuras'},
+ {src:'/img/ram2-adventlauf/ram2-11-neck-warmer-product.jpg',alt:'Braga de cuello blanca con estampado de la casita y el logotipo de Ram²',caption:'El accesorio, en detalle'}
+ ];
+ const main=gallery.querySelector('.ram-main'),caption=gallery.querySelector('.ram-caption'),count=gallery.querySelector('.ram-count');
+ let current=0,timer;
+ const show=(n,direction=1)=>{
+  current=(n+slides.length)%slides.length;const slide=slides[current];
+  main.style.setProperty('--ram-shift',direction>0?'-22px':'22px');main.style.setProperty('--ram-tilt',direction>0?'-1deg':'1deg');
+  main.classList.add('is-changing');clearTimeout(timer);
+  const preloaded=new Image();preloaded.onload=()=>{timer=setTimeout(()=>{main.src=slide.src;main.alt=slide.alt;caption.textContent=slide.caption;count.textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');requestAnimationFrame(()=>main.classList.remove('is-changing'))},150)};
+  preloaded.onerror=()=>{main.classList.remove('is-changing')};preloaded.src=slide.src;
+ };
+ gallery.querySelector('.prev').addEventListener('click',()=>show(current-1,-1));
+ gallery.querySelector('.next').addEventListener('click',()=>show(current+1,1));
+ gallery.addEventListener('keydown',(e)=>{if(e.key==='ArrowLeft'){e.preventDefault();show(current-1,-1)}if(e.key==='ArrowRight'){e.preventDefault();show(current+1,1)}});
+ let touchX=null;gallery.querySelector('.ram-visual').addEventListener('pointerdown',(e)=>{if(e.target.closest('button'))return;touchX=e.clientX});
+ gallery.querySelector('.ram-visual').addEventListener('pointerup',(e)=>{if(touchX===null)return;const delta=e.clientX-touchX;touchX=null;if(Math.abs(delta)>60)show(current+(delta<0?1:-1),delta<0?1:-1)});
 });
 
 </script>
