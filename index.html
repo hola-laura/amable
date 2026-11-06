@@ -462,16 +462,14 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 #sectorValue{font-size:18px;font-weight:600}
 .sector-chevron{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--soft);color:var(--dark);font:24px/1 'DM Sans',sans-serif;transition:transform .28s cubic-bezier(.2,.8,.2,1),background .25s}
 .sector-select.abierto .sector-chevron{transform:rotate(180deg);background:var(--dark);color:var(--on)}
-.sector-select .chips{position:absolute;top:calc(100% + 10px);left:0;width:min(680px,calc(100vw - 48px));max-height:var(--sector-max-height,min(54dvh,460px));overflow:auto;display:none;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0;padding:9px;border:1px solid rgba(255,255,255,.92);border-radius:22px;background:rgba(250,252,255,.97);box-shadow:0 24px 70px -30px rgba(19,36,57,.42),0 4px 18px rgba(19,36,57,.12);backdrop-filter:blur(18px);overscroll-behavior:contain}
+.sector-select .chips{position:relative;top:auto;left:auto;width:min(100%,680px);max-height:none;overflow:visible;display:none;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:12px 0 0;padding:9px;border:1px solid rgba(255,255,255,.92);border-radius:22px;background:rgba(250,252,255,.97);box-shadow:0 24px 70px -30px rgba(19,36,57,.3),0 4px 18px rgba(19,36,57,.1);backdrop-filter:blur(18px)}
 .sector-select.abierto .chips{display:grid;animation:sector-drop .2s cubic-bezier(.2,.8,.2,1) both}
-.sector-select.sube .chips{top:auto;bottom:calc(100% + 10px);animation-name:sector-drop-up}
 .sector-select .chip{min-height:40px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 13px;border-color:#e6edf4;border-radius:13px;background:rgba(255,255,255,.68);color:var(--ink);font-size:13px;line-height:1.2;text-align:left;white-space:normal}
 .sector-select .chip:hover{transform:none;border-color:var(--line);background:#fff}
 .sector-select .chip[aria-pressed=true]{background:var(--dark);color:var(--on);border-color:var(--dark)}
 .sector-select .chip[aria-pressed=true]::after{content:'✓';font-size:14px;opacity:.9}
 @keyframes sector-drop{from{opacity:0;transform:translateY(-7px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
-@keyframes sector-drop-up{from{opacity:0;transform:translateY(7px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
-@media(max-width:560px){.sector-select .chips{grid-template-columns:repeat(2,minmax(0,1fr));width:100%;max-height:var(--sector-max-height,min(48dvh,460px));border-radius:18px}.sector-select .chip{min-height:42px}}
+@media(max-width:560px){.sector-select .chips{grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:4px;padding:8px;border-radius:18px}.sector-select .chip{min-height:36px;padding:0 8px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){.sector-trigger,.sector-chevron{transition:none}.sector-select.abierto .chips{animation:none}}
 </style>
 </head>
@@ -881,11 +879,8 @@ requestAnimationFrame(()=>requestAnimationFrame(()=>$('h1').classList.add('vivo'
 const ORDEN=['pelu','rest','clin','dent','farm','vet','idio','tall','fincas','gest','inmo','refo','elec','font','gym','tien','otro'];
 $('chips').innerHTML=SECTORS.filter((s)=>!s.hidden).sort((x,y)=>ORDEN.indexOf(x.id)-ORDEN.indexOf(y.id)).map((s)=>'<button class="chip" type="button" data-id="'+s.id+'" aria-pressed="false">'+s.label+'</button>').join('');
 const selector=$('sectorSelect'),toggle=$('sectorToggle');
-const colocaSelector=()=>{const r=toggle.getBoundingClientRect(),m=$('chips'),gap=10,safe=16,desired=Math.min(460,innerHeight*(innerWidth<=560?.66:.64)),natural=Math.min(m.scrollHeight,desired),below=Math.max(0,innerHeight-r.bottom-gap-safe),above=Math.max(0,r.top-gap-safe),flip=below<natural&&above>below,room=flip?above:below;selector.classList.toggle('sube',flip);selector.style.setProperty('--sector-max-height',Math.max(64,Math.min(desired,room))+'px')};
-const cierraSelector=()=>{selector.classList.remove('abierto','sube');selector.style.removeProperty('--sector-max-height');toggle.setAttribute('aria-expanded','false');$('chips').setAttribute('aria-hidden','true')};
-toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';selector.classList.toggle('abierto',open);toggle.setAttribute('aria-expanded',String(open));$('chips').setAttribute('aria-hidden',String(!open));if(open)colocaSelector()});
-addEventListener('resize',()=>{if(selector.classList.contains('abierto'))colocaSelector()},{passive:true});
-addEventListener('scroll',()=>{if(selector.classList.contains('abierto'))colocaSelector()},{passive:true});
+const cierraSelector=()=>{selector.classList.remove('abierto');toggle.setAttribute('aria-expanded','false');$('chips').setAttribute('aria-hidden','true')};
+toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';selector.classList.toggle('abierto',open);toggle.setAttribute('aria-expanded',String(open));$('chips').setAttribute('aria-hidden',String(!open))});
 $('chips').addEventListener('click',(e)=>{const c=e.target.closest('.chip');if(!c)return;cierraSelector();if(c.dataset.id===(cur&&cur.id))return;barre(e.clientX||innerWidth/2,e.clientY||innerHeight/2,c.dataset.id)});
 document.addEventListener('click',(e)=>{if(!selector.contains(e.target))cierraSelector()});
 document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&selector.classList.contains('abierto')){cierraSelector();toggle.focus()}});
