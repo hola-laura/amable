@@ -188,6 +188,13 @@ h1{font-size:clamp(44px,min(7.6vw,12.4vh),100px);line-height:1.02;margin-bottom:
 
 /* trabajo */
 .trabajo{padding-bottom:clamp(64px,8vw,104px)}
+.trabajo.teaser{padding:clamp(56px,8vw,104px) 0}
+.teaser-card{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:32px 64px;padding:clamp(32px,5.2vw,64px);border-radius:28px;background:var(--piedra);margin-bottom:clamp(64px,9vw,120px)}
+.teaser-card .mono{display:block;margin-bottom:14px}
+.teaser-card h2{max-width:12ch;margin-bottom:14px}
+.teaser-card .lead{max-width:34em}
+.teaser-card .btn{white-space:nowrap}
+@media(max-width:860px){.teaser-card{grid-template-columns:1fr;gap:24px}.teaser-card h2{max-width:15ch}.teaser-card .btn{justify-self:start}}
 .nombres{display:flex;flex-wrap:wrap;gap:14px 36px;font:400 clamp(24px,2.6vw,32px)/1.2 var(--serif);padding-bottom:clamp(40px,5vw,64px);margin-bottom:clamp(64px,9vw,120px);border-bottom:1px solid var(--line)}
 .nombres span{display:inline-flex;align-items:baseline}
 .nombres span::after{content:"";width:.2em;height:.2em;margin-left:.04em;border-radius:50%;background:var(--a);transform:scale(0);transition:transform .35s var(--bote)}
@@ -449,7 +456,7 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 <nav class="nav" aria-label="Principal">
 <i class="prog" id="prog"></i>
 <a class="logo" href="#inicio" aria-label="amable., inicio">amable<i class="pt"></i></a>
-<ul><li><a href="#prueba">Cómo funciona</a></li><li><a href="#trabajos">Trabajos</a></li><li><a href="#diseno">Diseño</a></li><li><a href="#precios">Precios</a></li><li><a href="#laura">Quién soy</a></li></ul>
+<ul><li><a href="#prueba">Cómo funciona</a></li><li><a href="/proyectos">Trabajos</a></li><li><a href="#diseno">Diseño</a></li><li><a href="#precios">Precios</a></li><li><a href="#laura">Quién soy</a></li></ul>
 <a class="btn" data-mag href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Reservar 15 min</a>
 </nav>
 
@@ -484,11 +491,11 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 <ol class="ruta" id="ruta"></ol>
 </div>
 </div></section>
-
-<section class="trabajo" id="trabajos"><div class="wrap">
-<div class="tit r"><h2>Trabajo real, para gente real<i class="pt"></i></h2><p class="lead">He diseñado para empresas grandes y para profesionales que trabajan solos. Pasa por cada nombre para verlo, o púlsalo para saber más.</p></div>
-<div class="lista r"><ul id="pl"></ul><div class="vis" id="vis" aria-hidden="true"></div></div>
-<div class="todos r"><a class="btn" data-mag href="/proyectos">Ver todos los proyectos</a></div>
+<section class="trabajo teaser" id="trabajos"><div class="wrap">
+<div class="teaser-card r">
+<div><span class="mono">PROYECTOS SELECCIONADOS</span><h2>Trabajo real, para gente real<i class="pt"></i></h2><p class="lead">Una selección de proyectos de diseño, producto y automatización, contados desde el reto hasta el resultado.</p></div>
+<a class="btn" data-mag href="/proyectos">Explorar proyectos <span aria-hidden="true">↗</span></a>
+</div>
 <figure class="auto r"><figcaption><span class="mono">AUTOMATIZACIÓN POR DENTRO</span><h3>Así se ve una tarea que se hace sola</h3><p>Cuando alguien escribe desde la web, la consulta se comprueba, se guarda en una hoja y te llega un aviso por correo.</p></figcaption><div class="auto-img"><img loading="lazy" src="img/automatizacion.png" alt="Flujo de automatización: consulta web, validación, registro en hoja de cálculo, aviso por correo y respuesta" onerror="this.closest('figure').remove()"></div></figure>
 <h2 class="tit2 r">Cómo te puedo ayudar<i class="pt"></i></h2>
 <div class="ayuda">
@@ -497,11 +504,7 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 <div class="r"><h3>Que te ahorres tiempo</h3><p>Aplicaciones a medida y automatizaciones para las tareas que repites cada semana.</p><a class="mas" href="/automatizacion-negocios-madrid">Automatización</a> · <a class="mas" href="/aplicaciones-a-medida-madrid">Aplicaciones a medida</a></div>
 </div>
 </div>
-<template id="t-pres"><div class="pres"><header><h4>Reforma de baño</h4><span class="mono" style="margin:0">Nº 204</span></header>
-<div class="fp"><span>Demolición y retirada</span><span>640€</span></div><div class="fp"><span>Fontanería</span><span>980€</span></div><div class="fp"><span>Alicatado, 18 m²</span><span>1.080€</span></div><div class="fp"><span>Pintura, 24 m²</span><span>288€</span></div><div class="fp"><span>IVA 21%</span><span>627,48€</span></div>
-<footer><div class="tot"><span data-de="0" data-a="3615">3.615</span>,48€</div><span class="ui">Enviar al cliente</span></footer></div></template>
-<template id="t-flujo"><ol class="flujo"><li>Entra un contacto<small>09:12</small></li><li>Recibe un mensaje<small>09:12</small></li><li>Elige su hora<small>09:30</small></li><li>Se guarda en el calendario<small>09:30</small></li><li>Recordatorio el día antes<small>Auto</small></li></ol></template>
-</section>
+</section>>
 
 <section class="diseno" id="diseno"><div class="wrap">
 <div class="r"><h2>Y antes que nada, diseño</h2><p class="lead">Llevo años diseñando para empresas grandes y ahora lo hago para negocios del barrio. Si quieres que tu negocio se vea tan bien como trabaja, empezamos por ahí.</p></div>
@@ -513,8 +516,6 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 </div>
 <div class="r"><button class="btn claro" data-mag data-pide="Diseño para mi negocio">Cuéntame qué necesitas</button></div>
 </div></section>
-
-<dialog id="pm" aria-labelledby="pmT"><button class="pm-x" id="pmX" type="button" aria-label="Cerrar"></button><div class="pm-g"><div class="pm-v en" id="pmV"></div><div class="pm-t"><span class="mono" id="pmR"></span><h3 id="pmT"></h3><p id="pmP"></p><div id="pmS"></div><p class="tuyo" id="pmY"></p><div class="lks" id="pmL"></div><button class="lk sig" id="pmN" type="button"><i></i>Siguiente proyecto</button></div></div></dialog>
 
 <section id="precios"><div class="wrap">
 <div class="tit r"><h2>Precios claros<i class="pt"></i></h2><p class="lead">Para empezar, te recomendaría: <strong id="rec" style="color:var(--ink);font-weight:600">lo vemos juntas según tu negocio</strong>.</p></div>
@@ -888,40 +889,6 @@ $('frase').innerHTML=$('frase').textContent.split(' ').map((w)=>'<span>'+w+'</sp
 const pals=[...$('frase').children];
 /* tarjetas de precio que siguen al ratón */
 if(fino&&!quieto)document.querySelectorAll('.plan').forEach((c)=>{c.addEventListener('mousemove',(e)=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transition='transform .12s linear';c.style.transform='rotateY('+x*7+'deg) rotateX('+(-y*7)+'deg) translateZ(10px)'});c.addEventListener('mouseleave',()=>{c.style.transition='';c.style.transform=''})});
-
-/* proyectos: lista, visual y modal */
-const PF='https://hola-laura.github.io/laura/';
-const wb=(u,a)=>'<div class="web"><img loading="lazy" src="'+u+'" alt="'+a+'"></div>';
-const fo=(u,a)=>'<img class="foto" loading="lazy" src="'+u+'" alt="'+a+'">';
-const SV=['Founding designer: visión y conceptos para inversores','Rediseño de los recorridos clave','Prototipos interactivos, interacción y nueva UI','Design system','Evaluación heurística de los recorridos actuales','Mejoras de UX y de métricas según objetivos de negocio','Planes de investigación y test de usabilidad','Contratación de producto y diseño','Priorización y workshops'];
-const skI=(u,a)=>'<img loading="lazy" src="'+u+'" alt="'+a+'" onerror="this.onerror=null;this.src=\'https://www.skippr.ai/og-image.png\'">';
-const SK='<div class="web" style="width:86%;align-self:flex-start">'+skI('img/skippr-web.jpg','Web de Skippr')+'</div><div class="web flota">'+skI('img/skippr-producto.jpg','Producto de Skippr')+'</div>';
-const st=(n)=>({n,r:'STARTUP',c:'tipo',t:'Diseño para startups',p:n+' es una de las startups con las que he trabajado. Estos son algunos de los servicios que he hecho para startups:',serv:1,l:[['Ver todos los proyectos','proyectos.html']]});
-const CO='<img class="movil" style="width:min(48%,260px)" loading="lazy" src="img/correcto-gramatica.jpg" alt="Corrector de Correcto" onerror="this.remove()"><img class="movil" style="width:min(48%,260px)" loading="lazy" src="img/correcto-reescribir.jpg" alt="Parafraseador de Correcto" onerror="this.remove()">';
-const PROY=[
-{n:'Mattern Guide',r:'WEB Y PANEL',v:wb(PF+'assets/mountain-guide/website.webp','Web de Mattern Guide'),t:'Una web que su dueño cambia sin tocar código',p:'Diseñé y construí la web de Mattern Guide, un gestor de contenidos y una primera automatización.',y:'una web con tus servicios y horarios que puedes cambiar cuando quieras.',l:[['Ver la web','https://hola-laura.github.io/daniel-mattern-web/'],['Ver el panel','https://hola-laura.github.io/daniel-mattern-web/admin.html'],['Leer la historia',PF+'case-study-mountain-guide.html']]},
-{n:'Empresa de construcción',r:'SOFTWARE',tpl:'t-pres',t:'Presupuestos en un solo sitio',p:'Diseñé un software para que una empresa de construcción prepare sus presupuestos: partidas, cantidades, precios y total.',y:'si repites una tarea cada semana, puede tener su propia herramienta sencilla.',l:[]},
-{n:'Agencia de marketing local',r:'AUTOMATIZACIÓN',tpl:'t-flujo',t:'Citas que se organizan solas',p:'Automaticé la gestión de citas de una agencia de marketing local, desde que entra un contacto hasta el recordatorio.',y:'menos mensajes de ida y vuelta, y menos citas olvidadas.',l:[]},
-{n:'Monzo',r:'DISEÑO',v:fo(PF+'assets/flex/flex-focus-view.jpg','Persona usando la app de Monzo'),t:'Diseño en Monzo',p:'Trabajé como diseñadora de producto en Monzo, haciendo que cosas complicadas se entiendan a la primera.',y:'lo mismo, aplicado a lo que tus clientes necesitan entender y hacer.',l:[['Ver mi portfolio',PF+'index.html#case-studies']]},
-{n:'Skippr',r:'FOUNDING DESIGNER',v:SK,t:'El diseño de una startup desde el principio',p:'Fui founding designer de Skippr y les ayudé a diseñar su primera herramienta.',y:'sé empezar de cero y convertir una idea en algo que la gente entiende.',l:[['Ver Skippr','https://www.skippr.ai/']]},
-{n:'Drivo Test',r:'APP PROPIA',c:'dos',v:'<img class="movil" loading="lazy" src="'+PF+'assets/drivo/home-ios.png" alt="Inicio de Drivo Test"><img class="movil" loading="lazy" src="'+PF+'assets/drivo/library-ios.png" alt="Preguntas de Drivo Test">',t:'Mi propia app, publicada en el App Store',p:'Investigué, diseñé y construí una app gratuita para ayudar a estudiantes en España a entender la teoría de conducir.',y:'lo que te propongo, sé hacerlo y lanzarlo de principio a fin.',l:[['Ver en el App Store','https://apps.apple.com/es/app/drivo-test/id6813126362'],['Leer la historia',PF+'case-study-drivo.html']]},
-{n:'Just Eat',r:'INTRANET',v:'<div class="web"><img loading="lazy" src="img/just-eat.jpg" alt="Web de Just Eat" onerror="this.onerror=null;this.src=\'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/d2148e109663737.5fd8f758238b4.png\'"></div>',t:'La primera intranet para toda la empresa',p:'Diseñé The Kitchen, un único espacio con las noticias, las herramientas y el conocimiento de la empresa.',l:[['Leer la historia',PF+'case-study-just-eat.html']]},
-{n:'RLDatix',r:'SOFTWARE SANITARIO',v:fo(PF+'assets/rldatix/interface.png','Interfaz de RLDatix'),t:'Herramientas sanitarias en un solo producto',p:'Rediseñé un flujo complejo de gestión de riesgos sanitarios. En las pruebas, el 96% de los participantes completó las tareas clave sin ayuda.',l:[['Leer la historia',PF+'case-study-rldatix.html']]},
-{n:'intu',r:'WEB',v:'<img style="display:block;width:100%;border-radius:12px;box-shadow:0 26px 60px -34px rgba(17,17,17,.5)" loading="lazy" src="img/intu.jpg" alt="Family Club de intu" onerror="this.onerror=null;this.src=\'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/39941f94922721.5fd8f70be9544.png\'">',t:'Más fácil unirse a Family Club',p:'Quizá conozcas intu por Xanadú, en Madrid: era la empresa que estaba detrás. Rediseñé su club para familias para que la gente entendiera sus ventajas y se animara a unirse.',l:[['Leer la historia',PF+'case-study-intu.html']]},
-{...st('Correcto'),c:'dos',v:CO,t:'Un corrector especializado en español',p:'Trabajé con Correcto, un corrector ortográfico y parafraseador especializado en español. Estos son algunos de los servicios que he hecho para startups:'}];
-const visP=(p)=>p.tpl?$(p.tpl).innerHTML:p.v||('<p class="tn">'+p.n+'<i class="pt"></i></p>');
-const ajF=(r)=>r.querySelectorAll('.flujo').forEach((f)=>f.style.setProperty('--dist',(f.lastElementChild.offsetTop-f.firstElementChild.offsetTop)+'px'));
-$('pl').innerHTML=PROY.map((p,i)=>'<li><button class="pb" type="button" data-i="'+i+'"><span>'+p.n+'</span><small>'+p.r+'</small></button></li>').join('');
-$('vis').innerHTML=PROY.map((p)=>'<div class="capa en '+(p.c||'')+'">'+visP(p)+'</div>').join('');
-const capas=[...$('vis').children],pbs=[...$('pl').querySelectorAll('.pb')];let act=-1,zz=1;
-const activa=(i)=>{if(i===act)return;const c=capas[i];pbs.forEach((b,k)=>b.classList.toggle('on',k===i));const prev=capas[act];act=i;c.style.zIndex=++zz;c.classList.add('on');if(prev)setTimeout(()=>{if(capas[act]!==prev)prev.classList.remove('on')},820)};
-activa(0);ajF($('vis'));addEventListener('resize',()=>ajF($('vis')));
-$('pl').addEventListener('pointerover',(e)=>{const b=e.target.closest('.pb');if(b&&e.pointerType!=='touch')activa(+b.dataset.i)});
-$('pl').addEventListener('focusin',(e)=>{const b=e.target.closest('.pb');if(b)activa(+b.dataset.i)});
-let pmI=0;const abre=(i)=>{pmI=i;const p=PROY[i],m=$('pm');$('pmV').className='pm-v en '+(p.c||'');$('pmV').innerHTML=visP(p);$('pmR').textContent=p.r;$('pmT').textContent=p.t;$('pmP').textContent=p.p;$('pmS').innerHTML=p.serv?'<ul>'+SV.map((x)=>'<li>'+x+'</li>').join('')+'</ul>':'';$('pmY').innerHTML=p.y?'<b>En tu negocio:</b> '+p.y:'';$('pmL').innerHTML=p.l.map((l)=>'<a class="lk" href="'+l[1]+'"'+(l[1].startsWith('http')?' target="_blank" rel="noopener"':'')+'><i></i>'+l[0]+'</a>').join('');if(!m.open)m.showModal();m.scrollTop=0;ajF($('pmV'))};
-$('pl').addEventListener('click',(e)=>{const b=e.target.closest('.pb');if(b)abre(+b.dataset.i)});
-$('pmX').addEventListener('click',()=>$('pm').close());$('pmN').addEventListener('click',()=>abre((pmI+1)%PROY.length));
-$('pm').addEventListener('click',(e)=>{if(e.target===$('pm'))$('pm').close()});
 
 /* mazo de fotos */
 const fotos=[...$('mazo').querySelectorAll('img')];const pos=['-50%,-50%) rotate(0deg','-44%,-53%) rotate(4deg','-56%,-48%) rotate(-5deg','-50%,-46%) rotate(8deg'];
