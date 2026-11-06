@@ -399,25 +399,23 @@ html{scroll-behavior:auto}
 .alcolea-case .txt h3{max-width:590px}
 .alcolea-stage{position:relative;display:block;min-height:0;height:clamp(500px,43vw,590px);padding:0;overflow:hidden;border-radius:28px;background:linear-gradient(145deg,#dce9f8,#a8c8f8)}
 .alco-halo{position:absolute;left:50%;top:43%;width:min(76%,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#f8fbffbb 0%,#d9e9ff70 54%,transparent 72%);transform:translate(-50%,-50%);pointer-events:none}
-.alco-phones{position:absolute;inset:24px 0 68px;perspective:1100px}
-.alco-phone{position:absolute;left:50%;top:49%;width:clamp(185px,17vw,224px);height:clamp(350px,34vw,420px);padding:6px;border:1px solid #ffffff88;border-radius:38px;background:linear-gradient(140deg,#48505d,#101319 35%,#5c6270 52%,#171a20);box-shadow:0 28px 54px -20px #14283b8c,0 2px 4px #fff8 inset;transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .35s ease,filter .35s ease;will-change:transform}
-.alco-screen{position:relative;width:100%;height:100%;overflow:hidden;border-radius:32px;background:#f3f7fb}
-.alco-screen img{display:block;width:100%;height:100%;object-fit:cover;user-select:none}
-.alco-island{position:absolute;z-index:2;left:50%;top:9px;width:46px;height:12px;border-radius:99px;background:#090b0e;transform:translateX(-50%);box-shadow:0 1px 2px #0006}
-.alco-phone[data-slot="center"]{z-index:3;opacity:1;filter:none;transform:translate(-50%,-49%) scale(1.03) rotateY(0)}
-.alco-phone[data-slot="left"]{z-index:1;opacity:.86;filter:saturate(.88);transform:translate(-128%,-47%) scale(.84) rotate(-8deg) rotateY(5deg)}
-.alco-phone[data-slot="right"]{z-index:2;opacity:.9;filter:saturate(.9);transform:translate(28%,-47%) scale(.84) rotate(8deg) rotateY(-5deg)}
-.alco-stage.is-shuffling .alco-phone{opacity:.52;filter:blur(1px);transform:translate(-50%,-53%) scale(.95)}
+.alco-phones{position:absolute;inset:22px 0 70px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;justify-items:center;gap:clamp(0px,1vw,12px);padding:0 12px;perspective:1100px}
+.alco-phone{position:relative;left:auto;top:auto;width:min(100%,184px);height:auto;aspect-ratio:.49;padding:6px;border:1px solid #ffffff88;border-radius:38px;background:linear-gradient(140deg,#48505d,#101319 35%,#5c6270 52%,#171a20);box-shadow:0 28px 54px -20px #14283b8c,0 2px 4px #fff8 inset;transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .35s ease,filter .35s ease;will-change:transform}
+.alco-screen{position:relative;width:100%;height:100%;overflow:hidden;border-radius:32px;background:linear-gradient(180deg,#dce9f8 0%,#f3f7fb 48%,#e5effb 100%)}
+.alco-screen img{display:block;width:100%;height:100%;padding:15px 2px 8px;object-fit:contain;user-select:none}
+.alco-island{position:absolute;z-index:2;left:50%;top:8px;width:38px;height:10px;border-radius:99px;background:#090b0e;transform:translateX(-50%);box-shadow:0 1px 2px #0006}
+.alco-phone[data-slot="center"]{z-index:3;opacity:1;filter:none;transform:scale(1.02)}
+.alco-phone[data-slot="left"]{z-index:1;opacity:.91;filter:saturate(.9);transform:rotate(-3deg) scale(.94)}
+.alco-phone[data-slot="right"]{z-index:2;opacity:.94;filter:saturate(.94);transform:rotate(3deg) scale(.94)}
+.alco-stage.is-shuffling .alco-phone{opacity:.56;filter:blur(1px);transform:translateY(7px) scale(.96)}
 .alco-controls{position:absolute;z-index:5;left:50%;bottom:15px;display:flex;align-items:center;gap:18px;padding:7px 9px;border:1px solid #fff9;border-radius:999px;background:#ffffffd9;box-shadow:0 8px 22px #17355520;transform:translateX(-50%);backdrop-filter:blur(8px)}
 .alco-arrow{display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:#fff;color:#004833;font:23px/1 'DM Sans',sans-serif;cursor:pointer;transition:transform .2s ease,background .2s ease}
 .alco-arrow:hover{transform:scale(1.08);background:#edf4ff}
 .alco-arrow:focus-visible{outline:3px solid #004833;outline-offset:3px}
 .alco-count{min-width:48px;text-align:center;color:#405b73;font:11px 'DM Mono',monospace;letter-spacing:.05em}
-@media(max-width:860px){.alcolea-case{grid-template-columns:minmax(0,1fr)}.alcolea-case.inv .txt{order:0}.alcolea-stage{height:490px}.alco-phone{width:min(42vw,186px);height:min(86vw,344px)}.alco-phone[data-slot="left"]{transform:translate(-125%,-47%) scale(.81) rotate(-7deg)}.alco-phone[data-slot="right"]{transform:translate(25%,-47%) scale(.81) rotate(7deg)}}
-@media(max-width:480px){.alcolea-stage{height:430px}.alco-phones{inset:16px 0 60px}.alco-phone{width:min(42vw,164px);height:min(88vw,306px);padding:5px;border-radius:30px}.alco-screen{border-radius:25px}.alco-island{top:7px;width:40px;height:10px}.alco-phone[data-slot="left"]{transform:translate(-125%,-47%) scale(.78) rotate(-7deg)}.alco-phone[data-slot="right"]{transform:translate(25%,-47%) scale(.78) rotate(7deg)}}
-@media(prefers-reduced-motion:reduce){.alco-phone,.alco-arrow{transition:none}}
-
-</style>
+@media(max-width:860px){.alcolea-case{grid-template-columns:minmax(0,1fr)}.alcolea-case.inv .txt{order:0}.alcolea-stage{height:490px}.alco-phone{width:min(100%,176px)}}
+@media(max-width:560px){.alcolea-stage{height:430px}.alco-phones{inset:14px 0 60px;display:flex;justify-content:center;align-items:center;padding:0}.alco-phone{width:min(55vw,196px);aspect-ratio:.49;padding:5px;border-radius:30px}.alco-phone[data-slot="left"],.alco-phone[data-slot="right"]{display:none}.alco-screen{border-radius:25px}.alco-island{top:7px;width:36px;height:9px}}
+@media(prefers-reduced-motion:reduce){.alco-phone,.alco-arrow{transition:none}}</style>
 </head>
 <body>
 <nav class="nav" aria-label="Principal" style="justify-content:space-between"><a class="logo" href="/" aria-label="amable., inicio">amable<i class="pt"></i></a><a class="btn" href="/#contacto">Cuéntame tu caso</a></nav>
@@ -487,7 +485,7 @@ html{scroll-behavior:auto}
 <p class="tuyo"><b>En tu negocio:</b> una identidad que se adapta a cada momento y se recuerda mucho después del evento.</p>
 </div>
 <div class="lienzo r ram-galeria" data-ram-gallery aria-label="Galería de aplicaciones de marca para Ram² Immobilien" tabindex="0">
-<div class="ram-visual"><img class="ram-main" src="/img/ram2-adventlauf/ram2-01-event-banner.jpg" alt="Banner de Ram² Immobilien en una carrera infantil navideña en Mödling" fetchpriority="high" draggable="false"></div>
+<div class="ram-visual"><img class="ram-main" src="/img/ram2-adventlauf/ram2-04-neck-warmer-girl-front.jpg" alt="Niña con braga de cuello estampada con la mascota de Ram²" fetchpriority="high" draggable="false"></div>
 <div class="ram-controls">
 <button class="ram-arrow prev" type="button" aria-label="Imagen anterior">←</button>
 <div class="ram-meta"><span class="ram-count" aria-live="polite">01 / 11</span></div>
@@ -529,17 +527,17 @@ addEventListener('scroll',()=>requestAnimationFrame(mueve),{passive:true});mueve
 
 document.querySelectorAll('[data-ram-gallery]').forEach((gallery)=>{
  const slides=[
- {src:'/img/ram2-adventlauf/ram2-01-event-banner.jpg',alt:'Banner de Ram² Immobilien en una carrera infantil navideña en Mödling'},
- {src:'/img/ram2-adventlauf/ram2-02-shirt-back.jpg',alt:'Niño en la carrera con la camiseta de Ram² y la mascota de la casita'},
- {src:'/img/ram2-adventlauf/ram2-03-kids-hoodie.jpg',alt:'Sudadera infantil negra con el logotipo de Ram² en el pecho'},
  {src:'/img/ram2-adventlauf/ram2-04-neck-warmer-girl-front.jpg',alt:'Niña con braga de cuello estampada con la mascota de Ram²'},
  {src:'/img/ram2-adventlauf/ram2-05-neck-warmer-girl-profile.jpg',alt:'Detalle de perfil de la braga de cuello Ram² en una niña'},
  {src:'/img/ram2-adventlauf/ram2-06-neck-warmer-boy.jpg',alt:'Niño con braga de cuello Ram² durante una carrera infantil'},
+ {src:'/img/ram2-adventlauf/ram2-11-neck-warmer-product.jpg',alt:'Braga de cuello blanca con estampado de la casita y el logotipo de Ram²'},
+ {src:'/img/ram2-adventlauf/ram2-01-event-banner.jpg',alt:'Banner de Ram² Immobilien en una carrera infantil navideña en Mödling'},
+ {src:'/img/ram2-adventlauf/ram2-02-shirt-back.jpg',alt:'Niño en la carrera con la camiseta de Ram² y la mascota de la casita'},
+ {src:'/img/ram2-adventlauf/ram2-03-kids-hoodie.jpg',alt:'Sudadera infantil negra con el logotipo de Ram² en el pecho'},
  {src:'/img/ram2-adventlauf/ram2-07-kids-backpack.jpg',alt:'Mochila infantil azul marino con la casita y el logotipo de Ram²'},
  {src:'/img/ram2-adventlauf/ram2-08-shirt-detail.jpg',alt:'Detalle del logotipo Ram² aplicado en una camiseta blanca'},
  {src:'/img/ram2-adventlauf/ram2-09-white-label.jpg',alt:'Etiqueta negra Ram² cosida a una prenda blanca'},
- {src:'/img/ram2-adventlauf/ram2-10-black-label.jpg',alt:'Etiqueta Ram² Immobilien en una camiseta negra'},
- {src:'/img/ram2-adventlauf/ram2-11-neck-warmer-product.jpg',alt:'Braga de cuello blanca con estampado de la casita y el logotipo de Ram²'}
+ {src:'/img/ram2-adventlauf/ram2-10-black-label.jpg',alt:'Etiqueta Ram² Immobilien en una camiseta negra'}
  ];
  const main=gallery.querySelector('.ram-main'),count=gallery.querySelector('.ram-count');
  let current=0,timer;
