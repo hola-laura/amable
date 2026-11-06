@@ -378,11 +378,11 @@ html{scroll-behavior:auto}
 .ram-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:clamp(430px,58vw,700px);padding:clamp(18px,3vw,38px);background:linear-gradient(145deg,#e4e9ef,#f1f3f5);touch-action:pan-y;cursor:grab}
 .ram-visual:active{cursor:grabbing}
 .ram-visual:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 52% 45%,rgba(255,255,255,.85),transparent 65%);pointer-events:none}
-.ram-main{display:block;width:auto;height:auto;max-width:100%;max-height:clamp(340px,50vw,570px);object-fit:contain;filter:drop-shadow(0 16px 24px rgba(15,28,42,.12));transition:opacity .22s ease,transform .28s cubic-bezier(.2,.75,.25,1);user-select:none}
+.ram-main{display:block;width:auto;height:auto;max-width:100%;max-height:clamp(340px,50vw,570px);object-fit:contain;border-radius:18px;filter:drop-shadow(0 16px 24px rgba(15,28,42,.12));transition:opacity .22s ease,transform .28s cubic-bezier(.2,.75,.25,1);user-select:none}
 .ram-main.is-changing{opacity:0;transform:translateX(var(--ram-shift,18px)) rotate(var(--ram-tilt,1deg))}
 .ram-controls{display:flex;align-items:center;justify-content:center;gap:clamp(16px,3vw,36px);padding:18px clamp(14px,2.5vw,28px) 22px;background:#fff}
 .ram-meta{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center}
-.ram-caption{margin:0;color:#234339;font-size:.92rem;line-height:1.4}
+
 .ram-count{color:#687b73;font:11px 'DM Mono',monospace;letter-spacing:.06em}
 .ram-arrow{position:static;display:grid;place-items:center;flex:none;width:58px;height:58px;border:1px solid rgba(0,72,51,.17);border-radius:50%;background:#f5f7f4;color:#004833;font:26px/1 'DM Sans',sans-serif;cursor:pointer;box-shadow:0 5px 18px #152b2418;transition:transform .2s ease,background .2s ease,color .2s ease,box-shadow .2s ease}
 .ram-arrow.next{border-color:#004833;background:#004833;color:white}
@@ -390,7 +390,7 @@ html{scroll-behavior:auto}
 .ram-arrow.next:hover{background:#05644a;color:white}
 .ram-arrow:focus-visible{outline:3px solid #a8c8f8;outline-offset:4px}
 @media(max-width:860px){.ram-project{grid-template-columns:minmax(0,1fr)}.ram-visual{min-height:clamp(340px,82vw,560px);padding:16px}.ram-main{max-height:min(72vw,480px)}.ram-controls{gap:16px;padding:14px 14px 18px}.ram-arrow{width:50px;height:50px}}
-@media(max-width:480px){.ram-visual{min-height:340px}.ram-main{max-height:300px}.ram-controls{gap:12px}.ram-arrow{width:46px;height:46px}.ram-caption{font-size:.83rem}}
+@media(max-width:480px){.ram-visual{min-height:340px}.ram-main{max-height:300px}.ram-controls{gap:12px}.ram-arrow{width:46px;height:46px}}
 @media(prefers-reduced-motion:reduce){.ram-main,.ram-arrow{transition:none}}
 </style>
 </head>
@@ -409,7 +409,7 @@ html{scroll-behavior:auto}
 <div class="ram-visual"><img class="ram-main" src="/img/ram2-adventlauf/ram2-01-event-banner.jpg" alt="Banner de Ram² Immobilien en una carrera infantil navideña en Mödling" fetchpriority="high" draggable="false"></div>
 <div class="ram-controls">
 <button class="ram-arrow prev" type="button" aria-label="Imagen anterior">←</button>
-<div class="ram-meta"><p class="ram-caption" aria-live="polite">La marca da la bienvenida en la línea de meta</p><span class="ram-count" aria-live="polite">01 / 11</span></div>
+<div class="ram-meta"><span class="ram-count" aria-live="polite">01 / 11</span></div>
 <button class="ram-arrow next" type="button" aria-label="Imagen siguiente">→</button>
 </div>
 </div>
@@ -498,25 +498,25 @@ addEventListener('scroll',()=>requestAnimationFrame(mueve),{passive:true});mueve
 
 document.querySelectorAll('[data-ram-gallery]').forEach((gallery)=>{
  const slides=[
- {src:'/img/ram2-adventlauf/ram2-01-event-banner.jpg',alt:'Banner de Ram² Immobilien en una carrera infantil navideña en Mödling',caption:'La marca da la bienvenida en la línea de meta'},
- {src:'/img/ram2-adventlauf/ram2-02-shirt-back.jpg',alt:'Niño en la carrera con la camiseta de Ram² y la mascota de la casita',caption:'La casita, protagonista de la camiseta de carrera'},
- {src:'/img/ram2-adventlauf/ram2-03-kids-hoodie.jpg',alt:'Sudadera infantil negra con el logotipo de Ram² en el pecho',caption:'Una firma sutil para la sudadera infantil'},
- {src:'/img/ram2-adventlauf/ram2-04-neck-warmer-girl-front.jpg',alt:'Niña con braga de cuello estampada con la mascota de Ram²',caption:'La mascota acompaña a los pequeños corredores'},
- {src:'/img/ram2-adventlauf/ram2-05-neck-warmer-girl-profile.jpg',alt:'Detalle de perfil de la braga de cuello Ram² en una niña',caption:'Un estampado pensado para verse en movimiento'},
- {src:'/img/ram2-adventlauf/ram2-06-neck-warmer-boy.jpg',alt:'Niño con braga de cuello Ram² durante una carrera infantil',caption:'Calidez e identidad en una misma pieza'},
- {src:'/img/ram2-adventlauf/ram2-07-kids-backpack.jpg',alt:'Mochila infantil azul marino con la casita y el logotipo de Ram²',caption:'La casita se convierte en un parche para llevar'},
- {src:'/img/ram2-adventlauf/ram2-08-shirt-detail.jpg',alt:'Detalle del logotipo Ram² aplicado en una camiseta blanca',caption:'Un detalle limpio que deja respirar la marca'},
- {src:'/img/ram2-adventlauf/ram2-09-white-label.jpg',alt:'Etiqueta negra Ram² cosida a una prenda blanca',caption:'La etiqueta negra firma la prenda en contraste'},
- {src:'/img/ram2-adventlauf/ram2-10-black-label.jpg',alt:'Etiqueta Ram² Immobilien en una camiseta negra',caption:'Una versión tonal para las prendas oscuras'},
- {src:'/img/ram2-adventlauf/ram2-11-neck-warmer-product.jpg',alt:'Braga de cuello blanca con estampado de la casita y el logotipo de Ram²',caption:'El accesorio, en detalle'}
+ {src:'/img/ram2-adventlauf/ram2-01-event-banner.jpg',alt:'Banner de Ram² Immobilien en una carrera infantil navideña en Mödling'},
+ {src:'/img/ram2-adventlauf/ram2-02-shirt-back.jpg',alt:'Niño en la carrera con la camiseta de Ram² y la mascota de la casita'},
+ {src:'/img/ram2-adventlauf/ram2-03-kids-hoodie.jpg',alt:'Sudadera infantil negra con el logotipo de Ram² en el pecho'},
+ {src:'/img/ram2-adventlauf/ram2-04-neck-warmer-girl-front.jpg',alt:'Niña con braga de cuello estampada con la mascota de Ram²'},
+ {src:'/img/ram2-adventlauf/ram2-05-neck-warmer-girl-profile.jpg',alt:'Detalle de perfil de la braga de cuello Ram² en una niña'},
+ {src:'/img/ram2-adventlauf/ram2-06-neck-warmer-boy.jpg',alt:'Niño con braga de cuello Ram² durante una carrera infantil'},
+ {src:'/img/ram2-adventlauf/ram2-07-kids-backpack.jpg',alt:'Mochila infantil azul marino con la casita y el logotipo de Ram²'},
+ {src:'/img/ram2-adventlauf/ram2-08-shirt-detail.jpg',alt:'Detalle del logotipo Ram² aplicado en una camiseta blanca'},
+ {src:'/img/ram2-adventlauf/ram2-09-white-label.jpg',alt:'Etiqueta negra Ram² cosida a una prenda blanca'},
+ {src:'/img/ram2-adventlauf/ram2-10-black-label.jpg',alt:'Etiqueta Ram² Immobilien en una camiseta negra'},
+ {src:'/img/ram2-adventlauf/ram2-11-neck-warmer-product.jpg',alt:'Braga de cuello blanca con estampado de la casita y el logotipo de Ram²'}
  ];
- const main=gallery.querySelector('.ram-main'),caption=gallery.querySelector('.ram-caption'),count=gallery.querySelector('.ram-count');
+ const main=gallery.querySelector('.ram-main'),count=gallery.querySelector('.ram-count');
  let current=0,timer;
  const show=(n,direction=1)=>{
   current=(n+slides.length)%slides.length;const slide=slides[current];
   main.style.setProperty('--ram-shift',direction>0?'-22px':'22px');main.style.setProperty('--ram-tilt',direction>0?'-1deg':'1deg');
   main.classList.add('is-changing');clearTimeout(timer);
-  const preloaded=new Image();preloaded.onload=()=>{timer=setTimeout(()=>{main.src=slide.src;main.alt=slide.alt;caption.textContent=slide.caption;count.textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');requestAnimationFrame(()=>main.classList.remove('is-changing'))},150)};
+  const preloaded=new Image();preloaded.onload=()=>{timer=setTimeout(()=>{main.src=slide.src;main.alt=slide.alt;count.textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');requestAnimationFrame(()=>main.classList.remove('is-changing'))},150)};
   preloaded.onerror=()=>{main.classList.remove('is-changing')};preloaded.src=slide.src;
  };
  gallery.querySelector('.prev').addEventListener('click',()=>show(current-1,-1));
