@@ -82,7 +82,6 @@ h1{font-size:clamp(44px,min(7.6vw,12.4vh),100px);line-height:1.02;margin-bottom:
 .chip:hover{transform:translateY(-2px);border-color:var(--ink)}
 .chip[aria-pressed=true]{background:var(--a);color:var(--on);border-color:var(--a)}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
-.hero .cta{margin-top:clamp(24px,4vh,40px)}
 .hero .wrap{position:relative}
 .aviso{position:absolute;right:24px;top:-6px;width:286px;padding:14px 16px;display:flex;gap:12px;background:#fff;border-radius:18px;box-shadow:0 22px 50px -26px rgba(23,18,15,.5),0 0 0 1px var(--line);transform:translateY(16px) scale(.92) rotate(2deg);opacity:0;transition:transform .7s var(--bote),opacity .3s}
 .aviso.sale{transform:rotate(2deg);opacity:1}
@@ -454,9 +453,7 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Puedo pedirte solo diseño?","acceptedAnswer":{"@type":"Answer","text":"Sí. Si solo necesitas un logo, una carta o unos carteles, te lo diseño aunque no quieras nada más."}},{"@type":"Question","name":"¿Tengo que entender de tecnología?","acceptedAnswer":{"@type":"Answer","text":"No. Me cuentas cómo trabajas y yo me encargo del resto."}},{"@type":"Question","name":"¿Cómo funciona el 50%?","acceptedAnswer":{"@type":"Answer","text":"Los 20 primeros negocios del barrio pagan la mitad en su primer servicio."}},{"@type":"Question","name":"¿Los precios llevan IVA?","acceptedAnswer":{"@type":"Answer","text":"No, todos los precios son sin IVA."}},{"@type":"Question","name":"¿Y si no sé qué necesito?","acceptedAnswer":{"@type":"Answer","text":"Reserva 15 minutos, me cuentas tu caso y te digo por dónde empezaría."}}]}</script>
 <style>
 /* Selector de sector: compacto, claro y con opciones bajo demanda */
-.hero .elige{text-align:center}
-.sector-select + .cta{margin-top:24px}
-.sector-select{position:relative;z-index:12;width:min(100%,460px);margin:0 auto}
+.sector-select{position:relative;z-index:12;width:min(100%,460px);margin-bottom:clamp(24px,4vh,40px)}
 .sector-trigger{width:100%;min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 19px;border:1px solid rgba(255,255,255,.82);border-radius:19px;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(247,250,255,.94));color:var(--ink);text-align:left;box-shadow:0 15px 36px -25px rgba(23,38,58,.55),0 1px 2px rgba(23,38,58,.08);cursor:pointer;transition:transform .25s var(--bote),box-shadow .25s,border-color .25s}
 .sector-trigger:hover{transform:translateY(-2px);border-color:#fff;box-shadow:0 20px 40px -25px rgba(23,38,58,.55),0 0 0 3px rgba(255,255,255,.22)}
 .sector-trigger:focus-visible{outline:3px solid var(--dark);outline-offset:4px}
