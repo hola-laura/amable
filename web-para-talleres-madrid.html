@@ -12,9 +12,10 @@
 <meta property="og:title" content="Página web para talleres mecánicos en Madrid | Amable">
 <meta property="og:description" content="Página web para talleres mecánicos en Madrid: citas de revisión desde el móvil, avisos de coche listo y menos llamadas. Precios claros.">
 <meta property="og:url" content="https://amableagencia.com/web-para-talleres-madrid">
-<meta property="og:image" content="https://amableagencia.com/img/og.png">
+<meta property="og:image" content="https://amableagencia.com/img/og-web-para-talleres-madrid.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Página web para talleres mecánicos en Madrid">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
@@ -23,6 +24,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://videos.pexels.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Young+Serif&display=swap" rel="stylesheet">
 <style>
 :root{--a:#004833;--on:#fff;--h:#004833;--ink:#111111;--mut:#4A5550;--soft:#A8C8F8;--dark:#004833;
@@ -596,6 +599,7 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 <div class="gigante" id="gigante" aria-hidden="true">amable<i class="pt"></i></div>
 <nav class="secs" aria-label="Sectores"><a href="/web-para-peluquerias-madrid">Web para peluquerías</a><a href="/web-para-restaurantes-madrid">Web para restaurantes y bares</a><a href="/web-para-academias-madrid">Web para academias</a><a href="/web-para-electricistas-madrid">Web para electricistas</a><a href="/web-para-fontaneros-madrid">Web para fontaneros</a><a href="/web-para-talleres-madrid">Web para talleres mecánicos</a><a href="/web-para-clinicas-madrid">Web para fisios y clínicas</a><a href="/web-para-gimnasios-madrid">Web para gimnasios y estudios</a><a href="/web-para-dentistas-madrid">Web para dentistas</a><a href="/web-para-farmacias-madrid">Web para farmacias</a><a href="/web-para-veterinarias-madrid">Web para veterinarias</a><a href="/web-para-administradores-de-fincas-madrid">Web para administradores de fincas</a><a href="/web-para-gestorias-madrid">Web para gestorías</a><a href="/web-para-inmobiliarias-madrid">Web para inmobiliarias</a><a href="/web-para-reformas-madrid">Web para reformas y carpintería</a><a href="/web-para-tiendas-madrid">Web para tiendas locales</a></nav>
 <nav class="secs" aria-label="Servicios"><a href="/diseno-web-madrid">Diseño web</a><a href="/diseno-logos-madrid">Logos y marca</a><a href="/reservas-online-negocios-madrid">Reservas online</a><a href="/automatizacion-negocios-madrid">Automatización</a><a href="/aplicaciones-a-medida-madrid">Aplicaciones a medida</a><a href="/gestion-redes-sociales-madrid">Gestión de redes</a><a href="/cuanto-cuesta-una-pagina-web">Cuánto cuesta una web</a></nav>
+<nav class="secs" aria-label="Recursos"><a href="/sobre-laura">Sobre Laura</a><a href="/que-debe-tener-la-web-de-una-peluqueria">Qué debe tener la web de una peluquería</a><a href="/reservas-online-sin-comisiones">Reservas online sin comisiones</a><a href="/perfil-de-empresa-google">Perfil de Empresa de Google</a><a href="/caso-web-guia-montana">Caso: web para un guía de montaña</a><a href="/caso-presupuestos-construccion">Caso: presupuestos para construcción</a><a href="/caso-automatizacion-citas">Caso: citas automáticas</a><a href="/web-design-madrid">English</a></nav>
 <div class="legal"><span class="mono">Design · AI · Automation</span><a class="mono" href="/privacidad">Privacidad</a><span class="mono">Urgel · Oporto · Marqués de Vadillo, Madrid</span></div>
 </div></footer>
 
@@ -603,6 +607,8 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 <div class="cursor" id="cursor" aria-hidden="true"></div>
 
 <script>
+addEventListener('load',()=>setTimeout(()=>{window.__vid=1;const v=document.querySelector('#l2 video');if(v&&v.dataset.src&&!v.src){v.src=v.dataset.src;v.play&&v.play().catch(()=>{})}},900));
+addEventListener('DOMContentLoaded',()=>{const g=document.getElementById('granV');if(!g)return;new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){window.__gran=1;if(g.dataset.src){g.src=g.dataset.src;g.play&&g.play().catch(()=>{})}o.disconnect()}},{rootMargin:'600px'}).observe(g)});
 const SECTORS = [
   { id: 'pelu', label: 'Peluquería o estética', h1a: 'Menos teléfono.', h1b: 'Más clientes.',
     sub: 'Tus clientas reservan desde el móvil, la cita llega sola a tu agenda y tú sigues con las manos en lo tuyo.',
@@ -817,8 +823,8 @@ const pinta=(id)=>{const s=SECTORS.find((x)=>x.id===id)||SECTORS.find((x)=>x.id=
 pintaTema(s.id);
 $('l1').innerHTML='<span>'+conPunto(s.h1a)+'</span>';$('l2').innerHTML=clip()+'<span>'+conPunto(s.h1b)+'</span>';
 $('avT').textContent=s.got;$('avS').textContent=s.newRow;$('aviso').classList.remove('sale');$('aviso').style.visibility=(s.h1a.length>16||s.h1b.length>16)?'hidden':'visible';setTimeout(()=>$('aviso').classList.add('sale'),quieto?0:1300);
-const v=$('l2').querySelector('video');v.src=VID+(CLIPS[s.id]||CLIPS.otro);v.play&&v.play().catch(()=>{});
-const g=$('granV');g.src=v.src;g.play&&g.play().catch(()=>{});
+const v=$('l2').querySelector('video'),vu=VID+(CLIPS[s.id]||CLIPS.otro);v.dataset.src=vu;if(window.__vid){v.src=vu;v.play&&v.play().catch(()=>{})}
+const g=$('granV');g.dataset.src=vu;if(window.__gran){g.src=vu;g.play&&g.play().catch(()=>{})}
 $('sub').textContent=s.sub;$('dh').textContent=s.dh;$('c1').textContent=s.c1;$('c2').textContent=s.c2;$('nota').textContent='';
 $('rec').textContent=s.rec;$('sText').textContent=s.sText;
 $('horas').innerHTML=s.opts.map((o)=>'<button class="hora" type="button">'+o+'</button>').join('');
