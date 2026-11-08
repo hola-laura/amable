@@ -446,6 +446,27 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 @media (max-width:860px){.pista{height:auto;padding:22px 0 64px}}
 @media (prefers-reduced-motion:reduce){.vista .ic,.ic.si svg{animation:none}}
 /* fin posts */
+
+/* servicios con filtro */
+.srv{background:#fff}
+.srv-g{display:grid;grid-template-columns:minmax(260px,340px) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.srv-l{position:sticky;top:120px}.srv-l h2{font-size:clamp(36px,4.4vw,56px);line-height:1.04;margin:14px 0 18px}.srv-l .lead{font-size:17px;margin-bottom:28px}
+.srv-f{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.srv-f button{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:15px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.srv-f button:hover{border-color:var(--ink)}.srv-f button[aria-pressed=true]{background:var(--dark);color:#fff;border-color:var(--dark)}
+.srv-r{min-width:0;margin-right:calc(var(--g)*-1)}
+.srv-rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px var(--g) 8px 4px;outline:none}.srv-rail::-webkit-scrollbar{display:none}
+.srv-c{flex:none;width:clamp(260px,23vw,300px);min-height:430px;display:flex;flex-direction:column;padding:28px;border-radius:24px;background:var(--c2);scroll-snap-align:start;transition:transform .3s var(--punto)}
+.srv-c:hover{transform:translateY(-4px)}.srv-c[hidden]{display:none}
+.srv-ic{width:52px;height:52px;border-radius:14px;background:var(--a);color:var(--on);display:grid;place-items:center;margin-bottom:clamp(40px,5vw,64px)}.srv-ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.srv-c h3{font-size:26px;line-height:1.1;margin-bottom:12px;text-wrap:balance}.srv-c p{color:var(--mut);font-size:16px;margin-bottom:24px}
+.srv-c .srv-q{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--ink);line-height:1.45}
+.srv-a{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:15px;font-weight:500;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.srv-a:hover{background:var(--a);color:var(--on);border-color:var(--a)}.srv-a.fill{background:var(--dark);color:#fff;border-color:var(--dark)}
+.srv-nav{display:flex;align-items:center;gap:12px;margin:24px var(--g) 0 4px}.srv-bar{position:relative;flex:1;height:2px;background:var(--line);overflow:hidden}.srv-bar i{position:absolute;left:0;top:0;height:100%;background:var(--ink)}
+.srv-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer}.srv-nav button:hover{border-color:var(--ink)}
+@media (max-width:860px){.srv-g{grid-template-columns:minmax(0,1fr)}.srv-l{position:static}.srv-f{flex-wrap:nowrap;overflow-x:auto;margin-inline:calc(var(--g)*-1);padding:2px var(--g);scrollbar-width:none}.srv-f::-webkit-scrollbar{display:none}.srv-f button{flex:none}.srv-r{margin-left:calc(var(--g)*-1)}.srv-rail{padding-left:var(--g)}.srv-nav{margin-left:var(--g)}.srv-c{width:76vw;min-height:380px}}
+/* fin servicios */
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Página web para academias","serviceType":"Diseño web y reservas online","description":"Una academia recibe las mismas preguntas una y otra vez: cursos, horarios y precios. Diseño una web donde cada interesado encuentra su curso y pide una clase de prueba sin que tengas que contestar uno a uno.","url":"https://amableagencia.com/web-para-academias-madrid","provider":{"@id":"https://amableagencia.com/#negocio","name":"Amable","url":"https://amableagencia.com/"},"areaServed":{"@type":"City","name":"Madrid"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Amable","item":"https://amableagencia.com/"},{"@type":"ListItem","position":2,"name":"Web para academias","item":"https://amableagencia.com/web-para-academias-madrid"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Sirve para oposiciones o clases de repaso?","acceptedAnswer":{"@type":"Answer","text":"Sí. Da igual lo que enseñes: cambian los cursos, no la forma de atender a cada interesado."}},{"@type":"Question","name":"¿Se puede automatizar la respuesta a cada interesado?","acceptedAnswer":{"@type":"Answer","text":"Sí. Cada solicitud puede recibir la información del curso al momento."}},{"@type":"Question","name":"¿Puedo avisar de un cambio de horario a todo un grupo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Se puede preparar para no escribir a cada alumno por separado."}}]}]}</script>
 <style>
@@ -478,7 +499,7 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 <nav class="nav" aria-label="Principal">
 <i class="prog" id="prog"></i>
 <a class="logo" href="#inicio" aria-label="amable., inicio">amable<i class="pt"></i></a>
-<ul><li><a href="#prueba">Cómo funciona</a></li><li><a href="#trabajos">Trabajos</a></li><li><a href="#diseno">Diseño</a></li><li><a href="#precios">Precios</a></li><li><a href="#laura">Quién soy</a></li></ul>
+<ul><li><a href="#prueba">Cómo funciona</a></li><li><a href="#trabajos">Trabajos</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#precios">Precios</a></li><li><a href="#laura">Quién soy</a></li></ul>
 <a class="btn" data-mag href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Reservar 15 min</a>
 </nav>
 
@@ -525,12 +546,6 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 <div class="lista r"><ul id="pl"></ul><div class="vis" id="vis" aria-hidden="true"></div></div>
 <div class="todos r"><a class="btn" data-mag href="/proyectos">Ver todos los proyectos</a></div>
 <figure class="auto r"><figcaption><span class="mono">AUTOMATIZACIÓN POR DENTRO</span><h3>Así se ve una tarea que se hace sola</h3><p>Cuando alguien escribe desde la web, la consulta se comprueba, se guarda en una hoja y te llega un aviso por correo.</p></figcaption><div class="auto-img"><img loading="lazy" src="img/automatizacion.png" alt="Flujo de automatización: consulta web, validación, registro en hoja de cálculo, aviso por correo y respuesta" onerror="this.closest('figure').remove()"></div></figure>
-<h2 class="tit2 r">Cómo te puedo ayudar<i class="pt"></i></h2>
-<div class="ayuda">
-<article class="ay r"><div class="ay-top"><span class="ay-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.3-4.3"/></svg></span><span class="ay-n">01</span></div><h3>Que te encuentren</h3><p>Una web clara, hecha para el móvil y fácil de mantener.</p><div class="ay-l"><a href="/diseno-web-madrid">Diseño web <span aria-hidden="true">→</span></a></div></article>
-<article class="ay r"><div class="ay-top"><span class="ay-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17M9 15l2 2 4-4"/></svg></span><span class="ay-n">02</span></div><h3>Que te reserven</h3><p>Reservas, citas y recordatorios que funcionan sin que estés pendiente.</p><div class="ay-l"><a href="/reservas-online-negocios-madrid">Reservas online <span aria-hidden="true">→</span></a></div></article>
-<article class="ay r"><div class="ay-top"><span class="ay-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3Z"/></svg></span><span class="ay-n">03</span></div><h3>Que te ahorres tiempo</h3><p>Aplicaciones a medida y automatizaciones para las tareas que repites cada semana.</p><div class="ay-l"><a href="/automatizacion-negocios-madrid">Automatización <span aria-hidden="true">→</span></a><a href="/aplicaciones-a-medida-madrid">Aplicaciones <span aria-hidden="true">→</span></a></div></article>
-</div>
 </div>
 <template id="t-pres"><div class="pres"><header><h4>Reforma de baño</h4><span class="mono" style="margin:0">Nº 204</span></header>
 <div class="fp"><span>Demolición y retirada</span><span>640€</span></div><div class="fp"><span>Fontanería</span><span>980€</span></div><div class="fp"><span>Alicatado, 18 m²</span><span>1.080€</span></div><div class="fp"><span>Pintura, 24 m²</span><span>288€</span></div><div class="fp"><span>IVA 21%</span><span>627,48€</span></div>
@@ -538,16 +553,30 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 <template id="t-flujo"><ol class="flujo"><li>Entra un contacto<small>09:12</small></li><li>Recibe un mensaje<small>09:12</small></li><li>Elige su hora<small>09:30</small></li><li>Se guarda en el calendario<small>09:30</small></li><li>Recordatorio el día antes<small>Auto</small></li></ol></template>
 </section>
 
-<section class="diseno" id="diseno"><div class="wrap">
-<div class="r"><h2>Y antes que nada, diseño</h2><p class="lead">Llevo años diseñando para empresas grandes y ahora lo hago para negocios del barrio. Si quieres que tu negocio se vea tan bien como trabaja, empezamos por ahí.</p></div>
-<div class="dis-g">
-<div class="r"><h3><a href="/diseno-logos-madrid">Logo y marca</a></h3><p>Un logo, unos colores y un estilo que sean tuyos y se reconozcan.</p></div>
-<div class="r"><h3><a href="/diseno-web-madrid">Webs y aplicaciones</a></h3><p>Pantallas claras, pensadas para la gente que las va a usar.</p></div>
-<div class="r"><h3>Cartas, carteles y tarjetas</h3><p>Lo que se imprime, listo para la imprenta o para colgar en tu local.</p></div>
-<div class="r"><h3><a href="/gestion-redes-sociales-madrid">Redes</a></h3><p>Plantillas y publicaciones con tu marca, para que todo parezca de lo mismo.</p></div>
+<section class="srv" id="servicios"><span id="diseno"></span><div class="wrap srv-g">
+<div class="srv-l r"><span class="mono">SERVICIOS</span><h2>Cómo te puedo ayudar<i class="pt"></i></h2><p class="lead">Antes que nada, diseño: llevo años haciéndolo para empresas grandes. Ahora lo pongo al servicio de tu negocio, desde la marca hasta las herramientas que te ahorran tiempo.</p>
+<div class="srv-f" role="group" aria-label="Filtrar servicios"><button type="button" data-f="todo" aria-pressed="true">Todo</button><button type="button" data-f="diseno" aria-pressed="false">Diseño</button><button type="button" data-f="web" aria-pressed="false">Web</button><button type="button" data-f="reservas" aria-pressed="false">Reservas</button><button type="button" data-f="redes" aria-pressed="false">Redes</button><button type="button" data-f="auto" aria-pressed="false">Automatización y apps</button></div>
+<button class="btn" data-mag data-pide="Ayuda con mi negocio">Cuéntame qué necesitas</button></div>
+<div class="srv-r"><div class="srv-rail" id="srvRail" tabindex="0" aria-label="Servicios">
+<article class="srv-c srv-own"><span class="srv-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><h3>Cuéntame tu idea</h3><p class="srv-q">"Cada lunes, quiero que mis clientes reciban un recordatorio de su cita."</p><button class="srv-a fill" type="button" data-pide="Tengo una idea para mi negocio">Cuéntamelo</button></article>
+<article class="srv-c" data-t="diseno"><span class="srv-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 10.5-10.5a2.1 2.1 0 0 0-3-3L5 16l-1 4Z"/><path d="M13.5 7.5l3 3"/></svg></span><h3>Logo y marca</h3><p>Un logo, unos colores y un estilo que sean tuyos y se reconozcan en la calle y en el móvil.</p><a class="srv-a" href="/diseno-logos-madrid">Diseño de marca <span aria-hidden="true">→</span></a></article>
+<article class="srv-c" data-t="diseno"><span class="srv-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="2.5"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></svg></span><h3>Cartas, carteles y tarjetas</h3><p>Lo que se imprime, listo para la imprenta o para colgar en tu local.</p><a class="srv-a" href="/diseno-logos-madrid">Diseño gráfico <span aria-hidden="true">→</span></a></article>
+<article class="srv-c" data-t="web diseno"><span class="srv-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9h18M6.5 6.8h.01M9 6.8h.01"/></svg></span><h3>Una web que te encuentren</h3><p>Clara, hecha para el móvil y fácil de mantener, con lo que tus clientes buscan.</p><a class="srv-a" href="/diseno-web-madrid">Diseño web <span aria-hidden="true">→</span></a></article>
+<article class="srv-c" data-t="reservas"><span class="srv-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17M9 15l2 2 4-4"/></svg></span><h3>Reservas online</h3><p>Tus clientes eligen hora desde el móvil y la cita llega sola a tu calendario.</p><a class="srv-a" href="/reservas-online-negocios-madrid">Reservas online <span aria-hidden="true">→</span></a></article>
+<article class="srv-c" data-t="reservas auto"><span class="srv-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15L6 16Z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></span><h3>Recordatorios automáticos</h3><p>Confirmaciones y avisos el día antes, para que nadie se olvide de su cita.</p><a class="srv-a" href="/automatizacion-negocios-madrid">Ver cómo funciona <span aria-hidden="true">→</span></a></article>
+<article class="srv-c" data-t="redes diseno"><span class="srv-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8h.01"/></svg></span><h3>Redes con tu marca</h3><p>Decidimos juntas qué publicar, lo diseño y lo dejo programado.</p><a class="srv-a" href="/gestion-redes-sociales-madrid">Gestión de redes <span aria-hidden="true">→</span></a></article>
+<article class="srv-c" data-t="auto"><span class="srv-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3Z"/></svg></span><h3>Automatizaciones</h3><p>Las tareas que repites cada semana, hechas solas: avisos, hojas de cálculo y seguimiento.</p><a class="srv-a" href="/automatizacion-negocios-madrid">Automatización <span aria-hidden="true">→</span></a></article>
+<article class="srv-c" data-t="auto web"><span class="srv-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><h3>Aplicaciones a medida</h3><p>Cuando una hoja de cálculo se queda corta: presupuestos, citas o lo que hoy haces a mano.</p><a class="srv-a" href="/aplicaciones-a-medida-madrid">Aplicaciones <span aria-hidden="true">→</span></a></article>
+</div><div class="srv-nav"><div class="srv-bar"><i id="srvBar"></i></div><button type="button" id="srvPrev" aria-label="Servicios anteriores"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" id="srvNext" aria-label="Más servicios"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div></div>
 </div>
-<div class="r"><button class="btn claro" data-mag data-pide="Diseño para mi negocio">Cuéntame qué necesitas</button></div>
-</div></section>
+<script>(()=>{const s=document.getElementById('servicios');if(!s)return;const r=s.querySelector('#srvRail'),bar=s.querySelector('#srvBar');
+const up=()=>{const sw=r.scrollWidth,cw=r.clientWidth,w=Math.min(1,cw/Math.max(sw,1)),max=sw-cw;bar.style.width=(w*100)+'%';bar.style.transform='translateX('+(max>0?r.scrollLeft/max*(1/w-1)*100:0)+'%)'};
+r.addEventListener('scroll',up,{passive:true});addEventListener('resize',up);
+const paso=d=>{const c=r.querySelector('.srv-c:not([hidden])');r.scrollBy({left:d*((c?c.offsetWidth:300)+16),behavior:'smooth'})};
+s.querySelector('#srvPrev').addEventListener('click',()=>paso(-1));s.querySelector('#srvNext').addEventListener('click',()=>paso(1));
+s.querySelectorAll('.srv-f button').forEach(b=>b.addEventListener('click',()=>{s.querySelectorAll('.srv-f button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const f=b.dataset.f;
+r.querySelectorAll('.srv-c').forEach(c=>{c.hidden=!(f==='todo'||c.classList.contains('srv-own')||(c.dataset.t||'').split(' ').includes(f))});r.scrollTo({left:0});requestAnimationFrame(up)}));up()})();</script>
+</section>
 
 <dialog id="pm" aria-labelledby="pmT"><button class="pm-x" id="pmX" type="button" aria-label="Cerrar"></button><div class="pm-g"><div class="pm-v en" id="pmV"></div><div class="pm-t"><span class="mono" id="pmR"></span><h3 id="pmT"></h3><p id="pmP"></p><div id="pmS"></div><p class="tuyo" id="pmY"></p><div class="lks" id="pmL"></div><button class="lk sig" id="pmN" type="button"><i></i>Siguiente proyecto</button></div></div></dialog>
 
