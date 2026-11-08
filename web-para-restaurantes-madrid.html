@@ -439,6 +439,29 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 /* fin posts */
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Página web para restaurantes y bares","serviceType":"Diseño web y reservas online","description":"En pleno servicio nadie puede estar pendiente del teléfono. Preparo webs para restaurantes y bares con la carta en el móvil, el horario siempre al día y reservas online que llegan solas.","url":"https://amableagencia.com/web-para-restaurantes-madrid","provider":{"@id":"https://amableagencia.com/#negocio","name":"Amable","url":"https://amableagencia.com/"},"areaServed":{"@type":"City","name":"Madrid"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Amable","item":"https://amableagencia.com/"},{"@type":"ListItem","position":2,"name":"Web para restaurantes y bares","item":"https://amableagencia.com/web-para-restaurantes-madrid"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Puedo cambiar la carta yo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Te la dejo preparada para que puedas actualizar platos y precios sin depender de nadie."}},{"@type":"Question","name":"¿Y si llega una reserva en pleno servicio?","acceptedAnswer":{"@type":"Answer","text":"Se apunta sola y tu cliente recibe la confirmación. Tú la ves cuando puedas."}},{"@type":"Question","name":"¿Sirve para un bar pequeño?","acceptedAnswer":{"@type":"Answer","text":"Sí. A veces basta con la carta, el horario y un botón para llegar."}}]}]}</script>
+<style>
+/* Selector de sector: compacto, claro y con opciones bajo demanda */
+.sector-select{position:relative;z-index:12;width:min(100%,460px);margin-bottom:clamp(24px,4vh,40px)}
+.sector-trigger{width:100%;min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 19px;border:1px solid rgba(255,255,255,.82);border-radius:19px;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(247,250,255,.94));color:var(--ink);text-align:left;box-shadow:0 15px 36px -25px rgba(23,38,58,.55),0 1px 2px rgba(23,38,58,.08);cursor:pointer;transition:transform .25s var(--bote),box-shadow .25s,border-color .25s}
+.sector-trigger:hover{transform:translateY(-2px);border-color:#fff;box-shadow:0 20px 40px -25px rgba(23,38,58,.55),0 0 0 3px rgba(255,255,255,.22)}
+.sector-trigger:focus-visible{outline:3px solid var(--dark);outline-offset:4px}
+.sector-trigger-copy{display:grid;gap:3px}
+.sector-eyebrow{font:10px 'DM Mono',monospace;letter-spacing:.13em;color:var(--mut)}
+#sectorValue{font-size:18px;font-weight:600}
+.sector-chevron{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--soft);color:var(--dark);transition:transform .28s cubic-bezier(.2,.8,.2,1),background .25s}
+.sector-chevron svg{display:block;width:16px;height:16px;overflow:visible}
+.sector-chevron path{fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.sector-select.abierto .sector-chevron{transform:rotate(180deg);background:var(--dark);color:var(--on)}
+.sector-select .chips{position:relative;top:auto;left:auto;width:min(100%,680px);max-height:none;overflow:visible;display:none;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:12px 0 0;padding:9px;border:1px solid rgba(255,255,255,.92);border-radius:22px;background:rgba(250,252,255,.97);box-shadow:0 24px 70px -30px rgba(19,36,57,.3),0 4px 18px rgba(19,36,57,.1);backdrop-filter:blur(18px)}
+.sector-select.abierto .chips{display:grid;animation:sector-drop .2s cubic-bezier(.2,.8,.2,1) both}
+.sector-select .chip{min-height:40px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 13px;border-color:#e6edf4;border-radius:13px;background:rgba(255,255,255,.68);color:var(--ink);font-size:13px;line-height:1.2;text-align:left;white-space:normal}
+.sector-select .chip:hover{transform:none;border-color:var(--line);background:#fff}
+.sector-select .chip[aria-pressed=true]{background:var(--dark);color:var(--on);border-color:var(--dark)}
+.sector-select .chip[aria-pressed=true]::after{content:'✓';font-size:14px;opacity:.9}
+@keyframes sector-drop{from{opacity:0;transform:translateY(-7px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:560px){.sector-select .chips{grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:4px;padding:8px;border-radius:18px}.sector-select .chip{min-height:36px;padding:0 8px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.sector-trigger,.sector-chevron{transition:none}.sector-select.abierto .chips{animation:none}}
+</style>
 </head>
 <body>
 <nav class="nav" aria-label="Principal">
@@ -454,7 +477,13 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 <h1 class="kick">Página web y reservas para restaurantes y bares en Madrid</h1><p class="titular" id="h1" aria-live="polite"><span class="ln"><span id="l1"><span>Mesas llenas.</span></span></span><span class="ln"><span id="l2"><span>Menos llamadas.</span></span></span></p>
 <p class="bajada" id="sub">Tu carta en el móvil, reservas sin coger el teléfono en pleno servicio y redes que abren el apetito.</p>
 <p class="elige">¿Qué negocio tienes?</p>
-<div class="chips" id="chips" role="group" aria-label="Elige tu negocio"></div>
+<div class="sector-select" id="sectorSelect">
+<button class="sector-trigger" id="sectorToggle" type="button" aria-expanded="false" aria-controls="chips">
+<span class="sector-trigger-copy"><span class="sector-eyebrow">TU NEGOCIO</span><span id="sectorValue">Otro negocio</span></span>
+<span class="sector-chevron" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 6.25 8 10.75l4.5-4.5"/></svg></span>
+</button>
+<div class="chips" id="chips" role="group" aria-label="Elige tu negocio" aria-hidden="true"></div>
+</div>
 <div class="cta"><a class="btn" data-mag href="#contacto">Cuéntame tu caso</a><a class="btn claro" href="#precios">Ver precios</a></div>
 </div></section>
 
@@ -836,6 +865,7 @@ const clip=()=>'<span class="clip"><video muted loop playsinline autoplay preloa
 const pintaTema=(id)=>{const t=THEMES[id]||THEMES.otro,r=document.documentElement.style;
 r.setProperty('--a',t.a);r.setProperty('--on',t.on);r.setProperty('--h',t.h);r.setProperty('--soft',id==='otro'?'#A8C8F8':t.soft);r.setProperty('--dark',id==='otro'?'#004833':t.ink);r.setProperty('--c2',id==='otro'?'#EEF3FB':t.bg);r.setProperty('--c3',id==='otro'?'#FCB0F8':t.soft);};
 const pinta=(id)=>{const s=SECTORS.find((x)=>x.id===id)||SECTORS.find((x)=>x.id==='otro');cur=s;
+if($('sectorValue'))$('sectorValue').textContent=s.label;
 pintaTema(s.id);
 $('l1').innerHTML='<span>'+conPunto(s.h1a)+'</span>';$('l2').innerHTML=clip()+'<span>'+conPunto(s.h1b)+'</span>';
 $('avT').textContent=s.got;$('avS').textContent=s.newRow;$('aviso').classList.remove('sale');$('aviso').style.visibility=(s.h1a.length>16||s.h1b.length>16)?'hidden':'visible';setTimeout(()=>$('aviso').classList.add('sale'),quieto?0:1300);
@@ -863,7 +893,12 @@ requestAnimationFrame(()=>requestAnimationFrame(()=>$('h1').classList.add('vivo'
 
 const ORDEN=['pelu','rest','clin','dent','farm','vet','idio','tall','fincas','gest','inmo','refo','elec','font','gym','tien','otro'];
 $('chips').innerHTML=SECTORS.filter((s)=>!s.hidden).sort((x,y)=>ORDEN.indexOf(x.id)-ORDEN.indexOf(y.id)).map((s)=>'<button class="chip" type="button" data-id="'+s.id+'" aria-pressed="false">'+s.label+'</button>').join('');
-$('chips').addEventListener('click',(e)=>{const c=e.target.closest('.chip');if(!c||c.dataset.id===(cur&&cur.id))return;barre(e.clientX||innerWidth/2,e.clientY||innerHeight/2,c.dataset.id)});
+const selector=$('sectorSelect'),toggle=$('sectorToggle');
+const cierraSelector=()=>{selector.classList.remove('abierto');toggle.setAttribute('aria-expanded','false');$('chips').setAttribute('aria-hidden','true')};
+toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';selector.classList.toggle('abierto',open);toggle.setAttribute('aria-expanded',String(open));$('chips').setAttribute('aria-hidden',String(!open))});
+$('chips').addEventListener('click',(e)=>{const c=e.target.closest('.chip');if(!c)return;cierraSelector();if(c.dataset.id===(cur&&cur.id))return;barre(e.clientX||innerWidth/2,e.clientY||innerHeight/2,c.dataset.id)});
+document.addEventListener('click',(e)=>{if(!selector.contains(e.target))cierraSelector()});
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&selector.classList.contains('abierto')){cierraSelector();toggle.focus()}});
 
 /* demo: la hora vuela a la agenda y se enciende el recorrido */
 $('horas').addEventListener('click',(e)=>{const b=e.target.closest('.hora');if(!b)return;
