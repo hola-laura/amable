@@ -261,9 +261,18 @@ h1{font-size:clamp(44px,min(7.6vw,12.4vh),100px);line-height:1.02;margin-bottom:
 .startups ul{list-style:none;margin:0;padding:0}
 .startups li{display:flex;gap:14px;padding:13px 0;border-top:1px solid rgba(255,255,255,.16);font-size:17px}
 .startups li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--a);margin-top:.55em;flex:none}
-.ayuda{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(32px,5vw,72px);padding-top:clamp(48px,6vw,72px);border-top:1px solid var(--line)}
-.ayuda h3{font-size:clamp(25px,2.6vw,31px);line-height:1.1;margin-bottom:12px}
-.ayuda p{color:var(--mut)}
+.ayuda{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,24px)}
+.ay{display:flex;flex-direction:column;padding:clamp(28px,3vw,40px);border-radius:28px;background:var(--c2);transition:transform .35s var(--punto),box-shadow .35s}
+.ay:hover{transform:translateY(-4px);box-shadow:0 26px 50px -34px rgba(0,0,0,.35)}
+.ay-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:clamp(40px,5vw,72px)}
+.ay-ic{width:56px;height:56px;border-radius:16px;background:var(--a);color:var(--on);display:grid;place-items:center}.ay-ic svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ay-n{font:500 13px/1 var(--mono);letter-spacing:.06em;color:var(--mut)}
+.ayuda h3{font-size:clamp(26px,2.4vw,32px);line-height:1.08;margin-bottom:12px;text-wrap:balance}
+.ayuda p{color:var(--mut);margin-bottom:28px}
+.ay-l{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+.ay-l a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:15px;font-weight:500;transition:background .25s,color .25s,border-color .25s}
+.ay-l a:hover{background:var(--a);color:var(--on);border-color:var(--a)}.ay-l a span{transition:transform .25s}.ay-l a:hover span{transform:translateX(3px)}
+@media (min-width:861px) and (max-width:1100px){.ayuda{grid-template-columns:repeat(2,minmax(0,1fr))}.ayuda .ay:last-child{grid-column:1/-1}}
 .tit2{margin-bottom:clamp(48px,6vw,80px);font-size:clamp(36px,5.2vw,64px);line-height:1.04}
 @media (max-width:860px){
 .caso,.caso.inv,.mini3,.ayuda,.startups{grid-template-columns:minmax(0,1fr)}.caso.inv .txt{order:0}
@@ -532,9 +541,9 @@ h1.kick{font:500 14px/1.4 var(--mono);letter-spacing:0;color:var(--mut);margin:0
 <figure class="auto r"><figcaption><span class="mono">AUTOMATIZACIÓN POR DENTRO</span><h3>Así se ve una tarea que se hace sola</h3><p>Cuando alguien escribe desde la web, la consulta se comprueba, se guarda en una hoja y te llega un aviso por correo.</p></figcaption><div class="auto-img"><img loading="lazy" src="img/automatizacion.png" alt="Flujo de automatización: consulta web, validación, registro en hoja de cálculo, aviso por correo y respuesta" onerror="this.closest('figure').remove()"></div></figure>
 <h2 class="tit2 r">Cómo te puedo ayudar<i class="pt"></i></h2>
 <div class="ayuda">
-<div class="r"><h3>Que te encuentren</h3><p>Una web clara, hecha para el móvil y fácil de mantener.</p><a class="mas" href="/diseno-web-madrid">Diseño web en Madrid</a></div>
-<div class="r"><h3>Que te reserven</h3><p>Reservas, citas y recordatorios que funcionan sin que estés pendiente.</p><a class="mas" href="/reservas-online-negocios-madrid">Reservas online para negocios</a></div>
-<div class="r"><h3>Que te ahorres tiempo</h3><p>Aplicaciones a medida y automatizaciones para las tareas que repites cada semana.</p><a class="mas" href="/automatizacion-negocios-madrid">Automatización</a> · <a class="mas" href="/aplicaciones-a-medida-madrid">Aplicaciones a medida</a></div>
+<article class="ay r"><div class="ay-top"><span class="ay-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.3-4.3"/></svg></span><span class="ay-n">01</span></div><h3>Que te encuentren</h3><p>Una web clara, hecha para el móvil y fácil de mantener.</p><div class="ay-l"><a href="/diseno-web-madrid">Diseño web <span aria-hidden="true">→</span></a></div></article>
+<article class="ay r"><div class="ay-top"><span class="ay-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17M9 15l2 2 4-4"/></svg></span><span class="ay-n">02</span></div><h3>Que te reserven</h3><p>Reservas, citas y recordatorios que funcionan sin que estés pendiente.</p><div class="ay-l"><a href="/reservas-online-negocios-madrid">Reservas online <span aria-hidden="true">→</span></a></div></article>
+<article class="ay r"><div class="ay-top"><span class="ay-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3Z"/></svg></span><span class="ay-n">03</span></div><h3>Que te ahorres tiempo</h3><p>Aplicaciones a medida y automatizaciones para las tareas que repites cada semana.</p><div class="ay-l"><a href="/automatizacion-negocios-madrid">Automatización <span aria-hidden="true">→</span></a><a href="/aplicaciones-a-medida-madrid">Aplicaciones <span aria-hidden="true">→</span></a></div></article>
 </div>
 </div>
 </section>
