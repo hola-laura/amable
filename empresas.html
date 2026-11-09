@@ -24,7 +24,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;margin:0
 /* hero */
 .hero{padding:clamp(120px,14vw,170px) 0 clamp(64px,8vw,104px);background:var(--soft);overflow:hidden}
 .hg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(36px,5vw,72px);align-items:center}
-.hero h1{font-size:clamp(44px,6.2vw,84px);line-height:.98;margin:16px 0 22px}
+.hero h1{font-size:clamp(42px,5.6vw,76px);line-height:.98;margin:16px 0 22px}
 .hero .lead{font-size:clamp(18px,1.8vw,21px);color:#2a3331;max-width:30em;margin:0 0 30px}
 @media (max-width:900px){.hg{grid-template-columns:minmax(0,1fr)}}
 .flujo{position:relative;display:grid;gap:12px;padding:clamp(18px,2.4vw,28px);border-radius:28px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.8);backdrop-filter:blur(8px);box-shadow:0 40px 80px -50px rgba(0,40,30,.6)}
@@ -143,6 +143,17 @@ section.b{padding:clamp(80px,10vw,132px) 0}
 .contacto{background:var(--dark);color:#fff;padding:clamp(80px,10vw,132px) 0}
 .fin{text-align:center}.fin h2{font-size:clamp(38px,5.4vw,72px);line-height:1.02;max-width:14em;margin:0 auto 16px}.fin .pt{background:var(--soft)}
 .fin .lead{color:rgba(255,255,255,.75);margin:0 auto 30px;max-width:30em;font-size:19px}.fin .ctas{justify-content:center}
+/* pulido */
+.garant{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;margin:26px 0 0;padding:0;font-size:15px;color:#2a3331}
+.garant li{display:flex;align-items:center;gap:8px}.garant li:before{content:'✓';display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--dark);color:#fff;font-size:11px;font-weight:700}
+.calc-s .pt,.contacto .pt{background:var(--soft)}
+.v-prod{display:block}
+.wire{position:absolute;left:12%;top:40px;width:120px;height:230px;padding:14px 12px;border-radius:20px;border:2px dashed #B9B2D6;background:rgba(255,255,255,.7);transform:rotate(-6deg);display:grid;align-content:start;gap:8px}
+.wire i{display:block;height:10px;border-radius:5px;background:#DCD6EE}.wire .w1{width:60%;height:12px}.wire .w2{height:56px;border-radius:10px}.wire .w4{width:70%;height:26px;border-radius:13px;margin-top:6px;background:#CFC7EA}
+.v-prod .tel{position:absolute;right:14%;top:30px;transform:rotate(3deg)}
+.eti{position:absolute;padding:5px 10px;border-radius:999px;background:#fff;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;box-shadow:0 8px 16px -10px rgba(0,0,0,.4)}.eti.e1{left:8%;top:16px}.eti.e2{right:8%;bottom:18px;background:var(--dark);color:#fff}
+.comp{margin:0 0 10px!important;font-size:18px!important}.comp b{font:400 1.2em var(--serif)}
+.caso h3{margin-bottom:26px}.tit{margin-bottom:clamp(36px,4.5vw,56px)}
 /* revelar */
 .r{opacity:0;transform:translateY(20px);transition:opacity .7s var(--punto),transform .7s var(--punto)}.r.en{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}.doc,.scan,.fila.nueva,.aviso{animation:none}.scan{display:none}html{scroll-behavior:auto}}
@@ -172,6 +183,7 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 <h1>El programa que tu equipo necesita y no existe<i class="pt"></i></h1>
 <p class="lead">Diseño y construyo herramientas a medida y automatizaciones con IA. Menos trabajo a mano, todo en un sitio y hablando siempre con quien lo hace.</p>
 <div class="ctas"><a class="btn" href="/?busca=auto#contacto">Descubre qué puedes automatizar</a><a class="btn claro" href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Reservar 15 min</a></div>
+<ul class="garant"><li>Primera conversación gratis</li><li>Precio cerrado antes de empezar</li><li>Hablas con quien lo construye</li></ul>
 </div>
 <div class="flujo" aria-label="Ejemplo: una factura que se pasa sola a la hoja de cuentas">
 <div class="doc"><span class="doc-ic">PDF</span><div><b>Factura_0423.pdf</b><span>Suministros Norte · 1.240,00€</span></div><i class="scan" aria-hidden="true"></i></div>
@@ -186,20 +198,20 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 </div></section>
 
 <section class="b"><div class="wrap">
-<div class="tit r"><span class="mono">Qué hago</span><h2>Tres formas de quitarle trabajo a tu equipo</h2></div>
+<div class="tit r"><span class="mono">Qué hago</span><h2>Tres formas de quitarle trabajo a tu equipo<i class="pt"></i></h2></div>
 <div class="tres">
 <article class="srv r"><div class="viz v-app" aria-hidden="true"><div class="win"><div class="win-b"><i></i><i></i><i></i><span>Presupuesto #128</span></div>
 <div class="ln"><span>Alicatado baño · 18 m²</span><b>720€</b></div><div class="ln"><span>Fontanería</span><b>450€</b></div><div class="ln"><span>Mano de obra · 2 días</span><b>380€</b></div><div class="ln tot"><span>Total</span><b>1.550€</b></div><span class="win-btn">Enviar al cliente</span></div></div>
 <h3>Software a medida</h3><p>Presupuestos, herramientas internas o portales para tus clientes, conectados con lo que ya usáis.</p></article>
 <article class="srv r"><div class="viz v-auto" aria-hidden="true"><div class="nodo">Llega un correo</div><div class="nodo ia"><span class="chip-ia">IA</span>Extrae los datos</div><div class="nodo">Se guarda en la hoja</div><div class="nodo fin">Aviso al equipo</div></div>
 <h3>Automatización con IA</h3><p>La IA lee facturas, pedidos o correos y pasa los datos a vuestros programas. Lo importante lo revisa una persona.</p></article>
-<article class="srv r"><div class="viz v-prod" aria-hidden="true"><div class="tel"><img src="https://hola-laura.github.io/laura/assets/drivo/home-ios.png" alt="" loading="lazy"></div><div class="nota-dis"><span>Paso 1</span>Investigación</div><div class="nota-dis b2"><span>Paso 2</span>Prototipo</div></div>
+<article class="srv r"><div class="viz v-prod" aria-hidden="true"><div class="wire"><i class="w1"></i><i class="w2"></i><i class="w3"></i><i class="w3"></i><i class="w4"></i></div><div class="tel"><img src="https://hola-laura.github.io/laura/assets/drivo/home-ios.png" alt="" loading="lazy"></div><span class="eti e1">Boceto</span><span class="eti e2">Diseño final</span></div>
 <h3>Diseño de producto</h3><p>Si ya tenéis un producto, lo hago más claro y fácil de usar. Es lo que hacía en Monzo.</p></article>
 </div>
 </div></section>
 
 <section class="b casos-s"><div class="wrap">
-<div class="tit r"><span class="mono">Casos reales</span><h2>Antes y después</h2></div>
+<div class="tit r"><span class="mono">Casos reales</span><h2>Antes y después<i class="pt"></i></h2></div>
 
 <a class="caso r" href="/caso-presupuestos-construccion">
 <div class="caso-t"><span class="mono">Empresa de construcción · Software a medida</span><h3>Presupuestos listos sin dejar la obra</h3>
@@ -222,22 +234,21 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 </a>
 </div></section>
 
-<section class="b fit-s"><div class="wrap">
-<div class="tit r"><span class="mono">¿Encaja?</span><h2>Para quién es</h2></div>
-<div class="fit">
-<div class="fit-si r"><h3>Encaja si…</h3><ul><li>Tu equipo pasa horas cada semana copiando datos entre programas u hojas de cálculo.</li><li>Hacéis presupuestos, informes o documentos que siempre siguen el mismo patrón.</li><li>Usáis varias herramientas que no se hablan entre sí.</li><li>Queréis hablar directamente con quien lo diseña y lo construye, seáis un equipo de 3 personas o de 300.</li></ul></div>
-<div class="fit-no r"><h3>Mejor algo más sencillo si…</h3><ul><li>Solo necesitas una web, una marca o reservas online: mira los <a href="/negocios#precios">servicios para negocios</a>.</li><li>Ya existe un programa estándar que te sirve tal cual.</li></ul></div>
-</div>
-</div></section>
-
 <section class="calc-s"><div class="wrap calc-g">
 <div class="r"><span class="mono">Haz la cuenta</span><h2>¿Cuánto os cuesta hacerlo a mano?</h2><p>Cambia los números y mira lo que se va cada año en tareas que podrían hacerse solas.</p>
-<div class="ins"><label>Personas que lo hacen<input type="number" id="cp" min="1" max="500" value="3" inputmode="numeric"></label><label>Horas a la semana, cada una<input type="number" id="ch" min="1" max="40" value="4" inputmode="numeric"></label><label>Coste por hora (€)<input type="number" id="ce" min="5" max="200" value="20" inputmode="numeric"></label></div></div>
+<div class="ins"><label>Personas<input type="number" id="cp" min="1" max="500" value="3" inputmode="numeric"></label><label>Horas por semana, cada una<input type="number" id="ch" min="1" max="40" value="4" inputmode="numeric"></label><label>Coste por hora (€)<input type="number" id="ce" min="5" max="200" value="20" inputmode="numeric"></label></div></div>
 <div class="res r" aria-live="polite"><div><span class="mono">Horas al año</span><strong id="rh">552</strong></div><div><span class="mono">Euros al año</span><strong id="re">11.040€</strong></div><p class="nota">Estimación orientativa con 46 semanas de trabajo al año.</p></div>
 </div></section>
 
+<section class="precio-s"><div class="wrap"><div class="precio-g r">
+<div><span class="mono">Cuánto cuesta</span><p class="grande">Desde 3.000€</p></div>
+<div><ul class="chips"><li>Precio cerrado antes de empezar</li><li>Sin IVA</li><li>Mantenimiento opcional</li></ul><p class="comp">Con los números de la calculadora, hoy se van <b id="re2">11.040€</b> al año en trabajo a mano.</p><p>Para negocios pequeños también hago <a href="/negocios#precios">webs, reservas y automatizaciones sencillas</a> con precios publicados.</p></div>
+</div></div></section>
+
+
+
 <section class="b"><div class="wrap">
-<div class="tit r"><span class="mono">Cómo trabajo</span><h2>De la primera charla a funcionando</h2></div>
+<div class="tit r"><span class="mono">Cómo trabajo</span><h2>De la primera charla a funcionando<i class="pt"></i></h2></div>
 <ol class="linea r">
 <li><span class="num">1</span><h3>Una conversación gratis</h3><p>Me cuentas cómo trabaja tu equipo y dónde se pierde tiempo. Por videollamada o, en Madrid, en vuestra oficina. También puedes escribirme sin reservar reunión.</p></li>
 <li><span class="num">2</span><h3>Te enseño cómo funcionaría</h3><p>Una demo con tu caso y una propuesta con alcance, precio cerrado y plazo.</p></li>
@@ -246,18 +257,19 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 </ol>
 </div></section>
 
-<section class="precio-s"><div class="wrap"><div class="precio-g r">
-<div><span class="mono">Cuánto cuesta</span><p class="grande">Desde 3.000€</p></div>
-<div><ul class="chips"><li>Precio cerrado antes de empezar</li><li>Sin IVA</li><li>Mantenimiento opcional</li></ul><p>Para negocios pequeños también hago <a href="/negocios#precios">webs, reservas y automatizaciones sencillas</a> con precios publicados.</p></div>
-</div></div></section>
-
-<section class="b yo-s"><div class="wrap yo">
+<section class="b fit-s" style="padding-top:0"><div class="wrap">
+<div class="tit r"><span class="mono">¿Encaja?</span><h2>Para quién es<i class="pt"></i></h2></div>
+<div class="fit">
+<div class="fit-si r"><h3>Encaja si…</h3><ul><li>Tu equipo pasa horas cada semana copiando datos entre programas u hojas de cálculo.</li><li>Hacéis presupuestos, informes o documentos que siempre siguen el mismo patrón.</li><li>Usáis varias herramientas que no se hablan entre sí.</li><li>Queréis hablar directamente con quien lo diseña y lo construye, seáis un equipo de 3 personas o de 300.</li></ul></div>
+<div class="fit-no r"><h3>Mejor algo más sencillo si…</h3><ul><li>Solo necesitas una web, una marca o reservas online: mira los <a href="/negocios#precios">servicios para negocios</a>.</li><li>Ya existe un programa estándar que te sirve tal cual.</li></ul></div>
+</div>
+</div></section><section class="b yo-s"><div class="wrap yo">
 <div class="r"><span class="mono">Por qué yo</span><h2>Hablas con quien lo diseña y lo construye<i class="pt"></i></h2></div>
 <div class="r"><p>He diseñado productos digitales que usan millones de personas y he publicado mi propia app. Ahora aplico lo mismo a herramientas que tu equipo use sin manual.</p><div class="marcas"><span>Monzo</span><span>Just Eat</span><span>RLDatix</span><span>Drivo Test</span></div><div class="ctas"><a class="btn claro" href="/sobre-laura">Más sobre mí</a><a class="btn claro" href="https://hola-laura.github.io/laura/" target="_blank" rel="noopener">Mi portfolio</a></div></div>
 </div></section>
 
 <section class="b"><div class="wrap faq-g">
-<div class="r"><span class="mono">Dudas</span><h2>Preguntas frecuentes</h2></div>
+<div class="r"><span class="mono">Dudas</span><h2>Preguntas frecuentes<i class="pt"></i></h2></div>
 <div class="faq r">
 <details><summary>¿Hace falta saber qué automatizar?</summary><p>No. Me cuentas cómo trabaja tu equipo y lo vemos juntos en la primera conversación, que es gratis.</p></details>
 <details><summary>¿Trabajas con empresas fuera de Madrid?</summary><p>Sí. Trabajo en remoto con empresas de toda España. Si estáis en Madrid, también puedo ir a vuestra oficina.</p></details>
@@ -298,7 +310,7 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 </div></footer>
 <script>
 (()=>{const io=new IntersectionObserver((es)=>es.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('en');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.r').forEach((el)=>io.observe(el));
-const g=(i)=>Math.max(0,+document.getElementById(i).value||0),f=new Intl.NumberFormat('es-ES'),u=()=>{const h=g('cp')*g('ch')*46;document.getElementById('rh').textContent=f.format(h);document.getElementById('re').textContent=f.format(Math.round(h*g('ce')))+'€'};['cp','ch','ce'].forEach((i)=>document.getElementById(i).addEventListener('input',u));u()})();
+const g=(i)=>Math.max(0,+document.getElementById(i).value||0),f=new Intl.NumberFormat('es-ES'),u=()=>{const h=g('cp')*g('ch')*46;document.getElementById('rh').textContent=f.format(h);document.getElementById('re').textContent=document.getElementById('re2').textContent=f.format(Math.round(h*g('ce')))+'€'};['cp','ch','ce'].forEach((i)=>document.getElementById(i).addEventListener('input',u));u()})();
 </script>
 </body>
 </html>
