@@ -883,27 +883,27 @@ const SECTORS = [
     fText: 'Cada solicitud recibe respuesta automática con la información del curso y tú ves a quién hacer seguimiento.',
     flow: ['Entra una solicitud de curso', 'Se guarda en tu lista de interesados', 'Recibe la información del curso', 'Recordatorio de seguimiento'], rec: 'Automatización sencilla' }
 ];
-const mkTheme = (a, on, h, ink, mut, soft, bg, rgb) => ({ a, on, h, ink, mut, soft, bg, rgb, line: 'rgba(' + rgb + ', 0.18)' });
+const mkTheme = (a, on, h, ink, mut, soft, bg, rgb, x) => ({ a, on, h, ink, mut, soft, bg, rgb, x: x || soft, line: 'rgba(' + rgb + ', 0.18)' });
 const THEMES = {
-  pelu: mkTheme('#B8325F', '#FFFFFF', '#B8325F', '#3D0F22', '#6F4657', '#FBD5E1', '#FFF0F5', '61, 15, 34'),
-  rest: mkTheme('#C2410C', '#FFFFFF', '#C2410C', '#3B1706', '#6D4A33', '#FFDDB8', '#FFF3E6', '59, 23, 6'),
-  idio: mkTheme('#5B3FC4', '#FFFFFF', '#5B3FC4', '#1F1547', '#544C7A', '#DDD6FB', '#F3F1FF', '31, 21, 71'),
-  elec: mkTheme('#FFC21A', '#221C06', '#221C06', '#221C06', '#665B2A', '#FFEBA6', '#FFF9E0', '34, 28, 6'),
-  font: mkTheme('#0B5CAD', '#FFFFFF', '#0B5CAD', '#072A4D', '#40607F', '#CFE6FA', '#EEF7FF', '7, 42, 77'),
-  tall: mkTheme('#37474F', '#FFFFFF', '#37474F', '#1B2529', '#4E5F67', '#D6DEE2', '#F2F5F6', '27, 37, 41'),
-  clin: mkTheme('#0F766E', '#FFFFFF', '#0F766E', '#06332F', '#3D6460', '#C9EFE9', '#EFFAF8', '6, 51, 47'),
-  gym: mkTheme('#C8102E', '#FFFFFF', '#C8102E', '#3A0710', '#70404A', '#FFD3D9', '#FFF1F2', '58, 7, 16'),
-  tien: mkTheme('#2E7D32', '#FFFFFF', '#2E7D32', '#12331A', '#47644C', '#D3EBCF', '#F2FAF0', '18, 51, 26'),
+  pelu: mkTheme('#D6336C', '#FFFFFF', '#D6336C', '#4A1238', '#603C55', '#FFD6E2', '#FFF2F6', '74, 18, 56', '#FFE38A'),
+  rest: mkTheme('#FD550A', '#1C0A02', '#015D47', '#015D47', '#316D5E', '#FFDCC7', '#FFF3EB', '1, 93, 71', '#E0F354'),
+  idio: mkTheme('#6331FB', '#FFFFFF', '#6331FB', '#01010D', '#313139', '#DDD3FF', '#F4F0FF', '1, 1, 13', '#88F9C0'),
+  elec: mkTheme('#FFD60A', '#0B1A2E', '#0B1A2E', '#0B1A2E', '#37414E', '#FFF1A8', '#FFFBE6', '11, 26, 46', '#4D86FF'),
+  font: mkTheme('#0068A8', '#FFFFFF', '#0068A8', '#062B3D', '#344C58', '#D2EFFF', '#EFF9FF', '6, 43, 61', '#FF7A59'),
+  tall: mkTheme('#D7261E', '#FFFFFF', '#D7261E', '#16181D', '#3F4043', '#E4E6EA', '#F5F6F8', '22, 24, 29', '#FFC93C'),
+  clin: mkTheme('#0E7F74', '#FFFFFF', '#0E7F74', '#0B3B36', '#375753', '#D3F3EC', '#EFFBF8', '11, 59, 54', '#FFB08A'),
+  gym: mkTheme('#C6F432', '#0D0D0D', '#0D0D0D', '#0D0D0D', '#393939', '#EEFFC4', '#F9FFEC', '13, 13, 13', '#FF4D94'),
+  tien: mkTheme('#B84A33', '#FFFFFF', '#B84A33', '#2B1B12', '#4C423C', '#F6E2D3', '#FCF5EF', '43, 27, 18', '#A9C9A1'),
   otro: mkTheme('#004833', '#FFFFFF', '#004833', '#3A120A', '#6E4A40', '#FFD9C7', '#FFEFE6', '58, 18, 10'),
   pilates: mkTheme('#3F7265', '#FFFFFF', '#3F7265', '#14302A', '#47635C', '#D5E8E2', '#F1F8F5', '20, 48, 42'),
   academiapeluqueria: mkTheme('#8E2D6F', '#FFFFFF', '#8E2D6F', '#340D29', '#68445E', '#F3D3E9', '#FCF0F8', '52, 13, 41'),
-  dent: mkTheme('#0284A8', '#FFFFFF', '#0284A8', '#06303D', '#3F6673', '#CBEBF5', '#EEF9FC', '6, 48, 61'),
-  farm: mkTheme('#00875A', '#FFFFFF', '#00875A', '#04331F', '#3C6452', '#C4F0DC', '#EEFBF5', '4, 51, 31'),
-  vet: mkTheme('#A65A12', '#FFFFFF', '#A65A12', '#3A1F06', '#6E5236', '#FBE2BE', '#FFF6E9', '58, 31, 6'),
-  fincas: mkTheme('#3B4BA3', '#FFFFFF', '#3B4BA3', '#151C47', '#4C527A', '#D7DBF7', '#F2F3FE', '21, 28, 71'),
-  gest: mkTheme('#7A2E3A', '#FFFFFF', '#7A2E3A', '#33101A', '#6B454E', '#F5D6DC', '#FDF1F3', '51, 16, 26'),
-  inmo: mkTheme('#5F6B1E', '#FFFFFF', '#5F6B1E', '#262B0A', '#5A5F3C', '#E6EBBE', '#F9FAE9', '38, 43, 10'),
-  refo: mkTheme('#7C4A21', '#FFFFFF', '#7C4A21', '#2F1A09', '#66503D', '#EEDCC8', '#FAF4EC', '47, 26, 9')
+  dent: mkTheme('#072D59', '#FFFFFF', '#072D59', '#072D59', '#354E6A', '#DBF2FC', '#F2FAFE', '7, 45, 89', '#FD6E88'),
+  farm: mkTheme('#00875A', '#FFFFFF', '#00875A', '#003B2B', '#30574C', '#D2F6E6', '#EFFCF6', '0, 59, 43', '#B9A5FF'),
+  vet: mkTheme('#F4A300', '#241A52', '#241A52', '#241A52', '#484166', '#FFEDC2', '#FFF9EC', '36, 26, 82', '#8FD3FF'),
+  fincas: mkTheme('#3D5AA8', '#FFFFFF', '#3D5AA8', '#1E2A44', '#444C5C', '#DCE4F7', '#F3F6FD', '30, 42, 68', '#FFB86B'),
+  gest: mkTheme('#8C1D40', '#FFFFFF', '#8C1D40', '#1B1F3B', '#424457', '#F3DAE2', '#FDF3F6', '27, 31, 59', '#F2C14E'),
+  inmo: mkTheme('#1F6F50', '#FFFFFF', '#1F6F50', '#0E2A23', '#394C47', '#E2EFD4', '#F6FAF0', '14, 42, 35', '#E8875A'),
+  refo: mkTheme('#A0522A', '#FFFFFF', '#A0522A', '#2B1D14', '#4C433D', '#F1E1D1', '#FBF6F0', '43, 29, 20', '#4C86FA')
 };
 const FORM_URL='https://script.google.com/macros/s/AKfycbyzG0kePIy7Br2kr5oX7gncFMFjbJXAxXtv6JI6gpeqZ8cgGsO2_MjK0cDdbmXMshV0/exec';
 const VID='https://videos.pexels.com/video-files/';
@@ -916,7 +916,7 @@ let cur=null;
 const conPunto=(t)=>t.endsWith('.')?t.slice(0,-1)+'<i class="pt"></i>':t;
 const clip=()=>'<span class="clip"><video muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video></span>';
 const pintaTema=(id)=>{const t=THEMES[id]||THEMES.otro,r=document.documentElement.style;
-r.setProperty('--a',t.a);r.setProperty('--on',t.on);r.setProperty('--h',t.h);r.setProperty('--soft',id==='otro'?'#A8C8F8':t.soft);r.setProperty('--dark',id==='otro'?'#004833':t.ink);r.setProperty('--c2',id==='otro'?'#EEF3FB':t.bg);r.setProperty('--c3',id==='otro'?'#FCB0F8':t.soft);};
+r.setProperty('--a',t.a);r.setProperty('--on',t.on);r.setProperty('--h',t.h);r.setProperty('--soft',id==='otro'?'#A8C8F8':t.soft);r.setProperty('--dark',id==='otro'?'#004833':t.ink);r.setProperty('--c2',id==='otro'?'#EEF3FB':t.bg);r.setProperty('--c3',id==='otro'?'#FCB0F8':t.x);};
 const pinta=(id)=>{const s=SECTORS.find((x)=>x.id===id)||SECTORS.find((x)=>x.id==='otro');cur=s;
 if($('sectorValue'))$('sectorValue').textContent=s.label;
 pintaTema(s.id);
