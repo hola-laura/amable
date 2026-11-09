@@ -1,14 +1,15 @@
 # Amable
 
-> Amable (Amable Agencia) es una agencia de diseño de Laura Sampedro de la Rosa para pequeños negocios de Madrid: diseño de marca, webs, aplicaciones, reservas online, automatización y gestión de redes.
+> Amable (Amable Agencia) es el estudio de Laura Sampedro de la Rosa, diseñadora de producto: software a medida y automatización con IA para empresas, y diseño de marca, webs, reservas online y gestión de redes para negocios.
 
-Precios sin IVA: web sencilla 800€, reservas online 600€, gestión básica de redes 350€/mes, automatización sencilla 350€, calendario de contenidos 200€, 4 publicaciones 160€. Los 20 primeros negocios del barrio (Urgel, Oporto y Marqués de Vadillo) pagan la mitad en su primer servicio. El diseño de logos y material gráfico se presupuesta a medida.
+Precios sin IVA: web sencilla 800€, reservas online 600€, gestión básica de redes 350€/mes, automatización sencilla 350€, calendario de contenidos 200€, 4 publicaciones 160€. Los 20 primeros clientes pagan la mitad en su primer servicio. Los proyectos de software a medida para empresas empiezan en 3.000€. El diseño de logos y material gráfico se presupuesta a medida.
 
 Laura ha diseñado productos digitales para Monzo, Just Eat y RLDatix y ha publicado su propia app, Drivo Test.
 
-Laura trabaja normalmente por videollamada y puede reunirse en el negocio del cliente en cualquier punto de Madrid cuando el proyecto lo requiere.
+Laura trabaja en remoto con empresas de toda España y, en Madrid, también en persona.
 
 ## Servicios
+- [Software a medida y automatización con IA para empresas](https://amableagencia.com/empresas)
 - [Diseño web](https://amableagencia.com/diseno-web-madrid)
 - [Logos y marca](https://amableagencia.com/diseno-logos-madrid)
 - [Reservas online](https://amableagencia.com/reservas-online-negocios-madrid)
