@@ -130,6 +130,21 @@ section.b{padding:clamp(80px,10vw,136px) 0}
 header.h{background-image:var(--grano),radial-gradient(55% 80% at 95% 5%,color-mix(in srgb,#FCB0F8 85%,transparent),transparent 72%),radial-gradient(50% 70% at 0% 100%,color-mix(in srgb,#004833 18%,transparent),transparent 72%);background-blend-mode:overlay,normal,normal;background-size:220px,auto,auto}
 section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color-mix(in srgb,#A8C8F8 35%,transparent),transparent 72%),radial-gradient(60% 80% at 0% 100%,rgba(0,0,0,.28),transparent 72%);background-blend-mode:overlay,normal,normal;background-size:220px,auto,auto}
 /* fin degradado */
+/* hero centrado */
+.hero{margin:12px 12px 0;border-radius:36px;padding:clamp(150px,15vw,190px) 0 clamp(56px,7vw,88px);text-align:center;background:#F3F5F9;background-image:var(--grano),radial-gradient(70% 55% at 50% 108%,rgba(168,200,248,.95),transparent 70%),radial-gradient(45% 40% at 85% 100%,rgba(252,176,248,.75),transparent 70%),radial-gradient(40% 35% at 12% 100%,rgba(0,72,51,.12),transparent 70%);background-blend-mode:overlay,normal,normal,normal;background-size:220px,auto,auto,auto}
+.hero .mono{font-size:12px;letter-spacing:.14em}
+.hero h1{font-size:clamp(44px,6.4vw,92px);line-height:1;letter-spacing:-.035em;margin:20px auto 0;max-width:13em}
+.hero h1 span{display:block}.hero h1 span+span{padding-left:0}
+.hero h1 .s1{font-family:var(--sans);font-weight:600;letter-spacing:-.045em}
+.hero h1 .s2{font-family:var(--serif);font-weight:400;letter-spacing:-.02em}
+.puertas{max-width:1000px;margin:clamp(48px,6vw,72px) auto 0;text-align:left;gap:14px}
+.puerta{min-height:0;padding:clamp(24px,2.6vw,32px);border-radius:26px}
+.puerta.neg{box-shadow:0 1px 0 rgba(17,17,17,.06),0 20px 50px -34px rgba(20,40,80,.35)}
+.puerta h2{font-size:clamp(26px,2.6vw,34px);line-height:1.08;margin:10px 0 10px}
+.puerta p{font-size:16px;margin-bottom:18px}
+.tags{margin-bottom:22px}.tags li{font-size:13px;padding:5px 11px}
+.ir .fl{width:42px;height:42px}
+@media (max-width:820px){.hero{margin:8px 8px 0;border-radius:26px}}
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://amableagencia.com/#negocio","name":"Amable","alternateName":"Amable Agencia","url":"https://amableagencia.com/","image":"https://amableagencia.com/img/og.png","logo":"https://amableagencia.com/favicon.png","priceRange":"€€","knowsAbout":["Diseño web","Diseño de marca","Reservas online","Automatización","Diseño de producto"],"description":"Software a medida, automatización con IA, diseño de producto, webs y marca para empresas y negocios. En remoto y, en Madrid, también en persona.","founder":{"@type":"Person","name":"Laura Sampedro de la Rosa","jobTitle":"Diseñadora de producto"},"address":{"@type":"PostalAddress","addressLocality":"Madrid","addressRegion":"Madrid","addressCountry":"ES"},"areaServed":[{"@type":"City","name":"Madrid"},{"@type":"Country","name":"España"}],"knowsLanguage":["es","en"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño de marca y logotipos"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño web"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Aplicaciones a medida"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Reservas online"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatización"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestión de redes sociales"}}]},{"@type":"WebSite","@id":"https://amableagencia.com/#web","url":"https://amableagencia.com/","name":"Amable","inLanguage":"es"}]}</script>
@@ -141,7 +156,7 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 <main id="inicio">
 <section class="hero"><div class="wrap">
 <p class="mono">Diseño de producto · Software · Automatización</p>
-<h1><span>Menos tareas.</span><span>Más clientes<i class="pt"></i></span></h1>
+<h1><span class="s1">Menos tareas,</span> <span class="s2">más clientes<i class="pt"></i></span></h1>
 <div class="puertas">
 <a class="puerta neg" href="/negocios"><span class="mono">Tengo un negocio</span><h2>Que te encuentren y te reserven</h2><p>Para peluquerías, restaurantes, clínicas, talleres, academias y cualquier negocio que atiende a clientes.</p><ul class="tags"><li>Web</li><li>Marca y logo</li><li>Reservas online</li><li>Redes</li><li>Automatizaciones sencillas</li></ul><span class="ir"><span><b>Ver opciones para negocios</b><br><span class="precio">Precios publicados · web desde 800€</span></span><span class="fl" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
 <a class="puerta emp" href="/empresas"><span class="mono">Tengo una empresa</span><h2>Que tu equipo deje de hacerlo a mano</h2><p>Para equipos que pierden horas copiando datos, preparando documentos o saltando entre programas.</p><ul class="tags"><li>Software a medida</li><li>Automatización con IA</li><li>Herramientas internas</li><li>Diseño de producto</li></ul><span class="ir"><span><b>Ver opciones para empresas</b><br><span class="precio">Proyectos desde 3.000€</span></span><span class="fl" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
