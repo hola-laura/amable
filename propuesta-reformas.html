@@ -99,79 +99,114 @@ h1 em{color:var(--green);font-style:normal}
 .review-top b{font-size:11px}
 .review-card p{margin:6px 0 10px;color:#68736d;font-size:9px}
 .review-card button{min-height:44px;width:100%;border:1px solid #cbd9d1;border-radius:9px;background:#f7faf8;color:var(--green);font:650 10px -apple-system,BlinkMacSystemFont,sans-serif}
-.case-phones{display:flex;justify-content:center;align-items:center;gap:15px;min-width:0}
-.mini-phone{position:relative;width:min(48%,230px);aspect-ratio:393/852;padding:5px;border-radius:34px;background:linear-gradient(145deg,#404542,#101311);box-shadow:0 22px 42px rgba(0,0,0,.24)}
-.mini-phone:first-child{transform:rotate(-3deg) translateY(18px)}
-.mini-phone:last-child{transform:rotate(3deg) translateY(-12px)}
-.mini-screen{height:100%;overflow:hidden;border-radius:29px;background:#f6f7f5;color:#151816;font:400 10px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}
-.mini-status{height:32px;display:flex;justify-content:space-between;align-items:center;padding:5px 13px 0;font-size:8px;font-weight:700}
-.mini-island{position:relative;margin:-26px auto 12px;width:68px;height:20px;border-radius:15px;background:#050505}
-.mini-app{padding:3px 12px 12px}
-.mini-brand{font-size:7px;letter-spacing:.12em;font-weight:700;color:#60786b}
-.mini-title{margin:7px 0;font-size:17px;line-height:1.05;font-weight:750;letter-spacing:-.04em}
+.case-phones{display:flex;justify-content:center;align-items:flex-start;gap:24px;min-width:0}
+.mini-phone{position:relative;width:min(48%,250px);aspect-ratio:393/852;padding:5px;border-radius:34px;background:#242825;box-shadow:0 12px 28px rgba(15,35,26,.12);flex:none}
+.mini-screen{position:relative;height:100%;overflow:hidden;border-radius:31px;background:#f6f7f5;color:#151816;display:flex;flex-direction:column;font:400 10px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}
+.mini-status{height:38px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:6px 13px 0;font-size:9px;font-weight:700}
+.mini-island{position:absolute;z-index:3;top:7px;left:50%;transform:translateX(-50%);width:66px;height:19px;border-radius:15px;background:#050505}
+.mini-app{flex:1;min-height:0;overflow:hidden;padding:7px 12px 10px}
+.mini-navrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px;color:#52655b;font-size:10px}
+.mini-navrow b{font-size:8px;letter-spacing:.1em}
+.mini-brand{display:block;font-size:8px;letter-spacing:.1em;font-weight:700;color:#60786b}
+.mini-title{margin:6px 0;font-size:16px;line-height:1.08;font-weight:700;letter-spacing:-.035em}
 .mini-copy{font-size:9px;color:#6a756e}
-.mini-voice{padding:11px;margin:14px 0;border-radius:12px;background:#e7f0eb;color:#355c49;font-size:9px}
-.mini-action{min-height:35px;display:grid;place-items:center;border-radius:10px;background:var(--green);color:white;font-size:9px;font-weight:700}
-.mini-row{padding:10px 0;border-bottom:1px solid #e1e7e3;font-size:9px}
-.mini-row b{display:block;font-size:10px}
-.mini-total{margin:14px 0;padding:12px;border-radius:11px;background:#fff;border:1px solid #e3e8e4}
-.mini-total strong{display:block;margin-top:4px;font-size:16px}
-.mini-caption{position:absolute;left:0;right:0;bottom:-32px;text-align:center;color:rgba(255,255,255,.8);font:9px var(--mono);letter-spacing:.04em;text-transform:uppercase}
+.mini-field{margin:10px 0;padding:9px 10px;border:1px solid #e0e5e2;border-radius:10px;background:#fff}
+.mini-field label{display:block;margin-bottom:4px;color:#77827b;font-size:7px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.mini-field strong{font-size:9px;font-weight:600}
+.mini-voice{display:flex;align-items:center;gap:8px;margin:10px 0;padding:9px;border-radius:10px;background:#e7f0eb;color:#355c49;font-size:8px}
+.mini-voice-icon{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:var(--green);color:#fff;font-size:12px}
+.mini-action{min-height:38px;display:grid;place-items:center;border-radius:9px;background:var(--green);color:white;font-size:9px;font-weight:700}
+.mini-row{display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid #e1e7e3;font-size:8px}
+.mini-row b{display:block;font-size:9px}
+.mini-total{margin:9px 0;padding:10px;border-radius:10px;background:#fff;border:1px solid #e3e8e4}
+.mini-total strong{display:block;margin-top:4px;font-size:14px}
+.mini-tabs{height:45px;flex:none;display:flex;justify-content:space-around;align-items:center;border-top:1px solid #e4e8e5;background:#fff}
+.mini-tabs span{font-size:7px;color:#748078}
+.mini-tabs .selected{color:var(--green);font-weight:700}
+.mini-caption{margin-top:12px;text-align:center;color:var(--muted);font:10px var(--mono);letter-spacing:.04em;text-transform:uppercase}
 .proof{padding:22px 0;border-bottom:1px solid var(--line)}
 .proof{padding:22px 0;border-bottom:1px solid var(--line)}
 .proof-grid{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .proof span{font-size:13px;color:var(--muted)}
 .proof strong{color:var(--ink);font-weight:600}
-section{padding:clamp(76px,10vw,128px) 0}
+section{padding:clamp(64px,7vw,96px) 0}
 .section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:42px}
 .section-head h2{max-width:670px;font-size:clamp(38px,5vw,64px);line-height:1.03}
 .section-head p{max-width:370px;color:var(--muted)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.step{min-height:230px;padding:26px;border:1px solid var(--line);border-radius:18px;display:flex;flex-direction:column;justify-content:space-between;background:#fff}
-.step:nth-child(2){background:var(--stone)}
-.step .num{font:12px var(--mono);color:var(--green)}
-.step h3{font-size:27px;line-height:1.1;margin:22px 0 10px}
-.step p{max-width:32em;font-size:15px;color:var(--muted)}
-.case{background:var(--green);color:#fff}
-.case .mono,.case .case-copy p{color:rgba(255,255,255,.75)}
+.process-section{padding:72px 0}
+.process-section .section-head{margin-bottom:24px}
+.process-section .section-head h2{font-size:clamp(34px,4vw,50px)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.step{min-height:0;padding:22px;border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column;justify-content:flex-start;gap:12px;background:#fff}
+.step .num{width:36px;height:36px;flex:none;border-radius:50%;display:grid;place-items:center;background:#eaf2ee;color:var(--green);font:12px var(--mono)}
+.step h3{font:650 17px/1.25 var(--sans);margin:0 0 6px}
+.step p{font-size:13px;line-height:1.5;color:var(--muted)}
+.case{background:var(--stone);color:var(--ink)}
+.case .mono,.case .case-copy p{color:var(--muted)}
 .case-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,8vw,110px);align-items:center}
 .case h2{margin:18px 0 20px;font-size:clamp(40px,5.6vw,68px);line-height:1.02}
 .case-copy p{max-width:500px;font-size:18px}
-.case-copy .button{margin-top:26px;background:#fff;color:var(--green)}
+.case-copy .button{margin-top:26px;background:var(--green);color:#fff}
 .case-photos{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:14px}
 .case-photos img{width:100%;border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.2)}
 .case-photos img:first-child{transform:translateY(25px) rotate(-2deg)}
 .case-photos img:last-child{transform:translateY(-18px) rotate(2deg)}
 .offers{background:var(--stone)}
-.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.offer{padding:30px;border-radius:20px;background:#fff;border:1px solid var(--line)}
-.offer.featured{background:var(--green);color:#fff}
+.offer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.offer{min-height:0;padding:26px;border-radius:16px;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start}
+.offer.featured{background:#fff;color:var(--ink);border-top:4px solid var(--green);padding-top:23px}
 .offer .tag{font:11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--green)}
-.offer.featured .tag{color:#b7d2c8}
-.offer h3{margin:14px 0 10px;font-size:32px;line-height:1.1}
+.offer h3{margin:12px 0 8px;font-size:27px;line-height:1.1}
 .offer p{max-width:44em;color:var(--muted);font-size:15px}
-.offer.featured p{color:rgba(255,255,255,.78)}
-.price{margin-top:24px;font:34px/1.1 var(--serif)}
-.price small{font:13px var(--sans);opacity:.75}
-.launch{display:inline-block;margin-top:8px;padding:6px 10px;border-radius:999px;background:#e8f0ec;color:var(--green);font-size:12px;font-weight:600}
-.other{padding-top:0;background:var(--stone)}
+.offer-price{margin-top:18px;padding-top:0;font:32px/1.05 var(--serif);color:var(--ink)}
+.offer-price small{font:13px var(--sans);color:var(--muted)}
+.launch{display:block;margin-top:10px;padding:10px 12px;border-radius:10px;background:#eaf2ee;color:var(--green);font-size:13px;line-height:1.4}
+.launch strong{font-size:15px}
+.offer-link{display:inline-block;margin-top:14px;color:var(--green);font-size:13px;font-weight:700;text-decoration-thickness:1px;text-underline-offset:4px}
+.offer-foot{margin-top:8px;font-size:11px!important}
+.other{padding:0 0 54px;background:var(--stone)}
 .other-box{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:30px;border-top:1px solid var(--line)}
 .other-box h3{font-size:27px}
 .other-box p{max-width:620px;color:var(--muted);font-size:15px}
 .other-links{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
 .pill{padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-size:12px}
-.process{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:42px}
-.process article{border-top:1px solid var(--line);padding-top:17px}
-.process b{display:block;font:12px var(--mono);color:var(--green);margin-bottom:15px}
-.process h3{font:500 19px var(--sans);margin-bottom:6px}
-.process p{font-size:14px;color:var(--muted)}
+.how{padding:76px 0;background:var(--stone)}
+.how-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:28px}
+.how-head h2{max-width:660px;margin-top:12px;font-size:clamp(36px,4.4vw,54px);line-height:1.04}
+.how-head>p{max-width:340px;color:var(--muted);font-size:16px}
+.process{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:0}
+.process article{min-height:176px;padding:22px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.process b{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:#eaf2ee;color:var(--green);font:12px var(--mono);margin-bottom:18px}
+.process h3{font:650 19px/1.2 var(--sans);margin-bottom:8px}
+.process p{max-width:32em;font-size:14px;line-height:1.5;color:var(--muted)}
+.mini-copy{font-size:10px}
+.mini-field label{font-size:8px}
+.mini-field strong{font-size:10px}
+.mini-row{font-size:9px}
+.mini-row b{font-size:10px}
+.mini-tabs span{font-size:8px}
+.step:last-child{border-right:1px solid var(--line)}
+.mini-total{font-size:13px}
+@media(max-width:850px){.how-head{display:block}.how-head>p{margin-top:14px}}
+@media(max-width:600px){.step{border:1px solid var(--line);border-radius:14px;padding:18px}.step:last-child{border-bottom:1px solid var(--line)}.how{padding:60px 0}.process article{min-height:0;padding:18px}.process b{margin-bottom:14px}.how-head{margin-bottom:20px}}
 .final{padding:86px 0;background:var(--blue)}
 .final-row{display:flex;justify-content:space-between;align-items:center;gap:30px}
 .final h2{max-width:680px;font-size:clamp(38px,5vw,62px);line-height:1.02}
 .final .button{background:var(--ink)}
 footer{padding:24px 0;color:var(--muted);font-size:12px}
-@media(max-width:850px){.topbar{padding:0 24px}.nav{display:none}.hero-grid,.case-grid{grid-template-columns:1fr}.hero{padding-top:55px}.visual{min-height:auto;margin-top:5px}.iphone16{width:min(100%,340px)}.section-head{display:block}.section-head p{margin-top:18px}.case-photos{max-width:540px;margin:10px auto 0}}
-@media(max-width:600px){body{font-size:16px}.wrap{width:min(100% - 36px,var(--width))}.topbar{height:68px;padding:0 18px}.topbar>.button{min-height:42px;padding:0 15px;font-size:13px}.hero{padding:48px 0 46px}h1{font-size:clamp(42px,12vw,58px)}.intro{font-size:17px}.actions{align-items:stretch;flex-direction:column}.actions .button{width:100%}.visual{min-height:auto;margin:14px 0 0}.iphone16{width:min(100%,340px)}.phone-label{font-size:10px}.case-phones{gap:8px}.mini-phone{width:48%;padding:4px;border-radius:28px}.mini-screen{border-radius:24px}.mini-app{padding:2px 8px 10px}.mini-title{font-size:14px}.mini-copy,.mini-row{font-size:8px}.mini-voice{padding:8px;font-size:8px}.mini-caption{font-size:7px;bottom:-27px}.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.steps,.offer-grid,.process{grid-template-columns:1fr}.step{min-height:190px}.case-photos{gap:8px}.case-photos img:first-child{transform:translateY(15px) rotate(-2deg)}.case-photos img:last-child{transform:translateY(-8px) rotate(2deg)}.offer{padding:24px}.other-box,.final-row{display:block}.other-box .button,.final .button{margin-top:22px}.final{padding:64px 0}}
+@media(max-width:850px){.topbar{padding:0 24px}.nav{display:none}.hero-grid,.case-grid{grid-template-columns:1fr}.hero{padding-top:55px}.visual{min-height:auto;margin-top:5px}.iphone16{width:min(100%,340px)}.section-head{display:block}.section-head p{margin-top:14px}.case-phones{max-width:540px;margin:12px auto 0}}
+@media(max-width:600px){body{font-size:16px}.wrap{width:min(100% - 36px,var(--width))}.topbar{height:68px;padding:0 18px}.topbar>.button{min-height:42px;padding:0 15px;font-size:13px}.hero{padding:48px 0 46px}h1{font-size:clamp(42px,12vw,58px)}.intro{font-size:17px}.actions{align-items:stretch;flex-direction:column}.actions .button{width:100%}.visual{min-height:auto;margin:14px 0 0}.iphone16{width:min(100%,340px)}.phone-label{font-size:10px}.case-phones{gap:8px}.mini-phone{width:48%;padding:4px;border-radius:28px}.mini-screen{border-radius:24px}.mini-app{padding:2px 8px 10px}.mini-title{font-size:14px}.mini-copy,.mini-row{font-size:8px}.mini-voice{padding:8px;font-size:8px}.mini-caption{font-size:7px;bottom:-27px}.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.steps,.offer-grid{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line);padding:18px 20px}.step:last-child{border-bottom:0}.case-phones{justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 28px}.mini-phone{width:min(70vw,250px);scroll-snap-align:center}.offer{min-height:0;padding:22px}.offer.featured{padding-top:19px}.offer-price{padding-top:18px}.other-box,.final-row{display:block}.other-box .button,.final .button{margin-top:22px}.final{padding:64px 0}}
+.how{padding:76px 0;background:var(--stone)}
+.how-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:28px}
+.how-head h2{max-width:660px;margin-top:12px;font-size:clamp(36px,4.4vw,54px);line-height:1.04}
+.how-head>p{max-width:340px;color:var(--muted);font-size:16px}
+.how .steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.how .step{min-height:176px;padding:22px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.how .step .num{width:36px;height:36px;margin-bottom:4px}
+.how .step h3{font-size:19px}
+@media(max-width:850px){.how-head{display:block}.how-head>p{margin-top:14px}}
+@media(max-width:720px){.offer-grid{grid-template-columns:1fr}.offer{padding:24px}.offer.featured{padding-top:21px}}
+@media(max-width:600px){.how{padding:60px 0}.how-head{margin-bottom:20px}.how .step{min-height:0;padding:18px}.section-head{margin-bottom:26px}.section-head h2{font-size:clamp(34px,9vw,44px)}.case{overflow:hidden}.case-phones{scroll-padding-left:18px}.mini-phone{width:min(72vw,270px)}.offer h3{font-size:25px}.launch{max-width:100%}.other-box{padding:26px 0}}
 </style>
 </head>
 <body>
@@ -206,19 +241,19 @@ footer{padding:24px 0;color:var(--muted);font-size:12px}
               <div class="dynamic-island" aria-hidden="true"></div>
               <div class="phone-status"><span class="time">9:41</span><span class="system-icons" aria-hidden="true"><svg viewBox="0 0 18 14"><path d="M1 5.2C5.7 1.2 12.3 1.2 17 5.2M4 8.2c3-2.5 7-2.5 10 0M7 11.2c1.2-1 2.8-1 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="13" r="1" fill="currentColor"/></svg><svg viewBox="0 0 20 14"><rect x="1" y="2" width="15" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M18 5v4" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="4" width="10" height="6" rx="1" fill="currentColor"/></svg></span></div>
               <header class="app-top">
-                <div><span class="app-brand">ALCOLEA · DEMO</span><div class="app-title">Presupuestos</div></div>
+                <div><span class="app-brand">ALCOLEA</span><div class="app-title">Presupuestos</div></div>
                 <span class="app-avatar" aria-label="Perfil de ejemplo">AM</span>
               </header>
               <div class="app-scroll">
                 <section class="app-view active" id="screen-list" role="tabpanel" aria-label="Lista de presupuestos">
                   <p class="app-date">Miércoles · 11 nov</p>
                   <h2 class="app-view-title">Tu trabajo, en orden.</h2>
-                  <p class="app-subtitle">Ejemplo de vista de presupuestos</p>
+                  <p class="app-subtitle">Pendientes y recientes</p>
                   <div class="app-summary"><div class="app-stat"><span>Por enviar</span><strong>2</strong></div><div class="app-stat"><span>Seguimiento</span><strong>1</strong></div></div>
                   <button class="app-primary" type="button" data-open-view="new">＋ Crear presupuesto</button>
                   <div class="app-section-line"><span>Recientes</span><a href="#caso">Ver todos</a></div>
-                  <article class="budget-card"><div><b>Reforma de cocina</b><small>Cliente de ejemplo · hoy</small></div><span class="status-pill">Borrador</span></article>
-                  <article class="budget-card"><div><b>Armario a medida</b><small>Cliente de ejemplo · ayer</small></div><span class="status-pill sent">Enviado</span></article>
+                  <article class="budget-card"><div><b>Reforma de cocina</b><small>Madrid · hoy</small></div><span class="status-pill">Borrador</span></article>
+                  <article class="budget-card"><div><b>Armario a medida</b><small>Madrid · ayer</small></div><span class="status-pill sent">Enviado</span></article>
                   <div class="app-hint">Guarda cada presupuesto y continúa desde el móvil cuando tengas un rato.</div>
                 </section>
                 <section class="app-view" id="screen-new" role="tabpanel" aria-label="Crear presupuesto">
@@ -252,7 +287,6 @@ footer{padding:24px 0;color:var(--muted);font-size:12px}
           </div>
         </div>
       </div>
-      </div>
     </div>
   </section>
   <div class="proof"><div class="wrap proof-grid">
@@ -268,9 +302,9 @@ footer{padding:24px 0;color:var(--muted);font-size:12px}
         <p>Empezamos por una tarea que repites mucho y la convertimos en un proceso más sencillo.</p>
       </div>
       <div class="steps">
-        <article class="step"><span class="num">01 / DESCRIBIR</span><div><h3>Cuenta el trabajo</h3><p>Escríbelo o descríbelo desde el móvil para empezar a preparar el presupuesto.</p></div></article>
-        <article class="step"><span class="num">02 / REVISAR</span><div><h3>Ajusta las partidas</h3><p>Revisa y edita los conceptos antes de enviar el presupuesto al cliente.</p></div></article>
-        <article class="step"><span class="num">03 / SEGUIR</span><div><h3>No lo dejes pendiente</h3><p>Organiza solicitudes y recordatorios para saber qué presupuesto necesita seguimiento.</p></div></article>
+        <article class="step"><span class="num">01</span><div><h3>Cuenta el trabajo</h3><p>Escríbelo o descríbelo desde el móvil para empezar a preparar el presupuesto.</p></div></article>
+        <article class="step"><span class="num">02</span><div><h3>Ajusta las partidas</h3><p>Revisa y edita los conceptos antes de enviar el presupuesto al cliente.</p></div></article>
+        <article class="step"><span class="num">03</span><div><h3>No lo dejes pendiente</h3><p>Organiza solicitudes y recordatorios para saber qué presupuesto necesita seguimiento.</p></div></article>
       </div>
     </div>
   </section>
@@ -282,13 +316,42 @@ footer{padding:24px 0;color:var(--muted);font-size:12px}
         <p>Hacer cada presupuesto llevaba tiempo y había que prepararlo fuera de la obra. Diseñé una aplicación web para describir el trabajo hablando o escribiendo, convertirlo en partidas editables y enviar el presupuesto desde el móvil.</p>
         <a class="button" href="https://amableagencia.com/caso-presupuestos-construccion">Ver el caso completo</a>
       </div>
-      <div class="case-phones" aria-label="Vistas de ejemplo de la aplicación adaptadas a iPhone">
+      <div class="case-phones" aria-label="Dos pantallas de la aplicación en formato móvil">
         <figure class="mini-phone">
-          <div class="mini-screen"><div class="mini-status"><span>9:41</span><span>•••</span></div><div class="mini-island"></div><div class="mini-app"><span class="mini-brand">ALCOLEA · DEMO</span><h3 class="mini-title">Cuenta el trabajo.</h3><p class="mini-copy">Dicta una descripción breve mientras estás en la obra.</p><div class="mini-voice">“Cambiar la ducha, instalar el lavabo y revisar los azulejos…”</div><div class="mini-action">Convertir en partidas</div><p class="mini-copy" style="margin-top:12px">Propuesta de interfaz móvil</p></div></div>
-          <figcaption class="mini-caption">01 · Describir</figcaption>
+          <div class="mini-screen">
+            <div class="mini-island" aria-hidden="true"></div>
+            <div class="mini-status"><span>9:41</span><span>▴ ▰</span></div>
+            <div class="mini-app">
+              <div class="mini-navrow"><span>‹</span><b>ALCOLEA</b><span>···</span></div>
+              <span class="mini-brand">NUEVO PRESUPUESTO</span>
+              <h3 class="mini-title">Describe el trabajo</h3>
+              <p class="mini-copy">Añade los detalles de la obra.</p>
+              <div class="mini-field"><label>Descripción</label><strong>Reforma de baño</strong></div>
+              <div class="mini-voice"><span class="mini-voice-icon">●</span><span>Dictar descripción<br><small>Habla desde la obra</small></span></div>
+              <div class="mini-field"><label>Fotos y notas</label><strong>＋ Añadir fotos</strong></div>
+              <div class="mini-action">Continuar</div>
+            </div>
+            <nav class="mini-tabs" aria-label="Navegación de la app"><span>Inicio</span><span class="selected">Presupuestos</span><span>Cuenta</span></nav>
+          </div>
+          <figcaption class="mini-caption">01 · Crear presupuesto</figcaption>
         </figure>
         <figure class="mini-phone">
-          <div class="mini-screen"><div class="mini-status"><span>9:41</span><span>•••</span></div><div class="mini-island"></div><div class="mini-app"><span class="mini-brand">ALCOLEA · DEMO</span><h3 class="mini-title">Presupuesto</h3><p class="mini-copy">Reforma de baño · ejemplo</p><div class="mini-row"><b>Retirada y preparación</b>Revisar cantidad</div><div class="mini-row"><b>Instalación de ducha</b>Revisar precio</div><div class="mini-total"><span>Total del presupuesto</span><strong>Revisar y enviar</strong></div><div class="mini-action">Vista previa cliente</div><p class="mini-copy" style="margin-top:12px">Propuesta de interfaz móvil</p></div></div>
+          <div class="mini-screen">
+            <div class="mini-island" aria-hidden="true"></div>
+            <div class="mini-status"><span>9:41</span><span>▴ ▰</span></div>
+            <div class="mini-app">
+              <div class="mini-navrow"><span>‹ Volver</span><b>ALCOLEA</b><span>↗</span></div>
+              <span class="mini-brand">PRESUPUESTO · BORRADOR</span>
+              <h3 class="mini-title">Reforma de baño</h3>
+              <p class="mini-copy">Cliente nuevo · Madrid</p>
+              <div class="mini-row"><span><b>Retirada y preparación</b>1 unidad</span><strong>Editar</strong></div>
+              <div class="mini-row"><span><b>Instalación de ducha</b>1 unidad</span><strong>Editar</strong></div>
+              <div class="mini-row"><span><b>Materiales</b>Según selección</span><strong>Editar</strong></div>
+              <div class="mini-total"><span>Total del presupuesto</span><strong>4.850 €</strong></div>
+              <div class="mini-action">Vista previa para cliente</div>
+            </div>
+            <nav class="mini-tabs" aria-label="Acciones del presupuesto"><span>Guardar</span><span class="selected">Vista previa</span><span>Enviar</span></nav>
+          </div>
           <figcaption class="mini-caption">02 · Revisar y enviar</figcaption>
         </figure>
       </div>
@@ -297,23 +360,26 @@ footer{padding:24px 0;color:var(--muted);font-size:12px}
   <section class="offers" id="oferta">
     <div class="wrap">
       <div class="section-head">
-        <h2>Empezamos con la solución que necesitas.</h2>
-        <p>Una automatización sencilla para una tarea concreta, o una aplicación propia para un proceso más amplio.</p>
+        <h2>Empieza con una tarea. Amplía cuando lo necesites.</h2>
+        <p>Precios claros y alcance definido antes de empezar.</p>
       </div>
       <div class="offer-grid">
         <article class="offer featured">
-          <p class="tag">Para una tarea concreta</p>
+          <p class="tag">01 · Una tarea concreta</p>
           <h3>Automatización sencilla</h3>
-          <p>Una tarea, de principio a fin. Por ejemplo: guardar solicitudes, enviar avisos o recordar seguimientos.</p>
-          <div class="price">350 € <small>precio habitual</small></div>
-          <span class="launch">175 € precio de lanzamiento para los primeros 20 clientes</span>
+          <p>Conecto un proceso repetitivo de principio a fin: solicitudes, avisos o seguimiento de presupuestos.</p>
+          <div class="offer-price">350 € <small>precio habitual · sin IVA</small></div>
+          <div class="launch"><strong>175 €</strong> precio de lanzamiento en tu primer servicio</div>
+          <p class="offer-foot">Para los primeros 20 clientes.</p>
+          <a class="offer-link" href="https://amableagencia.com/negocios?sector=refo#contacto">Cuéntame qué tarea quieres automatizar →</a>
         </article>
         <article class="offer">
-          <p class="tag">Para un proceso más amplio</p>
+          <p class="tag">02 · Un proceso más amplio</p>
           <h3>Aplicación a medida</h3>
           <p>Una herramienta propia para preparar presupuestos, organizar el trabajo o resolver un proceso que hoy haces a mano.</p>
-          <div class="price">Desde 3.000 €</div>
-          <p style="margin-top:8px">El alcance y el precio se concretan antes de empezar.</p>
+          <div class="offer-price">Desde 3.000 €</div>
+          <p class="offer-foot">Definimos el alcance y el precio antes de empezar.</p>
+          <a class="offer-link" href="https://amableagencia.com/empresas">Ver software a medida para empresas →</a>
         </article>
       </div>
     </div>
@@ -329,14 +395,16 @@ footer{padding:24px 0;color:var(--muted);font-size:12px}
       <a class="button light" href="https://amableagencia.com/negocios?sector=refo#precios">Ver todos los servicios</a>
     </div>
   </section>
-  <section>
+  <section class="how">
     <div class="wrap">
-      <p class="mono">Tres pasos</p>
-      <h2 style="max-width:740px;margin-top:15px">Primero entendemos cómo trabajas.</h2>
-      <div class="process">
-        <article><b>01</b><h3>Hablamos 15 minutos</h3><p>Me cuentas qué tarea te quita tiempo o clientes.</p></article>
-        <article><b>02</b><h3>Te digo qué haría</h3><p>Recibes una propuesta sencilla y un precio claro antes de empezar.</p></article>
-        <article><b>03</b><h3>Lo dejo funcionando</h3><p>Lo probamos y te explico cómo usarlo en tu día a día.</p></article>
+      <div class="how-head">
+        <div><p class="mono">Tres pasos</p><h2>Así lo hacemos, de principio a fin.</h2></div>
+        <p>Hablas directamente conmigo, de la primera llamada a la entrega.</p>
+      </div>
+      <div class="steps">
+        <article class="step"><span class="num">01</span><div><h3>Entiendo el proceso</h3><p>Me cuentas qué tarea te quita tiempo o clientes.</p></div></article>
+        <article class="step"><span class="num">02</span><div><h3>Te propongo una solución</h3><p>Recibes una propuesta y un precio claro antes de empezar.</p></div></article>
+        <article class="step"><span class="num">03</span><div><h3>La dejamos funcionando</h3><p>La probamos y te explico cómo usarla en tu día a día.</p></div></article>
       </div>
     </div>
   </section>
@@ -364,4 +432,5 @@ footer{padding:24px 0;color:var(--muted);font-size:12px}
 </script>
 </body>
 </html>
+
 
