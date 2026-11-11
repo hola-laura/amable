@@ -967,7 +967,7 @@ document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&selector.classLis
 $('horas').addEventListener('click',(e)=>{const b=e.target.closest('.hora');if(!b)return;
 const a=b.getBoundingClientRect();b.classList.add('si');$('horas').querySelectorAll('.hora').forEach((h)=>h.disabled=true);
 const fila=document.createElement('div');fila.className='fila nueva';fila.innerHTML='<b>'+b.textContent+'</b><span>'+cur.newRow+'</span>';
-const fin=()=>{$('agenda').prepend(fila);$('nota').textContent=cur.note;
+const fin=()=>{(()=>{const t=b.textContent.trim(),sig=[...$('agenda').children].find((f)=>f.querySelector('b').textContent.trim()>t);$('agenda').insertBefore(fila,sig||null)})();$('nota').textContent=cur.note;
 [...$('ruta').children].forEach((li,i)=>setTimeout(()=>li.classList.add('ok'),quieto?0:i*320));
 setTimeout(()=>{if(cur)$('horas').querySelectorAll('.hora').forEach((h)=>{h.disabled=false;h.classList.remove('si')})},4200)};
 if(quieto){fin();return}
