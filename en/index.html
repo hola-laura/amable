@@ -104,10 +104,10 @@ section.b{padding:clamp(80px,10vw,136px) 0}
 .campo input,.campo textarea{width:100%;min-height:56px;padding:15px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.06);color:#fff;font:400 17px var(--sans);resize:vertical}
 .campo input:focus,.campo textarea:focus{outline:none;border-color:#fff;background:rgba(255,255,255,.1)}
 .via{border:0;padding:0;margin:0 0 20px;min-width:0}.via legend{padding:0;font-size:15px;color:rgba(255,255,255,.7);margin-bottom:8px}
-.vias{display:inline-flex;flex-wrap:wrap;gap:4px;padding:4px;border-radius:24px;background:rgba(255,255,255,.1);max-width:100%}
-.vias label{position:relative;cursor:pointer}.vias input{position:absolute;inset:0;margin:0;opacity:0;cursor:pointer}
-.vias span{display:flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-size:15px;font-weight:500;transition:background .2s,color .2s}
-.vias input:checked+span{background:#fff;color:#111}.vias input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+.vias{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:0;background:transparent;max-width:100%}
+.vias label{position:relative;display:block;max-width:100%;cursor:pointer;border-radius:999px}.vias input{position:absolute;inset:0;margin:0;opacity:0;cursor:pointer}
+.vias span{display:flex;align-items:center;justify-content:center;min-height:44px;max-width:100%;padding:8px 16px;border:1px solid rgba(255,255,255,.34);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;text-align:center;font-size:15px;line-height:1.25;font-weight:500;white-space:normal;transition:background .2s,color .2s,border-color .2s}
+.vias input:checked+span{background:#fff;color:#111;border-color:#fff}.vias input:focus-visible+span{outline:2px solid var(--soft);outline-offset:3px}
 .priv{font-size:14px;color:rgba(255,255,255,.65);margin:0 0 14px}.priv a{color:#fff}
 .ack{display:flex;align-items:flex-start;gap:12px;font-size:15px;margin-bottom:24px}.ack input{width:20px;height:20px;flex:none;margin:2px 0 0;accent-color:var(--soft)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
@@ -190,8 +190,8 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 <label class="campo"><span>What do you want to improve?</span><textarea name="mejora" rows="3" required></textarea></label>
 <fieldset class="via"><legend>How would you like me to reply?</legend><div class="vias"><label><input type="radio" name="via" value="email" checked><span>Email</span></label><label><input type="radio" name="via" value="tel"><span>Phone</span></label></div></fieldset>
 <label class="campo"><span id="cL">Your email</span><input name="contacto" id="cI" type="email" inputmode="email" autocomplete="email" placeholder="name@company.com" required></label>
-<p class="priv">Data controller: Laura Sampedro de la Rosa. I will only use this data to reply to you and will keep it for up to six months after our last contact. <a href="/en/privacy" target="_blank" rel="noopener">Read the privacy policy</a>.</p>
-<label class="ack"><input type="checkbox" name="privacy_ack"><span>I have read the privacy information.</span></label>
+<p class="priv">Data controller: Laura Sampedro de la Rosa. I’ll use your details to reply and keep them for up to six months after our last contact. <a href="/en/privacy" target="_blank" rel="noopener">Privacy information</a>.</p>
+
 <button class="btn" id="enviar" type="submit"><span>Send</span></button>
 <p class="err" id="err" hidden role="alert"></p>
 </form>
@@ -199,17 +199,20 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 </main>
 <footer class="pie footer-simple" style="background:#004833;color:#fff">
 <style>
-.footer-simple{padding:0 0 4px}.footer-simple .ftm{max-width:1240px;margin:auto;padding:clamp(32px,5vw,56px) clamp(24px,6vw,80px) 24px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-.footer-simple .ftm-brand{max-width:32em}.footer-simple .ftm-logo{font:400 34px/1 'Young Serif',Georgia,serif;letter-spacing:-.02em;color:#fff;text-decoration:none;display:inline-flex;align-items:baseline}
-.footer-simple .ftm-logo i{display:block;width:8px;height:8px;border-radius:50%;background:#A8C8F8;margin-left:3px}.footer-simple p{font:400 15px/1.5 'DM Sans',system-ui,sans-serif;color:rgba(255,255,255,.75);margin:10px 0 0}
-.footer-simple .ftm-links{display:flex;align-items:center;flex-wrap:wrap;gap:12px 24px}.footer-simple a{color:rgba(255,255,255,.84);text-decoration:none}.footer-simple a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
-.footer-simple .ftm-services{color:#fff;font:500 15px 'DM Sans',system-ui,sans-serif}.footer-simple .ftm-book{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:#fff;color:#111;font:600 14px 'DM Sans',system-ui,sans-serif;text-decoration:none}
-.footer-simple .ftm-book:hover{background:#A8C8F8;text-decoration:none}.footer-simple .ftm-bottom{max-width:1240px;margin:auto;padding:18px clamp(24px,6vw,80px) 24px;border-top:1px solid rgba(255,255,255,.18);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 24px;color:rgba(255,255,255,.58);font:400 12px/1.5 'DM Mono',ui-monospace,monospace}
-.footer-simple .ftm-bottom a{color:inherit}
-@media(max-width:680px){.footer-simple .ftm{align-items:flex-start;flex-direction:column;gap:22px}.footer-simple .ftm-links{gap:16px 22px}.footer-simple .ftm-bottom{flex-direction:column;gap:6px}}
+footer.footer-simple{padding:0 0 4px;text-align:center}
+footer.footer-simple .ftm{max-width:1240px;margin:0 auto;padding:clamp(34px,4vw,50px) clamp(24px,6vw,80px) 26px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
+footer.footer-simple .ftm-brand{width:100%;max-width:42em;text-align:center}
+footer.footer-simple .ftm-logo{font:400 32px/1 'Young Serif',Georgia,serif;letter-spacing:-.02em;color:#fff;text-decoration:none;display:inline-flex;align-items:baseline}
+footer.footer-simple .ftm-logo i{display:block;width:8px;height:8px;border-radius:50%;background:#A8C8F8;margin-left:3px}
+footer.footer-simple .ftm-brand p{font:400 15px/1.45 'DM Sans',system-ui,sans-serif;color:rgba(255,255,255,.76);max-width:54ch;margin:10px auto 0}
+footer.footer-simple .ftm-links{width:100%;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 26px}
+footer.footer-simple .ftm-links a{font:500 15px/1.35 'DM Sans',system-ui,sans-serif;color:rgba(255,255,255,.86);text-decoration:none;white-space:nowrap}
+footer.footer-simple .ftm-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+footer.footer-simple .ftm-bottom{max-width:1240px;margin:0 auto;padding:16px clamp(24px,6vw,80px) 22px;border-top:1px solid rgba(255,255,255,.18);display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px 28px;color:rgba(255,255,255,.62);text-align:center;font:400 12px/1.5 'DM Mono',ui-monospace,monospace}
+@media(max-width:680px){footer.footer-simple .ftm{padding:32px 22px 24px;gap:20px}footer.footer-simple .ftm-links{gap:12px 18px}footer.footer-simple .ftm-bottom{padding:15px 22px 20px;gap:5px 18px}}
 </style>
 <div class="ftm"><div class="ftm-brand"><a class="ftm-logo" href="/en/" aria-label="Amable home">amable<i></i></a><p>Product design, custom software and automation for businesses and companies.</p></div>
-<nav class="ftm-links" aria-label="Footer"><a class="ftm-services" href="/en/services">Services</a><a href="/en/privacy">Privacy</a><a href="/" hreflang="es" lang="es">Español</a><a class="ftm-book" href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Book 15 min</a></nav></div>
+<nav class="ftm-links" aria-label="Footer"><a class="ftm-services" href="/en/services">Services</a><a href="/en/privacy">Privacy</a></nav></div>
 <div class="ftm-bottom"><span>© 2026 Amable · Laura Sampedro de la Rosa</span><span>Made with care in Madrid</span></div></footer>
 <script>
 const $=(i)=>document.getElementById(i);
