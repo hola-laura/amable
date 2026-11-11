@@ -496,6 +496,57 @@ header.h{background-image:var(--grano),radial-gradient(55% 80% at 95% 5%,color-m
 section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color-mix(in srgb,#A8C8F8 35%,transparent),transparent 72%),radial-gradient(60% 80% at 0% 100%,rgba(0,0,0,.28),transparent 72%);background-blend-mode:overlay,normal,normal;background-size:220px,auto,auto}
 /* fin degradado */
 .emp-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin-top:28px;padding:22px 26px;border-radius:22px;background:var(--dark);color:#fff;text-decoration:none;font-size:17px;line-height:1.4;transition:transform .3s var(--punto)}.emp-band:hover{transform:translateY(-2px)}.emp-band b{font-weight:600}.emp-go{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:#fff;color:var(--ink);font-size:15px;font-weight:600;white-space:nowrap}
+
+#presupuestoCaso{padding:clamp(64px,7vw,96px) 0;background:var(--piedra);color:var(--ink);overflow:hidden}
+#presupuestoCaso[hidden]{display:none!important}
+#presupuestoCaso .budget-case-grid{display:grid;grid-template-columns:minmax(250px,.78fr) minmax(0,1.22fr);gap:clamp(32px,5vw,64px);align-items:center}
+#presupuestoCaso .budget-case-copy>.mono{font:11px/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--a)}
+#presupuestoCaso .budget-case-copy h2{margin:16px 0 18px;max-width:10ch;font:400 clamp(34px,4.5vw,54px)/1.04 var(--serif);letter-spacing:-.02em}
+#presupuestoCaso .budget-case-copy>p:not(.mono){max-width:48ch;margin:0;color:var(--mut);font-size:16px;line-height:1.55}
+#presupuestoCaso .budget-case-note{margin-top:16px!important;font-size:13px!important}
+#presupuestoCaso .budget-case-phones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:16px;min-width:0}
+#presupuestoCaso .mini-phone{position:relative;width:100%;max-width:300px;margin:0 auto}
+#presupuestoCaso .mini-screen{position:relative;width:100%;aspect-ratio:393/852;overflow:hidden;border:6px solid #202421;border-radius:46px;background:#f6f7f5;box-shadow:0 18px 38px rgba(0,35,24,.18);color:#151816;display:flex;flex-direction:column;font:400 10px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}
+#presupuestoCaso .mini-status{height:38px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:6px 13px 0;font-size:9px;font-weight:700}
+#presupuestoCaso .mini-status .system-icons{display:flex;align-items:center;gap:3px;margin-right:6px}
+#presupuestoCaso .mini-status .system-icons::before{content:"";width:11px;height:10px;flex:none;background:linear-gradient(currentColor,currentColor) 0 100%/2px 3px no-repeat,linear-gradient(currentColor,currentColor) 3px 100%/2px 5px no-repeat,linear-gradient(currentColor,currentColor) 6px 100%/2px 7px no-repeat,linear-gradient(currentColor,currentColor) 9px 100%/2px 10px no-repeat}
+#presupuestoCaso .mini-status .system-icons svg{display:block;width:14px;height:12px}
+#presupuestoCaso .mini-island{position:absolute;z-index:3;top:7px;left:50%;transform:translateX(-50%);width:66px;height:19px;border-radius:15px;background:#050505}
+#presupuestoCaso .app-top{padding:7px 17px 13px;display:flex;align-items:center;justify-content:space-between}
+#presupuestoCaso .app-brand{font:700 9px/1 -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:.12em;color:#557267}
+#presupuestoCaso .app-title{margin-top:5px;font-size:23px;font-weight:750;letter-spacing:-.04em;line-height:1.05}
+#presupuestoCaso .app-avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#dfeae5;color:#004833;font-size:12px;font-weight:700}
+#presupuestoCaso .mini-app{flex:1;min-height:0;overflow:hidden;padding:0 14px 10px}
+#presupuestoCaso .app-date{margin:2px 0 8px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#66716c}
+#presupuestoCaso .app-view-title{margin:0 0 5px;font:700 18px/1.2 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;letter-spacing:-.03em;color:#151816}
+#presupuestoCaso .app-subtitle{margin:0 0 13px;font-size:12px;color:#65716c}
+#presupuestoCaso .form-label{display:block;margin:12px 0 6px;font-size:10px;font-weight:700;color:#39433e}
+#presupuestoCaso .app-input{min-height:44px;padding:10px 11px;border:1px solid #dce2de;border-radius:11px;background:#fff;color:#252c28;font-size:11px}
+#presupuestoCaso .app-input.muted{color:#7c8580}
+#presupuestoCaso .voice-box{display:flex;align-items:center;gap:10px;margin:12px 0;padding:12px;border:1px solid #dce6e0;border-radius:13px;background:#e7f0eb;color:#355c49}
+#presupuestoCaso .voice-button{width:44px;height:44px;flex:none;border:0;border-radius:50%;display:grid;place-items:center;background:#004833;color:#fff}
+#presupuestoCaso .voice-button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#presupuestoCaso .voice-copy b{display:block;font-size:10px}
+#presupuestoCaso .voice-copy small{display:block;margin-top:3px;font-size:9px;color:#53665b}
+#presupuestoCaso .upload-box{min-height:54px;margin:10px 0;padding:10px;border:1px dashed #cbd6d0;border-radius:11px;background:#fff;color:#64716a;font-size:10px;display:flex;align-items:center;gap:9px}
+#presupuestoCaso .upload-plus{width:28px;height:28px;flex:none;border-radius:8px;display:grid;place-items:center;background:#eef3f0;color:#004833;font-size:20px}
+#presupuestoCaso .app-primary{width:100%;min-height:46px;border:0;border-radius:12px;background:#004833;color:#fff;font:650 13px -apple-system,BlinkMacSystemFont,sans-serif}
+#presupuestoCaso .line-item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 11px;margin:6px 0;border:1px solid #e5e9e6;border-radius:10px;background:#fff;color:#252c28;font-size:10px}
+#presupuestoCaso .line-item small{display:block;margin-top:3px;color:#758079;font-size:9px}
+#presupuestoCaso .app-stat{padding:11px 12px;border:1px solid #e5e9e6;border-radius:13px;background:#fff;color:#252c28}
+#presupuestoCaso .app-stat span{display:block;font-size:10px;color:#6e7772}
+#presupuestoCaso .app-stat strong{display:block;margin-top:4px;font-size:19px;line-height:1;font-weight:750}
+#presupuestoCaso .app-tabbar{height:62px;flex:none;display:grid;grid-template-columns:repeat(3,1fr);padding:5px 7px 11px;border-top:1px solid #e6e9e7;background:rgba(255,255,255,.97)}
+#presupuestoCaso .app-tab{min-width:0;min-height:44px;border:0;background:transparent;display:grid;justify-items:center;align-content:center;gap:3px;color:#77817c;font:500 9px -apple-system,BlinkMacSystemFont,sans-serif}
+#presupuestoCaso .app-tab svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#presupuestoCaso .app-tab[aria-selected="true"]{color:#004833;font-weight:700}
+#presupuestoCaso .home-indicator{position:absolute;z-index:5;bottom:4px;left:50%;transform:translateX(-50%);width:100px;height:4px;border-radius:4px;background:#131513}
+#presupuestoCaso .mini-caption{margin:11px 0 0;text-align:center;color:var(--mut);font:10px var(--mono);letter-spacing:.04em;text-transform:uppercase}
+#presupuestoCaso .status-pill{flex:none;padding:5px 7px;border-radius:20px;background:#fff1d6;color:#815100;font-size:8px;font-weight:700}
+#presupuestoCaso .status-pill.sent{background:#e3eee8;color:#176046}
+@media(max-width:920px){#presupuestoCaso .budget-case-grid{grid-template-columns:1fr;gap:32px}#presupuestoCaso .budget-case-copy h2{max-width:16ch}#presupuestoCaso .budget-case-phones{max-width:700px;margin:0 auto}}
+@media(max-width:620px){#presupuestoCaso .budget-case-grid{gap:26px}#presupuestoCaso .budget-case-phones{grid-template-columns:1fr;gap:26px}#presupuestoCaso .mini-phone{width:min(78vw,300px)}#presupuestoCaso .budget-case-copy h2{font-size:clamp(32px,9vw,42px)}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://amableagencia.com/#negocio","name":"Amable","alternateName":"Amable Agencia","url":"https://amableagencia.com/","image":"https://amableagencia.com/img/og.png","logo":"https://amableagencia.com/favicon.png","priceRange":"€€","knowsAbout":["Diseño web","Diseño de marca","Reservas online","Automatización","Diseño de producto"],"description":"Software a medida, automatización con IA, diseño de producto, webs y marca para empresas y negocios. En remoto y, en Madrid, también en persona.","founder":{"@type":"Person","name":"Laura Sampedro de la Rosa","jobTitle":"Diseñadora de producto"},"address":{"@type":"PostalAddress","addressLocality":"Madrid","addressRegion":"Madrid","addressCountry":"ES"},"areaServed":[{"@type":"City","name":"Madrid"},{"@type":"Country","name":"España"}],"knowsLanguage":["es","en"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño de marca y logotipos"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño web"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Aplicaciones a medida"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Reservas online"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatización"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestión de redes sociales"}}]},{"@type":"WebSite","@id":"https://amableagencia.com/#web","url":"https://amableagencia.com/","name":"Amable","inLanguage":"es"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Puedo pedirte solo diseño?","acceptedAnswer":{"@type":"Answer","text":"Sí. Si solo necesitas un logo, una carta o unos carteles, te lo diseño aunque no quieras nada más."}},{"@type":"Question","name":"¿Tengo que entender de tecnología?","acceptedAnswer":{"@type":"Answer","text":"No. Me cuentas cómo trabajas y yo me encargo del resto."}},{"@type":"Question","name":"¿Cómo funciona el 50%?","acceptedAnswer":{"@type":"Answer","text":"Los 20 primeros clientes pagan la mitad en su primer servicio."}},{"@type":"Question","name":"¿Los precios llevan IVA?","acceptedAnswer":{"@type":"Answer","text":"No, todos los precios son sin IVA."}},{"@type":"Question","name":"¿Y si no sé qué necesito?","acceptedAnswer":{"@type":"Answer","text":"Reserva 15 minutos, me cuentas tu caso y te digo por dónde empezaría."}}]}</script>
@@ -547,7 +598,7 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 <div class="chips" id="chips" role="group" aria-label="Elige tu negocio" aria-hidden="true"></div>
 </div>
 <div class="cta"><a class="btn" data-mag href="#contacto">Cuéntame tu caso</a><a class="btn claro" href="#precios">Ver precios</a></div>
-<a class="hero-case-link" id="refoCaseLink" href="/presupuestos-carpinteria.html" hidden>Ver ejemplo de presupuestos desde el móvil <span aria-hidden="true">↗</span></a>
+<a class="hero-case-link" id="refoCaseLink" href="#presupuestoCaso" hidden>Ver ejemplo de presupuestos <span aria-hidden="true">↓</span></a>
 </div></section>
 
 <div class="cinta" aria-hidden="true"><div id="cinta"></div></div>
@@ -571,6 +622,57 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 <ol class="ruta" id="ruta"></ol>
 </div>
 </div></section>
+<section id="presupuestoCaso" aria-labelledby="presupuestoCasoTitulo" hidden>
+    <div class="wrap budget-case-grid">
+      <div class="budget-case-copy">
+        <p class="mono">Un caso real · Alcolea</p>
+        <h2 id="presupuestoCasoTitulo">Presupuestos listos, sin dejar la obra.</h2>
+        <p>Hacer cada presupuesto llevaba tiempo y había que prepararlo fuera de la obra. Diseñé una aplicación web para describir el trabajo hablando o escribiendo, convertirlo en partidas editables y enviar el presupuesto desde el móvil.</p>
+        <p class="budget-case-note">Un ejemplo de aplicación diseñada para preparar partidas desde la obra y retomar cada presupuesto cuando tengas un rato.</p>
+      </div>
+      <div class="budget-case-phones" aria-label="Dos pantallas de la aplicación en formato móvil">
+        <figure class="mini-phone">
+          <div class="mini-screen">
+            <div class="mini-island" aria-hidden="true"></div>
+            <div class="mini-status"><span>9:41</span><span class="system-icons" aria-hidden="true"><svg viewBox="0 0 18 14"><path d="M1 5.2C5.7 1.2 12.3 1.2 17 5.2M4 8.2c3-2.5 7-2.5 10 0M7 11.2c1.2-1 2.8-1 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="13" r="1" fill="currentColor"/></svg><svg viewBox="0 0 20 14"><rect x="1" y="2" width="15" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M18 5v4" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="4" width="10" height="6" rx="1" fill="currentColor"/></svg></span></div>
+            <header class="app-top"><div><span class="app-brand">ALCOLEA</span><div class="app-title">Presupuestos</div></div><span class="app-avatar">AM</span></header>
+            <div class="mini-app">
+              <p class="app-date">Nuevo presupuesto</p>
+              <h2 class="app-view-title">Describe el trabajo.</h2>
+              <p class="app-subtitle">Añade los detalles de la obra.</p>
+              <label class="form-label">Trabajo</label><div class="app-input muted">Reforma de baño · cambiar ducha y lavabo…</div>
+              <div class="voice-box"><button class="voice-button" type="button" aria-label="Dictar descripción"><svg viewBox="0 0 20 20"><rect x="7" y="2" width="6" height="11" rx="3"/><path d="M4 9v1a6 6 0 0 0 12 0V9M10 16v3M7 19h6"/></svg></button><div class="voice-copy"><b>Dictar el trabajo</b><small>Habla desde la obra</small></div></div>
+              <label class="form-label">Fotos del espacio</label><div class="upload-box"><span class="upload-plus">＋</span><span>Añadir fotos para recordar medidas y detalles</span></div>
+              <button class="app-primary" type="button">Continuar</button>
+            </div>
+            <nav class="app-tabbar" aria-label="Secciones de la aplicación"><button class="app-tab" type="button"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg><span>Presupuestos</span></button><button class="app-tab" type="button" aria-selected="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Crear</span></button><button class="app-tab" type="button"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 1-2.4-5.7M20 4v6h-6"/><path d="M12 7v5l3 2"/></svg><span>Seguimiento</span></button></nav>
+            <div class="home-indicator" aria-hidden="true"></div>
+          </div>
+          <figcaption class="mini-caption">01 · Crear presupuesto</figcaption>
+        </figure>
+        <figure class="mini-phone">
+          <div class="mini-screen">
+            <div class="mini-island" aria-hidden="true"></div>
+            <div class="mini-status"><span>9:41</span><span class="system-icons" aria-hidden="true"><svg viewBox="0 0 18 14"><path d="M1 5.2C5.7 1.2 12.3 1.2 17 5.2M4 8.2c3-2.5 7-2.5 10 0M7 11.2c1.2-1 2.8-1 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="13" r="1" fill="currentColor"/></svg><svg viewBox="0 0 20 14"><rect x="1" y="2" width="15" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M18 5v4" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="4" width="10" height="6" rx="1" fill="currentColor"/></svg></span></div>
+            <header class="app-top"><div><span class="app-brand">ALCOLEA</span><div class="app-title">Presupuestos</div></div><span class="app-avatar">AM</span></header>
+            <div class="mini-app">
+              <p class="app-date">Presupuesto · borrador</p>
+              <h2 class="app-view-title">Reforma de baño</h2>
+              <p class="app-subtitle">Cliente nuevo · Madrid</p>
+              <div class="line-item"><span><b>Retirada y preparación</b><small>1 unidad</small></span><strong>Editar</strong></div>
+              <div class="line-item"><span><b>Instalación de ducha</b><small>1 unidad</small></span><strong>Editar</strong></div>
+              <div class="line-item"><span><b>Materiales</b><small>Según selección</small></span><strong>Editar</strong></div>
+              <div class="app-stat"><span>Total del presupuesto</span><strong>4.850 €</strong></div>
+              <button class="app-primary" type="button" style="margin-top:10px">Vista previa para cliente</button>
+            </div>
+            <nav class="app-tabbar" aria-label="Secciones de la aplicación"><button class="app-tab" type="button" aria-selected="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg><span>Presupuestos</span></button><button class="app-tab" type="button"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Crear</span></button><button class="app-tab" type="button"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 1-2.4-5.7M20 4v6h-6"/><path d="M12 7v5l3 2"/></svg><span>Seguimiento</span></button></nav>
+            <div class="home-indicator" aria-hidden="true"></div>
+          </div>
+          <figcaption class="mini-caption">02 · Revisar y enviar</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 <section class="trabajo teaser" id="trabajos"><div class="wrap">
 <div class="teaser-card r">
 <div><span class="mono">PROYECTOS SELECCIONADOS</span><h2>Trabajo real, para gente real<i class="pt"></i></h2><p class="lead">Una selección de proyectos de diseño, producto y automatización, contados desde el reto hasta el resultado.</p></div>
@@ -932,7 +1034,7 @@ $('avT').textContent=s.got;$('avS').textContent=s.newRow;$('aviso').classList.re
 const v=$('l2').querySelector('video'),vu=VID+(CLIPS[s.id]||CLIPS.otro);v.dataset.src=vu;if(window.__vid){v.src=vu;v.play&&v.play().catch(()=>{})}
 const g=$('granV');g.dataset.src=vu;if(window.__gran){g.src=vu;g.play&&g.play().catch(()=>{})}
 $('sub').textContent=s.sub;$('dh').textContent=s.dh;$('c1').textContent=s.c1;$('c2').textContent=s.c2;$('nota').textContent='';
-$('refoCaseLink').hidden=s.id!=='refo';$('rec').textContent=s.rec;$('sText').textContent=s.sText;
+$('refoCaseLink').hidden=s.id!=='refo';$('presupuestoCaso').hidden=s.id!=='refo';$('rec').textContent=s.rec;$('sText').textContent=s.sText;
 $('horas').innerHTML=s.opts.map((o)=>'<button class="hora" type="button">'+o+'</button>').join('');
 $('agenda').innerHTML=s.agenda.map((a)=>'<div class="fila"><b>'+a[0]+'</b><span>'+a[1]+'</span></div>').join('');
 $('ruta').innerHTML=s.flow.map((f)=>'<li><i></i>'+f+'</li>').join('');
