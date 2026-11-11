@@ -100,11 +100,11 @@ h1 em{color:var(--green);font-style:normal}
 .review-card p{margin:6px 0 10px;color:#68736d;font-size:9px}
 .review-card button{min-height:44px;width:100%;border:1px solid #cbd9d1;border-radius:9px;background:#f7faf8;color:var(--green);font:650 10px -apple-system,BlinkMacSystemFont,sans-serif}
 .case-phones{display:flex;justify-content:center;align-items:flex-start;gap:24px;min-width:0}
-.mini-phone{position:relative;width:min(48%,250px);aspect-ratio:393/852;padding:5px;border-radius:34px;background:#242825;box-shadow:0 12px 28px rgba(15,35,26,.12);flex:none}
-.mini-screen{position:relative;height:100%;overflow:hidden;border-radius:31px;background:#f6f7f5;color:#151816;display:flex;flex-direction:column;font:400 10px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}
+.mini-phone{position:relative;width:min(48%,250px);margin:0;flex:none}
+.mini-screen{position:relative;width:100%;aspect-ratio:393/852;overflow:hidden;border:6px solid #202421;border-radius:46px;background:#f6f7f5;box-shadow:0 18px 38px rgba(0,35,24,.18);color:#151816;display:flex;flex-direction:column;font:400 10px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}
 .mini-status{height:38px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:6px 13px 0;font-size:9px;font-weight:700}
 .mini-island{position:absolute;z-index:3;top:7px;left:50%;transform:translateX(-50%);width:66px;height:19px;border-radius:15px;background:#050505}
-.mini-app{flex:1;min-height:0;overflow:hidden;padding:7px 12px 10px}
+.mini-app{flex:1;min-height:0;overflow:hidden;padding:0 12px 10px}
 .mini-navrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px;color:#52655b;font-size:10px}
 .mini-navrow b{font-size:8px;letter-spacing:.1em}
 .mini-brand{display:block;font-size:8px;letter-spacing:.1em;font-weight:700;color:#60786b}
@@ -123,7 +123,7 @@ h1 em{color:var(--green);font-style:normal}
 .mini-tabs{height:45px;flex:none;display:flex;justify-content:space-around;align-items:center;border-top:1px solid #e4e8e5;background:#fff}
 .mini-tabs span{font-size:7px;color:#748078}
 .mini-tabs .selected{color:var(--green);font-weight:700}
-.mini-caption{margin-top:12px;text-align:center;color:var(--muted);font:10px var(--mono);letter-spacing:.04em;text-transform:uppercase}
+.mini-caption{position:static;margin:11px 0 0;text-align:center;color:var(--muted);font:10px var(--mono);letter-spacing:.04em;text-transform:uppercase}
 .proof{padding:22px 0;border-bottom:1px solid var(--line)}
 .proof{padding:22px 0;border-bottom:1px solid var(--line)}
 .proof-grid{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
@@ -206,7 +206,7 @@ footer{padding:24px 0;color:var(--muted);font-size:12px}
 .how .step h3{font-size:19px}
 @media(max-width:850px){.how-head{display:block}.how-head>p{margin-top:14px}}
 @media(max-width:720px){.offer-grid{grid-template-columns:1fr}.offer{padding:24px}.offer.featured{padding-top:21px}}
-@media(max-width:600px){.how{padding:60px 0}.how-head{margin-bottom:20px}.how .step{min-height:0;padding:18px}.section-head{margin-bottom:26px}.section-head h2{font-size:clamp(34px,9vw,44px)}.case{overflow:hidden}.case-phones{scroll-padding-left:18px}.mini-phone{width:min(72vw,270px)}.offer h3{font-size:25px}.launch{max-width:100%}.other-box{padding:26px 0}}
+@media(max-width:600px){.how{padding:60px 0}.how-head{margin-bottom:20px}.how .step{min-height:0;padding:18px}.section-head{margin-bottom:26px}.section-head h2{font-size:clamp(34px,9vw,44px)}.case{overflow:hidden}.case-phones{scroll-padding-left:18px}.mini-phone{width:min(72vw,270px)}.mini-screen{border-width:5px;border-radius:40px}.offer h3{font-size:25px}.launch{max-width:100%}.other-box{padding:26px 0}}
 </style>
 </head>
 <body>
@@ -320,37 +320,39 @@ footer{padding:24px 0;color:var(--muted);font-size:12px}
         <figure class="mini-phone">
           <div class="mini-screen">
             <div class="mini-island" aria-hidden="true"></div>
-            <div class="mini-status"><span>9:41</span><span>▴ ▰</span></div>
+            <div class="mini-status"><span>9:41</span><span class="system-icons" aria-hidden="true"><svg viewBox="0 0 18 14"><path d="M1 5.2C5.7 1.2 12.3 1.2 17 5.2M4 8.2c3-2.5 7-2.5 10 0M7 11.2c1.2-1 2.8-1 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="13" r="1" fill="currentColor"/></svg><svg viewBox="0 0 20 14"><rect x="1" y="2" width="15" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M18 5v4" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="4" width="10" height="6" rx="1" fill="currentColor"/></svg></span></div>
+            <header class="app-top"><div><span class="app-brand">ALCOLEA</span><div class="app-title">Presupuestos</div></div><span class="app-avatar">AM</span></header>
             <div class="mini-app">
-              <div class="mini-navrow"><span>‹</span><b>ALCOLEA</b><span>···</span></div>
-              <span class="mini-brand">NUEVO PRESUPUESTO</span>
-              <h3 class="mini-title">Describe el trabajo</h3>
-              <p class="mini-copy">Añade los detalles de la obra.</p>
+              <p class="app-date">Nuevo presupuesto</p>
+              <h3 class="app-view-title">Describe el trabajo</h3>
+              <p class="app-subtitle">Añade los detalles de la obra.</p>
               <div class="mini-field"><label>Descripción</label><strong>Reforma de baño</strong></div>
               <div class="mini-voice"><span class="mini-voice-icon">●</span><span>Dictar descripción<br><small>Habla desde la obra</small></span></div>
               <div class="mini-field"><label>Fotos y notas</label><strong>＋ Añadir fotos</strong></div>
               <div class="mini-action">Continuar</div>
             </div>
-            <nav class="mini-tabs" aria-label="Navegación de la app"><span>Inicio</span><span class="selected">Presupuestos</span><span>Cuenta</span></nav>
+            <nav class="app-tabbar" aria-label="Secciones de la aplicación"><button class="app-tab" type="button"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg><span>Presupuestos</span></button><button class="app-tab" type="button" aria-selected="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Crear</span></button><button class="app-tab" type="button"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 1-2.4-5.7M20 4v6h-6"/><path d="M12 7v5l3 2"/></svg><span>Seguimiento</span></button></nav>
+            <div class="home-indicator" aria-hidden="true"></div>
           </div>
           <figcaption class="mini-caption">01 · Crear presupuesto</figcaption>
         </figure>
         <figure class="mini-phone">
           <div class="mini-screen">
             <div class="mini-island" aria-hidden="true"></div>
-            <div class="mini-status"><span>9:41</span><span>▴ ▰</span></div>
+            <div class="mini-status"><span>9:41</span><span class="system-icons" aria-hidden="true"><svg viewBox="0 0 18 14"><path d="M1 5.2C5.7 1.2 12.3 1.2 17 5.2M4 8.2c3-2.5 7-2.5 10 0M7 11.2c1.2-1 2.8-1 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="13" r="1" fill="currentColor"/></svg><svg viewBox="0 0 20 14"><rect x="1" y="2" width="15" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M18 5v4" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="4" width="10" height="6" rx="1" fill="currentColor"/></svg></span></div>
+            <header class="app-top"><div><span class="app-brand">ALCOLEA</span><div class="app-title">Presupuestos</div></div><span class="app-avatar">AM</span></header>
             <div class="mini-app">
-              <div class="mini-navrow"><span>‹ Volver</span><b>ALCOLEA</b><span>↗</span></div>
-              <span class="mini-brand">PRESUPUESTO · BORRADOR</span>
-              <h3 class="mini-title">Reforma de baño</h3>
-              <p class="mini-copy">Cliente nuevo · Madrid</p>
+              <p class="app-date">Presupuesto · borrador</p>
+              <h3 class="app-view-title">Reforma de baño</h3>
+              <p class="app-subtitle">Cliente nuevo · Madrid</p>
               <div class="mini-row"><span><b>Retirada y preparación</b>1 unidad</span><strong>Editar</strong></div>
               <div class="mini-row"><span><b>Instalación de ducha</b>1 unidad</span><strong>Editar</strong></div>
               <div class="mini-row"><span><b>Materiales</b>Según selección</span><strong>Editar</strong></div>
               <div class="mini-total"><span>Total del presupuesto</span><strong>4.850 €</strong></div>
               <div class="mini-action">Vista previa para cliente</div>
             </div>
-            <nav class="mini-tabs" aria-label="Acciones del presupuesto"><span>Guardar</span><span class="selected">Vista previa</span><span>Enviar</span></nav>
+            <nav class="app-tabbar" aria-label="Secciones de la aplicación"><button class="app-tab" type="button" aria-selected="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg><span>Presupuestos</span></button><button class="app-tab" type="button"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Crear</span></button><button class="app-tab" type="button"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 1-2.4-5.7M20 4v6h-6"/><path d="M12 7v5l3 2"/></svg><span>Seguimiento</span></button></nav>
+            <div class="home-indicator" aria-hidden="true"></div>
           </div>
           <figcaption class="mini-caption">02 · Revisar y enviar</figcaption>
         </figure>
