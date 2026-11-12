@@ -180,4 +180,5 @@ if(!rm&&matchMedia('(hover:none)').matches){const io=new IntersectionObserver(es
 if(rm||!matchMedia('(hover:hover)').matches)return;let r;
 s.addEventListener('pointermove',e=>{const b=s.getBoundingClientRect(),x=(e.clientX-b.left)/b.width,y=(e.clientY-b.top)/b.height;s.classList.add('mov');cancelAnimationFrame(r);r=requestAnimationFrame(()=>{s.style.setProperty('--ry',((x-.5)*10).toFixed(2)+'deg');s.style.setProperty('--rx',((.5-y)*8).toFixed(2)+'deg');s.style.setProperty('--gx',(x*100).toFixed(1)+'%');s.style.setProperty('--gy',(y*100).toFixed(1)+'%')})});
 s.addEventListener('pointerleave',()=>{s.classList.remove('mov');s.style.setProperty('--rx','0deg');s.style.setProperty('--ry','0deg')})})();</script>
+<script src="/menu.js" defer></script>
 </body></html>

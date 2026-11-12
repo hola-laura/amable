@@ -60,7 +60,7 @@ h2{font-size:clamp(36px,5.2vw,64px);line-height:1.04}
 
 /* nav */
 .nav{position:fixed;z-index:30;top:20px;left:50%;transform:translateX(-50%);width:min(calc(100% - 24px),780px);display:flex;align-items:center;gap:6px;padding:8px 8px 8px 24px;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;transition:transform .45s var(--punto)}
-.nav.fuera{transform:translate(-50%,-90px)}
+
 .logo{font:400 25px/1 var(--serif);letter-spacing:-.02em;text-decoration:none;display:inline-flex;align-items:baseline}
 .logo .pt{transition:transform .35s var(--bote),background .4s}.logo:hover .pt{transform:translateY(-.5em)}
 .nav ul{list-style:none;display:flex;gap:2px;margin:0 auto;padding:0}
@@ -515,7 +515,7 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 <nav class="nav" aria-label="Principal">
 <i class="prog" id="prog"></i>
 <a class="logo" href="/" aria-label="amable., inicio">amable<i class="pt"></i></a>
-<ul><li><a href="/negocios">Negocios</a></li><li><a href="/empresas">Empresas</a></li><li><a href="/proyectos">Proyectos</a></li><li><a href="#precios">Precios</a></li><li><a href="/sobre-laura">Sobre mí</a></li></ul>
+<ul><li><a href="/negocios">Negocios</a></li><li><a href="/empresas">Empresas</a></li><li><a href="/proyectos">Proyectos</a></li><li><a href="/sobre-laura">Sobre mí</a></li></ul>
 <a class="lang" href="/en/website-for-renovations-madrid" hreflang="en" lang="en" aria-label="English version">EN</a><a class="btn" data-mag href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Reservar 15 min</a>
 </nav>
 
@@ -1031,7 +1031,7 @@ if(fino&&!quieto){$('mazo').addEventListener('mouseenter',()=>fotos.forEach((f,i
 /* scroll: nav, cinta de redes, bola de pasos, gigante */
 let ult=0,pend=false;
 const scroll=()=>{pend=false;const y=scrollY;
-document.querySelector('.nav').classList.toggle('fuera',y>ult&&y>500);ult=y;
+
 $('prog').style.transform='scaleX('+Math.min(y/Math.max(document.documentElement.scrollHeight-innerHeight,1),1)+')';
 if(quieto){pals.forEach((w)=>w.classList.add('on'));return}
 const fr=$('frase').getBoundingClientRect(),fp=Math.min(Math.max((innerHeight*.82-fr.top)/(fr.height+innerHeight*.34),0),1);pals.forEach((w,i)=>w.classList.toggle('on',i<fp*pals.length));
@@ -1071,5 +1071,6 @@ const l=document.createElement('div');l.className='carga';l.innerHTML='<div>amab
 setTimeout(()=>{l.classList.add('ya');arranca();try{sessionStorage.setItem('amable-v','1')}catch(e){}},1050);setTimeout(()=>l.remove(),1800);}
 scroll();
 </script>
-<script>/* menu responsive */(()=>{document.querySelectorAll('a.lang').forEach((a)=>{const c=document.documentElement.lang==='en'?'en':'es';a.classList.add('seg');a.innerHTML=['es','en'].map((l)=>'<span class="lg-o'+(l===c?' on':'')+'" data-l="'+l+'">'+l.toUpperCase()+'</span>').join('')});document.querySelectorAll('nav.nav,nav.vnav').forEach((n)=>{const ul=n.querySelector('ul');if(!ul)return;n.classList.add('tiene-menu');const en=document.documentElement.lang==='en';const b=document.createElement('button');b.type='button';b.className='menu-b';b.setAttribute('aria-expanded','false');b.setAttribute('aria-label',en?'Menu':'Menú');b.innerHTML='<i></i><i></i>';n.append(b);const cierra=()=>{n.classList.remove('abierto');b.setAttribute('aria-expanded','false')};b.addEventListener('click',(e)=>{e.stopPropagation();const o=n.classList.toggle('abierto');b.setAttribute('aria-expanded',String(o))});ul.addEventListener('click',(e)=>{if(e.target.closest('a'))cierra()});document.addEventListener('click',(e)=>{if(!n.contains(e.target))cierra()});document.addEventListener('keydown',(e)=>{if(e.key==='Escape')cierra()});addEventListener('resize',()=>{if(innerWidth>1024)cierra()})})})();</script></body>
+<script>/* menu responsive */(()=>{document.querySelectorAll('a.lang').forEach((a)=>{const c=document.documentElement.lang==='en'?'en':'es';a.classList.add('seg');a.innerHTML=['es','en'].map((l)=>'<span class="lg-o'+(l===c?' on':'')+'" data-l="'+l+'">'+l.toUpperCase()+'</span>').join('')});document.querySelectorAll('nav.nav,nav.vnav').forEach((n)=>{const ul=n.querySelector('ul');if(!ul)return;n.classList.add('tiene-menu');const en=document.documentElement.lang==='en';const b=document.createElement('button');b.type='button';b.className='menu-b';b.setAttribute('aria-expanded','false');b.setAttribute('aria-label',en?'Menu':'Menú');b.innerHTML='<i></i><i></i>';n.append(b);const cierra=()=>{n.classList.remove('abierto');b.setAttribute('aria-expanded','false')};b.addEventListener('click',(e)=>{e.stopPropagation();const o=n.classList.toggle('abierto');b.setAttribute('aria-expanded',String(o))});ul.addEventListener('click',(e)=>{if(e.target.closest('a'))cierra()});document.addEventListener('click',(e)=>{if(!n.contains(e.target))cierra()});document.addEventListener('keydown',(e)=>{if(e.key==='Escape')cierra()});addEventListener('resize',()=>{if(innerWidth>1024)cierra()})})})();</script><script src="/menu.js" defer></script>
+</body>
 </html>
