@@ -443,6 +443,57 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 .wow.vivo .pt{transform:translateY(-.55em) scale(1.25);background:#FCB0F8}
 @media (prefers-reduced-motion:reduce){.wow .ch>span{transition:none}}
 </style>
+<style>/* proyectos: rediseño editorial */
+.pg-g1{background:var(--grano),radial-gradient(70% 90% at 88% 6%,color-mix(in srgb,#FCB0F8 55%,transparent),transparent 70%),radial-gradient(60% 80% at 4% 100%,color-mix(in srgb,#004833 16%,transparent),transparent 70%),linear-gradient(140deg,#C7D9F4,#EEF3FB);background-blend-mode:overlay,normal,normal,normal;background-size:220px,auto,auto,auto}
+.pg-g2{background:var(--grano),radial-gradient(65% 85% at 15% 10%,color-mix(in srgb,#A8C8F8 70%,transparent),transparent 72%),radial-gradient(70% 90% at 95% 95%,color-mix(in srgb,#FCB0F8 40%,transparent),transparent 70%),linear-gradient(160deg,#EEF3FB,#E3E9F6);background-blend-mode:overlay,normal,normal,normal;background-size:220px,auto,auto,auto}
+.pg-g3{background:var(--grano),radial-gradient(70% 90% at 90% 10%,color-mix(in srgb,#A8C8F8 55%,transparent),transparent 70%),radial-gradient(60% 80% at 0% 100%,color-mix(in srgb,#2c7a5c 55%,transparent),transparent 72%),linear-gradient(150deg,#0d5a42,#004833);background-blend-mode:overlay,normal,normal,normal;background-size:220px,auto,auto,auto}
+.pg-g4{background:var(--grano),radial-gradient(70% 90% at 100% 0%,color-mix(in srgb,#FCB0F8 70%,transparent),transparent 70%),radial-gradient(70% 80% at 0% 90%,color-mix(in srgb,#A8C8F8 70%,transparent),transparent 72%),linear-gradient(135deg,#F6EEF8,#EEF3FB);background-blend-mode:overlay,normal,normal,normal;background-size:220px,auto,auto,auto}
+.pg-g5{background:var(--grano),radial-gradient(60% 80% at 20% 0%,rgba(255,255,255,.7),transparent 70%),radial-gradient(80% 90% at 90% 100%,color-mix(in srgb,#A8C8F8 80%,transparent),transparent 72%),linear-gradient(170deg,#E9EEF7,#D6E3F7);background-blend-mode:overlay,normal,normal,normal;background-size:220px,auto,auto,auto}
+.pg-g6{background:var(--grano),radial-gradient(70% 90% at 10% 10%,color-mix(in srgb,#FCB0F8 45%,transparent),transparent 70%),radial-gradient(70% 90% at 100% 100%,color-mix(in srgb,#004833 28%,transparent),transparent 72%),linear-gradient(140deg,#F1ECF3,#E4EBE7);background-blend-mode:overlay,normal,normal,normal;background-size:220px,auto,auto,auto}
+.pf-list{display:grid;gap:clamp(72px,9vw,128px);margin-bottom:clamp(80px,10vw,140px)}
+.pf{display:block}
+.pf-media{position:relative;display:grid;place-items:center;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(17,17,17,.06);isolation:isolate}
+.pf-media>.in{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.pf-media:hover>.in{transform:scale(1.025)}
+.pf-media video{height:78%;width:auto;aspect-ratio:1;border-radius:14px;object-fit:cover;box-shadow:0 30px 60px -36px rgba(17,17,17,.55)}
+.pf-tres{display:flex;align-items:center;justify-content:center;gap:clamp(10px,2vw,28px);height:84%;width:100%}
+.pf-tres img{height:100%;width:auto;filter:drop-shadow(0 24px 30px rgba(17,17,17,.22))}
+.pf-tres img:nth-child(2){height:92%;transform:translateY(-3%)}
+.pf-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,5vw,80px);align-items:start;margin-top:clamp(20px,2.4vw,32px)}
+.pf-t{font:400 clamp(30px,3.4vw,46px)/1.05 var(--serif);letter-spacing:-.02em;margin:0 0 12px}
+.pf-t a{color:inherit;text-decoration:none}
+.pf-body p{margin:0;font-size:17px;color:var(--mut);max-width:34em}
+.pf-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink)}
+.pf-meta div{padding:12px 12px 0 0}
+.pf-meta span{display:block;font:400 11px/1.4 'DM Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}
+.pf-meta b{display:block;font:500 15px/1.35 'DM Sans',system-ui,sans-serif}
+.pf-meta b.k{font:400 22px/1.1 var(--serif);color:var(--dark)}
+.pf-lk{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.pf-lk a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(17,17,17,.16);font-size:14px;color:var(--ink);text-decoration:none;transition:background .25s,border-color .25s}
+.pf-lk a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ix-h{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:12px;margin:0}
+.ix-h h2{font:400 clamp(26px,2.6vw,34px)/1.1 var(--serif);margin:0}
+.ix-h span{font:400 12px 'DM Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.ix{list-style:none;margin:0 0 clamp(80px,10vw,140px);padding:0}
+.ix li{margin:0;border-bottom:1px solid rgba(17,17,17,.12)}
+.ix a{position:relative;display:grid;grid-template-columns:56px minmax(0,.9fr) minmax(0,1.6fr) minmax(0,.8fr) 28px;gap:16px;align-items:center;padding:24px 0;color:var(--ink);text-decoration:none;transition:padding .45s cubic-bezier(.2,.8,.2,1),color .3s}
+.ix .n,.ix .ty{font:400 12px/1.4 'DM Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.ix .cl{font:500 16px/1.3 'DM Sans',system-ui,sans-serif}
+.ix .ti{font:400 clamp(20px,2vw,26px)/1.2 var(--serif);letter-spacing:-.01em}
+.ix .ar{justify-self:end;font-size:20px;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.ix .th{display:none}
+.ix a:hover{padding-left:14px;padding-right:6px}.ix a:hover .ar{transform:translateX(4px) rotate(-45deg)}
+.ix-fl{position:fixed;left:0;top:0;z-index:40;width:300px;aspect-ratio:4/3;border-radius:12px;overflow:hidden;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.6);transition:opacity .35s ease,scale .45s cubic-bezier(.2,1.2,.3,1);box-shadow:0 30px 60px -30px rgba(17,17,17,.45)}
+.ix-fl.on{opacity:1}
+.ix-fl .tl{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transition:opacity .3s}
+.ix-fl .tl.on{opacity:1}
+.ix-fl img{max-width:86%;max-height:84%;border-radius:8px;object-fit:contain;box-shadow:0 16px 30px -18px rgba(17,17,17,.45)}
+.ix-fl img.full{max-width:none;max-height:none;width:100%;height:100%;object-fit:cover;border-radius:0;box-shadow:none}
+.ix-fl .fl{display:grid;gap:6px;width:70%}.ix-fl .fl i{font:400 12px 'DM Sans',sans-serif;font-style:normal;background:#fff;border-radius:10px;padding:8px 10px;box-shadow:0 8px 16px -12px rgba(0,0,0,.4)}.ix-fl .fl i:last-child{background:#004833;color:#fff}
+@media (max-width:860px){.pf-body{grid-template-columns:minmax(0,1fr)}.pf-media{aspect-ratio:4/3}.pf-meta{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ix a{grid-template-columns:64px minmax(0,1fr) 20px;gap:4px 14px;padding:18px 0}.ix .n,.ix .ty{display:none}.ix .cl{grid-column:2;font-size:13px;color:var(--mut)}.ix .ti{grid-column:2;font-size:20px}.ix .ar{grid-column:3;grid-row:1/span 2}
+.ix .th{display:grid;place-items:center;grid-row:1/span 2;width:64px;height:64px;border-radius:10px;overflow:hidden}.ix .th img{width:100%;height:100%;object-fit:cover}.ix a:hover{padding-left:0;padding-right:0}.ix-fl{display:none}}
+</style>
 </head>
 <body>
 <nav class="nav" aria-label="Main"><a class="logo" href="/en/" aria-label="amable., home">amable<i class="pt"></i></a><ul><li><a href="/en/businesses">Businesses</a></li><li><a href="/en/companies">Companies</a></li><li><a href="/en/projects" aria-current="page">Projects</a></li><li><a href="/en/about">About me</a></li></ul><a class="lang" href="/proyectos" hreflang="es" lang="es" aria-label="Versión en español">ES</a><a class="btn" href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Book 15 min</a></nav>
@@ -450,81 +501,8 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 <section class="trabajo" ><div class="wrap">
 <div class="tit r"><h1 style="margin:0">Projects<i class="pt"></i></h1><p class="lead">I've designed for big companies and for professionals who work alone. That's the experience I put to work for your business.</p></div>
 
-<article class="caso"><style>.monzo-k{list-style:none;margin:18px 0 22px;padding:0;border-top:1px solid var(--line,rgba(17,17,17,.12))}.monzo-k li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line,rgba(17,17,17,.12));margin:0}.monzo-k b{font:400 20px/1.2 var(--serif)}.monzo-k a{font:400 13px var(--mono);letter-spacing:.04em;color:inherit;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}.monzo-k span{grid-column:1/-1;font-size:16px;color:var(--mut,#4A5550)}.monzo-k li:last-child{border-bottom:0}.monzo-k em{font-style:normal;color:#004833;font-weight:600}</style>
-<div class="txt r"><span class="mono">APP DESIGNER · MONZO BANK</span><h3>Designing for a bank</h3>
-<p>I designed credit, mortgages and spending-control tools at Monzo, working with research, data, risk and legal teams.</p>
-<ul class="monzo-k">
-<li><b>Monzo Flex</b><a href="/en/case-monzo-flex">See case study</a><span>I led design as it moved from “pay later” to a credit card: <em>+37% retention</em> and 15% fewer missed payments.</span></li>
-<li><b>Mortgages</b><a href="/en/case-monzo-mortgages">See case study</a><span>Sole designer on remortgaging: customers with a known deal-end date went from <em>69K to 170K</em> in a year.</span></li>
-<li><b>Spending Block</b><a href="/en/case-monzo-spending-block">See case study</a><span>Block merchants to pause impulse spending. Designed and launched in <em>2 weeks</em>, used by 10,000+ customers.</span></li>
-</ul>
-<p class="tuyo"><b>In your business:</b> someone who knows how to design when a mistake costs money, and how to measure whether a change works.</p>
-</div>
-<div class="lienzo foto-l r"><video class="foto" autoplay muted loop playsinline preload="metadata" poster="https://hola-laura.github.io/laura/assets/flex/campaign/flex-pay-in-3-poster.webp" aria-label="Monzo Flex animation: choosing to pay £249 at Amazon in three interest-free instalments"><source src="https://hola-laura.github.io/laura/assets/flex/campaign/flex-pay-in-3.webm" type="video/webm"><source src="https://hola-laura.github.io/laura/assets/flex/campaign/flex-pay-in-3.mp4" type="video/mp4"></video><script>(()=>{const v=document.currentScript.previousElementSibling;if(matchMedia("(prefers-reduced-motion:reduce)").matches){v.removeAttribute("autoplay");v.pause()}})();</script></div>
-</article>
+<div class="pf-list"><article class="pf r"><a class="pf-media pg-g4" href="/en/case-monzo-flex" aria-label="Designing for a bank"><div class="in"><video autoplay muted loop playsinline preload="metadata" poster="https://hola-laura.github.io/laura/assets/flex/campaign/flex-pay-in-3-poster.webp" aria-label="Monzo Flex animation: pay in three instalments"><source src="https://hola-laura.github.io/laura/assets/flex/campaign/flex-pay-in-3.webm" type="video/webm"><source src="https://hola-laura.github.io/laura/assets/flex/campaign/flex-pay-in-3.mp4" type="video/mp4"></video></div></a><div class="pf-body"><div><h2 class="pf-t"><a href="/en/case-monzo-flex">Designing for a bank</a></h2><p>Credit, mortgages and spending-control tools, working with research, data, risk and legal teams.</p></div><div><div class="pf-meta"><div><span>Client</span><b class="">Monzo Bank</b></div><div><span>Role</span><b class="">App designer</b></div><div><span>Result</span><b class="k">+37% retention</b></div></div><div class="pf-lk"><a href="/en/case-monzo-flex">Monzo Flex <span aria-hidden="true">→</span></a><a href="/en/case-monzo-mortgages">Mortgages <span aria-hidden="true">→</span></a><a href="/en/case-monzo-spending-block">Spending Block <span aria-hidden="true">→</span></a></div></div></div></article><article class="pf r"><a class="pf-media pg-g1" href="/en/case-construction-quotes" aria-label="Quotes ready, without leaving the site"><div class="in"><div class="pf-tres"><img loading="lazy" src="/img/alcolea/01-voice-entry.jpg" alt="Dictating the job"><img loading="lazy" src="/img/alcolea/02-budget-items.jpg" alt="Quote line items"><img loading="lazy" src="/img/alcolea/03-client-view.jpg" alt="Client view"></div></div></a><div class="pf-body"><div><h2 class="pf-t"><a href="/en/case-construction-quotes">Quotes ready, without leaving the site</a></h2><p>Speak or type the job; Alcolea turns it into editable line items and a quote ready to send from your phone.</p></div><div><div class="pf-meta"><div><span>Client</span><b class="">Alcolea</b></div><div><span>Role</span><b class="">Design and build</b></div><div><span>Result</span><b class="k">From voice to quote</b></div></div><div class="pf-lk"><a href="/en/case-construction-quotes">See the case study <span aria-hidden="true">→</span></a></div></div></div></article></div><div class="ix-h r"><h2>More projects</h2><span>06 projects</span></div><ul class="ix r"><li><a href="https://www.skippr.ai/" target="_blank" rel="noopener" data-k="skippr" data-g="pg-g5"><span class="th pg-g5"><img loading="lazy" src="/img/skippr-web.jpg" alt=""></span><span class="n">03</span><span class="cl">Skippr</span><span class="ti">A startup's design from day one</span><span class="ty">Founding designer</span><span class="ar" aria-hidden="true">↗</span></a></li><li><a href="/en/case-seo-ram2-immobilien" data-k="ram2" data-g="pg-g2"><span class="th pg-g2"><img loading="lazy" src="/img/ram2-seo/portada-3x2.webp" alt=""></span><span class="n">04</span><span class="cl">Ram² Immobilien</span><span class="ti">An SEO analysis to sell more homes</span><span class="ty">Local SEO</span><span class="ar" aria-hidden="true">→</span></a></li><li><a href="/en/case-mountain-guide-website" data-k="mattern" data-g="pg-g6"><span class="th pg-g6"><img loading="lazy" src="https://hola-laura.github.io/laura/assets/mountain-guide/website.webp" alt=""></span><span class="n">05</span><span class="cl">Mattern Guide</span><span class="ti">A website its owner runs alone</span><span class="ty">Website and panel</span><span class="ar" aria-hidden="true">→</span></a></li><li><a href="/en/case-appointment-automation" data-k="citas" data-g="pg-g3"><span class="th pg-g3"></span><span class="n">06</span><span class="cl">Marketing agency</span><span class="ti">Appointments that organise themselves</span><span class="ty">Automation</span><span class="ar" aria-hidden="true">→</span></a></li><li><a href="https://hola-laura.github.io/laura/case-study-drivo.html" target="_blank" rel="noopener" data-k="drivo" data-g="pg-g1"><span class="th pg-g1"><img loading="lazy" src="https://hola-laura.github.io/laura/assets/drivo/home-ios.png" alt=""></span><span class="n">07</span><span class="cl">Drivo Test</span><span class="ti">Driving theory tests for iPhone</span><span class="ty">iOS app</span><span class="ar" aria-hidden="true">↗</span></a></li><li><a href="/en/case-olive-oil-brand" data-k="vereda" data-g="pg-g4"><span class="th pg-g4"><img loading="lazy" src="/img/vereda/botellas.webp" alt=""></span><span class="n">08</span><span class="cl">Vereda</span><span class="ti">An olive oil brand drawn by hand</span><span class="ty">Brand and packaging</span><span class="ar" aria-hidden="true">→</span></a></li></ul><div class="ix-fl" aria-hidden="true"><div class="tl" data-k="skippr"><img class="full" src="/img/skippr-web.jpg" alt=""></div><div class="tl" data-k="ram2"><img src="/img/ram2-seo/portada-3x2.webp" alt=""></div><div class="tl" data-k="mattern"><img src="https://hola-laura.github.io/laura/assets/mountain-guide/website.webp" alt=""></div><div class="tl" data-k="citas"><div class="fl"><i>09:12 · A contact comes in</i><i>09:30 · They pick a time</i><i>Reminder the day before</i></div></div><div class="tl" data-k="drivo"><img src="https://hola-laura.github.io/laura/assets/drivo/home-ios.png" alt=""></div><div class="tl" data-k="vereda"><img class="full" src="/img/vereda/botellas.webp" alt=""></div></div>
 
-<article class="caso inv">
-<div class="txt r"><span class="mono">FOUNDING DESIGNER · SKIPPR</span><h3>A startup's design from the very beginning</h3>
-<p>I was founding designer at Skippr and helped them design their first tool.</p>
-<p class="tuyo"><b>In your business:</b> I know how to start from scratch and turn an idea into something people understand.</p>
-<div class="lks"><a class="lk" href="https://www.skippr.ai/" target="_blank" rel="noopener"><i></i>Visit Skippr's website</a></div></div>
-<div class="lienzo doble r"><div class="web"><img loading="lazy" src="/img/skippr-web.jpg" alt="Skippr website" onerror="this.onerror=null;this.src='https://www.skippr.ai/og-image.png'"></div><div class="web flota" data-par=".06"><img loading="lazy" src="/img/skippr-producto.jpg" alt="Skippr product" onerror="this.onerror=null;this.src='https://www.skippr.ai/og-image.png'"></div></div>
-</article>
-
-<article class="caso alcolea-case">
-<div class="txt r"><span class="mono">WEB APP · ALCOLEA · QUOTES</span><h3>Quotes ready, without leaving the site</h3>
-<p>Speak or type the job; Alcolea turns it into editable line items and a quote ready to send from your phone.</p></div>
-<div class="lienzo r alcolea-stage" data-alcolea-gallery aria-label="Alcolea on three iPhone screens" tabindex="0">
-<div class="alco-halo" aria-hidden="true"></div>
-<div class="alco-phones">
-<div class="alco-phone" data-slot="left" aria-hidden="true"><div class="alco-screen"><img src="/img/alcolea/03-client-view.jpg" alt="" draggable="false" loading="lazy"><span class="alco-island"></span></div></div>
-<div class="alco-phone" data-slot="center" aria-hidden="false"><div class="alco-screen"><img src="/img/alcolea/01-voice-entry.jpg" alt="Alcolea screen for dictating the job that will go into the quote" draggable="false" fetchpriority="high"><span class="alco-island"></span></div></div>
-<div class="alco-phone" data-slot="right" aria-hidden="true"><div class="alco-screen"><img src="/img/alcolea/02-budget-items.jpg" alt="" draggable="false" loading="lazy"><span class="alco-island"></span></div></div>
-</div>
-<div class="alco-controls"><button class="alco-arrow prev" type="button" aria-label="Previous screen">←</button><span class="alco-count" aria-live="polite">01 / 03</span><button class="alco-arrow next" type="button" aria-label="Next screen">→</button></div>
-</div>
-</article>
-
-<article class="caso inv">
-<div class="txt r"><span class="mono">LOCAL SEO · RAM² IMMOBILIEN</span><h3>An SEO analysis to sell more homes</h3>
-<p>I reviewed the Ram² website, five local agencies and what people search for on Google. I turned it into a clear report: what to fix first and a twelve-week plan.</p>
-<p class="tuyo"><b>For your business:</b> find out why people can't find you on Google and what to change, explained without jargon.</p>
-<div class="lks"><a class="lk" href="/en/case-seo-ram2-immobilien"><i></i>See the Ram² SEO case study</a></div></div>
-<div class="lienzo vereda-l r"><img class="v-main" loading="lazy" src="/img/ram2-seo/portada-3x2.webp" alt="Cover of the Ram² Immobilien SEO report: More owners calling Ram² to sell"><img class="v-flota" loading="lazy" src="/img/ram2-seo/resumen.webp" alt="Report summary page with three priorities"></div>
-</article>
-
-
-
-
-<article class="caso">
-<div class="txt r"><span class="mono">WEBSITE AND PANEL · MOUNTAIN GUIDE</span><h3>A website its owner updates without touching code</h3>
-<p>I designed and built the Mattern Guide website, a content manager and a first automation. Daniel can update his trips, places and copy on his own.</p>
-<p class="tuyo"><b>In your business:</b> a website with your services and opening hours that you can change whenever you want.</p>
-<div class="lks"><a class="lk" href="https://hola-laura.github.io/daniel-mattern-web/" target="_blank" rel="noopener"><i></i>Visit the Mattern Guide website</a><a class="lk" href="https://hola-laura.github.io/daniel-mattern-web/admin.html" target="_blank" rel="noopener"><i></i>View the content management panel</a></div></div>
-<div class="lienzo doble r"><div class="web"><img loading="lazy" src="https://hola-laura.github.io/laura/assets/mountain-guide/website.webp" alt="Mattern Guide website home page"></div><div class="web flota" data-par=".06"><img loading="lazy" src="https://hola-laura.github.io/laura/assets/mountain-guide/panel.webp" alt="Mattern Guide content management panel"></div></div>
-</article>
-
-<article class="caso inv">
-<div class="txt r"><span class="mono">AUTOMATION · LOCAL MARKETING AGENCY</span><h3>Appointments that organise themselves</h3>
-<p>I automated appointment handling for a local marketing agency, from the moment a contact comes in to the reminder.</p>
-<p class="tuyo"><b>In your business:</b> fewer back-and-forth messages and fewer forgotten appointments.</p></div>
-<div class="lienzo r" style="flex-direction:column"><ol class="flujo" id="flujo"><li>A contact comes in<small>09:12</small></li><li>They receive a message<small>09:12</small></li><li>They choose their time<small>09:30</small></li><li>Saved in the calendar<small>09:30</small></li><li>Reminder the day before<small>Auto</small></li></ol></div>
-</article>
-
-<article class="caso">
-<div class="txt r"><span class="mono">iOS APP · DRIVING TEST</span><h3>Driving theory test app for iPhone</h3>
-<p>Tests, explanations and visual resources help future drivers understand the theory and prepare for the test on their iPhone.</p>
-<div class="lks"><a class="lk" href="https://hola-laura.github.io/carnet-conducir-app/" target="_blank" rel="noopener"><i></i>Try Drivo Test</a><a class="lk" href="https://hola-laura.github.io/laura/case-study-drivo.html?lang=es" target="_blank" rel="noopener"><i></i>See the case study in Spanish</a></div></div>
-<div class="lienzo dos r"><img class="movil" loading="lazy" src="https://hola-laura.github.io/laura/assets/drivo/home-ios.png" alt="Drivo Test home screen on iPhone"><img class="movil" loading="lazy" src="https://hola-laura.github.io/laura/assets/drivo/library-ios.png" alt="Drivo Test question library on iPhone"></div>
-</article>
-
-<article class="caso inv"><style>.vereda-l{align-items:flex-start;justify-content:flex-start;background:#A8C8F8}.vereda-l .v-main{display:block;width:86%;aspect-ratio:3/2;object-fit:cover;border-radius:12px;box-shadow:0 26px 60px -34px rgba(17,17,17,.5)}.vereda-l .v-flota{position:absolute;right:clamp(20px,3.2vw,48px);bottom:clamp(20px,3.2vw,48px);width:clamp(110px,13vw,180px);aspect-ratio:760/1069;object-fit:cover;border-radius:12px;box-shadow:0 26px 50px -24px rgba(17,17,17,.55)}@media(max-width:860px){.vereda-l .v-main{width:100%}.vereda-l .v-flota{width:clamp(96px,26vw,150px)}}</style>
-<div class="txt r"><span class="mono">BRAND AND PACKAGING · VEREDA</span><h3>An olive oil brand drawn by hand</h3>
-<p>I created the name, identity and packaging for Vereda, an extra virgin olive oil. Crayon drawings and market colours to stand out from all the black and gold.</p>
-<p class="tuyo"><b>For your business:</b> a brand with its own personality, ready for labels, stationery and social media.</p>
-<div class="lks"><a class="lk" href="/en/case-olive-oil-brand"><i></i>View Vereda brand case study</a></div></div>
-<div class="lienzo vereda-l r"><img class="v-main" loading="lazy" src="/img/vereda/botellas.webp" alt="Three Vereda bottles with red, olive-green and peach labels"><img class="v-flota" loading="lazy" src="/img/vereda/lata-detalle.webp" alt="Vereda 2.5 litre tin in olive green"></div>
-</article>
 
 <div class="startups r">
 <div><span class="mono">STARTUPS</span><h3>Design from day one</h3><p class="sn">Skippr · Correcto</p></div>
@@ -633,5 +611,11 @@ h.addEventListener('pointermove',e=>{h.classList.add('vivo');chs.forEach(s=>{con
 h.addEventListener('pointerleave',()=>h.classList.remove('vivo'));
 h.addEventListener('click',()=>ola(55,700));
 const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){setTimeout(()=>ola(),500);io.disconnect()}}),{threshold:.6});io.observe(h)})();</script>
+<script>(()=>{const fl=document.querySelector('.ix-fl');if(!fl||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+let x=0,y=0,tx=0,ty=0,raf=0,activo=null;const tls=[...fl.querySelectorAll('.tl')];
+const loop=()=>{x+=(tx-x)*.16;y+=(ty-y)*.16;const r=Math.max(-10,Math.min(10,(tx-x)*.08));fl.style.transform=`translate(${x+28}px,${y-110}px) rotate(${r}deg)`;raf=requestAnimationFrame(loop)};
+document.querySelectorAll('.ix a').forEach(a=>{a.addEventListener('mouseenter',e=>{if(!activo){x=tx=e.clientX;y=ty=e.clientY}activo=a;tls.forEach(t=>t.classList.toggle('on',t.dataset.k===a.dataset.k));fl.className='ix-fl on '+a.dataset.g;fl.style.scale='1';if(!raf)raf=requestAnimationFrame(loop)});
+a.addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY})});
+document.querySelector('.ix').addEventListener('mouseleave',()=>{activo=null;fl.classList.remove('on');fl.style.scale='.6';setTimeout(()=>{if(!activo){cancelAnimationFrame(raf);raf=0}},400)})})();</script>
 </body>
 </html>
