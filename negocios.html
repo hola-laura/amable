@@ -1260,7 +1260,7 @@ scroll();
   const $=(s)=>root.querySelector(s);
   const $$=(s)=>Array.from(root.querySelectorAll(s));
   let selectedType="Baño",total=2950,addedItem=false,recordTimer=null,toastTimer=null;
-  const money=(n)=>n.toLocaleString("es-ES")+" €";
+  const money=(n)=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,".")+" €";
   const setStatus=(text)=>{
     const el=$("[data-ed-review-status]");
     if(el){el.textContent=text;window.clearTimeout(toastTimer);toastTimer=window.setTimeout(()=>{if(el.textContent===text)el.textContent=""},2600)}
