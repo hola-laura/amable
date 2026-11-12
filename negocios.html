@@ -498,9 +498,9 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 .emp-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin-top:28px;padding:22px 26px;border-radius:22px;background:var(--dark);color:#fff;text-decoration:none;font-size:17px;line-height:1.4;transition:transform .3s var(--punto)}.emp-band:hover{transform:translateY(-2px)}.emp-band b{font-weight:600}.emp-go{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:#fff;color:var(--ink);font-size:15px;font-weight:600;white-space:nowrap}
 
 
-#presupuestoCaso .ed-previews{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));justify-items:center;align-items:start;gap:16px;min-width:0}
-#presupuestoCaso .ed-preview{width:100%;max-width:292.5px;margin:0;container-type:inline-size}
-#presupuestoCaso .ed-caption{min-height:26px;margin:0 0 9px 4px;color:var(--mut);font:11px/1.3 var(--sans);letter-spacing:.01em}
+#presupuestoCaso .wrap.budget-case-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);align-items:center;column-gap:clamp(36px,5vw,76px)}
+#presupuestoCaso .ed-previews{display:flex;justify-content:center;align-items:flex-start;gap:clamp(18px,2.2vw,32px);min-width:0;width:100%}
+#presupuestoCaso .ed-preview{width:292.5px;max-width:calc(50% - 12px);flex:0 1 292.5px;margin:0;container-type:inline-size}
 #presupuestoCaso .ed-frame{position:relative;width:100%;aspect-ratio:390/844;overflow:hidden;border:1px solid #d0d0d0;border-radius:42px;background:#fff;box-shadow:0 14px 30px rgba(24,25,22,.12)}
 #presupuestoCaso .ed-artboard{position:absolute;top:0;left:0;width:390px;height:844px;transform:scale(.75);transform-origin:top left;overflow:hidden;font:400 14px/1.4 Inter,Arial,sans-serif;color:#1f1f1f;background:#fff}
 #presupuestoCaso .ed-create-head{position:absolute;top:58px;left:20px;right:20px;display:flex;align-items:center;justify-content:space-between}
@@ -510,7 +510,7 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 #presupuestoCaso .ed-work-head{position:absolute;top:122px;left:26px;right:26px;display:flex;align-items:baseline;justify-content:space-between}
 #presupuestoCaso .ed-work-head h4,#presupuestoCaso .ed-photo-heading h4{margin:0;font:500 19px/1.2 Newsreader,Georgia,serif;color:#1f1f1f}
 #presupuestoCaso .ed-text-button{border:0;background:transparent;color:#2f6b4f;font:500 13px Inter,Arial,sans-serif}
-#presupuestoCaso .ed-work-types{position:absolute;top:157px;left:20px;right:0;display:flex;gap:10px;overflow-x:auto;overflow-y:hidden;padding:0 18px 8px 0;scrollbar-width:none}
+#presupuestoCaso .ed-work-types{position:absolute;top:152px;left:15px;right:0;display:flex;gap:10px;overflow-x:auto;overflow-y:hidden;padding:5px 18px 8px 5px;scrollbar-width:none}
 #presupuestoCaso .ed-work-types::-webkit-scrollbar{display:none}
 #presupuestoCaso .ed-work-type{flex:0 0 104px;width:104px;padding:0;border:0;background:none;display:flex;flex-direction:column;align-items:stretch;gap:8px;text-align:left;color:#4a4a4a;font:400 13px Inter,Arial,sans-serif}
 #presupuestoCaso .ed-work-type>span:last-child{line-height:1.3}
@@ -595,8 +595,8 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 @keyframes ed-frame-in{0%{transform:translateY(8px);box-shadow:0 0 0 0 rgba(47,107,79,0)}45%{transform:translateY(-3px);box-shadow:0 0 0 5px rgba(47,107,79,.18)}100%{transform:translateY(0);box-shadow:0 14px 30px rgba(24,25,22,.12)}}
 #presupuestoCaso button:focus-visible,#presupuestoCaso textarea:focus-visible{outline:2px solid var(--a);outline-offset:3px}
 
-@media(max-width:920px){#presupuestoCaso .budget-case-grid{grid-template-columns:1fr;gap:32px}#presupuestoCaso .budget-case-copy h2{max-width:16ch}#presupuestoCaso .ed-previews{max-width:680px;margin:0 auto;gap:14px}}
-@media(max-width:620px){#presupuestoCaso .budget-case-grid{gap:26px}#presupuestoCaso .ed-previews{grid-template-columns:1fr;gap:24px}#presupuestoCaso .ed-preview{width:292.5px;max-width:100%}#presupuestoCaso .ed-caption{margin-left:2px}#presupuestoCaso .ed-review-preview{margin-top:0}}
+@media(max-width:920px){#presupuestoCaso .budget-case-grid{grid-template-columns:1fr;gap:32px}#presupuestoCaso .budget-case-copy h2{max-width:16ch}#presupuestoCaso .ed-previews{max-width:640px;margin:0 auto;gap:20px}}
+@media(max-width:620px){#presupuestoCaso .budget-case-grid{gap:26px}#presupuestoCaso .ed-previews{flex-direction:column;align-items:center;gap:24px}#presupuestoCaso .ed-preview{width:min(292.5px,100%);max-width:100%;flex:0 1 auto}#presupuestoCaso .ed-review-preview{margin-top:0}}
 @media(max-width:340px){#presupuestoCaso .ed-preview{width:265.2px}#presupuestoCaso .ed-artboard{transform:scale(.68)}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://amableagencia.com/#negocio","name":"Amable","alternateName":"Amable Agencia","url":"https://amableagencia.com/","image":"https://amableagencia.com/img/og.png","logo":"https://amableagencia.com/favicon.png","priceRange":"€€","knowsAbout":["Diseño web","Diseño de marca","Reservas online","Automatización","Diseño de producto"],"description":"Software a medida, automatización con IA, diseño de producto, webs y marca para empresas y negocios. En remoto y, en Madrid, también en persona.","founder":{"@type":"Person","name":"Laura Sampedro de la Rosa","jobTitle":"Diseñadora de producto"},"address":{"@type":"PostalAddress","addressLocality":"Madrid","addressRegion":"Madrid","addressCountry":"ES"},"areaServed":[{"@type":"City","name":"Madrid"},{"@type":"Country","name":"España"}],"knowsLanguage":["es","en"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño de marca y logotipos"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño web"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Aplicaciones a medida"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Reservas online"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatización"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestión de redes sociales"}}]},{"@type":"WebSite","@id":"https://amableagencia.com/#web","url":"https://amableagencia.com/","name":"Amable","inLanguage":"es"}]}</script>
@@ -683,7 +683,7 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
       </div>
       <div class="budget-case-phones ed-previews" id="edAppDemo" aria-label="Demostración interactiva de la app de presupuestos">
       <figure class="ed-preview">
-        <figcaption class="ed-caption">Presupuestos · 01 Crear</figcaption>
+        
         <div class="ed-frame">
           <div class="ed-artboard ed-create">
             <header class="ed-create-head"><h3>Nuevo presupuesto</h3><button class="ed-icon-button" type="button" data-ed-action="close" aria-label="Reiniciar ejemplo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header>
@@ -729,7 +729,7 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
         </div>
       </figure>
       <figure class="ed-preview ed-review-preview">
-        <figcaption class="ed-caption">Presupuestos · 02 Revisar</figcaption>
+        
         <div class="ed-frame" data-ed-review>
           <div class="ed-artboard ed-review">
             <div class="ed-review-scene">
