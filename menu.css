@@ -1,0 +1,39 @@
+/* amable · el mismo menú en todas las páginas */
+html body nav.nav,
+html body nav.vnav{
+  position:fixed!important;top:16px!important;left:50%!important;right:auto!important;
+  transform:translateX(-50%)!important;z-index:60!important;
+  width:min(calc(100% - 32px),1040px)!important;max-width:none!important;min-height:60px!important;margin:0!important;
+  box-sizing:border-box!important;display:flex!important;align-items:center!important;gap:28px!important;
+  padding:8px 8px 8px 22px!important;border:0!important;border-radius:999px!important;
+  background:rgba(255,255,255,.86)!important;
+  -webkit-backdrop-filter:blur(14px)!important;backdrop-filter:blur(14px)!important;
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 10px 30px -18px rgba(17,17,17,.35)!important;
+  font-family:'DM Sans',system-ui,sans-serif!important;color:#111!important
+}
+html body nav.nav .logo,
+html body nav.vnav .vlogo{
+  font:400 24px/1 'Young Serif',Georgia,serif!important;letter-spacing:-.02em!important;
+  color:#111!important;text-decoration:none!important;display:inline-flex!important;align-items:baseline!important
+}
+html body nav.nav ul,
+html body nav.vnav ul{gap:2px!important;padding:0!important}
+html body nav.nav ul a,
+html body nav.vnav ul a{
+  padding:10px 14px!important;font-size:15px!important;font-weight:400!important;line-height:1.55!important;
+  border-radius:999px!important;color:#111!important;text-decoration:none!important
+}
+html body nav.nav ul a[aria-current="page"],
+html body nav.vnav ul a[aria-current="page"]{background:#EEF3FB!important}
+html body nav.nav .btn,
+html body nav.vnav .vbtn{
+  display:inline-flex!important;align-items:center!important;min-height:44px!important;height:auto!important;
+  padding:0 18px!important;border-radius:999px!important;background:#004833!important;color:#fff!important;
+  font:500 15px/1 'DM Sans',system-ui,sans-serif!important;text-decoration:none!important;white-space:nowrap!important
+}
+@media (max-width:1024px){
+  html body nav.nav,
+  html body nav.vnav{gap:12px!important;padding:8px 8px 8px 20px!important}
+  html body nav.nav.abierto,
+  html body nav.vnav.abierto{border-radius:28px!important}
+}

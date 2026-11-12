@@ -4,6 +4,14 @@
   if (!nav) return;
   nav.classList.add('am');
 
+  // Marca la sección actual
+  const ruta = location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+  const esCaso = /\/(caso-|case-)/.test(ruta);
+  nav.querySelectorAll('ul a').forEach((a) => {
+    const h = new URL(a.href, location.href).pathname.replace(/\/$/, '') || '/';
+    if (h === ruta || (esCaso && /\/(proyectos|projects)$/.test(h))) a.setAttribute('aria-current', 'page');
+  });
+
   const css = `
 nav.am{transition:translate .55s cubic-bezier(.7,0,.84,0),scale .55s cubic-bezier(.7,0,.84,0),opacity .4s ease,filter .45s ease,box-shadow .4s ease,background .4s ease!important;will-change:translate,opacity}
 nav.am.am-fuera{translate:0 calc(-100% - 36px);scale:.94;opacity:0;filter:blur(6px);pointer-events:none}
