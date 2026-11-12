@@ -500,7 +500,7 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 
 #presupuestoCaso .wrap.budget-case-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);align-items:center;column-gap:clamp(36px,5vw,76px)}
 #presupuestoCaso .ed-previews{display:flex;justify-content:center;align-items:flex-start;gap:clamp(18px,2.2vw,32px);min-width:0;width:100%}
-#presupuestoCaso .ed-preview{width:292.5px;max-width:calc(50% - 12px);flex:0 1 292.5px;margin:0;container-type:inline-size}
+#presupuestoCaso .ed-preview{width:292.5px;max-width:none;flex:0 0 292.5px;margin:0;container-type:inline-size}
 #presupuestoCaso .ed-frame{position:relative;width:100%;aspect-ratio:390/844;overflow:hidden;border:1px solid #d0d0d0;border-radius:42px;background:#fff;box-shadow:0 14px 30px rgba(24,25,22,.12)}
 #presupuestoCaso .ed-artboard{position:absolute;top:0;left:0;width:390px;height:844px;transform:scale(.75);transform-origin:top left;overflow:hidden;font:400 14px/1.4 Inter,Arial,sans-serif;color:#1f1f1f;background:#fff}
 #presupuestoCaso .ed-create-head{position:absolute;top:58px;left:20px;right:20px;display:flex;align-items:center;justify-content:space-between}
@@ -595,7 +595,7 @@ section.f{background-image:var(--grano),radial-gradient(55% 80% at 100% 0%,color
 @keyframes ed-frame-in{0%{transform:translateY(8px);box-shadow:0 0 0 0 rgba(47,107,79,0)}45%{transform:translateY(-3px);box-shadow:0 0 0 5px rgba(47,107,79,.18)}100%{transform:translateY(0);box-shadow:0 14px 30px rgba(24,25,22,.12)}}
 #presupuestoCaso button:focus-visible,#presupuestoCaso textarea:focus-visible{outline:2px solid var(--a);outline-offset:3px}
 
-@media(max-width:920px){#presupuestoCaso .budget-case-grid{grid-template-columns:1fr;gap:32px}#presupuestoCaso .budget-case-copy h2{max-width:16ch}#presupuestoCaso .ed-previews{max-width:640px;margin:0 auto;gap:20px}}
+@media(max-width:1200px){#presupuestoCaso .budget-case-grid{grid-template-columns:1fr;gap:32px}#presupuestoCaso .budget-case-copy h2{max-width:16ch}#presupuestoCaso .ed-previews{max-width:640px;margin:0 auto;gap:20px}}
 @media(max-width:620px){#presupuestoCaso .budget-case-grid{gap:26px}#presupuestoCaso .ed-previews{flex-direction:column;align-items:center;gap:24px}#presupuestoCaso .ed-preview{width:min(292.5px,100%);max-width:100%;flex:0 1 auto}#presupuestoCaso .ed-review-preview{margin-top:0}}
 @media(max-width:340px){#presupuestoCaso .ed-preview{width:265.2px}#presupuestoCaso .ed-artboard{transform:scale(.68)}}
 </style>
