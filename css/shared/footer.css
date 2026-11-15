@@ -1,0 +1,11 @@
+footer.footer-simple{padding:0 0 4px;text-align:center}
+footer.footer-simple .ftm{max-width:1240px;margin:0 auto;padding:clamp(34px,4vw,50px) clamp(24px,6vw,80px) 26px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
+footer.footer-simple .ftm-brand{width:100%;max-width:42em;text-align:center}
+footer.footer-simple .ftm-logo{font:400 32px/1 'Young Serif',Georgia,serif;letter-spacing:-.02em;color:#fff;text-decoration:none;display:inline-flex;align-items:baseline}
+footer.footer-simple .ftm-logo i{display:block;width:8px;height:8px;border-radius:50%;background:#A8C8F8;margin-left:3px}
+footer.footer-simple .ftm-brand p{font:400 15px/1.45 'DM Sans',system-ui,sans-serif;color:rgba(255,255,255,.76);max-width:54ch;margin:10px auto 0}
+footer.footer-simple .ftm-links{width:100%;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 26px}
+footer.footer-simple .ftm-links a{font:500 15px/1.35 'DM Sans',system-ui,sans-serif;color:rgba(255,255,255,.86);text-decoration:none;white-space:nowrap}
+footer.footer-simple .ftm-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+footer.footer-simple .ftm-bottom{max-width:1240px;margin:0 auto;padding:16px clamp(24px,6vw,80px) 22px;border-top:1px solid rgba(255,255,255,.18);display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px 28px;color:rgba(255,255,255,.62);text-align:center;font:400 12px/1.5 'DM Sans',system-ui,sans-serif;letter-spacing:.01em}
+@media(max-width:680px){footer.footer-simple .ftm{padding:32px 22px 24px;gap:20px}footer.footer-simple .ftm-links{gap:12px 18px}footer.footer-simple .ftm-bottom{padding:15px 22px 20px;gap:5px 18px}}
