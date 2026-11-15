@@ -293,6 +293,103 @@ html.js .en .pw>span{transform:none}
 .cur.on span{transform:scale(1)}
 /* === fin home === */
 </style>
+<style id="home-audaz">
+/* === home · propuesta atrevida: titular grande, trabajo en la primera pantalla y trazos a mano === */
+.hero.ha{text-align:left;padding:clamp(118px,13vw,170px) 0 0;display:flex;flex-direction:column;min-height:min(100svh - 12px,1080px)}
+.hero.ha .wrap{max-width:none;padding:0 clamp(20px,3.2vw,56px)}
+.hero.ha .mono{margin:0}
+.hero.ha h1{font-size:clamp(44px,calc((100vw - 24px - 2*clamp(20px,3.2vw,56px))/6.03),250px);line-height:.86;letter-spacing:-.05em;margin:clamp(14px,1.6vw,26px) 0 0;max-width:none;white-space:nowrap}
+.hero.ha h1 .s2{letter-spacing:-.035em}
+.hero.ha h1>span{padding:.07em .05em .17em;margin:-.07em -.05em -.17em}
+.hero h1 .sub{position:relative;display:inline-block;isolation:isolate}
+.hero h1 .garab{position:absolute;display:block;left:-3%;bottom:-.19em;width:106%;height:auto;aspect-ratio:300/40;z-index:-1;overflow:visible}
+.garab path{fill:none;stroke:#FCB0F8;stroke-width:15;stroke-linecap:round;stroke-dasharray:1 3;stroke-dashoffset:0}
+html.js .garab path{stroke-dashoffset:1.5;animation:traza 1s cubic-bezier(.6,0,.2,1) forwards;animation-delay:calc(var(--t0) + .75s)}
+@keyframes traza{to{stroke-dashoffset:0}}
+.ha-pie{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:20px 48px;margin-top:clamp(22px,2.6vw,40px)}
+.ha-pie .lead{font-size:clamp(18px,1.55vw,24px);line-height:1.38;max-width:27em;margin:0;color:#1d2422}
+.ha-cta{display:flex;flex-wrap:wrap;gap:10px}
+html.js .ha-pie{animation:entra .9s var(--punto) backwards;animation-delay:calc(var(--t0) + .4s)}
+/* tira de proyectos en la primera pantalla */
+.tira{margin-top:auto;padding:clamp(34px,4vw,60px) 0 clamp(18px,2vw,28px);overflow:hidden}
+html.js .tira{animation:entra 1s var(--punto) backwards;animation-delay:calc(var(--t0) + .55s)}
+.tira-riel{display:flex;width:max-content;animation:tira-va 64s linear infinite}
+.tira:hover .tira-riel,.tira:focus-within .tira-riel{animation-play-state:paused}
+.tira-pista{display:flex;gap:14px;padding-right:14px}
+@keyframes tira-va{to{transform:translateX(-50%)}}
+.tj{--alto:clamp(190px,31vh,330px);display:block;flex:none;color:var(--ink);text-decoration:none}
+.tj-vi{position:relative;display:block;height:var(--alto);border-radius:14px;overflow:hidden;background:#dfe7f3}
+.tj-vi>img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--punto)}
+.tj:hover .tj-vi>img{transform:scale(1.05)}
+.tj.h .tj-vi{aspect-ratio:3/2}.tj.v .tj-vi{aspect-ratio:4/5}.tj.u .tj-vi{aspect-ratio:5/4}
+.tj .mono{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:11.5px;letter-spacing:.08em;color:#2f3835}
+.tj .mono b{font-weight:400}
+.tj:focus-visible{outline:2px solid var(--a);outline-offset:4px;border-radius:14px}
+.tj-vi.g1{background:var(--grano),radial-gradient(70% 90% at 88% 6%,color-mix(in srgb,#FCB0F8 55%,transparent),transparent 70%),linear-gradient(140deg,#C7D9F4,#EEF3FB);background-blend-mode:overlay,normal,normal;background-size:220px,auto,auto}
+.tj-vi.g2{background:var(--grano),radial-gradient(70% 90% at 100% 0%,color-mix(in srgb,#FCB0F8 70%,transparent),transparent 70%),linear-gradient(135deg,#F6EEF8,#E3EBFA);background-blend-mode:overlay,normal,normal;background-size:220px,auto,auto}
+.tj-vi.g3{background:var(--grano),radial-gradient(70% 90% at 90% 10%,color-mix(in srgb,#A8C8F8 55%,transparent),transparent 70%),linear-gradient(150deg,#0d5a42,#004833);background-blend-mode:overlay,normal,normal;background-size:220px,auto,auto}
+.tj .tel{width:37%;border-width:4px;border-radius:16px}
+.tj .tel.t1{left:11%;top:12%}.tj .tel.t2{right:11%;top:24%}
+.tj:hover .tel.t1{transform:rotate(-2deg) translateY(-6px)}.tj:hover .tel.t2{transform:rotate(2deg) translateY(-10px)}
+.tj .msgs{position:absolute;inset:0;gap:8px;padding:0 9%;height:auto}
+.tj .msg{width:86%;padding:9px 11px;border-radius:12px;font-size:12px;column-gap:9px;opacity:1;translate:0 0}
+html.js .tj .msg{opacity:1;translate:0 0}
+.tj .msg em{width:26px;height:26px}.tj .msg em svg{width:13px;height:13px}.tj .msg b{font-size:12.5px}
+.tj .marco{left:9%;top:14%;width:118%;border-radius:10px}
+.tj .marco .barra{padding:7px 10px;gap:4px}.tj .marco .barra i{width:6px;height:6px}
+.tj:hover .marco{transform:translate(-8px,-8px)}
+/* las dos puertas, ahora en la segunda pantalla y más grandes */
+.puertas-sec{padding:clamp(56px,7vw,104px) 0 clamp(40px,5vw,72px)}
+.puertas-sec .puertas{max-width:none;margin:0;gap:16px}
+.puertas-sec .puerta{min-height:clamp(300px,42vh,440px);padding:clamp(26px,3vw,44px);border-radius:22px}
+.puertas-sec .puerta h2{font-size:clamp(30px,3.9vw,60px);line-height:1.02;letter-spacing:-.025em;margin:14px 0 18px}
+.puertas-sec .tags li{font-size:14px;padding:6px 12px}
+.puertas-sec .puerta.neg{background:var(--c2);box-shadow:none}
+.puertas-sec .neg .tags li{background:#fff}
+html.js .puertas-sec .puerta{animation:none}
+/* trazos a mano */
+.rodeo{position:relative;display:inline-block}
+.rodeo svg{position:absolute;left:-.16em;top:-.04em;width:calc(100% + .32em);height:1.1em;overflow:visible;pointer-events:none}
+.traz{fill:none;stroke:var(--a);stroke-width:3px;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 3;stroke-dashoffset:0}
+html.js .traz{stroke-dashoffset:1.5;transition:stroke-dashoffset 1.2s cubic-bezier(.6,0,.2,1) .55s}
+html.js .en .traz{stroke-dashoffset:0}
+/* pasos unidos por una línea dibujada a mano */
+.pasos-w{position:relative;--p:0}
+.pasos-w .pasos:before,.pasos-w .pasos::after{display:none}
+.onda{position:absolute;left:28px;right:28px;top:14px;width:calc(100% - 56px);height:28px;overflow:visible;pointer-events:none}
+.onda path{fill:none;stroke:var(--a);stroke-width:2.5px;stroke-linecap:round;stroke-dasharray:1 3;stroke-dashoffset:0}
+html.js .onda path{stroke-dashoffset:calc(1.03 - var(--p,0)*1.03)}
+@media (max-width:820px){.onda{display:none}.pasos-w .pasos li:not(:last-child):after{display:block}}
+/* declaración: se va marcando al bajar */
+.dicho .wrap{display:block}
+.dicho h2{font:400 13px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:0 0 clamp(20px,2.4vw,34px)}
+.dicho h2 .pt{display:none}
+.frase{font:400 clamp(28px,4.3vw,70px)/1.08 var(--serif);letter-spacing:-.025em;margin:0 0 clamp(34px,4vw,60px);max-width:17em;text-wrap:balance;color:var(--ink)}
+html.js .frase.viva .pl{color:#7c8480;transition:color .35s}
+html.js .frase.viva .pl.si{color:var(--ink)}
+.dicho-pie{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,5vw,80px)}
+.dicho-pie div{grid-column:2}
+.dicho-pie p{margin:0 0 18px;font-size:19px}
+@media (max-width:820px){.dicho-pie{grid-template-columns:1fr}.dicho-pie div{grid-column:1}}
+/* contacto: una flecha a mano señala el formulario */
+.flecha-mano{display:block;width:clamp(90px,9vw,150px);height:auto;margin:clamp(26px,3vw,44px) 0 0 auto;overflow:visible}
+.flecha-mano .traz{stroke:#A8C8F8}
+@media (max-width:860px){.flecha-mano{display:none}}
+@media (max-width:700px){
+.hero.ha{min-height:0;padding-top:104px}
+.hero.ha h1{font-size:calc((100vw - 16px - 2*clamp(20px,3.2vw,56px))/6.03);line-height:.9}
+.ha-pie{align-items:start}
+.tj{--alto:190px}
+}
+@media (prefers-reduced-motion:reduce){
+html.js .garab path,html.js .traz,html.js .onda path{stroke-dashoffset:0;animation:none;transition:none}
+html.js .ha-pie,html.js .tira{animation:none}
+.tira{overflow-x:auto}.tira-riel{animation:none}.tira-pista[aria-hidden=true]{display:none}
+.tj-vi>img{transition:none}
+html.js .frase.viva .pl{color:var(--ink)}
+}
+/* === fin propuesta === */
+</style>
 <link rel="stylesheet" href="/menu.css">
 </head>
 <body>
@@ -301,10 +398,15 @@ html.js .en .pw>span{transform:none}
 <ul><li><a href="/negocios">Negocios</a></li><li><a href="/empresas">Empresas</a></li><li><a href="/proyectos">Proyectos</a></li><li><a href="/sobre-laura">Sobre mí</a></li></ul>
 <a class="lang" href="/en/" hreflang="en" lang="en" aria-label="English version">EN</a><a class="btn" href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Reservar 15 min</a></nav>
 <main id="inicio">
-<section class="hero"><div class="hero-luz" aria-hidden="true"></div><div class="hero-rastro" aria-hidden="true"></div><div class="wrap">
+<section class="hero ha"><div class="hero-luz" aria-hidden="true"></div><div class="hero-rastro" aria-hidden="true"></div><div class="wrap">
 <p class="mono">Diseño de producto · Software · Automatización</p>
-<h1><span class="s1"><span class="ln">Soluciones digitales</span></span> <span class="s2"><span class="ln">para negocios y equipos<i class="pt"></i></span></span></h1>
-<div class="puertas">
+<h1><span class="s1"><span class="ln">Lo digital,</span></span> <span class="s2"><span class="ln">pero <span class="sub">amable<svg class="garab" viewBox="0 0 300 40" aria-hidden="true"><path pathLength="1" d="M9 23C55 14 100 28 152 19S250 13 291 21"/></svg></span><i class="pt"></i></span></span></h1>
+<div class="ha-pie"><p class="lead">Webs, marcas y reservas para negocios; software a medida y automatización con IA para empresas. Precios claros y trato directo.</p><div class="ha-cta"><a class="btn" href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Reservar 15 min</a><a class="btn claro" href="/proyectos">Ver todos los proyectos</a></div></div>
+</div>
+<div class="tira"><div class="tira-riel"><div class="tira-pista"><a class="tj h" href="/caso-marca-aceite-vereda"><div class="tj-vi"><img src="/img/tira/vereda-botellas.webp" alt="" width="840" height="560" decoding="async"></div><span class="mono"><b>Vereda</b><span>Nombre, identidad y packaging</span></span></a><a class="tj u" href="/caso-presupuestos-construccion"><div class="tj-vi g1"><div class="tel t1"><img src="/img/rastro/alcolea-voz.webp" alt="" width="360" height="450" decoding="async"></div><div class="tel t2"><img src="/img/rastro/alcolea-partidas.webp" alt="" width="360" height="450" decoding="async"></div></div><span class="mono"><b>Alcolea</b><span>App web</span></span></a><a class="tj v" href="/caso-marca-aceite-vereda"><div class="tj-vi"><img src="/img/tira/vereda-lata.webp" alt="" width="480" height="600" decoding="async"></div><span class="mono"><b>Vereda</b><span>9 dibujos a mano</span></span></a><a class="tj u" href="/caso-automatizacion-citas"><div class="tj-vi g2"><div class="msgs"><div class="msg"><em><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></em><b>Nueva solicitud</b><span>Reunión de 30 min</span></div><div class="msg"><em><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></em><b>Cita confirmada</b><span>Jueves, 10:30</span></div><div class="msg"><em><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 7 2.5 7h-17S6 15 6 9z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></em><b>Recordatorio enviado</b><span>El día antes</span></div></div></div><span class="mono"><b>Agencia de marketing</b><span>Automatización</span></span></a><a class="tj h" href="/caso-seo-ram2-immobilien"><div class="tj-vi"><img src="/img/tira/ram2-portada.webp" alt="" width="840" height="560" decoding="async"></div><span class="mono"><b>Ram² Immobilien</b><span>SEO local</span></span></a><a class="tj u" href="/caso-web-guia-montana"><div class="tj-vi g3"><div class="marco"><div class="barra"><i></i><i></i><i></i></div><img src="https://hola-laura.github.io/laura/assets/mountain-guide/website.webp" alt="" width="1400" height="848" decoding="async"></div></div><span class="mono"><b>Mattern Guide</b><span>Web y panel</span></span></a></div><div class="tira-pista" aria-hidden="true"><a tabindex="-1" class="tj h" href="/caso-marca-aceite-vereda"><div class="tj-vi"><img src="/img/tira/vereda-botellas.webp" alt="" width="840" height="560" decoding="async"></div><span class="mono"><b>Vereda</b><span>Nombre, identidad y packaging</span></span></a><a tabindex="-1" class="tj u" href="/caso-presupuestos-construccion"><div class="tj-vi g1"><div class="tel t1"><img src="/img/rastro/alcolea-voz.webp" alt="" width="360" height="450" decoding="async"></div><div class="tel t2"><img src="/img/rastro/alcolea-partidas.webp" alt="" width="360" height="450" decoding="async"></div></div><span class="mono"><b>Alcolea</b><span>App web</span></span></a><a tabindex="-1" class="tj v" href="/caso-marca-aceite-vereda"><div class="tj-vi"><img src="/img/tira/vereda-lata.webp" alt="" width="480" height="600" decoding="async"></div><span class="mono"><b>Vereda</b><span>9 dibujos a mano</span></span></a><a tabindex="-1" class="tj u" href="/caso-automatizacion-citas"><div class="tj-vi g2"><div class="msgs"><div class="msg"><em><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></em><b>Nueva solicitud</b><span>Reunión de 30 min</span></div><div class="msg"><em><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></em><b>Cita confirmada</b><span>Jueves, 10:30</span></div><div class="msg"><em><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 7 2.5 7h-17S6 15 6 9z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></em><b>Recordatorio enviado</b><span>El día antes</span></div></div></div><span class="mono"><b>Agencia de marketing</b><span>Automatización</span></span></a><a tabindex="-1" class="tj h" href="/caso-seo-ram2-immobilien"><div class="tj-vi"><img src="/img/tira/ram2-portada.webp" alt="" width="840" height="560" decoding="async"></div><span class="mono"><b>Ram² Immobilien</b><span>SEO local</span></span></a><a tabindex="-1" class="tj u" href="/caso-web-guia-montana"><div class="tj-vi g3"><div class="marco"><div class="barra"><i></i><i></i><i></i></div><img src="https://hola-laura.github.io/laura/assets/mountain-guide/website.webp" alt="" width="1400" height="848" decoding="async"></div></div><span class="mono"><b>Mattern Guide</b><span>Web y panel</span></span></a></div></div></div>
+</section>
+<section class="puertas-sec"><div class="wrap">
+<div class="puertas r">
 <a class="puerta neg" href="/negocios"><span class="mono">Tengo un negocio</span><h2>Que te encuentren y te reserven</h2><ul class="tags"><li>Web</li><li>Marca y logo</li><li>Reservas online</li><li>Redes</li><li>Automatizaciones sencillas</li></ul><span class="ir"><span><b>Ver opciones para negocios</b><br><span class="precio">Precios publicados · web desde 800€</span></span><span class="fl" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
 <a class="puerta emp" href="/empresas"><span class="mono">Tengo una empresa</span><h2>Que tu equipo deje de hacerlo a mano</h2><ul class="tags"><li>Software a medida</li><li>Automatización con IA</li><li>Herramientas internas</li><li>Diseño de producto</li></ul><span class="ir"><span><b>Ver opciones para empresas</b><br><span class="precio">Proyectos desde 3.000€</span></span><span class="fl" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
 </div>
@@ -319,15 +421,16 @@ html.js .en .pw>span{transform:none}
 </div></div></section>
 <section class="b" style="padding-top:0"><div class="wrap">
 <div class="tit r"><h2>Cómo trabajo<i class="pt"></i></h2><p>Desde una web de reservas hasta software a medida: definimos el alcance y el precio antes de empezar.</p></div>
-<ol class="pasos r"><li><h3>Entendemos el reto</h3><p>En una conversación de 15 minutos, me cuentas qué necesitas y vemos cómo puedo ayudarte.</p></li><li><h3>Definimos el alcance</h3><p>Recibes una propuesta clara, con entregables, calendario y precio cerrado.</p></li><li><h3>Diseño, implemento y acompaño</h3><p>Pongo la solución en marcha, te enseño a usarla y sigo disponible para su evolución.</p></li></ol>
+<div class="pasos-w"><svg class="onda" viewBox="0 0 1000 28" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 14C20 5.2 41 5.2 62 13.7C79 19.3 97 19.3 115 14.1C136 6.7 157 6.7 178 15.0C197 19.1 216 19.1 236 13.8C254 8.0 272 8.0 290 14.1C307 22.3 325 22.3 343 13.1C362 6.5 382 6.5 402 14.2C419 21.3 437 21.3 455 13.8C474 8.8 494 8.8 514 14.9C534 20.7 554 20.7 575 14.1C598 7.8 621 7.8 645 14.8C664 19.4 683 19.4 702 14.2C721 7.5 740 7.5 760 14.1C778 21.3 796 21.3 814 14.3C836 6.3 858 6.3 881 13.8C901 20.9 922 20.9 943 15.0C964 7.8 985 7.8 1000 14.7"/></svg><ol class="pasos r"><li><h3>Entendemos el reto</h3><p>En una conversación de 15 minutos, me cuentas qué necesitas y vemos cómo puedo ayudarte.</p></li><li><h3>Definimos el alcance</h3><p>Recibes una propuesta clara, con entregables, calendario y precio cerrado.</p></li><li><h3>Diseño, implemento y acompaño</h3><p>Pongo la solución en marcha, te enseño a usarla y sigo disponible para su evolución.</p></li></ol></div>
 </div></section>
-<section class="b sobre" id="laura"><div class="wrap yo">
+<section class="b sobre dicho" id="laura"><div class="wrap">
 <h2 class="r">Hablas con quien lo diseña y lo construye<i class="pt"></i></h2>
-<div class="r"><p>He diseñado productos digitales utilizados por millones de personas en banca, salud y delivery. He trabajado en Monzo, Just Eat y RLDatix, y he creado y publicado mi propia app, Drivo Test.</p><p>Con Amable aplico esa experiencia a proyectos de distintas escalas: desde webs y reservas para negocios hasta software y automatización para equipos. Empiezo por entender el reto y definir un alcance claro antes de construir.</p><a class="btn claro" href="/sobre-laura">Más sobre mí</a></div>
+<p class="frase">He diseñado productos digitales utilizados por millones de personas en banca, salud y delivery. He trabajado en Monzo, Just Eat y RLDatix, y he creado y publicado mi propia app, Drivo Test.</p>
+<div class="dicho-pie r"><div><p>Con Amable aplico esa experiencia a proyectos de distintas escalas: desde webs y reservas para negocios hasta software y automatización para equipos. Empiezo por entender el reto y definir un alcance claro antes de construir.</p><a class="btn claro" href="/sobre-laura">Más sobre mí</a></div></div>
 </div></section>
 <section class="contacto" id="contacto"><div class="wrap">
 <div class="r"><h2>Cuéntame tu caso<i class="pt"></i></h2><p class="lead">Dime qué quieres mejorar y te contesto lo antes posible. Si prefieres, reserva 15 minutos.</p>
-<div class="salidas"><a class="btn" href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Reservar 15 minutos</a><a class="btn" href="https://wa.me/447469892325?text=Hola%20Laura%2C%20quiero%20contarte%20mi%20proyecto" target="_blank" rel="noopener">WhatsApp</a></div></div>
+<div class="salidas"><a class="btn" href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Reservar 15 minutos</a><a class="btn" href="https://wa.me/447469892325?text=Hola%20Laura%2C%20quiero%20contarte%20mi%20proyecto" target="_blank" rel="noopener">WhatsApp</a></div><svg class="flecha-mano" viewBox="0 0 150 90" aria-hidden="true"><path class="traz" pathLength="1" d="M6 16C44 4 98 12 120 60"/><path class="traz" pathLength="1" d="M96 54L121 62L129 36"/></svg></div>
 <form class="r" id="f" novalidate>
 <input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
 <fieldset class="via"><legend>Qué buscas</legend><div class="vias"><label><input type="radio" name="busca" value="Web, marca o reservas" checked><span>Web, marca o reservas</span></label><label><input type="radio" name="busca" value="Automatizar o software a medida"><span>Automatizar o software</span></label><label><input type="radio" name="busca" value="Aún no lo sé"><span>Aún no lo sé</span></label></div></fieldset>
@@ -430,6 +533,24 @@ casos.forEach((c)=>{c.addEventListener('pointerenter',(e)=>{const ab=c.querySele
 c.addEventListener('pointermove',(e)=>{px=e.clientX+18;py=e.clientY+18},{passive:true});
 c.addEventListener('pointerleave',()=>{activa=false;cur.classList.remove('on')})});
 addEventListener('scroll',()=>{if(activa&&!document.querySelector('.caso:hover')){activa=false;cur.classList.remove('on')}},{passive:true})}
+})();</script>
+<script>/* propuesta atrevida: rodeo, declaración y línea de pasos */(()=>{
+const calma=matchMedia('(prefers-reduced-motion:reduce)').matches,lim=(v,a,b)=>Math.min(b,Math.max(a,v));
+/* un rodeo a mano en la última palabra de «Trabajo real» */
+const t=document.querySelector('#trabajos .tit h2');
+if(t){const ps=t.querySelectorAll('.pw'),u=ps[ps.length-1];if(u){const r=document.createElement('span');r.className='rodeo';u.replaceWith(r);r.append(u);r.insertAdjacentHTML('beforeend','<svg aria-hidden="true"><path class="traz" pathLength="1"/></svg>');
+const sv=r.querySelector('svg'),pt=sv.firstChild,N=[.855,.21,.695,.04,.31,.01,.135,.24,-.015,.44,.03,.82,.31,.92,.61,1.02,.955,.87,.975,.52,.99,.25,.78,.07,.56,.11];
+const traza=()=>{const w=sv.clientWidth,h=sv.clientHeight;if(!w||!h)return;const q=N.map((v,i)=>(v*(i%2?h:w)).toFixed(1));sv.setAttribute('viewBox','0 0 '+w+' '+h);pt.setAttribute('d','M'+q[0]+' '+q[1]+'C'+q.slice(2,8).join(' ')+'C'+q.slice(8,14).join(' ')+'C'+q.slice(14,20).join(' ')+'C'+q.slice(20,26).join(' '))};
+traza();addEventListener('resize',traza);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(traza)}}
+/* la declaración se va marcando palabra a palabra al bajar */
+const f=document.querySelector('.frase'),pa=document.querySelector('.pasos-w');let pl=[];
+if(f&&!calma){const ws=f.textContent.trim().split(/\s+/);f.textContent='';ws.forEach((w,i)=>{const s=document.createElement('span');s.className='pl';s.textContent=w;f.append(s,i<ws.length-1?' ':'')});f.classList.add('viva');pl=[...f.children]}
+let pend=false;
+const mide=()=>{pend=false;const vh=innerHeight;
+if(pl.length){const r=f.getBoundingClientRect(),q=lim((vh*.84-r.top)/(r.height+vh*.28),0,1),n=Math.round(q*pl.length*1.04);pl.forEach((s,i)=>s.classList.toggle('si',i<n))}
+if(pa){const p=calma?1:lim((vh*.82-pa.getBoundingClientRect().top)/(vh*.42),0,1);pa.style.setProperty('--p',p.toFixed(3))}};
+const pide=()=>{if(!pend){pend=true;requestAnimationFrame(mide)}};
+addEventListener('scroll',pide,{passive:true});addEventListener('resize',pide);mide();
 })();</script>
 <script>/* menu responsive */(()=>{document.querySelectorAll('a.lang').forEach((a)=>{const c=document.documentElement.lang==='en'?'en':'es';a.classList.add('seg');a.innerHTML=['es','en'].map((l)=>'<span class="lg-o'+(l===c?' on':'')+'" data-l="'+l+'">'+l.toUpperCase()+'</span>').join('')});document.querySelectorAll('nav.nav,nav.vnav').forEach((n)=>{const ul=n.querySelector('ul');if(!ul)return;n.classList.add('tiene-menu');const en=document.documentElement.lang==='en';const b=document.createElement('button');b.type='button';b.className='menu-b';b.setAttribute('aria-expanded','false');b.setAttribute('aria-label',en?'Menu':'Menú');b.innerHTML='<i></i><i></i>';n.append(b);const cierra=()=>{n.classList.remove('abierto');b.setAttribute('aria-expanded','false')};b.addEventListener('click',(e)=>{e.stopPropagation();const o=n.classList.toggle('abierto');b.setAttribute('aria-expanded',String(o))});ul.addEventListener('click',(e)=>{if(e.target.closest('a'))cierra()});document.addEventListener('click',(e)=>{if(!n.contains(e.target))cierra()});document.addEventListener('keydown',(e)=>{if(e.key==='Escape')cierra()});addEventListener('resize',()=>{if(innerWidth>1024)cierra()})})})();</script><script src="/menu.js" defer></script>
 </body>
