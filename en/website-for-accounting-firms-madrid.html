@@ -1063,7 +1063,7 @@ if(innerWidth>860){const r=$('pista').getBoundingClientRect(),p=(innerHeight-r.t
 if(p>-.1&&p<1.1){const w=$('posts').scrollWidth-innerWidth;$('posts').style.transform='translateX('+(-Math.max(w,0)*p)+'px)';$('fondo').style.transform='translate('+(-p*18)+'%,-50%)'}}
 const q=$('pasos').getBoundingClientRect(),m=Math.min(Math.max((innerHeight*.6-q.top)/q.height,0),1);$('bola').style.transform='translateY('+m*(q.height-16)+'px)';
 if(innerWidth>860)document.querySelectorAll('[data-par]').forEach((e)=>{const r=e.parentElement.getBoundingClientRect();e.style.transform='translateY('+(r.top+r.height/2-innerHeight/2)*+e.dataset.par+'px)'});
-const f=document.querySelector('.pie').getBoundingClientRect(),z=Math.min(Math.max((innerHeight-f.top)/f.height,0),1);$('gigante').style.transform='translateY('+(1-z)*42+'%)';};
+const f=document.querySelector('.pie').getBoundingClientRect(),z=Math.min(Math.max((innerHeight-f.top)/f.height,0),1);{const g=$('gigante');if(g)g.style.transform='translateY('+(1-z)*42+'%)'}};
 addEventListener('scroll',()=>{if(!pend){pend=true;requestAnimationFrame(scroll)}},{passive:true});
 
 /* cursor punto y botones magnéticos, solo con ratón */

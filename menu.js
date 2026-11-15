@@ -12,6 +12,15 @@
     if (h === ruta || (esCaso && /\/(proyectos|projects)$/.test(h))) a.setAttribute('aria-current', 'page');
   });
 
+  // Selector de idioma: el nombre accesible incluye el texto visible (ES EN)
+  document.querySelectorAll('a.lang.seg').forEach((a) => {
+    const os = a.querySelectorAll('.lg-o');
+    if (os.length !== 2 || a.dataset.nom) return;
+    os[0].after(' ');
+    a.setAttribute('aria-label', 'ES EN · ' + (a.getAttribute('aria-label') || ''));
+    a.dataset.nom = '1';
+  });
+
   const css = `
 nav.am{transition:translate .55s cubic-bezier(.7,0,.84,0),scale .55s cubic-bezier(.7,0,.84,0),opacity .4s ease,filter .45s ease,box-shadow .4s ease,background .4s ease!important;will-change:translate,opacity}
 nav.am.am-fuera{translate:0 calc(-100% - 36px);scale:.94;opacity:0;filter:blur(6px);pointer-events:none}

@@ -3,8 +3,8 @@
   const KEY = "amable-analytics-consent";
   const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
   const text = isEnglish
-    ? { body: "We use analytics cookies to improve the site, only if you say yes.", privacy: "More info", reject: "No thanks", accept: "OK" }
-    : { body: "Usamos cookies de analítica para mejorar la web, solo si aceptas.", privacy: "Más info", reject: "No, gracias", accept: "Vale" };
+    ? { body: "We use analytics cookies to improve the site, only if you say yes.", privacy: "Privacy information", reject: "No thanks", accept: "OK" }
+    : { body: "Usamos cookies de analítica para mejorar la web, solo si aceptas.", privacy: "Información de privacidad", reject: "No, gracias", accept: "Vale" };
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
