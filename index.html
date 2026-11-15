@@ -68,10 +68,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;margin:0
 .prueba{padding:clamp(30px,4vw,44px) 0;border-bottom:1px solid var(--line);overflow:hidden}
 .logo-marquee{width:100%;overflow:hidden}
 .logo-rail{display:flex;width:max-content;animation:logo-scroll 48s linear infinite}
-.logo-track{display:flex;align-items:center;gap:clamp(44px,6vw,88px);padding:0 clamp(24px,5vw,64px)}
-.logo-item{display:grid;place-items:center;min-width:clamp(175px,19vw,235px);height:68px;padding:0 8px;flex:none}
-.logo-item img{display:block;width:auto;height:auto;max-width:220px;max-height:54px;object-fit:contain;filter:grayscale(1);opacity:.5;transition:opacity .25s,filter .25s}
-.logo-item:hover img{opacity:.82}
+.logo-track{display:flex;align-items:center;gap:64px;padding:0 64px}
+.logo-item{display:grid;place-items:center;width:220px;height:64px;flex:none}
+.logo-item img{display:block;width:auto;height:42px;max-width:204px;object-fit:contain;filter:grayscale(1);opacity:.55;transition:opacity .25s,filter .25s}
+.logo-item:hover img{opacity:.78}
 .logo-marquee:hover .logo-rail,.logo-marquee:focus-within .logo-rail{animation-play-state:paused}
 @keyframes logo-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.logo-rail{animation:none}.logo-track[aria-hidden=true]{display:none}.logo-track{justify-content:center;flex-wrap:wrap}.logo-marquee{overflow:visible}}
