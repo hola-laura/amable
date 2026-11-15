@@ -42,9 +42,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;margin:0
 .logo-rail{display:flex;width:max-content;animation:logo-scroll 48s linear infinite}
 .logo-track{display:flex;align-items:center;gap:72px;padding:0 64px}
 .logo-item{display:flex;align-items:center;justify-content:center;width:auto;height:64px;flex:none}
-.logo-item img{display:block;width:auto;height:34px;max-width:190px;object-fit:contain;filter:grayscale(1);opacity:.55;transition:opacity .25s,filter .25s}
+.logo-item img{display:block;width:190px;height:34px;max-width:190px;object-fit:contain;filter:grayscale(1);opacity:.55;transition:opacity .25s,filter .25s}
 /* Tamaño óptico: compensar el lienzo con márgenes del logo de intu. */
-.logo-item:nth-child(4) img{height:58px}
+.logo-item:nth-child(4) img{width:190px;height:58px}
 .logo-item:nth-child(1) img{max-width:170px}
 .logo-item:nth-child(6) img{max-width:150px}
 .logo-item:hover img{opacity:.78}
