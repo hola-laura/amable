@@ -82,6 +82,32 @@
     document.querySelectorAll("[data-amable-open-consent]").forEach((button) => button.addEventListener("click", openBanner));
   }
 
+  // Conversiones: se dejan en dataLayer para que Tag Manager las envíe a GA4 (solo si hay consentimiento).
+  function track(name, params) {
+    window.dataLayer.push(Object.assign({ event: name, page_language: isEnglish ? "en" : "es" }, params || {}));
+  }
+  document.addEventListener("click", (event) => {
+    const link = event.target && event.target.closest ? event.target.closest("a[href]") : null;
+    if (!link) return;
+    const href = link.getAttribute("href") || "";
+    let method = "";
+    if (/^https:\/\/wa\.me\//.test(href)) method = "whatsapp";
+    else if (/^https:\/\/calendar\.app\.google\//.test(href)) method = "booking";
+    else if (/^mailto:/.test(href)) method = "email";
+    else if (/^tel:/.test(href)) method = "phone";
+    if (method) track("contact_click", { contact_method: method });
+  }, true);
+  function watchForm() {
+    const form = document.getElementById("f");
+    if (!form || !("MutationObserver" in window)) return;
+    const observer = new MutationObserver(() => {
+      if (form.querySelector(".gracias")) { observer.disconnect(); track("generate_lead", { form_id: "contacto" }); }
+    });
+    observer.observe(form, { childList: true });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", watchForm, { once: true });
+  else watchForm();
+
   const style = document.createElement("style");
   style.textContent = `
     #amable-consent-banner{position:fixed;z-index:2147483000;left:16px;bottom:16px;width:min(380px,calc(100% - 32px));padding:16px 18px;background:#fff;color:#111;border:1px solid rgba(17,17,17,.12);border-radius:16px;box-shadow:0 12px 36px rgba(0,0,0,.18);font:14.5px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}

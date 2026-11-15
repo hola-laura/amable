@@ -18,6 +18,8 @@ Laura trabaja en remoto con empresas de toda España y, en Madrid, también en p
 - [Aplicaciones a medida](https://amableagencia.com/aplicaciones-a-medida-madrid)
 - [Gestión de redes](https://amableagencia.com/gestion-redes-sociales-madrid)
 - [Cuánto cuesta una web](https://amableagencia.com/cuanto-cuesta-una-pagina-web)
+- [Auditoría UX para webs y productos digitales](https://amableagencia.com/auditoria-ux)
+- [Todos los servicios, sectores y artículos](https://amableagencia.com/servicios)
 
 ## Sectores
 - [Web para peluquerías y estética](https://amableagencia.com/web-para-peluquerias-madrid)
@@ -91,6 +93,8 @@ The whole site is also available in English under https://amableagencia.com/en/ 
 - [Custom software for businesses in Madrid](https://amableagencia.com/en/custom-software-madrid)
 - [Social media management for businesses in Madrid](https://amableagencia.com/en/social-media-management-madrid)
 - [How much does a website cost for a small business](https://amableagencia.com/en/how-much-does-a-website-cost)
+- [UX audit for websites and digital products](https://amableagencia.com/en/ux-audit)
+- [All services, sectors and guides](https://amableagencia.com/en/services)
 - [Case study: website with a content manager for a mountain guide](https://amableagencia.com/en/case-mountain-guide-website)
 - [Case study: quoting app for construction](https://amableagencia.com/en/case-construction-quotes)
 - [Case study: appointment automation for an agency](https://amableagencia.com/en/case-appointment-automation)
