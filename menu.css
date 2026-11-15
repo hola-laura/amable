@@ -48,3 +48,6 @@ html body nav.vnav .vbtn{
 }
 @keyframes am-sale{to{opacity:0;transform:translateY(-10px)}}
 @keyframes am-entra{from{opacity:0;transform:translateY(16px)}}
+
+/* Las imágenes con ancho y alto declarados reservan su hueco y conservan su proporción */
+:where(img[width][height]){height:auto}
