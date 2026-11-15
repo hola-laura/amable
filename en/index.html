@@ -270,10 +270,27 @@ html.js .pie-marca.en b:nth-child(2){transition-delay:0s,.05s}html.js .pie-marca
 @media (prefers-reduced-motion:reduce){
 html.js .hero h1 .ln,html.js .hero .mono,html.js .puerta,.puerta:hover .fl svg{animation:none}
 html.js .msg,html.js .pie-marca b,html.js .pie-marca i{opacity:1;translate:0 0;transition:none}
+html.js .pw>span{transform:none;transition:none}.cur{display:none}
 .caso{transform:none;filter:none}.caso:hover{transform:none}
 .tel,.marco,.puerta,.caso .ab span{transition:none}
 .pasos::after{transform:none}
 }
+/* desplazamiento suave (Lenis) */
+html.lenis,html.lenis body{height:auto}
+html.lenis{scroll-behavior:auto}
+.lenis.lenis-stopped{overflow:clip}
+/* hero: rastro de proyectos detrás del titular */
+.hero-rastro{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.hero-rastro img{position:absolute;left:0;top:0;width:clamp(124px,12.5vw,196px);height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:10px;opacity:0;will-change:transform,opacity;box-shadow:0 22px 44px -26px rgba(0,30,60,.55)}
+/* títulos: las palabras suben una a una */
+.pw{display:inline-block;overflow:hidden;vertical-align:top;padding:.06em .02em .16em;margin:-.06em -.02em -.16em}
+.pw>span{display:inline-block}
+html.js .pw>span{transform:translateY(112%);transition:transform .9s var(--punto);transition-delay:calc(var(--w,0)*.07s + .05s)}
+html.js .en .pw>span{transform:none}
+/* etiqueta que acompaña al cursor en los casos */
+.cur{position:fixed;left:0;top:0;z-index:80;pointer-events:none;transform:translate3d(var(--cx,-200px),var(--cy,-200px),0)}
+.cur span{display:block;padding:11px 16px;border-radius:999px;background:#fff;color:#111;font:500 14px/1 var(--sans);white-space:nowrap;box-shadow:0 12px 30px -12px rgba(0,0,0,.5);transform:scale(0);transform-origin:0 0;transition:transform .4s var(--punto)}
+.cur.on span{transform:scale(1)}
 /* === fin home === */
 </style>
 <link rel="stylesheet" href="/menu.css">
@@ -284,7 +301,7 @@ html.js .msg,html.js .pie-marca b,html.js .pie-marca i{opacity:1;translate:0 0;t
 <ul><li><a href="/en/businesses">Businesses</a></li><li><a href="/en/companies">Companies</a></li><li><a href="/en/projects">Projects</a></li><li><a href="/en/about">About me</a></li></ul>
 <a class="lang" href="/" hreflang="es" lang="es" aria-label="Versión en español">ES</a><a class="btn" href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Book 15 min</a></nav>
 <main id="inicio">
-<section class="hero"><div class="hero-luz" aria-hidden="true"></div><div class="wrap">
+<section class="hero"><div class="hero-luz" aria-hidden="true"></div><div class="hero-rastro" aria-hidden="true"></div><div class="wrap">
 <p class="mono">Product design · Software · Automation</p>
 <h1><span class="s1"><span class="ln">Digital solutions</span></span> <span class="s2"><span class="ln">for businesses and teams<i class="pt"></i></span></span></h1>
 <div class="puertas">
@@ -392,6 +409,27 @@ addEventListener('scroll',pide,{passive:true});addEventListener('resize',pide);m
 if(marca&&fino&&!calma){const ls=[...marca.querySelectorAll('b,i')];
 marca.addEventListener('pointermove',(e)=>{ls.forEach((l)=>{const r=l.getBoundingClientRect(),d=Math.abs(e.clientX-(r.left+r.width/2)),f=lim(1-d/(r.width*1.6+60),0,1);l.style.transform='translateY('+(-f*f*9).toFixed(2)+'%)'})},{passive:true});
 marca.addEventListener('pointerleave',()=>ls.forEach((l)=>{l.style.transform=''}))}
+/* desplazamiento suave: solo con ratón y si no se ha pedido menos movimiento */
+if(fino&&!calma){const sc=document.createElement('script');sc.src='/lenis.min.js';sc.onload=()=>{try{new Lenis({autoRaf:true,anchors:true})}catch(e){}};document.head.append(sc)}
+/* títulos: una palabra detrás de otra */
+if(!calma)document.querySelectorAll('.tit h2,.yo h2,.contacto h2').forEach((h)=>{let w=0;[...h.childNodes].forEach((n)=>{if(n.nodeType!==3)return;const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach((t)=>{if(!t)return;if(/^\s+$/.test(t)){f.append(' ');return}const o=document.createElement('span'),i=document.createElement('span');o.className='pw';i.textContent=t;i.style.setProperty('--w',w++);o.append(i);f.append(o)});n.replaceWith(f)});const pt=h.querySelector(':scope>.pt'),ult=[...h.querySelectorAll('.pw>span')].pop();if(pt&&ult)ult.append(pt);h.setAttribute('aria-label',h.textContent.replace(/\s+/g,' ').trim());h.querySelectorAll('.pw').forEach((o)=>o.setAttribute('aria-hidden','true'))});
+/* hero: al mover el cursor por el titular van apareciendo proyectos */
+const rastro=document.querySelector('.hero-rastro');
+if(hero&&rastro&&fino&&!calma&&innerWidth>=900){const h1=hero.querySelector('h1'),listos=[];let k=0,ux=null,uy=0;
+const carga=()=>['vereda-botellas','alcolea-voz','vereda-lata','vereda-mano','alcolea-partidas','vereda-bolsa','vereda-cajas'].forEach((n)=>{const im=new Image();im.alt='';im.decoding='async';im.onload=()=>{rastro.append(im);listos.push(im)};im.src='/img/rastro/'+n+'.webp'});
+if(document.readyState==='complete')setTimeout(carga,600);else addEventListener('load',()=>setTimeout(carga,600));
+hero.addEventListener('pointermove',(e)=>{if(!listos.length)return;const r=hero.getBoundingClientRect(),z=h1.getBoundingClientRect();if(e.clientY<z.top||e.clientY>z.bottom+30)return;const x=e.clientX-r.left,y=e.clientY-r.top;if(ux===null){ux=x;uy=y;return}let dx=x-ux,dy=y-uy;if(Math.hypot(dx,dy)<120)return;ux=x;uy=y;dx=lim(dx,-140,140);dy=lim(dy,-140,140);
+const im=listos[k++%listos.length],a=x-im.offsetWidth/2,b=y-im.offsetHeight/2,g=(Math.random()*10-5).toFixed(1),tr=(px,py,s)=>'translate('+px.toFixed(1)+'px,'+py.toFixed(1)+'px) scale('+s+') rotate('+g+'deg)';
+im.getAnimations().forEach((an)=>an.cancel());
+im.animate([{opacity:0,transform:tr(a,b,.72)},{opacity:.6,transform:tr(a,b,1),offset:.16},{opacity:.6,transform:tr(a+dx*.12,b+dy*.12,1),offset:.62},{opacity:0,transform:tr(a+dx*.2,b+dy*.2+18,.94)}],{duration:1400,easing:'cubic-bezier(.2,.8,.2,1)'})},{passive:true})}
+/* casos: una etiqueta acompaña al cursor */
+if(fino&&!calma&&casos.length){const cur=document.createElement('div'),tx=document.createElement('span');cur.className='cur';cur.setAttribute('aria-hidden','true');cur.append(tx);document.body.append(cur);
+let cx=0,cy=0,px=0,py=0,viva=0,activa=false;
+const anda=()=>{cx+=(px-cx)*.2;cy+=(py-cy)*.2;cur.style.setProperty('--cx',cx.toFixed(1)+'px');cur.style.setProperty('--cy',cy.toFixed(1)+'px');if(activa||Math.abs(px-cx)+Math.abs(py-cy)>.5)viva=requestAnimationFrame(anda);else viva=0};
+casos.forEach((c)=>{c.addEventListener('pointerenter',(e)=>{const ab=c.querySelector('.ab');tx.textContent=ab?ab.textContent.replace(/\s+/g,' ').trim():'';px=cx=e.clientX+18;py=cy=e.clientY+18;activa=true;cur.classList.add('on');if(!viva)viva=requestAnimationFrame(anda)});
+c.addEventListener('pointermove',(e)=>{px=e.clientX+18;py=e.clientY+18},{passive:true});
+c.addEventListener('pointerleave',()=>{activa=false;cur.classList.remove('on')})});
+addEventListener('scroll',()=>{if(activa&&!document.querySelector('.caso:hover')){activa=false;cur.classList.remove('on')}},{passive:true})}
 })();</script>
 <script>/* menu responsive */(()=>{document.querySelectorAll('a.lang').forEach((a)=>{const c=document.documentElement.lang==='en'?'en':'es';a.classList.add('seg');a.innerHTML=['es','en'].map((l)=>'<span class="lg-o'+(l===c?' on':'')+'" data-l="'+l+'">'+l.toUpperCase()+'</span>').join('')});document.querySelectorAll('nav.nav,nav.vnav').forEach((n)=>{const ul=n.querySelector('ul');if(!ul)return;n.classList.add('tiene-menu');const en=document.documentElement.lang==='en';const b=document.createElement('button');b.type='button';b.className='menu-b';b.setAttribute('aria-expanded','false');b.setAttribute('aria-label',en?'Menu':'Menú');b.innerHTML='<i></i><i></i>';n.append(b);const cierra=()=>{n.classList.remove('abierto');b.setAttribute('aria-expanded','false')};b.addEventListener('click',(e)=>{e.stopPropagation();const o=n.classList.toggle('abierto');b.setAttribute('aria-expanded',String(o))});ul.addEventListener('click',(e)=>{if(e.target.closest('a'))cierra()});document.addEventListener('click',(e)=>{if(!n.contains(e.target))cierra()});document.addEventListener('keydown',(e)=>{if(e.key==='Escape')cierra()});addEventListener('resize',()=>{if(innerWidth>1024)cierra()})})})();</script><script src="/menu.js" defer></script>
 </body>

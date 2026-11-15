@@ -55,3 +55,11 @@ html body nav.vnav .vlogo{padding:10px 0!important}
 }
 @keyframes am-sale{to{opacity:0;transform:translateY(-10px)}}
 @keyframes am-entra{from{opacity:0;transform:translateY(16px)}}
+
+/* amable · formularios sobre fondo oscuro: contraste suficiente en bordes, texto de ejemplo y foco */
+html body .campo input,html body .campo textarea{border-color:rgba(255,255,255,.58)!important}
+html body .campo input::placeholder,html body .campo textarea::placeholder{color:rgba(255,255,255,.74)!important;opacity:1!important}
+html body .campo input:focus,html body .campo textarea:focus{border-color:#fff!important}
+html body .campo input:focus-visible,html body .campo textarea:focus-visible{outline:2px solid #A8C8F8!important;outline-offset:2px!important}
+html body .vias span{border-color:rgba(255,255,255,.58)!important}
+html body .vias input:checked+span{border-color:#fff!important}
