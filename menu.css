@@ -37,3 +37,21 @@ html body nav.vnav .vbtn{
   html body nav.nav.abierto,
   html body nav.vnav.abierto{border-radius:28px!important}
 }
+
+/* amable · las imágenes con ancho y alto declarados conservan su proporción */
+:where(img[width][height]){height:auto}
+
+/* amable · el logotipo del menú, más fácil de tocar */
+html body nav.nav .logo,
+html body nav.vnav .vlogo{padding:10px 0!important}
+
+/* amable · transición suave entre páginas (solo si no se ha pedido menos movimiento) */
+@media (prefers-reduced-motion:no-preference){
+  @view-transition{navigation:auto}
+  html body nav.nav,
+  html body nav.vnav{view-transition-name:menu}
+  ::view-transition-old(root){animation:am-sale .26s cubic-bezier(.4,0,1,1) both}
+  ::view-transition-new(root){animation:am-entra .5s cubic-bezier(.2,.8,.2,1) both}
+}
+@keyframes am-sale{to{opacity:0;transform:translateY(-10px)}}
+@keyframes am-entra{from{opacity:0;transform:translateY(16px)}}

@@ -988,7 +988,7 @@ v.animate([{transform:'none'},{transform:'translate('+(z.left-a.left)*.5+'px,'+(
 const mil=(n)=>String(n).replace(/\B(?=(\d{3})+$)/g,'.');
 const cuenta=(el)=>{const de=+el.dataset.de,a=+el.dataset.a;if(quieto){el.textContent=mil(a);return}const t0=performance.now()+250;
 const paso=(t)=>{const p=Math.min(Math.max((t-t0)/800,0),1),e=1-Math.pow(1-p,3);el.textContent=mil(Math.round(de+(a-de)*e));if(p<1)requestAnimationFrame(paso)};requestAnimationFrame(paso)};
-const io=new IntersectionObserver((es)=>es.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('en');e.target.querySelectorAll('[data-de]').forEach(cuenta);io.unobserve(e.target)}}),{threshold:.18,rootMargin:'0px 0px -6% 0px'});
+const io=new IntersectionObserver((es)=>es.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('en');e.target.querySelectorAll('[data-de]').forEach(cuenta);io.unobserve(e.target)}}),{threshold:.18,rootMargin:'0px 0px 6% 0px'});
 document.querySelectorAll('.r').forEach((el)=>io.observe(el));
 
 /* pedir un servicio rellena el formulario */
@@ -1063,7 +1063,7 @@ if(innerWidth>860){const r=$('pista').getBoundingClientRect(),p=(innerHeight-r.t
 if(p>-.1&&p<1.1){const w=$('posts').scrollWidth-innerWidth;$('posts').style.transform='translateX('+(-Math.max(w,0)*p)+'px)';$('fondo').style.transform='translate('+(-p*18)+'%,-50%)'}}
 const q=$('pasos').getBoundingClientRect(),m=Math.min(Math.max((innerHeight*.6-q.top)/q.height,0),1);$('bola').style.transform='translateY('+m*(q.height-16)+'px)';
 if(innerWidth>860)document.querySelectorAll('[data-par]').forEach((e)=>{const r=e.parentElement.getBoundingClientRect();e.style.transform='translateY('+(r.top+r.height/2-innerHeight/2)*+e.dataset.par+'px)'});
-const f=document.querySelector('.pie').getBoundingClientRect(),z=Math.min(Math.max((innerHeight-f.top)/f.height,0),1);$('gigante').style.transform='translateY('+(1-z)*42+'%)';};
+const f=document.querySelector('.pie').getBoundingClientRect(),z=Math.min(Math.max((innerHeight-f.top)/f.height,0),1);{const g=$('gigante');if(g)g.style.transform='translateY('+(1-z)*42+'%)'}};
 addEventListener('scroll',()=>{if(!pend){pend=true;requestAnimationFrame(scroll)}},{passive:true});
 
 /* cursor punto y botones magnéticos, solo con ratón */
