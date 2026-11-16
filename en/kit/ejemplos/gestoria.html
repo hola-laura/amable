@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Olmo Advisers · Accountants for freelancers and small firms in Madrid</title>
+<meta name="description" content="Tax, payroll and bookkeeping for freelancers and small businesses in Madrid. A fixed monthly fee and a reply within 24 hours. Book a first meeting.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Olmo Advisers · Accountants for freelancers and small firms in Madrid">
+<meta property="og:description" content="Tax, payroll and bookkeeping for freelancers and small businesses in Madrid. A fixed monthly fee and a reply within 24 hours. Book a first meeting.">
+<meta property="og:image" content="https://images.pexels.com/photos/4428040/pexels-photo-4428040.jpeg?auto=compress&cs=tinysrgb&w=1800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#101B33">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+/* ===== BRAND: change only this ===== */
+:root{
+  --dark:#101B33;      /* midnight blue: header and dark blocks */
+  --bg:#F6F7FA;       /* cool white */
+  --soft:#E7ECF5;       /* cards on the background */
+  --ink:#101B33;       /* text */
+  --grey:#566078;        /* secondary text */
+  --accent:#F2D46B;      /* one touch of colour, very little */
+  --line:rgba(16,27,51,.14);
+  --font-headings:"Archivo",system-ui,sans-serif;
+  --font-body:"Inter",system-ui,sans-serif;
+  --font-figures:"IBM Plex Mono",ui-monospace,monospace;
+}
+/* ===== end of BRAND ===== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--bg);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:var(--font-headings);font-weight:500;line-height:1.08;letter-spacing:-.035em;text-wrap:balance}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.gris{color:var(--grey)}
+.dato{font-family:var(--font-figures);font-size:12px;letter-spacing:.02em}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:5px;text-decoration:none;font-size:14px;font-weight:500;border:1px solid transparent}
+.btn.claro{background:#fff;color:var(--dark)}
+.btn.borde{border-color:rgba(255,255,255,.4);color:#fff}
+.btn.cafe{background:var(--dark);color:#fff}
+.btn.linea{border-color:var(--line)}
+
+/* dark header with the photo inside */
+.arriba{background:var(--dark);color:#fff;padding-bottom:12px}
+.arriba nav{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;font-size:14px}
+.arriba nav .logo{font-family:var(--font-headings);font-weight:500;font-size:21px;text-decoration:none;letter-spacing:-.04em}
+.arriba nav .sec{display:none;gap:28px}
+.arriba nav .sec a{text-decoration:none;opacity:.9}
+.arriba nav .acc{display:flex;align-items:center;gap:14px}
+.arriba nav .acc a.txt{display:none;text-decoration:none}
+.hero{position:relative;margin:0 12px;border-radius:8px;overflow:hidden;min-height:620px;display:flex;align-items:flex-end;background:#1b2947}
+.hero>img{position:absolute;inset:0;object-position:24% 30%;transform:scaleX(-1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,27,51,.92) 0%,rgba(16,27,51,.55) 46%,rgba(16,27,51,.08) 100%)}
+.hero .txt{position:relative;z-index:1;padding:28px 20px 30px;max-width:640px}
+.etiqueta{display:inline-block;border:1px solid rgba(255,255,255,.6);border-radius:5px;padding:5px 10px;font-size:12.5px;margin-bottom:20px}
+.hero h1{font-size:clamp(34px,5.2vw,56px);text-shadow:0 2px 30px rgba(8,14,30,.55)}
+h1 .etiqueta{display:table;font-family:var(--font-body);font-weight:400;line-height:1.5;letter-spacing:0}
+.hero p,.etiqueta{text-shadow:0 1px 10px rgba(8,14,30,.6)}
+.hero p{margin:16px 0 24px;font-size:16.5px;max-width:34em}
+.hero .btns{display:flex;flex-wrap:wrap;gap:8px}
+.franja{display:grid;grid-template-columns:1fr;gap:0;margin:0 20px;font-size:14px}
+.franja div{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.16);display:flex;justify-content:space-between;gap:16px}
+.franja div:last-child{border-bottom:0}
+.franja span{opacity:.72}
+
+section{padding:76px 0}
+.manifiesto h2{font-size:clamp(30px,4.8vw,52px);max-width:15em;margin-bottom:38px}
+.manifiesto .cols{display:grid;gap:26px}
+.manifiesto .cols p{max-width:42ch}
+.manifiesto .cols .serif{font-size:20px;line-height:1.25;letter-spacing:-.025em;margin-bottom:12px}
+
+/* services */
+.servicios .cab{margin-bottom:34px}
+.servicios h2{font-size:clamp(30px,4vw,40px);max-width:9em}
+.servicios .num{font-family:var(--font-headings);font-weight:500;font-size:clamp(64px,9vw,92px);line-height:1;letter-spacing:-.03em;margin-top:34px}
+.tarjetas{display:grid;gap:12px}
+.tarjeta{background:var(--soft);border-radius:8px;padding:26px 24px 24px;display:flex;flex-direction:column;min-height:250px}
+.tarjeta .dato{color:var(--grey);margin-bottom:auto}
+.tarjeta h3{font-family:var(--font-body);font-weight:500;font-size:17px;letter-spacing:0;margin:40px 0 6px}
+.tarjeta p{font-size:14.5px;color:var(--grey)}
+
+/* dark block: how we work + quarter panel */
+.oscuro{background:var(--dark);color:#fff}
+.oscuro .dos{display:grid;gap:44px}
+.oscuro h2{font-size:clamp(32px,4.6vw,46px);max-width:11em}
+.oscuro ol{list-style:none;margin-top:34px;border-top:1px solid rgba(255,255,255,.16)}
+.oscuro li{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:34px 1fr;gap:8px}
+.oscuro li .dato{opacity:.7;padding-top:4px}
+.oscuro li b{font-family:var(--font-headings);font-weight:500;letter-spacing:-.025em;font-size:19px;display:block;line-height:1.2}
+.oscuro li span.t{opacity:.82;font-size:14.5px}
+.panel{background:#18264A;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:22px;align-self:center}
+.panel .cab{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px}
+.panel .cab b{font-family:var(--font-headings);font-weight:500;letter-spacing:-.03em;font-size:20px}
+.panel .cab span{opacity:.75}
+.panel .fila{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-top:1px solid rgba(255,255,255,.1);font-size:14.5px}
+.panel .fila small{display:block;opacity:.72;font-size:12.5px}
+.chip{font-size:12px;border-radius:99px;padding:3px 10px;white-space:nowrap}
+.chip.ok{background:var(--accent);color:var(--dark)}
+.chip.es{border:1px solid rgba(255,255,255,.6)}
+.panel .pie{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);opacity:.75;font-size:12.5px}
+
+/* photo + quote */
+.voz{display:grid;gap:34px}
+.voz figure{border-radius:8px;overflow:hidden;aspect-ratio:4/3;position:relative}
+.voz figure::after{content:"";position:absolute;left:0;bottom:0;width:38%;height:14px;background:var(--accent)}
+.voz blockquote{font-family:var(--font-headings);font-weight:500;font-size:clamp(24px,3.2vw,34px);line-height:1.15;letter-spacing:-.035em}
+.voz cite{display:block;font-family:var(--font-body);font-style:normal;font-size:14px;color:var(--grey);margin-top:20px}
+
+/* questions and contact */
+.final{display:grid;gap:56px}
+.final h2{font-size:clamp(30px,4vw,40px);margin-bottom:22px}
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:18px 30px 18px 0;position:relative;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:2px;top:13px;font-size:22px;font-weight:400;color:var(--grey)}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 18px;color:var(--grey);max-width:52ch}
+.contacto{background:var(--soft);border-radius:8px;padding:28px 24px}
+.contacto dl div{display:grid;grid-template-columns:86px 1fr;gap:12px;padding:13px 0;border-top:1px solid var(--line);font-size:14.5px}
+.contacto dt{color:var(--grey)}
+.contacto .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+
+footer{background:var(--dark);color:#fff;padding:48px 0 28px}
+footer .logo{font-family:var(--font-headings);font-weight:500;font-size:clamp(54px,12vw,150px);line-height:.95;letter-spacing:-.03em}
+footer .fin{margin-top:34px;padding-top:16px;border-top:1px solid rgba(255,255,255,.16);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between;font-size:13px;opacity:.78}
+footer .fin a{margin-right:16px}
+
+@media(min-width:860px){
+  body{font-size:16px}
+  .wrap{padding:0 40px}
+  .arriba nav{padding:20px 40px}
+  .arriba nav .sec{display:flex}
+  .arriba nav .acc a.txt{display:block}
+  .hero{margin:0 16px;min-height:660px;align-items:center}
+  .hero::after{background:linear-gradient(90deg,rgba(16,27,51,.94) 0%,rgba(16,27,51,.82) 42%,rgba(16,27,51,.12) 80%)}
+  .hero .txt{padding:0 0 0 44px}
+  .franja{grid-template-columns:repeat(3,1fr);margin:0 60px;gap:40px}
+  .franja div{border-bottom:0;padding:22px 0 12px}
+  section{padding:124px 0}
+  .manifiesto .cols{grid-template-columns:1fr 1fr;gap:72px;max-width:920px}
+  .servicios .wrap{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
+  .servicios .cab{position:sticky;top:40px;margin:0}
+  .tarjetas{grid-template-columns:1fr 1fr}
+  .oscuro .dos{grid-template-columns:1fr 1fr;gap:88px}
+  .voz{grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+  .final{grid-template-columns:1.15fr .85fr;gap:88px;align-items:start}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP OF THE PAGE: what you do + who for + where -->
+<div class="arriba">
+  <nav>
+    <a class="logo" href="#">Olmo</a>
+    <div class="sec"><a href="#servicios">Services</a><a href="#trabajo">How we work</a><a href="#preguntas">Questions</a></div>
+    <div class="acc"><a class="txt" href="#">910 000 000</a><a class="btn claro" href="#contacto">Book a meeting</a></div>
+  </nav>
+  <header class="hero">
+    <img fetchpriority="high" src="https://images.pexels.com/photos/4428040/pexels-photo-4428040.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="An adviser in her office">
+    <div class="txt">
+      <h1><span class="etiqueta">Accountants for freelancers and small businesses in Madrid</span>Your taxes up to date, without having to chase us</h1>
+      <p>Tax, payroll and bookkeeping with one person who knows your business and replies within 24 hours.</p>
+      <div class="btns">
+        <a class="btn claro" href="#contacto">Book a first meeting</a>
+        <a class="btn borde" href="#servicios">See services</a>
+      </div>
+    </div>
+  </header>
+  <!-- THREE FACTS: only if they are real. If not, remove it. -->
+  <div class="franja">
+    <div><span>Reply</span>Within 24 hours, always</div>
+    <div><span>Fee</span>Fixed per month, no surprises</div>
+    <div><span>Tie-in</span>None</div>
+  </div>
+</div>
+
+<!-- ABOUT US -->
+<section class="manifiesto">
+  <div class="wrap">
+    <h2>An accountant who warns you before the deadline</h2>
+    <div class="cols">
+      <p class="gris">Most freelancers find out what they owe the week it is due. Then comes the rush, the missing paperwork and the feeling of always running late.</p>
+      <div>
+        <p class="serif">We opened Olmo in 2009 because it didn’t have to be that way.</p>
+        <p class="gris">We ask for your paperwork in good time, explain every figure before filing it and tell you what you’ll pay with two weeks to spare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="servicios" id="servicios" style="padding-top:0">
+  <div class="wrap">
+    <div class="cab">
+      <h2>Where we take you by the hand</h2>
+      <div class="num">24 h</div>
+      <p class="gris" style="max-width:22ch;margin-top:8px">to answer any question you send us</p>
+    </div>
+    <div class="tarjetas">
+      <div class="tarjeta"><span class="dato">FROM €60/MONTH</span><h3>Freelancers</h3><p>Quarterly returns, income tax and invoices up to date. We tell you what you can deduct and what you can’t.</p></div>
+      <div class="tarjeta"><span class="dato">FROM €150/MONTH</span><h3>Companies</h3><p>Bookkeeping, corporation tax and annual accounts, with a close every month.</p></div>
+      <div class="tarjeta"><span class="dato">FROM €15/PAYSLIP</span><h3>Payroll</h3><p>Contracts, payslips, starters and leavers. Also when you hire for the first time.</p></div>
+      <div class="tarjeta"><span class="dato">FROM €50</span><h3>Income tax</h3><p>Your return checked by a person, not just accepting the draft.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK + a sample of what the client receives -->
+<section class="oscuro" id="trabajo">
+  <div class="wrap dos">
+    <div>
+      <h2>You always know where everything stands</h2>
+      <ol>
+        <li><span class="dato">01</span><div><b>First meeting, free</b><span class="t">We look at your situation and tell you what you need and what it costs.</span></div></li>
+        <li><span class="dato">02</span><div><b>You send us the paperwork</b><span class="t">By email or with a photo from your phone. We put it in order.</span></div></li>
+        <li><span class="dato">03</span><div><b>We warn you in good time</b><span class="t">Two weeks before each deadline you know what is being filed and what you pay.</span></div></li>
+      </ol>
+    </div>
+    <div class="panel" aria-label="Example of the quarterly summary a client receives">
+      <div class="cab"><b>Third quarter</b><span class="dato">EXAMPLE</span></div>
+      <div class="fila"><div>Form 303<small>Quarterly VAT</small></div><span class="chip ok">Filed</span></div>
+      <div class="fila"><div>Form 130<small>Income tax instalment</small></div><span class="chip ok">Filed</span></div>
+      <div class="fila"><div>Form 111<small>Withholdings</small></div><span class="chip es">Under review</span></div>
+      <div class="fila"><div>Invoices this quarter<small>42 issued · 31 received</small></div><span class="chip ok">Up to date</span></div>
+      <p class="pie dato">Next deadline: 20 January</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW: one real sentence from a client only. If there is none, remove the quote and keep the photo with a line of your own. -->
+<section>
+  <div class="wrap voz">
+    <figure><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/8872665/pexels-photo-8872665.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="A desk with tidy papers and a lamp switched on"></figure>
+    <div>
+      <blockquote>“In six years I haven’t had a single letter from the tax office that I didn’t know about beforehand.”</blockquote>
+      <cite>Raquel, freelance designer</cite>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTIONS AND CONTACT -->
+<section id="preguntas" style="padding-top:0">
+  <div class="wrap final">
+    <div>
+      <h2>What we are always asked</h2>
+      <details open><summary>Can I switch accountants halfway through the year?</summary><p>Yes. We request the paperwork from your previous accountant ourselves and start in the next quarter.</p></details>
+      <details><summary>Do I have to come to the office?</summary><p>No need. Almost everything is done by email and phone. If you’d rather come in, book a meeting.</p></details>
+      <details><summary>What does the fee include?</summary><p>All the regular returns and your questions. Anything outside it, we tell you in writing before we start.</p></details>
+      <details><summary>What if I get a notice from the tax office?</summary><p>We answer it. If the mistake was ours, it costs you nothing.</p></details>
+    </div>
+    <div class="contacto" id="contacto">
+      <h2>Book a first meeting</h2>
+      <dl>
+        <div><dt>Address</dt><dd>Calle del Ejemplo 21, 3.º A<br>28004 Madrid</dd></div>
+        <div><dt>Opening hours</dt><dd>Monday to Thursday, 9:00 – 18:30<br>Friday, 9:00 – 15:00</dd></div>
+        <div><dt>Phone</dt><dd><a href="#">910 000 000</a></dd></div>
+        <div><dt>Email</dt><dd><a href="#">hello@example.com</a></dd></div>
+      </dl>
+      <div class="btns">
+        <a class="btn cafe" href="#">Message us on WhatsApp</a>
+        <a class="btn linea" href="#">Get directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo">Olmo Advisers</div>
+    <div class="fin">
+      <span><a href="#">Legal notice</a><a href="#">Privacy</a></span>
+      <span>Fictional example made with the amable kit. Olmo Advisers does not exist.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

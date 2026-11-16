@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nácar · Beauty salon in Valencia</title>
+<meta name="description" content="Facials, massage and manicures in Ruzafa, Valencia. Quiet treatment rooms, no waiting and natural skincare products.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Nácar · Beauty salon in Valencia">
+<meta property="og:description" content="Facials, massage and manicures in Ruzafa, Valencia. Quiet treatment rooms, no waiting and natural skincare products.">
+<meta property="og:image" content="https://images.pexels.com/photos/3373721/pexels-photo-3373721.jpeg?auto=compress&cs=tinysrgb&w=1600">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#D8F27A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== BRAND: change only this ===== */
+:root{
+  --primary:#D8F27A;   /* bright colour: buttons */
+  --on-primary:#23301A;
+  --warm:#B4614A;      /* supporting colour: photo veil and blocks */
+  --warm-light:#F3D9CB;
+  --bg:#FBF6F1;
+  --ink:#2B1B15;
+  --grey:#6E5C54;
+  --font-headings:"Urbanist",system-ui,sans-serif;
+  --font-body:"Figtree",system-ui,sans-serif;
+}
+/* ===== end of BRAND ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--bg);font-size:17px;line-height:1.55;padding-bottom:84px}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-headings);font-weight:500;line-height:1.08;letter-spacing:-.015em;text-wrap:balance}
+.wrap{max-width:1120px;margin:0 auto;padding:0 14px}
+.demo{background:var(--ink);color:#fff;text-align:center;font-size:12.5px;padding:7px 12px}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 26px;border-radius:99px;background:var(--primary);color:var(--on-primary);font-weight:600;text-decoration:none;font-size:16.5px}
+.pill.blanca{background:#fff;color:var(--ink)}
+.pill.linea{background:transparent;border:1.5px solid currentColor;color:inherit}
+
+/* header: a card with the photo */
+.hero{position:relative;margin-top:14px;border-radius:30px;overflow:hidden;min-height:660px;display:flex;flex-direction:column;color:#fff;background:var(--warm)}
+.hero>img{position:absolute;inset:0;object-position:50% 20%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(60,24,14,.42) 0%,rgba(120,52,34,.08) 30%,rgba(120,52,34,.5) 58%,rgba(92,36,22,.93) 100%)}
+.hero>*:not(img){position:relative;z-index:1}
+.nav{display:flex;align-items:center;justify-content:space-between;margin:14px;padding:8px 8px 8px 18px;background:rgba(255,255,255,.94);color:var(--ink);border-radius:99px}
+.logo{font-family:var(--font-headings);font-weight:600;font-size:21px;text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+.logo i{width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,var(--warm-light) 45%,var(--warm))}
+.nav ul{display:none;list-style:none;gap:26px;font-size:15px}
+.nav ul a{text-decoration:none}
+.nav .pill{min-height:40px;padding:0 18px;font-size:14.5px}
+.hero .txt{margin-top:auto;padding:24px 22px 26px}
+h1{font-size:clamp(40px,11vw,70px);font-weight:500;max-width:min(100%,560px);text-shadow:0 1px 18px rgba(60,20,10,.35)}
+.hero p{margin:14px 0 22px;max-width:34ch;font-size:17px;text-shadow:0 1px 10px rgba(60,20,10,.5)}
+.hero .btns{display:flex;flex-wrap:wrap;gap:10px}
+.hero .chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);border-radius:99px;padding:6px 14px;font-size:13.5px;margin-bottom:16px;backdrop-filter:blur(6px)}
+.hero h1 .chip{display:flex;width:fit-content;max-width:none;font-family:var(--font-body);font-weight:400;line-height:1.5;letter-spacing:0;text-shadow:none}
+.hero .chip i{width:8px;height:8px;border-radius:50%;background:var(--primary)}
+
+section{padding:64px 0}
+.eti{display:flex;align-items:center;justify-content:center;gap:12px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin-bottom:18px}
+.eti::before,.eti::after{content:"";height:1px;width:34px;background:currentColor;opacity:.5}
+.frase{text-align:center;font-family:var(--font-headings);font-size:clamp(25px,6.4vw,40px);line-height:1.18;letter-spacing:-.015em;max-width:21ch;margin:0 auto}
+.frase span{color:var(--grey)}
+.trio{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:10px;align-items:end;max-width:560px;margin:34px auto 0}
+.trio div{border-radius:22px;overflow:hidden;aspect-ratio:3/4;background:var(--warm-light)}
+.trio div:nth-child(2){aspect-ratio:3/4.4}
+
+h2{font-size:clamp(31px,8vw,48px);margin-bottom:10px}
+.sub{color:var(--grey);max-width:46ch;margin-bottom:26px}
+.trat{display:grid;gap:12px}
+.t{background:#fff;border-radius:24px;padding:10px;display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:center}
+.t .f{border-radius:16px;overflow:hidden;aspect-ratio:1;background:var(--warm-light)}
+.t h3{font-size:21px;margin-bottom:3px}
+.t p{font-size:15px;color:var(--grey);line-height:1.4}
+.t .dat{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.t .dat b{font-weight:600;font-size:13px;border-radius:99px;padding:3px 11px;background:var(--primary);color:var(--on-primary)}
+.t .dat b+b{background:var(--bg);color:var(--ink)}
+
+.bloque{border-radius:30px;padding:34px 22px;color:#fff;background:linear-gradient(150deg,#8E4532 0%,var(--warm) 55%,#CF8B6E 100%)}
+.bloque h2{max-width:14ch}
+.bloque ol{list-style:none;display:grid;gap:10px;margin-top:22px}
+.bloque li{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:16px 18px;display:flex;gap:14px}
+.bloque li b{font-family:var(--font-headings);font-size:26px;font-weight:500;line-height:1;width:30px;flex:none}
+.bloque li span{font-size:16px}
+.bloque li strong{display:block;font-weight:600}
+
+.dos{display:grid;gap:14px}
+.sobre{border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:var(--warm-light)}
+.sobre-t{background:#fff;border-radius:26px;padding:28px 22px}
+.sobre-t p{margin-top:12px;color:var(--grey)}
+.firma{margin-top:18px;font-family:var(--font-headings);font-size:19px}
+
+details{background:#fff;border-radius:20px;padding:0 20px;margin-bottom:8px}
+summary{list-style:none;cursor:pointer;min-height:62px;display:flex;align-items:center;justify-content:space-between;gap:14px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";width:30px;height:30px;border-radius:50%;background:var(--primary);color:var(--on-primary);display:grid;place-items:center;flex:none;font-size:20px;font-weight:400}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 20px;color:var(--grey)}
+
+.donde{display:grid;gap:12px}
+.caja{background:#fff;border-radius:24px;padding:24px 22px}
+.caja h3{font-size:22px;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:16px}
+td{padding:9px 0;border-top:1px solid #EFE4DC}
+td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.caja .pill{margin-top:16px;width:100%}
+
+footer{padding:34px 0 20px;font-size:14px;color:var(--grey);text-align:center}
+footer a{margin:0 8px}
+.barra{position:fixed;left:10px;right:10px;bottom:10px;z-index:20;display:flex;gap:8px;padding:8px;border-radius:99px;background:rgba(43,27,21,.94)}
+.barra a{flex:1;min-height:50px}
+.barra .pill.linea{color:#fff;border-color:rgba(255,255,255,.5)}
+
+@media(min-width:820px){
+  body{font-size:18px;padding-bottom:0}
+  .wrap{padding:0 24px}
+  .barra{display:none}
+  .nav ul{display:flex}
+  .hero{min-height:680px}
+  .hero .txt{padding:44px 48px 48px}
+  .trat{grid-template-columns:1fr 1fr}
+  .bloque{padding:56px 52px}
+  .bloque ol{grid-template-columns:repeat(3,1fr)}
+  .bloque li{flex-direction:column}
+  .dos{grid-template-columns:.8fr 1fr;align-items:stretch}
+  .sobre{aspect-ratio:auto}
+  .sobre-t{padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
+  .donde{grid-template-columns:1fr 1fr}
+  section{padding:88px 0}
+}
+</style>
+</head>
+<body>
+<div class="demo">Fictional example · this is how a website made with the amable kit can look</div>
+
+<div class="wrap">
+  <header class="hero">
+    <img fetchpriority="high" src="https://images.pexels.com/photos/3373721/pexels-photo-3373721.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="A client with glowing skin after a facial">
+    <nav class="nav">
+      <a class="logo" href="#"><i></i>Nácar</a>
+      <ul><li><a href="#tratamientos">Treatments</a></li><li><a href="#visita">Your first visit</a></li><li><a href="#donde">Where to find us</a></li></ul>
+      <a class="pill" href="#">Book now</a>
+    </nav>
+    <div class="txt">
+      <h1><span class="chip"><i></i>Beauty salon in Ruzafa, Valencia</span>An hour just for your skin</h1>
+      <p>Facials, massage and manicures in quiet rooms. No rush, and we never sell you anything you don’t need.</p>
+      <div class="btns"><a class="pill" href="#">Book on WhatsApp</a><a class="pill blanca" href="#tratamientos">See treatments</a></div>
+    </div>
+  </header>
+</div>
+
+<section>
+  <div class="wrap">
+    <p class="eti">How we work</p>
+    <p class="frase">We don’t believe in fixing faces. <span>We believe in looking after the skin you already have, with time and with our hands.</span></p>
+    <div class="trio">
+      <div><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/8406608/pexels-photo-8406608.jpeg?auto=compress&cs=tinysrgb&w=600" alt="A woman with a towel in her hair holds a jar of cream"></div>
+      <div><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/9775369/pexels-photo-9775369.jpeg?auto=compress&cs=tinysrgb&w=700" alt="A woman smiles with freshly moisturised skin"></div>
+      <div><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/6543142/pexels-photo-6543142.jpeg?auto=compress&cs=tinysrgb&w=600" alt="A woman touches her face, her skin well cared for"></div>
+    </div>
+  </div>
+</section>
+
+<section id="tratamientos" style="padding-top:0">
+  <div class="wrap">
+    <h2>Treatments</h2>
+    <p class="sub">The four people ask for most. If you’re not sure which suits you, tell us how your skin is and we’ll say.</p>
+    <div class="trat">
+      <article class="t"><div class="f"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/12115040/pexels-photo-12115040.jpeg?auto=compress&cs=tinysrgb&w=400" alt="A facial in the treatment room"></div><div><h3>Full cleansing facial</h3><p>Cleanse, gentle extraction, mask and massage. You leave with rested skin.</p><div class="dat"><b>€48</b><b>60 min</b></div></div></article>
+      <article class="t"><div class="f"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/7446659/pexels-photo-7446659.jpeg?auto=compress&cs=tinysrgb&w=400" alt="A beautician gives a hydrating treatment"></div><div><h3>Deep hydration</h3><p>For tight or dull skin. Hyaluronic acid and a seaweed mask.</p><div class="dat"><b>€62</b><b>75 min</b></div></div></article>
+      <article class="t"><div class="f"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/6187305/pexels-photo-6187305.jpeg?auto=compress&cs=tinysrgb&w=400" alt="A relaxing face and neck massage"></div><div><h3>Relaxing massage</h3><p>Back, neck and scalp with warm oil. To let the week go.</p><div class="dat"><b>€40</b><b>45 min</b></div></div></article>
+      <article class="t"><div class="f"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/6663600/pexels-photo-6663600.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Close-up of hand and skin care"></div><div><h3>Careful manicure</h3><p>File, cuticles, moisturiser and regular or gel polish.</p><div class="dat"><b>From €18</b><b>40 min</b></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="visita" style="padding-top:0">
+  <div class="wrap">
+    <div class="bloque">
+      <p class="eti" style="justify-content:flex-start;color:#fff">Your first visit</p>
+      <h2>What a first visit is like</h2>
+      <ol>
+        <li><b>1</b><span><strong>You message us</strong>We find you a slot that same week, nearly always.</span></li>
+        <li><b>2</b><span><strong>We look at your skin</strong>Ten minutes to see what it needs before we touch anything.</span></li>
+        <li><b>3</b><span><strong>You leave with a plan</strong>What to do at home, written down. No obligation to buy.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap dos">
+    <div class="sobre"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/3893744/pexels-photo-3893744.jpeg?auto=compress&cs=tinysrgb&w=900" alt="The salon’s two beauticians"></div>
+    <div class="sobre-t">
+      <p class="eti" style="justify-content:flex-start">Who looks after you</p>
+      <h2>We are Inés and Carla</h2>
+      <p>We opened Nácar in 2017 after years working in big salons, where every appointment lasted just long enough. Here we do the opposite: few appointments a day and as much time as it takes.</p>
+      <p>We work with natural skincare and always tell you what we’re using and why.</p>
+      <p class="firma">Inés and Carla</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap" style="max-width:760px">
+    <h2>What you ask us</h2>
+    <p class="sub">If your question isn’t here, message us.</p>
+    <details open><summary>Do I need to book?</summary><p>Yes. We work by appointment only, so you never wait and the room is yours.</p></details>
+    <details><summary>Can I come if I have sensitive skin?</summary><p>Of course. Tell us when you book and we’ll adapt the products.</p></details>
+    <details><summary>Do you have gift vouchers?</summary><p>Yes, for any treatment. We can prepare it at the salon or email it to you.</p></details>
+    <details><summary>How do I pay?</summary><p>At the salon, by card, Bizum or cash.</p></details>
+  </div>
+</section>
+
+<section id="donde" style="padding-top:0">
+  <div class="wrap donde">
+    <div class="caja">
+      <h3>Opening hours</h3>
+      <table><tr><td>Tuesday to Friday</td><td>10:00 – 20:00</td></tr><tr><td>Saturday</td><td>10:00 – 14:00</td></tr><tr><td>Sunday and Monday</td><td>Closed</td></tr></table>
+    </div>
+    <div class="caja">
+      <h3>Where to find us</h3>
+      <p>Calle Sueca 41, Ruzafa<br>46006 Valencia</p>
+      <a class="pill linea" href="#">Get directions</a>
+      <a class="pill" href="#">Book on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><p>Nácar · Beauty salon</p><p style="margin-top:8px"><a href="#">Legal notice</a><a href="#">Privacy</a></p></div></footer>
+<div class="barra"><a class="pill linea" href="#">Call</a><a class="pill" href="#">Book now</a></div>
+</body>
+</html>

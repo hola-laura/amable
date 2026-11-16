@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tramo Physiotherapy · Physiotherapists in Chamberí, Madrid</title>
+<meta name="description" content="Physiotherapy for back pain, sports injuries and pelvic floor in Chamberí, Madrid. One-hour sessions. Book on WhatsApp.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Tramo Physiotherapy · Physiotherapists in Chamberí, Madrid">
+<meta property="og:description" content="Physiotherapy for back pain, sports injuries and pelvic floor in Chamberí, Madrid. One-hour sessions. Book on WhatsApp.">
+<meta property="og:image" content="https://images.pexels.com/photos/5793788/pexels-photo-5793788.jpeg?auto=compress&cs=tinysrgb&w=1800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0F2A24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== BRAND: change only this ===== */
+:root{
+  --bg:#F1F6F2;       /* light, greenish background */
+  --ink:#0F2A24;       /* text: green, almost black */
+  --grey:#52645E;        /* secondary text */
+  --primary:#A6E3BE;   /* accent: mint, main button only */
+  --on-primary:#0F2A24;
+  --line:rgba(15,42,36,.14);
+  --font-headings:"Bricolage Grotesque",system-ui,sans-serif;
+  --font-body:"DM Sans",system-ui,sans-serif;
+}
+/* ===== end of BRAND ===== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--bg);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:var(--font-headings);font-weight:500;line-height:1.04;letter-spacing:-.035em;text-wrap:balance}
+em{font-style:normal;color:var(--primary)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.gris{color:var(--grey)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:12px;background:#fff;color:var(--ink);text-decoration:none;font-size:14.5px;font-weight:500;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.btn.main{background:var(--primary);color:var(--on-primary)}
+.btn.oscuro{background:var(--ink);color:#fff}
+
+/* top of the page */
+.hero{position:relative;height:100svh;min-height:600px;color:#fff;background:#1d3b34;overflow:hidden}
+.hero>img{position:absolute;inset:0}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,38,32,.6),rgba(13,38,32,.5) 45%,rgba(13,38,32,.72))}
+.hero nav{position:absolute;z-index:2;top:14px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.hero nav .grupo{display:flex;align-items:center;gap:4px;background:#fff;color:var(--ink);border-radius:14px;padding:4px;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.hero nav .grupo a{display:flex;align-items:center;min-height:36px;padding:0 12px;border-radius:10px;text-decoration:none;font-size:14px}
+.hero nav .grupo a.logo{font-family:var(--font-headings);font-weight:600;letter-spacing:-.03em;font-size:19px;gap:7px;padding-right:14px}
+.hero nav .grupo a.logo i{width:9px;height:9px;border-radius:50%;background:var(--primary)}
+.hero nav .grupo .sec{display:none}
+.hero nav .acc{display:flex;gap:6px}
+.hero nav .acc .btn{min-height:44px;border-radius:14px}
+.hero .centro{position:absolute;z-index:2;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px}
+.hero h1{font-size:clamp(40px,7.6vw,84px);text-shadow:0 2px 34px rgba(8,28,23,.5)}
+.hero .sub,.hero .dato{text-shadow:0 1px 12px rgba(8,28,23,.6)}
+.hero .sub{margin-top:20px;font-size:16.5px}
+.hero h1 .clave{display:block;margin-top:20px;font-family:var(--font-body);font-weight:400;font-size:16.5px;line-height:1.5;letter-spacing:0;text-shadow:0 1px 12px rgba(8,28,23,.6)}
+.hero .dato{margin-top:10px;font-size:14.5px;display:flex;align-items:center;gap:8px}
+.hero .dato::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--primary)}
+.hero .abajo{position:absolute;z-index:2;left:0;right:0;bottom:26px;display:flex;justify-content:center;gap:8px;padding:0 20px;flex-wrap:wrap}
+
+section{padding:84px 0}
+.cifra b{color:#1F6B55}
+.titulo{text-align:center;font-size:clamp(34px,5.6vw,60px);max-width:13em;margin:0 auto}
+
+/* service blocks: text and a photo panel with a floating card */
+.bloque{margin-top:64px}
+.bloque h3{font-size:clamp(25px,3vw,30px);margin-bottom:8px}
+.bloque p{max-width:44ch;font-size:15.5px}
+.panel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.panel{position:relative;margin-top:22px;aspect-ratio:4/5;border-radius:26px;overflow:hidden;background:#cfdcd5}
+.panel .ficha{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(86%,360px);background:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 12px 40px rgba(15,42,36,.2);font-size:14.5px}
+.ficha b{display:block;font-weight:500;font-size:15.5px;margin-bottom:8px}
+.ficha div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--line)}
+.ficha div span:first-child{color:var(--grey)}
+
+/* figure */
+.cifra{text-align:center}
+.cifra b{font-family:var(--font-headings);font-weight:600;font-size:clamp(96px,20vw,200px);line-height:.9;letter-spacing:-.06em;display:block}
+.cifra p{font-family:var(--font-headings);font-weight:500;letter-spacing:-.03em;font-size:clamp(22px,3vw,28px);line-height:1.15;margin-top:14px}
+.cifra small{display:block;margin-top:12px;font-size:15px}
+
+/* how it works */
+.pasos{display:grid;gap:34px;margin-top:54px}
+.pasos span{font-size:12px;letter-spacing:.08em;color:var(--grey)}
+.pasos h3{font-size:24px;margin:10px 0 6px}
+.pasos p{font-size:15.5px;max-width:34ch}
+
+/* team */
+.equipo{display:grid;gap:40px}
+.equipo figure{aspect-ratio:5/4;border-radius:26px;overflow:hidden}
+.equipo h2{font-size:clamp(30px,4.4vw,44px);margin-bottom:14px}
+.equipo ul{list-style:none;margin-top:26px;border-top:1px solid var(--line)}
+.equipo li{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+.equipo li b{font-family:var(--font-headings);font-weight:500;letter-spacing:-.03em;font-size:20px;line-height:1.1}
+
+/* questions */
+.faq{max-width:720px;margin:44px auto 0}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 34px 20px 0;position:relative;font-size:17px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:2px;top:15px;font-size:24px;font-weight:400;color:var(--grey)}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 20px;max-width:56ch;font-size:15.5px}
+
+/* closing */
+.cierre{position:relative;border-radius:26px;overflow:hidden;min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:60px 22px;background:#1d3b34}
+.cierre img{position:absolute;inset:0}
+.cierre::after{content:"";position:absolute;inset:0;background:rgba(13,38,32,.6)}
+.cierre>*:not(img){position:relative;z-index:1}
+.cierre h2{font-size:clamp(34px,5.6vw,60px);max-width:12em;text-shadow:0 2px 30px rgba(8,28,23,.5)}
+.cierre p{margin:14px 0 26px;font-size:16px;opacity:.92}
+
+footer{padding:56px 0 30px;font-size:14.5px}
+footer .cols{display:grid;grid-template-columns:1fr 1fr;gap:34px 20px}
+footer .logo{font-family:var(--font-headings);font-weight:600;letter-spacing:-.04em;font-size:28px;grid-column:1/-1}
+footer h4{font-size:12px;font-weight:400;letter-spacing:.08em;color:var(--grey);margin-bottom:10px}
+footer a{display:block;text-decoration:none;padding:3px 0}
+footer .fin{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--grey);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
+
+@media(min-width:820px){
+  body{font-size:17px}
+  .hero nav{top:20px;left:22px;right:22px}
+  .hero nav .grupo .sec{display:flex}
+  section{padding:128px 0}
+  .bloque{margin-top:96px}
+  .panel{aspect-ratio:16/9;border-radius:32px}
+  .pasos{grid-template-columns:repeat(3,1fr);gap:40px}
+  .equipo{grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+  .equipo figure,.cierre{border-radius:32px}
+  .cierre{min-height:560px}
+  footer .cols{grid-template-columns:2fr 1fr 1fr 1fr}
+  footer .logo{grid-column:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP OF THE PAGE: a real person, one sentence and the button -->
+<header class="hero">
+  <img fetchpriority="high" src="https://images.pexels.com/photos/5793788/pexels-photo-5793788.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="A physiotherapist works on a patient’s arm in a room with natural light">
+  <nav>
+    <div class="grupo">
+      <a class="logo" href="#"><i></i>Tramo</a>
+      <a class="sec" href="#servicios">Services</a>
+      <a class="sec" href="#equipo">Team</a>
+      <a class="sec" href="#preguntas">Questions</a>
+    </div>
+    <div class="acc">
+      <a class="btn" href="#">Call</a>
+      <a class="btn main" href="#cita">Book now</a>
+    </div>
+  </nav>
+  <div class="centro">
+    <h1>Back pain<br><em>doesn’t run your week</em><span class="clave">Physiotherapy in Chamberí, Madrid, without the rush.</span></h1>
+    <p class="dato">First appointment within 48 hours</p>
+  </div>
+  <div class="abajo">
+    <a class="btn" href="#">Book on WhatsApp</a>
+  </div>
+</header>
+
+<!-- SERVICES: one block per service, with its photo and details -->
+<section id="servicios">
+  <div class="wrap">
+    <h2 class="titulo">A full hour, and always the same physio</h2>
+
+    <div class="bloque">
+      <h3>Back and neck</h3>
+      <p class="gris">Knots, lower-back pain and stiff necks from long hours sitting. Manual therapy and exercises to do at home.</p>
+      <div class="panel">
+        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/5793917/pexels-photo-5793917.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Manual back treatment">
+        <div class="ficha"><b>Back and neck</b><div><span>Length</span><span>60 minutes</span></div><div><span>Price</span><span>€55</span></div></div>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>Sports injuries</h3>
+      <p class="gris">Sprains, overload and getting back to running after a break, with a week-by-week plan.</p>
+      <div class="panel">
+        <!-- Sample VIDEO (Pexels). With no video of their own, keep only the photo: delete the <video> tag. -->
+        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/20860587/pexels-photo-20860587.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="A physiotherapist helps a patient stretch a leg">
+        <video muted loop playsinline preload="none" aria-hidden="true" data-src="https://videos.pexels.com/video-files/6111092/6111092-hd_1280_720_25fps.mp4"></video>
+        <div class="ficha"><b>Your return plan</b><div><span>Week 1</span><span>Mobility</span></div><div><span>Week 2</span><span>Strength</span></div><div><span>Week 3</span><span>Easy jog</span></div></div>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>Pelvic floor</h3>
+      <p class="gris">Pregnancy, postnatal and leaks. First assessment in a one-to-one appointment.</p>
+      <div class="panel">
+        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/5793792/pexels-photo-5793792.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="A physiotherapist guides a patient through an exercise">
+        <div class="ficha"><b>First assessment</b><div><span>Length</span><span>75 minutes</span></div><div><span>Price</span><span>€65</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIGURE: only if it is a real fact. If not, remove it. -->
+<section class="cifra" style="padding-top:0">
+  <div class="wrap">
+    <b>60 min</b>
+    <p>every session lasts</p>
+    <small class="gris">We opened the practice in 2014 because we didn’t like twenty-minute appointments.</small>
+  </div>
+</section>
+
+<!-- HOW IT WORKS: three steps, to take the fear out of the first time -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="titulo">What coming to Tramo is like</h2>
+    <div class="pasos">
+      <div><span>01</span><h3>You tell us what’s wrong</h3><p class="gris">On WhatsApp or by phone. We tell you who with and when.</p></div>
+      <div><span>02</span><h3>First session</h3><p class="gris">We assess, treat and explain what you have in plain words.</p></div>
+      <div><span>03</span><h3>You leave with a plan</h3><p class="gris">Three or four exercises on video to do at home.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="equipo" style="padding-top:0">
+  <div class="wrap equipo">
+    <figure><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/20860590/pexels-photo-20860590.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="A physiotherapist smiles while treating a patient"></figure>
+    <div>
+      <h2>Two physios, and always the same one for you</h2>
+      <p class="gris">Here the same person looks after you from start to finish. They know what happened last time, so you don’t have to explain it again.</p>
+      <ul>
+        <li><b>Irene Solana</b><span class="gris">Back and pelvic floor</span></li>
+        <li><b>Dani Otero</b><span class="gris">Sports injuries</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FREQUENT QUESTIONS -->
+<section id="preguntas" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="titulo">What we are always asked</h2>
+    <div class="faq">
+      <details open><summary>Do you work with insurers?</summary><p class="gris">We don’t deal with insurers directly, but we give you an invoice to send to yours if they reimburse you.</p></details>
+      <details><summary>What should I bring to the first session?</summary><p class="gris">Comfortable clothes and, if you have them, recent reports or scans. Nothing else.</p></details>
+      <details><summary>Can I cancel an appointment?</summary><p class="gris">Yes, with 24 hours’ notice. A WhatsApp message is fine.</p></details>
+      <details><summary>Do you sell session packs?</summary><p class="gris">A pack of five sessions for €250, with no expiry date.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING AND CONTACT -->
+<div class="wrap" id="cita">
+  <div class="cierre">
+    <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/3248690/pexels-photo-3248690.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="The treatment room">
+    <h2>A break for your back</h2>
+    <p>Message us and we’ll reply the same day.</p>
+    <a class="btn main" href="#">Book on WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div class="logo">Tramo</div>
+      <div><h4>VISIT US</h4><span>Calle del Ejemplo 8, 1.º B<br>28010 Madrid</span><a href="#" style="text-decoration:underline;text-underline-offset:3px;margin-top:6px">Get directions</a></div>
+      <div><h4>OPENING HOURS</h4><span>Monday to Friday, 9:00 – 20:30<br>Saturday, 10:00 – 14:00</span></div>
+      <div><h4>CONTACT</h4><a href="#">910 000 000</a><a href="#">Instagram</a></div>
+    </div>
+    <div class="fin"><span><a href="#" style="display:inline;margin-right:16px">Legal notice</a><a href="#" style="display:inline">Privacy</a></span><span>Fictional example made with the amable kit. Tramo Physiotherapy does not exist.</span></div>
+  </div>
+</footer>
+
+<!-- Video: only starts if the person has not asked for reduced motion -->
+<script>
+(function(){var menos=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches,mini=location.hash==="#mini";document.querySelectorAll("video[data-src]").forEach(function(v){if(menos||mini)return;v.src=v.getAttribute("data-src");var p=v.play();if(p&&p.catch)p.catch(function(){})})})();
+</script>
+
+</body>
+</html>
