@@ -2,10 +2,17 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lumbre · Reformas de cocinas, baños y pisos en Zaragoza</title>
 <meta name="description" content="Reformas de cocinas, baños y pisos completos en Zaragoza. Presupuesto cerrado por escrito, un solo encargado y fecha de entrega firmada.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Lumbre · Reformas de cocinas, baños y pisos en Zaragoza">
+<meta property="og:description" content="Reformas de cocinas, baños y pisos completos en Zaragoza. Presupuesto cerrado por escrito, un solo encargado y fecha de entrega firmada.">
+<meta property="og:image" content="https://images.pexels.com/photos/15124970/pexels-photo-15124970.jpeg?auto=compress&cs=tinysrgb&w=1600">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D2238">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
@@ -29,7 +36,7 @@ html{scroll-behavior:smooth}
 body{font-family:var(--letra-texto);color:var(--tinta);background:var(--fondo);font-size:17px;line-height:1.5;padding-bottom:76px}
 img{display:block;width:100%;height:100%;object-fit:cover}
 a{color:inherit}
-h1,h2,h3{font-family:var(--letra-titulos);font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:.005em}
+h1,h2,h3,.nombre{font-family:var(--letra-titulos);font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:.005em}
 .wrap{max-width:1160px;margin:0 auto;padding:0 16px}
 .demo{background:var(--acento);color:var(--sobre-acento);text-align:center;font-size:12.5px;padding:7px 12px;font-weight:600}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:99px;background:var(--acento);color:var(--sobre-acento);font-weight:600;text-decoration:none;font-size:16.5px}
@@ -49,9 +56,9 @@ h1,h2,h3{font-family:var(--letra-titulos);font-weight:400;text-transform:upperca
 .top nav a{text-decoration:none;padding:7px 16px;border-radius:99px}
 .top nav a:first-child{background:var(--oscuro);color:#fff}
 .top .tel{font-weight:600;text-decoration:none;font-size:15px;border:1.5px solid rgba(255,255,255,.6);border-radius:99px;padding:8px 16px}
-h1{font-size:clamp(118px,37vw,330px);text-align:center;line-height:.8;margin-top:26px;letter-spacing:.01em;text-shadow:0 4px 40px rgba(6,20,36,.5)}
+.nombre{font-size:clamp(118px,37vw,330px);text-align:center;line-height:.8;margin-top:26px;letter-spacing:.01em;text-shadow:0 4px 40px rgba(6,20,36,.5)}
 .hero .txt{margin-top:auto;padding:0 16px 26px}
-.hero .txt b{font-family:var(--letra-titulos);font-weight:400;font-size:30px;line-height:1;display:block;max-width:14ch;text-transform:uppercase}
+.hero .txt h1{font-size:30px;line-height:1;max-width:14ch}
 .hero .txt p{margin:10px 0 18px;max-width:34ch;font-size:16.5px}
 .hero .btns{display:flex;flex-wrap:wrap;gap:10px}
 
@@ -118,9 +125,9 @@ footer a{margin-left:14px}
   .hero{min-height:720px}
   .top{padding:22px 32px}
   .top nav{display:flex}
-  h1{font-size:clamp(220px,27vw,400px);margin-top:10px}
+  .nombre{font-size:clamp(220px,27vw,400px);margin-top:10px}
   .hero .txt{padding:0 32px 40px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
-  .hero .txt b{font-size:44px}
+  .hero .txt h1{font-size:44px}
   .intro{padding-top:70px}
   .cifras{grid-template-columns:repeat(4,1fr);gap:12px}
   .cab{grid-template-columns:1fr 1fr;align-items:end;gap:40px}
@@ -140,15 +147,15 @@ footer a{margin-left:14px}
 <div class="demo">Ejemplo ficticio · así puede quedar una web hecha con el kit de amable</div>
 
 <header class="hero">
-  <img src="https://images.pexels.com/photos/15124970/pexels-photo-15124970.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+  <img fetchpriority="high" src="https://images.pexels.com/photos/15124970/pexels-photo-15124970.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Un oficial termina la reforma de una cocina">
   <div class="top">
     <a class="logo" href="#">Lumbre</a>
     <nav><a href="#">Inicio</a><a href="#reformas">Reformas</a><a href="#proceso">Cómo trabajamos</a><a href="#obras">Obras</a></nav>
     <a class="tel" href="#">Llamar</a>
   </div>
-  <h1>Lumbre</h1>
+  <p class="nombre">Lumbre</p>
   <div class="txt">
-    <div><b>Reformas en Zaragoza que acaban el día firmado</b><p>Cocinas, baños y pisos completos. Presupuesto cerrado por escrito y un solo encargado de principio a fin.</p></div>
+    <div><h1>Reformas en Zaragoza que acaban el día firmado</h1><p>Cocinas, baños y pisos completos. Presupuesto cerrado por escrito y un solo encargado de principio a fin.</p></div>
     <div class="btns"><a class="btn" href="#">Pedir presupuesto <i></i></a><a class="btn blanco" href="#obras">Ver obras</a></div>
   </div>
 </header>
@@ -167,9 +174,9 @@ footer a{margin-left:14px}
   <div class="wrap">
     <div class="cab"><h2>Qué <span>reformamos</span></h2><p>Los plazos son los habituales con el material ya elegido. El tuyo va escrito en el presupuesto.</p></div>
     <div class="serv">
-      <article class="s"><div class="f"><img loading="lazy" src="https://images.pexels.com/photos/20348123/pexels-photo-20348123.jpeg?auto=compress&cs=tinysrgb&w=900" alt=""></div><div class="t"><h3>Cocinas</h3><p>Muebles, encimera, fontanería, electricidad y alicatado. Todo con el mismo equipo.</p><u>3 semanas</u></div></article>
-      <article class="s"><div class="f"><img loading="lazy" src="https://images.pexels.com/photos/6474295/pexels-photo-6474295.jpeg?auto=compress&cs=tinysrgb&w=900" alt=""></div><div class="t"><h3>Baños</h3><p>Cambio de bañera por ducha, suelo, azulejo y sanitarios. Sin dejarte sin baño más de lo justo.</p><u>10 días</u></div></article>
-      <article class="s"><div class="f"><img loading="lazy" src="https://images.pexels.com/photos/5691521/pexels-photo-5691521.jpeg?auto=compress&cs=tinysrgb&w=900" alt=""></div><div class="t"><h3>Pisos completos</h3><p>Tirar tabiques, instalaciones nuevas, suelos, ventanas y pintura. Llave en mano.</p><u>8 a 12 semanas</u></div></article>
+      <article class="s"><div class="f"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/20348123/pexels-photo-20348123.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Cocina reformada con encimera de mármol"></div><div class="t"><h3>Cocinas</h3><p>Muebles, encimera, fontanería, electricidad y alicatado. Todo con el mismo equipo.</p><u>3 semanas</u></div></article>
+      <article class="s"><div class="f"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/6474295/pexels-photo-6474295.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Un oficial lija el techo durante la reforma de un baño"></div><div class="t"><h3>Baños</h3><p>Cambio de bañera por ducha, suelo, azulejo y sanitarios. Sin dejarte sin baño más de lo justo.</p><u>10 días</u></div></article>
+      <article class="s"><div class="f"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/5691521/pexels-photo-5691521.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Un oficial coloca una ventana en la reforma de un piso"></div><div class="t"><h3>Pisos completos</h3><p>Tirar tabiques, instalaciones nuevas, suelos, ventanas y pintura. Llave en mano.</p><u>8 a 12 semanas</u></div></article>
     </div>
   </div>
 </section>
@@ -190,9 +197,9 @@ footer a{margin-left:14px}
   <div class="wrap">
     <div class="cab"><h2>Obras <span>recientes</span></h2><p>Tres de este año. Si quieres ver alguna parecida a la tuya, pídenos fotos.</p></div>
     <div class="obras">
-      <div class="o"><img loading="lazy" src="https://images.pexels.com/photos/6510984/pexels-photo-6510984.jpeg?auto=compress&cs=tinysrgb&w=1200" alt=""><span><b>Cocina abierta al salón</b>Delicias · 3 semanas</span></div>
-      <div class="o"><img loading="lazy" src="https://images.pexels.com/photos/5493654/pexels-photo-5493654.jpeg?auto=compress&cs=tinysrgb&w=700" alt=""><span><b>Piso de 85 m²</b>Centro · 10 semanas</span></div>
-      <div class="o"><img loading="lazy" src="https://images.pexels.com/photos/37357023/pexels-photo-37357023.jpeg?auto=compress&cs=tinysrgb&w=700" alt=""><span><b>Cocina en L</b>Actur · 3 semanas</span></div>
+      <div class="o"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/6510984/pexels-photo-6510984.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cocina blanca reformada y abierta al salón"><span><b>Cocina abierta al salón</b>Delicias · 3 semanas</span></div>
+      <div class="o"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/5493654/pexels-photo-5493654.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Dos oficiales pintan un piso en plena reforma"><span><b>Piso de 85 m²</b>Centro · 10 semanas</span></div>
+      <div class="o"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/37357023/pexels-photo-37357023.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Cocina en L reformada, con ventana sobre el fregadero"><span><b>Cocina en L</b>Actur · 3 semanas</span></div>
     </div>
   </div>
 </section>

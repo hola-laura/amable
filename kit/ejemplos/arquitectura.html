@@ -2,10 +2,17 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pardo &amp; Luján · Estudio de arquitectura en Bilbao</title>
 <meta name="description" content="Estudio de arquitectura en Bilbao. Vivienda unifamiliar, rehabilitación de edificios y reforma integral, del primer boceto a la entrega de llaves.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Pardo &amp; Luján · Estudio de arquitectura en Bilbao">
+<meta property="og:description" content="Estudio de arquitectura en Bilbao. Vivienda unifamiliar, rehabilitación de edificios y reforma integral, del primer boceto a la entrega de llaves.">
+<meta property="og:image" content="https://images.pexels.com/photos/6332018/pexels-photo-6332018.jpeg?auto=compress&cs=tinysrgb&w=1600">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#BF2A1B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;800;900&display=swap" rel="stylesheet">
@@ -26,7 +33,7 @@ html{scroll-behavior:smooth;background:var(--principal)}
 body{font-family:var(--letra-texto);color:var(--tinta);font-size:17px;line-height:1.5;padding:10px 10px 86px}
 img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08)}
 a{color:inherit}
-h1,h2,h3{font-family:var(--letra-titulos);font-weight:900;text-transform:uppercase;line-height:.9;letter-spacing:-.035em}
+h1,h2,h3,.nombre{font-family:var(--letra-titulos);font-weight:900;text-transform:uppercase;line-height:.9;letter-spacing:-.035em}
 .demo{background:var(--tinta);color:#fff;text-align:center;font-size:12.5px;padding:7px 12px;margin:-10px -10px 10px}
 .hoja{background:var(--fondo);max-width:1240px;margin:0 auto}
 .in{padding-left:18px;padding-right:18px}
@@ -42,8 +49,9 @@ header nav a{text-decoration:none}
 .menu{width:44px;height:26px;display:grid;align-content:space-between}
 .menu i{display:block;height:4px;background:var(--tinta)}
 
-h1{font-size:clamp(64px,22.5vw,250px);padding:26px 18px 0;margin-left:-.03em;overflow-wrap:normal}
-h1 em{font-style:normal;color:var(--principal)}
+.nombre{font-size:clamp(64px,22.5vw,250px);padding:26px 18px 0;margin-left:-.03em;overflow-wrap:normal}
+h1.mono{font-weight:500;line-height:1.5}
+.nombre em{font-style:normal;color:var(--principal)}
 .hero{display:grid;gap:18px;padding:22px 18px 0}
 .hero .f{aspect-ratio:4/5;background:#ddd}
 .hero .lado{display:flex;flex-direction:column;gap:18px}
@@ -107,7 +115,7 @@ footer a{margin-left:14px}
   .in{padding-left:40px;padding-right:40px}
   header{padding:30px 40px 0}
   header nav{display:flex}
-  h1{padding:34px 40px 0;font-size:clamp(120px,17.4vw,236px)}
+  .nombre{padding:34px 40px 0;font-size:clamp(120px,17.4vw,236px)}
   .hero{grid-template-columns:1.25fr 1fr;gap:40px;padding:34px 40px 0;align-items:end}
   .hero .f{aspect-ratio:16/11}
   .cifras{grid-template-columns:repeat(4,1fr)}
@@ -138,12 +146,12 @@ footer a{margin-left:14px}
     <span class="menu" aria-hidden="true"><i></i><i></i><i></i></span>
   </header>
 
-  <h1>Pardo <em>&amp;</em><br>Luján</h1>
+  <p class="nombre">Pardo <em>&amp;</em><br>Luján</p>
 
   <div class="hero">
-    <div class="f"><img src="https://images.pexels.com/photos/6332018/pexels-photo-6332018.jpeg?auto=compress&cs=tinysrgb&w=1600" alt=""></div>
+    <div class="f"><img fetchpriority="high" src="https://images.pexels.com/photos/6332018/pexels-photo-6332018.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Fachada de hormigón de un edificio rehabilitado por el estudio"></div>
     <div class="lado">
-      <p class="mono">Estudio de arquitectura · Bilbao</p>
+      <h1 class="mono">Estudio de arquitectura en Bilbao</h1>
       <p>Hacemos casas, rehabilitamos edificios y reformamos pisos enteros. Pocos proyectos al año, y los dos socios en todas las visitas de obra.</p>
       <a class="btn" href="#">Cuéntanos tu proyecto</a>
       <p class="dato mono">Primera reunión sin coste, en el estudio o en tu solar</p>
@@ -173,9 +181,9 @@ footer a{margin-left:14px}
   <section class="in" id="obras">
     <h2>Obras</h2>
     <div class="obras">
-      <a class="o" href="#"><img loading="lazy" src="https://images.pexels.com/photos/23639035/pexels-photo-23639035.jpeg?auto=compress&cs=tinysrgb&w=1200" alt=""><u>2025</u><span><b>Casa en Getxo</b><small>Vivienda nueva</small></span></a>
-      <a class="o" href="#"><img loading="lazy" src="https://images.pexels.com/photos/31024672/pexels-photo-31024672.jpeg?auto=compress&cs=tinysrgb&w=900" alt=""><u>2024</u><span><b>Edificio Ledesma</b><small>Rehabilitación</small></span></a>
-      <a class="o" href="#"><img loading="lazy" src="https://images.pexels.com/photos/5800419/pexels-photo-5800419.jpeg?auto=compress&cs=tinysrgb&w=900" alt=""><u>2023</u><span><b>Escalera Indautxu</b><small>Reforma integral</small></span></a>
+      <a class="o" href="#"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/23639035/pexels-photo-23639035.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Casa blanca de líneas rectas en Getxo"><u>2025</u><span><b>Casa en Getxo</b><small>Vivienda nueva</small></span></a>
+      <a class="o" href="#"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/31024672/pexels-photo-31024672.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fachada en retícula del edificio Ledesma, rehabilitado"><u>2024</u><span><b>Edificio Ledesma</b><small>Rehabilitación</small></span></a>
+      <a class="o" href="#"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/5800419/pexels-photo-5800419.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Escalera curva de hormigón en una reforma integral"><u>2023</u><span><b>Escalera Indautxu</b><small>Reforma integral</small></span></a>
     </div>
   </section>
 
@@ -192,7 +200,7 @@ footer a{margin-left:14px}
 
   <section class="in" id="estudio">
     <div class="equipo">
-      <div class="f"><img loading="lazy" src="https://images.pexels.com/photos/28625420/pexels-photo-28625420.jpeg?auto=compress&cs=tinysrgb&w=1200" alt=""></div>
+      <div class="f"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/28625420/pexels-photo-28625420.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Interior de hormigón con luz cenital"></div>
       <div>
         <h2>El estudio</h2>
         <p>Somos Ane Pardo y Mikel Luján. Nos conocimos en la escuela de San Sebastián y abrimos el estudio en 2012, en un segundo piso de la calle Ledesma.</p>

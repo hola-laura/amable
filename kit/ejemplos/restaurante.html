@@ -2,13 +2,19 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Casa Brezo · Vermut y raciones en Madrid</title>
 <meta name="description" content="Vermut de grifo, raciones de siempre y cocina abierta todo el día en Madrid. Reserva por WhatsApp.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Casa Brezo · Vermut y raciones en Madrid">
+<meta property="og:description" content="Vermut de grifo, raciones de siempre y cocina abierta todo el día en Madrid. Reserva por WhatsApp.">
+<meta property="og:image" content="https://images.pexels.com/photos/24596510/pexels-photo-24596510.jpeg?auto=compress&cs=tinysrgb&w=1800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2B1614">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- MARCA · letras -->
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ===== MARCA: cambia solo esto ===== */
@@ -46,6 +52,7 @@ h1,h2,h3,.serif{font-family:var(--letra-titulos);font-weight:300;line-height:1.1
 .hero h1{font-size:clamp(58px,13vw,132px);line-height:.98;text-shadow:0 2px 40px rgba(0,0,0,.45)}
 .hero nav,.hero p{text-shadow:0 1px 12px rgba(0,0,0,.5)}
 .hero p{margin-top:18px;font-size:15.5px;letter-spacing:.01em}
+.hero h1 .clave{display:block;margin-top:18px;font-family:var(--letra-texto);font-weight:400;font-size:15.5px;line-height:1.5;letter-spacing:.01em;text-shadow:0 1px 12px rgba(0,0,0,.5)}
 
 /* barra fija: la acción principal */
 .barra{position:fixed;z-index:9;left:0;right:0;bottom:0;height:58px;background:var(--oscuro);color:var(--fondo);display:flex;align-items:center;justify-content:center;font-family:var(--letra-titulos);font-size:21px;text-decoration:none}
@@ -119,15 +126,14 @@ footer .fila a{margin-right:18px}
 <!-- ARRIBA DEL TODO: la foto y el nombre. Nada más. -->
 <header class="hero">
   <!-- VÍDEO de cabecera (de muestra, de Pexels). Si la persona no tiene vídeo propio, deja solo la foto: borra la etiqueta <video>. -->
-  <img src="https://images.pexels.com/photos/24596510/pexels-photo-24596510.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="La barra, con las raciones del día">
+  <img fetchpriority="high" src="https://images.pexels.com/photos/24596510/pexels-photo-24596510.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="La barra, con las raciones del día">
   <video muted loop playsinline preload="none" aria-hidden="true" data-src="https://videos.pexels.com/video-files/8764786/8764786-hd_1280_720_25fps.mp4"></video>
   <nav>
     <a class="logo" href="#">Casa Brezo</a>
     <div><a href="#carta">Carta</a><a href="#nosotros">Nosotros</a><a href="#visita">Visítanos</a></div>
   </nav>
   <div class="centro">
-    <h1>Casa Brezo</h1>
-    <p>Vermut de grifo y raciones · Madrid</p>
+    <h1>Casa Brezo<span class="clave">Vermut de grifo y raciones en Madrid</span></h1>
   </div>
 </header>
 
@@ -147,11 +153,11 @@ footer .fila a{margin-right:18px}
 
 <!-- TIRA DE FOTOS: cuatro o cinco fotos reales. Sin fotos, se quita. -->
 <div class="tira" aria-label="Fotos del local y de la carta">
-  <figure><img loading="lazy" src="https://images.pexels.com/photos/38681146/pexels-photo-38681146.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Gildas de la casa"></figure>
-  <figure><img loading="lazy" src="https://images.pexels.com/photos/13012150/pexels-photo-13012150.jpeg?auto=compress&cs=tinysrgb&w=900" alt="El comedor"></figure>
-  <figure><img loading="lazy" src="https://images.pexels.com/photos/17166774/pexels-photo-17166774.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Una mesa después del aperitivo"></figure>
-  <figure><img loading="lazy" src="https://images.pexels.com/photos/28490819/pexels-photo-28490819.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Bravas"></figure>
-  <figure><img loading="lazy" src="https://images.pexels.com/photos/14009277/pexels-photo-14009277.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Raciones para compartir"></figure>
+  <figure><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/38681146/pexels-photo-38681146.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Gildas de la casa"></figure>
+  <figure><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/13012150/pexels-photo-13012150.jpeg?auto=compress&cs=tinysrgb&w=900" alt="El comedor"></figure>
+  <figure><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/17166774/pexels-photo-17166774.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Una mesa después del aperitivo"></figure>
+  <figure><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/28490819/pexels-photo-28490819.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Bravas"></figure>
+  <figure><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/14009277/pexels-photo-14009277.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Raciones para compartir"></figure>
 </div>
 
 <!-- SERVICIOS O PRODUCTOS -->
@@ -187,7 +193,7 @@ footer .fila a{margin-right:18px}
 <!-- SOBRE NOSOTROS: la historia corta, en primera persona -->
 <section class="oscuro" id="nosotros">
   <div class="wrap dos">
-    <figure><img loading="lazy" src="https://images.pexels.com/photos/7270393/pexels-photo-7270393.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Vermut rojo y blanco servidos"></figure>
+    <figure><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/7270393/pexels-photo-7270393.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Vermut rojo y blanco servidos"></figure>
     <div>
       <p class="mini" style="opacity:.8;margin-bottom:22px">Nosotros</p>
       <p class="serif grande">Catorce años detrás de la misma barra.</p>

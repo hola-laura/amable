@@ -2,10 +2,17 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nácar · Centro de estética en Valencia</title>
 <meta name="description" content="Limpiezas faciales, masajes y manicura en Ruzafa, Valencia. Cabinas tranquilas, citas sin esperas y productos de cosmética natural.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Nácar · Centro de estética en Valencia">
+<meta property="og:description" content="Limpiezas faciales, masajes y manicura en Ruzafa, Valencia. Cabinas tranquilas, citas sin esperas y productos de cosmética natural.">
+<meta property="og:image" content="https://images.pexels.com/photos/3373721/pexels-photo-3373721.jpeg?auto=compress&cs=tinysrgb&w=1600">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#D8F27A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -47,10 +54,11 @@ h1,h2,h3{font-family:var(--letra-titulos);font-weight:500;line-height:1.08;lette
 .nav ul a{text-decoration:none}
 .nav .pill{min-height:40px;padding:0 18px;font-size:14.5px}
 .hero .txt{margin-top:auto;padding:24px 22px 26px}
-h1{font-size:clamp(40px,11vw,70px);font-weight:500;max-width:11ch;text-shadow:0 1px 18px rgba(60,20,10,.35)}
+h1{font-size:clamp(40px,11vw,70px);font-weight:500;max-width:min(100%,560px);text-shadow:0 1px 18px rgba(60,20,10,.35)}
 .hero p{margin:14px 0 22px;max-width:34ch;font-size:17px;text-shadow:0 1px 10px rgba(60,20,10,.5)}
 .hero .btns{display:flex;flex-wrap:wrap;gap:10px}
 .hero .chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);border-radius:99px;padding:6px 14px;font-size:13.5px;margin-bottom:16px;backdrop-filter:blur(6px)}
+.hero h1 .chip{display:flex;width:fit-content;max-width:none;font-family:var(--letra-texto);font-weight:400;line-height:1.5;letter-spacing:0;text-shadow:none}
 .hero .chip i{width:8px;height:8px;border-radius:50%;background:var(--principal)}
 
 section{padding:64px 0}
@@ -132,15 +140,14 @@ footer a{margin:0 8px}
 
 <div class="wrap">
   <header class="hero">
-    <img src="https://images.pexels.com/photos/3373721/pexels-photo-3373721.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+    <img fetchpriority="high" src="https://images.pexels.com/photos/3373721/pexels-photo-3373721.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Una clienta con la piel luminosa después de un tratamiento facial">
     <nav class="nav">
       <a class="logo" href="#"><i></i>Nácar</a>
       <ul><li><a href="#tratamientos">Tratamientos</a></li><li><a href="#visita">Tu primera visita</a></li><li><a href="#donde">Dónde estamos</a></li></ul>
       <a class="pill" href="#">Pedir cita</a>
     </nav>
     <div class="txt">
-      <span class="chip"><i></i>Centro de estética en Ruzafa, Valencia</span>
-      <h1>Una hora solo para tu piel</h1>
+      <h1><span class="chip"><i></i>Centro de estética en Ruzafa, Valencia</span>Una hora solo para tu piel</h1>
       <p>Limpiezas faciales, masajes y manicura en cabinas tranquilas. Sin prisas y sin venderte nada que no necesites.</p>
       <div class="btns"><a class="pill" href="#">Pedir cita por WhatsApp</a><a class="pill blanca" href="#tratamientos">Ver tratamientos</a></div>
     </div>
@@ -152,9 +159,9 @@ footer a{margin:0 8px}
     <p class="eti">Cómo trabajamos</p>
     <p class="frase">No creemos en arreglar caras. <span>Creemos en cuidar la piel que ya tienes, con tiempo y con manos.</span></p>
     <div class="trio">
-      <div><img loading="lazy" src="https://images.pexels.com/photos/8406608/pexels-photo-8406608.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
-      <div><img loading="lazy" src="https://images.pexels.com/photos/9775369/pexels-photo-9775369.jpeg?auto=compress&cs=tinysrgb&w=700" alt=""></div>
-      <div><img loading="lazy" src="https://images.pexels.com/photos/6543142/pexels-photo-6543142.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+      <div><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/8406608/pexels-photo-8406608.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Una mujer con una toalla en el pelo sostiene un tarro de crema"></div>
+      <div><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/9775369/pexels-photo-9775369.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Una mujer sonríe con la piel recién hidratada"></div>
+      <div><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/6543142/pexels-photo-6543142.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Una mujer se toca la cara, con la piel cuidada"></div>
     </div>
   </div>
 </section>
@@ -164,10 +171,10 @@ footer a{margin:0 8px}
     <h2>Tratamientos</h2>
     <p class="sub">Los cuatro que más nos piden. Si no sabes cuál te va, cuéntanos cómo tienes la piel y te lo decimos.</p>
     <div class="trat">
-      <article class="t"><div class="f"><img loading="lazy" src="https://images.pexels.com/photos/12115040/pexels-photo-12115040.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></div><div><h3>Limpieza facial completa</h3><p>Limpieza, extracción suave, mascarilla y masaje. Sales con la piel descansada.</p><div class="dat"><b>48 €</b><b>60 min</b></div></div></article>
-      <article class="t"><div class="f"><img loading="lazy" src="https://images.pexels.com/photos/7446659/pexels-photo-7446659.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></div><div><h3>Hidratación profunda</h3><p>Para piel tirante o apagada. Ácido hialurónico y mascarilla de algas.</p><div class="dat"><b>62 €</b><b>75 min</b></div></div></article>
-      <article class="t"><div class="f"><img loading="lazy" src="https://images.pexels.com/photos/6187305/pexels-photo-6187305.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></div><div><h3>Masaje relajante</h3><p>Espalda, cuello y cabeza con aceite templado. Para soltar la semana.</p><div class="dat"><b>40 €</b><b>45 min</b></div></div></article>
-      <article class="t"><div class="f"><img loading="lazy" src="https://images.pexels.com/photos/6663600/pexels-photo-6663600.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></div><div><h3>Manicura cuidada</h3><p>Lima, cutícula, hidratación y esmalte normal o semipermanente.</p><div class="dat"><b>Desde 18 €</b><b>40 min</b></div></div></article>
+      <article class="t"><div class="f"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/12115040/pexels-photo-12115040.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Limpieza facial en cabina"></div><div><h3>Limpieza facial completa</h3><p>Limpieza, extracción suave, mascarilla y masaje. Sales con la piel descansada.</p><div class="dat"><b>48 €</b><b>60 min</b></div></div></article>
+      <article class="t"><div class="f"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/7446659/pexels-photo-7446659.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Una esteticista hace un tratamiento de hidratación en cabina"></div><div><h3>Hidratación profunda</h3><p>Para piel tirante o apagada. Ácido hialurónico y mascarilla de algas.</p><div class="dat"><b>62 €</b><b>75 min</b></div></div></article>
+      <article class="t"><div class="f"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/6187305/pexels-photo-6187305.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Masaje relajante en la cara y el cuello"></div><div><h3>Masaje relajante</h3><p>Espalda, cuello y cabeza con aceite templado. Para soltar la semana.</p><div class="dat"><b>40 €</b><b>45 min</b></div></div></article>
+      <article class="t"><div class="f"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/6663600/pexels-photo-6663600.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Detalle de cuidado de manos y piel"></div><div><h3>Manicura cuidada</h3><p>Lima, cutícula, hidratación y esmalte normal o semipermanente.</p><div class="dat"><b>Desde 18 €</b><b>40 min</b></div></div></article>
     </div>
   </div>
 </section>
@@ -188,7 +195,7 @@ footer a{margin:0 8px}
 
 <section style="padding-top:0">
   <div class="wrap dos">
-    <div class="sobre"><img loading="lazy" src="https://images.pexels.com/photos/3893744/pexels-photo-3893744.jpeg?auto=compress&cs=tinysrgb&w=900" alt=""></div>
+    <div class="sobre"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/3893744/pexels-photo-3893744.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Las dos esteticistas del centro"></div>
     <div class="sobre-t">
       <p class="eti" style="justify-content:flex-start">Quién te atiende</p>
       <h2>Somos Inés y Carla</h2>
