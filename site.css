@@ -414,3 +414,22 @@ html body nav.nav .logo{padding:10px 0!important}
 }
 @keyframes am-sale{to{opacity:0;transform:translateY(-10px)}}
 @keyframes am-entra{from{opacity:0;transform:translateY(16px)}}
+
+/* visual de caso: el informe en hojas de papel (caso de SEO) */
+.hoja{position:absolute;width:min(44%,262px);aspect-ratio:1100/1555;border-radius:5px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px rgba(0,30,60,.07),0 30px 54px -30px rgba(0,30,60,.6);transition:transform .7s var(--punto)}
+.hoja img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.hoja.ho1{left:7%;top:11%;z-index:2;transform:rotate(-5deg)}
+.hoja.ho2{left:31%;top:20%;z-index:1;transform:rotate(2deg)}
+.hoja.ho3{right:3%;top:30%;transform:rotate(8deg)}
+.caso:hover .hoja.ho1{transform:rotate(-7deg) translate(-8px,-10px)}
+.caso:hover .hoja.ho2{transform:rotate(2deg) translateY(-14px)}
+.caso:hover .hoja.ho3{transform:rotate(10deg) translate(8px,-8px)}
+@media (max-width:860px){.hoja{width:136px}.hoja.ho1{left:7%;top:9%}.hoja.ho2{left:31%;top:15%}.hoja.ho3{right:4%;top:22%}}
+@media (prefers-reduced-motion:reduce){.hoja{transition:none}}
+/* Monzo: imágenes de monzo.com (móviles con su propio marco y la tarjeta Flex), sin marco añadido */
+.mz-vi.web .mz-tel{border:0;border-radius:0;background:none;overflow:visible;box-shadow:none;aspect-ratio:auto;filter:drop-shadow(0 30px 30px rgba(0,12,34,.42))}
+.mz-vi.web .mz-tel img{height:auto;object-fit:contain}
+.mz-vi.web .mz-tel:nth-child(1){left:-2%;top:21%;width:50%;--k:40}
+.mz-vi.web .mz-tel:nth-child(2){left:auto;right:0;top:4%;width:54%;--k:110;z-index:1}
+.mz-vi.web .mz-tel:nth-child(3){left:13%;right:auto;top:auto;bottom:6%;width:56%;--k:170;z-index:2;rotate:-9deg}
+@media (max-width:860px){.mz-vi.web{min-height:430px}.mz-vi.web .mz-tel:nth-child(3){bottom:10%}}
