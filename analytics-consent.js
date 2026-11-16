@@ -1,5 +1,5 @@
 (() => {
-  const ID = "GTM-5FD73LGW";
+  const ID = "GTM-M9D8PJB7";
   const KEY = "amable-analytics-consent";
   const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
   const text = isEnglish
@@ -84,6 +84,9 @@
 
   // Conversiones: se dejan en dataLayer para que Tag Manager las envíe a GA4 (solo si hay consentimiento).
   function track(name, params) {
+    let consent = null;
+    try { consent = localStorage.getItem(KEY); } catch (_) {}
+    if (consent !== "granted") return;
     window.dataLayer.push(Object.assign({ event: name, page_language: isEnglish ? "en" : "es" }, params || {}));
   }
   document.addEventListener("click", (event) => {
