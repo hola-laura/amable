@@ -12,20 +12,20 @@ body{margin:0;-webkit-font-smoothing:antialiased}
 a{color:#004833}
 img{max-width:100%}
 /* móvil en vivo: una web de ejemplo real, reducida */
-.fono{--w:260px;display:block;position:relative;width:var(--w);aspect-ratio:390/800;border:5px solid #111;border-radius:26px;overflow:hidden;background:#fff;padding:0;cursor:pointer;font:inherit;color:inherit;transition:transform .25s ease}
+.fono{--n:260;--alto:800;box-sizing:content-box;flex:none;display:block;position:relative;width:calc(var(--n)*1px);height:calc(var(--n)*var(--alto)/390*1px);border:5px solid #111;border-radius:26px;overflow:hidden;background:#fff;padding:0;cursor:pointer;font:inherit;color:inherit;transition:transform .25s ease}
 .fono:hover{transform:translateY(-6px)}
 .fono:focus-visible{outline:3px solid #FCB0F8;outline-offset:4px}
-.fono iframe{position:absolute;left:0;top:0;width:390px;height:800px;border:0;transform-origin:0 0;transform:scale(calc((var(--w) - 10px) / 390px));pointer-events:none}
+.fono iframe{position:absolute;left:0;top:0;width:390px;height:800px;border:0;transform-origin:0 0;transform:scale(calc(var(--n)/390));pointer-events:none}
 .fono .ver{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:#111;color:#fff;border-radius:6px;padding:9px 14px;font-size:13.5px;font-weight:600;white-space:nowrap;opacity:0;transition:opacity .2s}
 .fono:hover .ver,.fono:focus-visible .ver{opacity:1}
 @media(hover:none){.fono .ver{opacity:1}}
-.hero-fones{flex:0 1 420px;min-width:0;display:flex;gap:16px;align-items:flex-end;justify-content:center}
-.hero-fones .fono{--w:210px;border-bottom:0;border-radius:24px 24px 0 0;aspect-ratio:390/690}
-.hero-fones .fono.alto{aspect-ratio:390/800}
+.hero-fones{flex:0 0 auto;max-width:100%;min-width:0;display:flex;gap:16px;align-items:flex-end;justify-content:center}
+.hero-fones .fono{--n:210;--alto:690;border-bottom:0;border-radius:24px 24px 0 0}
+.hero-fones .fono.alto{--alto:800}
 .hero-fones .fono:hover{transform:none}
 .ejs{display:flex;flex-wrap:wrap;gap:40px 32px;justify-content:center}
 .ej{flex:0 0 300px;max-width:100%}
-.ej .fono{--w:300px}
+.ej .fono{--n:300}
 .ej .est{margin:20px 0 4px;font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#004833}
 .ej h3{margin:0 0 4px;font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:24px}
 .ej p{margin:0;font-size:16px}
@@ -55,7 +55,7 @@ body{background:#fff;color:#111}
 .k-btn{transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s ease}
 .k-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(252,176,248,.9)}
 .fono{border-width:4px;border-radius:30px;box-shadow:0 34px 60px -34px rgba(8,30,22,.55)}
-.hero-fones .fono{--w:228px;border-radius:30px 30px 0 0;box-shadow:0 -10px 60px -20px rgba(0,0,0,.45)}
+.hero-fones .fono{--n:204;border-radius:30px 30px 0 0;box-shadow:0 -10px 60px -20px rgba(0,0,0,.45)}
 .hero-fones{gap:18px}
 .ej .fono{box-shadow:0 40px 70px -40px rgba(8,30,22,.5)}
 h2{letter-spacing:-.018em}
@@ -63,7 +63,8 @@ h2{letter-spacing:-.018em}
 .kr{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
 .kr.en{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.kr{opacity:1;transform:none;transition:none}.k-btn{transition:none}}
-@media(max-width:700px){.hero-fones .fono{--w:158px}}
+@media(max-width:700px){.hero-fones .fono{--n:150}}
+@media(max-width:360px){.ej .fono{--n:260}}
 </style></head><body class="v">
 <nav class="vnav" aria-label="Principal"><a class="vlogo" href="/" aria-label="amable">amable<i class="vpt"></i></a><ul><li><a href="/negocios">Negocios</a></li><li><a href="/empresas">Empresas</a></li><li><a href="/proyectos">Proyectos</a></li><li><a href="/sobre-laura">Sobre mí</a></li></ul><a class="vbtn" href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Reservar 15 min</a></nav>
 <div id="kit">
@@ -85,8 +86,8 @@ h2{letter-spacing:-.018em}
 </div>
 </div>
 <div class="hero-fones">
-<button class="fono alto" data-ej="restaurante" aria-label="Abrir en grande la web de ejemplo de un restaurante"><iframe src="ejemplos/restaurante.html" title="Web de ejemplo: restaurante" tabindex="-1" scrolling="no"></iframe></button>
-<button class="fono" data-ej="gestoria" aria-label="Abrir en grande la web de ejemplo de una gestoría"><iframe src="ejemplos/gestoria.html" title="Web de ejemplo: gestoría" tabindex="-1" scrolling="no"></iframe></button>
+<button class="fono alto" data-ej="restaurante" aria-label="Abrir en grande la web de ejemplo de un restaurante"><iframe src="ejemplos/restaurante.html#mini" title="Web de ejemplo: restaurante" tabindex="-1" scrolling="no"></iframe></button>
+<button class="fono" data-ej="gestoria" aria-label="Abrir en grande la web de ejemplo de una gestoría"><iframe src="ejemplos/gestoria.html#mini" title="Web de ejemplo: gestoría" tabindex="-1" scrolling="no"></iframe></button>
 </div>
 </div>
 </div>
@@ -151,19 +152,19 @@ h2{letter-spacing:-.018em}
 <p style="margin: 0 0 44px; max-width: 36em">Tres negocios inventados, cada uno con su propio estilo. Toca cualquiera para abrirlo en grande y moverte por él. La tuya saldrá con tus colores, tus textos y tus fotos.</p>
 <div class="ejs">
 <article class="ej">
-<button class="fono" data-ej="restaurante" aria-label="Abrir en grande: Casa Brezo"><iframe src="ejemplos/restaurante.html" title="Web de ejemplo: Casa Brezo" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
+<button class="fono" data-ej="restaurante" aria-label="Abrir en grande: Casa Brezo"><iframe src="ejemplos/restaurante.html#mini" title="Web de ejemplo: Casa Brezo" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
 <p class="est">Cálida · restaurante</p>
 <h3>Casa Brezo</h3>
 <p>Bares, restaurantes, tiendas y alimentación. La foto manda, con la carta y el horario a la vista.</p>
 </article>
 <article class="ej">
-<button class="fono" data-ej="clinica" aria-label="Abrir en grande: Fisioterapia Tramo"><iframe src="ejemplos/clinica.html" title="Web de ejemplo: Fisioterapia Tramo" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
+<button class="fono" data-ej="clinica" aria-label="Abrir en grande: Fisioterapia Tramo"><iframe src="ejemplos/clinica.html#mini" title="Web de ejemplo: Fisioterapia Tramo" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
 <p class="est">Limpia · clínica</p>
 <h3>Fisioterapia Tramo</h3>
 <p>Salud, belleza y academias. Humana y en calma, para pedir cita con confianza.</p>
 </article>
 <article class="ej">
-<button class="fono" data-ej="gestoria" aria-label="Abrir en grande: Olmo Asesores"><iframe src="ejemplos/gestoria.html" title="Web de ejemplo: Olmo Asesores" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
+<button class="fono" data-ej="gestoria" aria-label="Abrir en grande: Olmo Asesores"><iframe src="ejemplos/gestoria.html#mini" title="Web de ejemplo: Olmo Asesores" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
 <p class="est">Despacho · gestoría</p>
 <h3>Olmo Asesores</h3>
 <p>Gestorías, asesorías y abogados. Seria y cálida, para dar confianza sin parecer un banco.</p>
