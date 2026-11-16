@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pardo &amp; Luján · Estudio de arquitectura en Bilbao</title>
+<meta name="description" content="Estudio de arquitectura en Bilbao. Vivienda unifamiliar, rehabilitación de edificios y reforma integral, del primer boceto a la entrega de llaves.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;800;900&display=swap" rel="stylesheet">
+<style>
+/* ===== MARCA: cambia solo esto ===== */
+:root{
+  --principal:#BF2A1B;   /* color fuerte: marco, detalles y botón al pasar */
+  --fondo:#FFFFFF;
+  --tinta:#0B0B0B;
+  --gris:#5C5C5C;
+  --linea:#0B0B0B;
+  --letra-titulos:"Hanken Grotesk",Arial,sans-serif;
+  --letra-texto:"Hanken Grotesk",Arial,sans-serif;
+}
+/* ===== fin MARCA ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--principal)}
+body{font-family:var(--letra-texto);color:var(--tinta);font-size:17px;line-height:1.5;padding:10px 10px 86px}
+img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--letra-titulos);font-weight:900;text-transform:uppercase;line-height:.9;letter-spacing:-.035em}
+.demo{background:var(--tinta);color:#fff;text-align:center;font-size:12.5px;padding:7px 12px;margin:-10px -10px 10px}
+.hoja{background:var(--fondo);max-width:1240px;margin:0 auto}
+.in{padding-left:18px;padding-right:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;background:var(--tinta);color:#fff;text-decoration:none;font-size:13.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+.btn.claro{background:#fff;color:var(--tinta);border:1.5px solid var(--tinta)}
+.mono{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+
+header{display:flex;justify-content:space-between;align-items:flex-start;padding:18px 18px 0}
+.logo{font-weight:800;font-size:14px;line-height:1.1;text-decoration:none;display:block}
+.logo i{display:block;width:12px;height:12px;background:var(--principal);margin-bottom:7px}
+header nav{display:none;gap:44px;font-size:14px;font-weight:500}
+header nav a{text-decoration:none}
+.menu{width:44px;height:26px;display:grid;align-content:space-between}
+.menu i{display:block;height:4px;background:var(--tinta)}
+
+h1{font-size:clamp(64px,22.5vw,250px);padding:26px 18px 0;margin-left:-.03em;overflow-wrap:normal}
+h1 em{font-style:normal;color:var(--principal)}
+.hero{display:grid;gap:18px;padding:22px 18px 0}
+.hero .f{aspect-ratio:4/5;background:#ddd}
+.hero .lado{display:flex;flex-direction:column;gap:18px}
+.hero p{max-width:38ch}
+.hero .dato{border-top:2px solid var(--linea);padding-top:12px}
+
+section{padding:66px 0 0}
+h2{font-size:clamp(40px,11.5vw,104px);margin-bottom:22px}
+.cifras{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--linea)}
+.cifras div{padding:16px 0 20px;border-bottom:2px solid var(--linea)}
+.cifras div:nth-child(odd){border-right:2px solid var(--linea);padding-right:12px}
+.cifras div:nth-child(even){padding-left:14px}
+.cifras b{font-weight:900;font-size:clamp(46px,13vw,92px);line-height:.9;letter-spacing:-.04em;display:block}
+.cifras b sup{font-size:.45em;color:var(--principal);vertical-align:top;position:relative;top:.12em}
+.cifras span{font-size:14px;color:var(--gris);display:block;margin-top:6px;max-width:20ch}
+
+.serv{border-top:2px solid var(--linea)}
+.s{display:grid;grid-template-columns:44px 1fr;gap:6px 10px;padding:20px 0;border-bottom:2px solid var(--linea)}
+.s .n{font-size:13px;font-weight:500;padding-top:6px;color:var(--principal)}
+.s h3{font-size:clamp(27px,7.4vw,46px);letter-spacing:-.03em;line-height:.95}
+.s p{grid-column:2;color:var(--gris);font-size:16px;max-width:48ch}
+
+.obras{display:grid;gap:10px}
+.o{position:relative;display:block;text-decoration:none;color:#fff;aspect-ratio:4/3;overflow:hidden;background:#222}
+.o::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.82) 100%)}
+.o span{position:absolute;left:16px;right:16px;bottom:14px;z-index:1}
+.o b{display:block;font-weight:900;text-transform:uppercase;font-size:25px;letter-spacing:-.02em;line-height:1}
+.o small{font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:.9}
+.o u{position:absolute;top:0;left:0;z-index:1;background:var(--principal);color:#fff;text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.1em;padding:6px 10px}
+
+.rojo{background:var(--principal);color:#fff;margin-top:66px;padding:52px 18px}
+.rojo h2{margin-bottom:18px}
+.rojo p{max-width:44ch;font-size:19px}
+.pasos{display:grid;gap:0;margin-top:30px;border-top:2px solid #fff}
+.pasos div{padding:16px 0;border-bottom:2px solid #fff;display:grid;grid-template-columns:44px 1fr;gap:10px}
+.pasos b{font-weight:900;font-size:26px;line-height:1}
+.pasos strong{display:block;text-transform:uppercase;font-weight:800;letter-spacing:-.01em}
+
+.equipo{display:grid;gap:22px}
+.equipo .f{aspect-ratio:5/4;background:#ddd}
+.equipo p+p{margin-top:12px}
+
+.contacto{display:grid;gap:0;border-top:2px solid var(--linea)}
+.contacto div{padding:18px 0;border-bottom:2px solid var(--linea)}
+.contacto h3{font-size:14px;letter-spacing:.12em;font-weight:500;color:var(--gris);margin-bottom:8px;line-height:1.2}
+.contacto p{font-size:19px;font-weight:500}
+table{border-collapse:collapse;font-size:17px;width:100%;max-width:340px}
+td{padding:3px 0}td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.cierre{padding:52px 18px 30px}
+.cierre h2{margin-bottom:22px}
+.cierre .btns{display:flex;flex-wrap:wrap;gap:10px}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:18px;font-size:13px;color:var(--gris);border-top:2px solid var(--linea)}
+footer a{margin-left:14px}
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:1fr 1.4fr;border-top:2px solid var(--tinta)}
+.barra .btn{min-height:58px}
+
+@media(min-width:860px){
+  body{padding:22px;font-size:18px}
+  .demo{margin:-22px -22px 22px}
+  .barra{display:none}
+  .in{padding-left:40px;padding-right:40px}
+  header{padding:30px 40px 0}
+  header nav{display:flex}
+  h1{padding:34px 40px 0;font-size:clamp(120px,17.4vw,236px)}
+  .hero{grid-template-columns:1.25fr 1fr;gap:40px;padding:34px 40px 0;align-items:end}
+  .hero .f{aspect-ratio:16/11}
+  .cifras{grid-template-columns:repeat(4,1fr)}
+  .cifras div{border-right:2px solid var(--linea);padding:22px 18px 26px}
+  .cifras div:first-child{padding-left:0}
+  .cifras div:last-child{border-right:0}
+  .s{grid-template-columns:90px 1fr 1fr;align-items:baseline}
+  .s p{grid-column:3}
+  .obras{grid-template-columns:1.4fr 1fr 1fr}
+  .o{aspect-ratio:auto;height:440px}
+  .rojo{padding:84px 40px;margin-top:100px}
+  .pasos{grid-template-columns:repeat(4,1fr);gap:26px;border:0}
+  .pasos div{border-top:2px solid #fff;border-bottom:0;grid-template-columns:1fr}
+  .equipo{grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  .contacto{grid-template-columns:repeat(3,1fr);gap:40px}
+  .cierre{padding:90px 40px 50px}
+  section{padding-top:100px}
+  footer{padding:22px 40px}
+}
+</style>
+</head>
+<body>
+<div class="demo">Ejemplo ficticio · así puede quedar una web hecha con el kit de amable</div>
+<div class="hoja">
+  <header>
+    <a class="logo" href="#"><i></i>Pardo<br>&amp; Luján</a>
+    <nav><a href="#hacemos">Qué hacemos</a><a href="#obras">Obras</a><a href="#estudio">El estudio</a><a href="#contacto">Contacto</a></nav>
+    <span class="menu" aria-hidden="true"><i></i><i></i><i></i></span>
+  </header>
+
+  <h1>Pardo <em>&amp;</em><br>Luján</h1>
+
+  <div class="hero">
+    <div class="f"><img src="https://images.pexels.com/photos/6332018/pexels-photo-6332018.jpeg?auto=compress&cs=tinysrgb&w=1600" alt=""></div>
+    <div class="lado">
+      <p class="mono">Estudio de arquitectura · Bilbao</p>
+      <p>Hacemos casas, rehabilitamos edificios y reformamos pisos enteros. Pocos proyectos al año, y los dos socios en todas las visitas de obra.</p>
+      <a class="btn" href="#">Cuéntanos tu proyecto</a>
+      <p class="dato mono">Primera reunión sin coste, en el estudio o en tu solar</p>
+    </div>
+  </div>
+
+  <section class="in">
+    <h2>Los números<br>hablan solos</h2>
+    <div class="cifras">
+      <div><b>14</b><span>años trabajando juntos</span></div>
+      <div><b>63</b><span>obras terminadas y entregadas</span></div>
+      <div><b>6<sup>máx.</sup></b><span>proyectos a la vez, para estar en todos</span></div>
+      <div><b>0</b><span>sorpresas en el presupuesto final</span></div>
+    </div>
+  </section>
+
+  <section class="in" id="hacemos">
+    <h2>Qué hacemos</h2>
+    <div class="serv">
+      <div class="s"><span class="n">01</span><h3>Vivienda nueva</h3><p>Casas unifamiliares pensadas para el terreno, la luz y la vida de quien las va a habitar.</p></div>
+      <div class="s"><span class="n">02</span><h3>Rehabilitación</h3><p>Fachadas, cubiertas y portales de edificios antiguos. Con las ayudas tramitadas.</p></div>
+      <div class="s"><span class="n">03</span><h3>Reforma integral</h3><p>Pisos enteros, redistribuidos. Proyecto, licencias y dirección de obra.</p></div>
+      <div class="s"><span class="n">04</span><h3>Informes y licencias</h3><p>ITE, certificados energéticos, cambios de uso y licencias de actividad.</p></div>
+    </div>
+  </section>
+
+  <section class="in" id="obras">
+    <h2>Obras</h2>
+    <div class="obras">
+      <a class="o" href="#"><img loading="lazy" src="https://images.pexels.com/photos/23639035/pexels-photo-23639035.jpeg?auto=compress&cs=tinysrgb&w=1200" alt=""><u>2025</u><span><b>Casa en Getxo</b><small>Vivienda nueva</small></span></a>
+      <a class="o" href="#"><img loading="lazy" src="https://images.pexels.com/photos/31024672/pexels-photo-31024672.jpeg?auto=compress&cs=tinysrgb&w=900" alt=""><u>2024</u><span><b>Edificio Ledesma</b><small>Rehabilitación</small></span></a>
+      <a class="o" href="#"><img loading="lazy" src="https://images.pexels.com/photos/5800419/pexels-photo-5800419.jpeg?auto=compress&cs=tinysrgb&w=900" alt=""><u>2023</u><span><b>Escalera Indautxu</b><small>Reforma integral</small></span></a>
+    </div>
+  </section>
+
+  <div class="rojo">
+    <h2>Del boceto<br>a las llaves</h2>
+    <p>Sabes en qué punto está tu obra cada semana, y cuánto llevas gastado.</p>
+    <div class="pasos">
+      <div><b>1</b><span><strong>Escuchar</strong>Vemos el sitio y lo que necesitas.</span></div>
+      <div><b>2</b><span><strong>Dibujar</strong>Dos propuestas con su coste aproximado.</span></div>
+      <div><b>3</b><span><strong>Tramitar</strong>Proyecto, licencia y constructora.</span></div>
+      <div><b>4</b><span><strong>Construir</strong>Visita de obra semanal hasta la entrega.</span></div>
+    </div>
+  </div>
+
+  <section class="in" id="estudio">
+    <div class="equipo">
+      <div class="f"><img loading="lazy" src="https://images.pexels.com/photos/28625420/pexels-photo-28625420.jpeg?auto=compress&cs=tinysrgb&w=1200" alt=""></div>
+      <div>
+        <h2>El estudio</h2>
+        <p>Somos Ane Pardo y Mikel Luján. Nos conocimos en la escuela de San Sebastián y abrimos el estudio en 2012, en un segundo piso de la calle Ledesma.</p>
+        <p>Seguimos siendo pequeños a propósito: quien dibuja tu casa es quien te coge el teléfono.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="in" id="contacto">
+    <div class="contacto">
+      <div><h3>Dónde</h3><p>Calle Ledesma 12, 2.º<br>48001 Bilbao</p></div>
+      <div><h3>Horario</h3><table><tr><td>Lunes a viernes</td><td>9:00 – 18:00</td></tr><tr><td>Visitas de obra</td><td>Con cita</td></tr></table></div>
+      <div><h3>Escríbenos</h3><p>estudio@pardolujan.example</p></div>
+    </div>
+  </section>
+
+  <div class="cierre">
+    <h2>¿Tienes un<br>solar o una <span style="color:var(--principal)">idea</span>?</h2>
+    <div class="btns"><a class="btn" href="#">Cuéntanos tu proyecto</a><a class="btn claro" href="#">Cómo llegar</a></div>
+  </div>
+  <footer><span>Pardo &amp; Luján Arquitectos</span><span><a href="#">Aviso legal</a><a href="#">Privacidad</a></span></footer>
+</div>
+<div class="barra"><a class="btn claro" href="#">Llamar</a><a class="btn" href="#">Cuéntanos tu proyecto</a></div>
+</body>
+</html>

@@ -149,7 +149,7 @@ h2{letter-spacing:-.018em}
 <div style="max-width: 1120px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 56px)">
 <p style="margin: 0 0 14px; font-family: 'DM Mono', monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #004833">Ejemplos</p>
 <h2 style="margin: 0 0 16px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4.6vw, 52px); line-height: 1.1; color: #004833">Así queda</h2>
-<p style="margin: 0 0 44px; max-width: 36em">Tres negocios inventados, cada uno con su propio estilo. Toca cualquiera para abrirlo en grande y moverte por él. La tuya saldrá con tus colores, tus textos y tus fotos.</p>
+<p style="margin: 0 0 44px; max-width: 36em">Seis negocios inventados, cada uno con su propio estilo. Toca cualquiera para abrirlo en grande y moverte por él. La tuya saldrá con tus colores, tus textos y tus fotos.</p>
 <div class="ejs">
 <article class="ej">
 <button class="fono" data-ej="restaurante" aria-label="Abrir en grande: Casa Brezo"><iframe src="ejemplos/restaurante.html#mini" title="Web de ejemplo: Casa Brezo" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
@@ -168,6 +168,24 @@ h2{letter-spacing:-.018em}
 <p class="est">Despacho · gestoría</p>
 <h3>Olmo Asesores</h3>
 <p>Gestorías, asesorías y abogados. Seria y cálida, para dar confianza sin parecer un banco.</p>
+</article>
+<article class="ej">
+<button class="fono" data-ej="estetica" aria-label="Abrir en grande: Nácar"><iframe src="ejemplos/estetica.html#mini" title="Web de ejemplo: Nácar" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
+<p class="est">Suave · estética</p>
+<h3>Nácar</h3>
+<p>Estética, peluquería y bienestar. Redondeada y luminosa, con los tratamientos y sus precios a la vista.</p>
+</article>
+<article class="ej">
+<button class="fono" data-ej="arquitectura" aria-label="Abrir en grande: Pardo &amp; Luján"><iframe src="ejemplos/arquitectura.html#mini" title="Web de ejemplo: Pardo &amp; Luján" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
+<p class="est">Editorial · arquitectura</p>
+<h3>Pardo &amp; Luján</h3>
+<p>Estudios de arquitectura, interiorismo y fotografía. Titulares enormes y fotos en blanco y negro.</p>
+</article>
+<article class="ej">
+<button class="fono" data-ej="reformas" aria-label="Abrir en grande: Lumbre"><iframe src="ejemplos/reformas.html#mini" title="Web de ejemplo: Lumbre" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
+<p class="est">Obra · reformas</p>
+<h3>Lumbre</h3>
+<p>Reformas, oficios y talleres. Sólida y directa, para pedir presupuesto en un toque.</p>
 </article>
 </div>
 <p style="margin: 40px 0 0; font-size: 15px; color: #3d4753">Los negocios de los ejemplos son inventados y sus fotos son de muestra. El kit trae también un diseño para reformas, oficios y talleres.</p>
@@ -387,7 +405,7 @@ h2{letter-spacing:-.018em}
 </div>
 <script>
 (function(){
-  var nombres={restaurante:"Casa Brezo",clinica:"Fisioterapia Tramo",gestoria:"Olmo Asesores"};
+  var nombres={restaurante:"Casa Brezo",clinica:"Fisioterapia Tramo",gestoria:"Olmo Asesores",estetica:"Nácar",arquitectura:"Pardo & Luján",reformas:"Lumbre"};
   var modal=document.getElementById("modal"),marco=modal.querySelector("iframe"),titulo=modal.querySelector(".barra b");
   var botones=modal.querySelectorAll(".cambio button"),cerrar=modal.querySelector(".cerrar"),origen=null;
   function vista(v){modal.classList.toggle("movil",v==="movil");botones.forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.vista===v))})}
