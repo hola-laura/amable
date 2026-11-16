@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Tu marca y tu web en un día · Kit de amable</title><meta name="description" content="Un kit para que negocios locales y autónomos saquen su marca, sus textos y su web en un día, sin saber de diseño."><link rel="canonical" href="https://amableagencia.com/kit/"><meta name="theme-color" content="#004833"><meta property="og:type" content="website"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="Amable"><meta property="og:title" content="Tu marca y tu web en un día · Kit de amable"><meta property="og:description" content="Un kit para que negocios locales y autónomos saquen su marca, sus textos y su web en un día, sin saber de diseño."><meta property="og:url" content="https://amableagencia.com/kit/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.png" type="image/png" sizes="192x192"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Young+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/shared/page-foundation.css">
+<link rel="stylesheet" href="/css/shared/language-switch.css">
+<link rel="stylesheet" href="/css/shared/responsive-navigation.css">
+<link rel="stylesheet" href="/menu.css">
+<link rel="stylesheet" href="/css/shared/grain-background.css" id="fondos-grano">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;-webkit-font-smoothing:antialiased}
+a{color:#004833}
+img{max-width:100%}
+/* móvil en vivo: una web de ejemplo real, reducida */
+.fono{--w:260px;display:block;position:relative;width:var(--w);aspect-ratio:390/800;border:5px solid #111;border-radius:26px;overflow:hidden;background:#fff;padding:0;cursor:pointer;font:inherit;color:inherit;transition:transform .25s ease}
+.fono:hover{transform:translateY(-6px)}
+.fono:focus-visible{outline:3px solid #FCB0F8;outline-offset:4px}
+.fono iframe{position:absolute;left:0;top:0;width:390px;height:800px;border:0;transform-origin:0 0;transform:scale(calc((var(--w) - 10px) / 390px));pointer-events:none}
+.fono .ver{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:#111;color:#fff;border-radius:6px;padding:9px 14px;font-size:13.5px;font-weight:600;white-space:nowrap;opacity:0;transition:opacity .2s}
+.fono:hover .ver,.fono:focus-visible .ver{opacity:1}
+@media(hover:none){.fono .ver{opacity:1}}
+.hero-fones{flex:0 1 420px;min-width:0;display:flex;gap:16px;align-items:flex-end;justify-content:center}
+.hero-fones .fono{--w:210px;border-bottom:0;border-radius:24px 24px 0 0;aspect-ratio:390/690}
+.hero-fones .fono.alto{aspect-ratio:390/800}
+.hero-fones .fono:hover{transform:none}
+.ejs{display:flex;flex-wrap:wrap;gap:40px 32px;justify-content:center}
+.ej{flex:0 0 300px;max-width:100%}
+.ej .fono{--w:300px}
+.ej .est{margin:20px 0 4px;font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#004833}
+.ej h3{margin:0 0 4px;font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:24px}
+.ej p{margin:0;font-size:16px}
+/* ventana en grande */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(10,20,16,.72);display:none;padding:clamp(0px,2vw,28px)}
+.modal.abierta{display:flex}
+.modal .caja{margin:auto;width:100%;height:100%;max-width:1440px;background:#111;border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.modal .barra{display:flex;align-items:center;gap:12px;padding:10px 12px 10px 18px;color:#fff;font-size:14.5px}
+.modal .barra b{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:18px;margin-right:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.modal .barra small{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#A8C8F8;display:none}
+.modal .cambio{display:none;background:#2a2a2a;border-radius:6px;padding:3px}
+.modal .cambio button,.modal .cerrar{font:inherit;font-size:13.5px;font-weight:600;color:#fff;background:none;border:0;border-radius:4px;min-height:38px;padding:0 12px;cursor:pointer}
+.modal .cambio button[aria-pressed="true"]{background:#fff;color:#111}
+.modal .cerrar{background:#FCB0F8;color:#111;border-radius:6px;min-height:44px;padding:0 16px}
+.modal .lienzo{flex:1;min-height:0;display:flex;justify-content:center;background:#1c1c1c}
+.modal iframe{border:0;background:#fff;width:100%;height:100%}
+.modal.movil iframe{width:390px;max-width:100%}
+@media(min-width:760px){.modal .cambio{display:flex}.modal .barra small{display:block}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fono{transition:none}}
+
+/* ——— amable: menú y pie comunes; el resto es propio de esta página ——— */
+body{background:#fff;color:#111}
+.vlogo .vpt{display:inline-block;width:.16em;height:.16em;border-radius:50%;background:#004833;margin-left:.04em}
+.k-hero{background-image:var(--grano-n),radial-gradient(52% 78% at 100% 0%,rgba(252,176,248,.46),transparent 70%),radial-gradient(48% 62% at 62% 0%,rgba(168,200,248,.22),transparent 72%),radial-gradient(60% 80% at 0% 100%,rgba(0,0,0,.3),transparent 72%);background-blend-mode:overlay,normal,normal,normal;background-size:220px,auto,auto,auto}
+.k-noche{background:var(--grano-n),radial-gradient(60% 75% at 0% 100%,#8fc6ea,rgba(143,198,234,.5) 38%,transparent 72%),radial-gradient(45% 55% at 4% 10%,rgba(180,192,206,.85),transparent 70%),radial-gradient(45% 75% at 56% 8%,rgba(12,32,40,.9),transparent 70%),radial-gradient(60% 85% at 100% 60%,rgba(54,116,176,.95),transparent 72%),linear-gradient(170deg,#24506f,#1d4b7a);background-blend-mode:overlay,normal,normal,normal,normal,normal;background-size:220px,auto,auto,auto,auto,auto}
+.k-noche p[style*="A8C8F8"],.k-noche h3[style*="A8C8F8"]{color:rgba(255,255,255,.78)!important}
+.k-btn{transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s ease}
+.k-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(252,176,248,.9)}
+.fono{border-width:4px;border-radius:30px;box-shadow:0 34px 60px -34px rgba(8,30,22,.55)}
+.hero-fones .fono{--w:228px;border-radius:30px 30px 0 0;box-shadow:0 -10px 60px -20px rgba(0,0,0,.45)}
+.hero-fones{gap:18px}
+.ej .fono{box-shadow:0 40px 70px -40px rgba(8,30,22,.5)}
+h2{letter-spacing:-.018em}
+/* entrada suave al bajar */
+.kr{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.kr.en{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.kr{opacity:1;transform:none;transition:none}.k-btn{transition:none}}
+@media(max-width:700px){.hero-fones .fono{--w:158px}}
+</style></head><body class="v">
+<nav class="vnav" aria-label="Principal"><a class="vlogo" href="/" aria-label="amable">amable<i class="vpt"></i></a><ul><li><a href="/negocios">Negocios</a></li><li><a href="/empresas">Empresas</a></li><li><a href="/proyectos">Proyectos</a></li><li><a href="/sobre-laura">Sobre mí</a></li></ul><a class="vbtn" href="https://calendar.app.google/tx5x6KwxiNUhJSyn9" target="_blank" rel="noopener">Reservar 15 min</a></nav>
+<div id="kit">
+<div style="font-family: 'DM Sans', system-ui, sans-serif; color: #111111; background: #ffffff; font-size: 17px; line-height: 1.55">
+
+<!-- CABECERA -->
+<div class="k-hero" style="background-color: #004833; color: #ffffff">
+<div id="top" style="max-width: 1120px; margin: 0 auto; padding: clamp(124px, 13vw, 176px) clamp(20px, 5vw, 56px) 0; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-end">
+<div style="flex: 1 1 460px; min-width: 0; padding-bottom: clamp(40px, 7vw, 84px)">
+<p style="margin: 0 0 22px; font-family: 'DM Mono', monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A8C8F8">Kit de amable · para negocios locales y autónomos</p>
+<h1 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(40px, 5.2vw, 66px); line-height: 1.06; letter-spacing: -0.01em">Tu marca y tu web <span style="box-shadow: inset 0 -0.14em 0 #FCB0F8; white-space: nowrap">en un día</span>, sin saber de diseño</h1>
+<p style="margin: 26px 0 32px; font-size: clamp(18px, 2vw, 21px); line-height: 1.5; max-width: 30em; color: #EEF3FB">Respondes a unas preguntas como se lo contarías a un vecino. Sales con tus colores, tus textos y una web lista para publicar.</p>
+<a href="#precio" class="k-btn" style="display: inline-flex; align-items: center; justify-content: center; min-height: 58px; padding: 0 32px; background: #FCB0F8; color: #111111; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 17px">Quiero el kit · [149 €]</a>
+<p style="margin: 14px 0 0; font-size: 15px; color: #A8C8F8">Pago único. Funciona con la versión gratuita de Claude.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 34px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.22); font-size: 15px">
+<span>4 pasos</span>
+<span>20 a 30 minutos cada uno</span>
+<span>Puedes parar y seguir otro día</span>
+</div>
+</div>
+<div class="hero-fones">
+<button class="fono alto" data-ej="restaurante" aria-label="Abrir en grande la web de ejemplo de un restaurante"><iframe src="ejemplos/restaurante.html" title="Web de ejemplo: restaurante" tabindex="-1" scrolling="no"></iframe></button>
+<button class="fono" data-ej="gestoria" aria-label="Abrir en grande la web de ejemplo de una gestoría"><iframe src="ejemplos/gestoria.html" title="Web de ejemplo: gestoría" tabindex="-1" scrolling="no"></iframe></button>
+</div>
+</div>
+</div>
+
+<!-- EL PROBLEMA -->
+<div style="background: #EEF3FB">
+<div style="max-width: 1120px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 56px)">
+<h2 style="margin: 0 0 36px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4.6vw, 52px); line-height: 1.1; color: #004833; max-width: 16em">Llevas años diciendo «tengo que hacer la web»</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 1 1 320px; min-width: 0; background: #ffffff; border-radius: 4px; padding: 34px">
+<h3 style="margin: 0 0 10px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.2">«No tengo web. Me buscan en Instagram.»</h3>
+<p style="margin: 0">Instagram está muy bien para que te vean. Pero quien quiere tu horario, tu dirección o pedirte cita lo busca en Google, y ahí no estás.</p>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #ffffff; border-radius: 4px; padding: 34px">
+<h3 style="margin: 0 0 10px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.2">«Tengo una, pero mejor no la mires.»</h3>
+<p style="margin: 0">La hizo un conocido hace años. El teléfono es el antiguo, en el móvil se ve mal y te da apuro pasar el enlace.</p>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px 56px; margin-top: 44px">
+<p style="flex: 1 1 320px; min-width: 0; margin: 0">Alguien te recomienda. La otra persona te busca en el móvil antes de llamar. Si no encuentra nada, o lo que encuentra no le da confianza, llama al siguiente de la lista. Y tú no te enteras.</p>
+<p style="flex: 1 1 320px; min-width: 0; margin: 0">No la has hecho porque encargarla cuesta un dinero y unas semanas que ahora no tienes. Y porque hacerla tú, con una plantilla de las de siempre, acaba en una página que se parece a todas las demás.</p>
+</div>
+<p style="margin: 48px 0 0; font-family: 'Young Serif', Georgia, serif; font-size: clamp(22px, 2.8vw, 30px); line-height: 1.25; color: #004833; max-width: 26em">Lo lento nunca fue montar la web. Lo lento era decidir qué decir y cómo tenía que verse. Eso ya está resuelto.</p>
+</div>
+</div>
+
+<!-- CÓMO FUNCIONA -->
+<div style="max-width: 1120px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 56px)">
+<p style="margin: 0 0 14px; font-family: 'DM Mono', monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #004833">Cómo funciona</p>
+<h2 style="margin: 0 0 16px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4.6vw, 52px); line-height: 1.1; color: #004833; max-width: 17em">Cuatro pasos. Tú hablas de tu negocio; el kit hace lo demás.</h2>
+<p style="margin: 0 0 44px; max-width: 36em">Lo haces con Claude, un ayudante con el que hablas por chat. El kit le enseña a trabajar como lo haría una diseñadora.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 1 1 230px; min-width: 0; border-top: 2px solid #004833; padding-top: 20px">
+<p style="margin: 0 0 14px; font-family: 'DM Mono', monospace; font-size: 13px; color: #004833">01 · 20 MIN</p>
+<h3 style="margin: 0 0 8px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.15">La entrevista</h3>
+<p style="margin: 0; font-size: 16px">Doce preguntas sobre tu negocio, con un ejemplo de respuesta en cada una. Puedes contestar corto, con faltas o dictando por voz.</p>
+</div>
+<div style="flex: 1 1 230px; min-width: 0; border-top: 2px solid #004833; padding-top: 20px">
+<p style="margin: 0 0 14px; font-family: 'DM Mono', monospace; font-size: 13px; color: #004833">02 · 20 MIN</p>
+<h3 style="margin: 0 0 8px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.15">La marca</h3>
+<p style="margin: 0; font-size: 16px">Te enseña dos estilos con tus colores y tus letras. Solo tienes que decir «A» o «B».</p>
+</div>
+<div style="flex: 1 1 230px; min-width: 0; border-top: 2px solid #004833; padding-top: 20px">
+<p style="margin: 0 0 14px; font-family: 'DM Mono', monospace; font-size: 13px; color: #004833">03 · 30 MIN</p>
+<h3 style="margin: 0 0 8px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.15">Los textos</h3>
+<p style="margin: 0; font-size: 16px">Escribe tu web con las palabras que usaste en la entrevista. Tú marcas lo que no te suena a ti y se cambia.</p>
+</div>
+<div style="flex: 1 1 230px; min-width: 0; border-top: 2px solid #004833; padding-top: 20px">
+<p style="margin: 0 0 14px; font-family: 'DM Mono', monospace; font-size: 13px; color: #004833">04 · 30 MIN</p>
+<h3 style="margin: 0 0 8px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.15">La web</h3>
+<p style="margin: 0; font-size: 16px">Monta tu página sobre un diseño ya hecho, pensada para verse bien en el móvil. Pides los cambios y te la llevas.</p>
+</div>
+</div>
+<p style="margin: 40px 0 0; max-width: 40em; color: #3d4753">Puedes hacerlo todo en un día o un paso cada tarde. Al acabar cada paso te llevas una ficha con todo lo trabajado, para seguir donde lo dejaste.</p>
+</div>
+
+<!-- EJEMPLOS -->
+<div style="background: #EEF3FB" id="ejemplos">
+<div style="max-width: 1120px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 56px)">
+<p style="margin: 0 0 14px; font-family: 'DM Mono', monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #004833">Ejemplos</p>
+<h2 style="margin: 0 0 16px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4.6vw, 52px); line-height: 1.1; color: #004833">Así queda</h2>
+<p style="margin: 0 0 44px; max-width: 36em">Tres negocios inventados, cada uno con su propio estilo. Toca cualquiera para abrirlo en grande y moverte por él. La tuya saldrá con tus colores, tus textos y tus fotos.</p>
+<div class="ejs">
+<article class="ej">
+<button class="fono" data-ej="restaurante" aria-label="Abrir en grande: Casa Brezo"><iframe src="ejemplos/restaurante.html" title="Web de ejemplo: Casa Brezo" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
+<p class="est">Cálida · restaurante</p>
+<h3>Casa Brezo</h3>
+<p>Bares, restaurantes, tiendas y alimentación. La foto manda, con la carta y el horario a la vista.</p>
+</article>
+<article class="ej">
+<button class="fono" data-ej="clinica" aria-label="Abrir en grande: Fisioterapia Tramo"><iframe src="ejemplos/clinica.html" title="Web de ejemplo: Fisioterapia Tramo" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
+<p class="est">Limpia · clínica</p>
+<h3>Fisioterapia Tramo</h3>
+<p>Salud, belleza y academias. Humana y en calma, para pedir cita con confianza.</p>
+</article>
+<article class="ej">
+<button class="fono" data-ej="gestoria" aria-label="Abrir en grande: Olmo Asesores"><iframe src="ejemplos/gestoria.html" title="Web de ejemplo: Olmo Asesores" tabindex="-1" scrolling="no" loading="lazy"></iframe><span class="ver">Ver en grande</span></button>
+<p class="est">Despacho · gestoría</p>
+<h3>Olmo Asesores</h3>
+<p>Gestorías, asesorías y abogados. Seria y cálida, para dar confianza sin parecer un banco.</p>
+</article>
+</div>
+<p style="margin: 40px 0 0; font-size: 15px; color: #3d4753">Los negocios de los ejemplos son inventados y sus fotos son de muestra. El kit trae también un diseño para reformas, oficios y talleres.</p>
+</div>
+</div>
+
+<!-- QUÉ INCLUYE -->
+<div style="max-width: 1120px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 56px)">
+<p style="margin: 0 0 14px; font-family: 'DM Mono', monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #004833">Qué incluye</p>
+<h2 style="margin: 0 0 16px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4.6vw, 52px); line-height: 1.1; color: #004833">Lo que te llevas</h2>
+<p style="margin: 0 0 44px; max-width: 36em">No es un curso. No hay que ver horas de vídeo ni aprender nada. Es una herramienta: la instalas y te pones.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div style="flex: 1 1 400px; min-width: 0">
+<div style="border-top: 1px solid #c9d3e2; padding: 20px 0">
+<h3 style="margin: 0 0 4px; font-size: 19px; font-weight: 600">Tu web de una página</h3>
+<p style="margin: 0; font-size: 16px">Quién eres, qué haces, horario, cómo llegar y botones de WhatsApp y llamada. Pensada primero para el móvil.</p>
+</div>
+<div style="border-top: 1px solid #c9d3e2; padding: 20px 0">
+<h3 style="margin: 0 0 4px; font-size: 19px; font-weight: 600">Tu hoja de marca</h3>
+<p style="margin: 0; font-size: 16px">Tus colores y tus letras en una página, para dársela a la imprenta o al rotulista.</p>
+</div>
+<div style="border-top: 1px solid #c9d3e2; padding: 20px 0">
+<h3 style="margin: 0 0 4px; font-size: 19px; font-weight: 600">Tus textos</h3>
+<p style="margin: 0; font-size: 16px">Escritos como hablas tú, sin frases de relleno.</p>
+</div>
+<div style="border-top: 1px solid #c9d3e2; border-bottom: 1px solid #c9d3e2; padding: 20px 0">
+<h3 style="margin: 0 0 4px; font-size: 19px; font-weight: 600">Tu ficha</h3>
+<p style="margin: 0; font-size: 16px">Todo lo trabajado en un PDF, para parar y seguir cuando quieras.</p>
+</div>
+<h3 style="margin: 36px 0 12px; font-family: 'DM Mono', monospace; font-weight: 500; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #004833">Dentro del kit</h3>
+<ul style="margin: 0; padding: 0 0 0 20px; font-size: 16px; display: flex; flex-direction: column; gap: 6px">
+<li>4 diseños de web, según tu tipo de negocio</li>
+<li>9 estilos de marca con colores y letras ya combinados</li>
+<li>Fórmulas de texto para cada parte de la web, por sector</li>
+<li>Una lista de palabras prohibidas, para que nada suene a plantilla</li>
+<li>Guía de instalación paso a paso, con imágenes</li>
+<li>Soporte por correo si te atascas</li>
+</ul>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; gap: 16px; align-items: flex-start">
+<img src="img/hoja-marca.png" alt="Hoja de marca de ejemplo, con colores y letras" style="width: 54%; border: 1px solid #c9d3e2; border-radius: 4px; display: block">
+<img src="img/ficha.png" alt="Ficha del kit de ejemplo" style="width: 42%; border: 1px solid #c9d3e2; border-radius: 4px; display: block; margin-top: 48px">
+</div>
+</div>
+</div>
+
+<!-- DUDAS -->
+<div style="background: #EEF3FB">
+<div style="max-width: 1120px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 56px)">
+<h2 style="margin: 0 0 40px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4.6vw, 52px); line-height: 1.1; color: #004833; max-width: 15em">Lo que seguramente estás pensando</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 1 1 320px; min-width: 0; background: #ffffff; border-radius: 4px; padding: 32px">
+<h3 style="margin: 0 0 8px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; line-height: 1.2">«Yo de ordenadores no sé nada.»</h3>
+<p style="margin: 0; font-size: 16px">No hace falta. Si sabes escribir un WhatsApp, sabes usar el kit. Todo son preguntas y respuestas, y la guía de instalación te lleva paso a paso, con imágenes de lo que tienes que tocar.</p>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #ffffff; border-radius: 4px; padding: 32px">
+<h3 style="margin: 0 0 8px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; line-height: 1.2">«Lo que escribe una IA suena a robot.»</h3>
+<p style="margin: 0; font-size: 16px">Suena a robot cuando le pides que invente. Aquí primero te entrevista, y los textos salen de tus respuestas y de tus palabras. Además lleva una lista de expresiones prohibidas: nada de «soluciones a tu medida».</p>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #ffffff; border-radius: 4px; padding: 32px">
+<h3 style="margin: 0 0 8px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; line-height: 1.2">«No tengo fotos buenas.»</h3>
+<p style="margin: 0; font-size: 16px">La web queda bien sin ellas y deja los huecos marcados para cuando las tengas. El kit no inventa fotos de tu local ni de tu equipo: las que salgan serán las tuyas.</p>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #ffffff; border-radius: 4px; padding: 32px">
+<h3 style="margin: 0 0 8px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; line-height: 1.2">«No tengo un día entero.»</h3>
+<p style="margin: 0; font-size: 16px">Son cuatro pasos de 20 a 30 minutos. Haz uno cada tarde, cuando cierres.</p>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #ffffff; border-radius: 4px; padding: 32px">
+<h3 style="margin: 0 0 8px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; line-height: 1.2">«Ya tengo Instagram, con eso me vale.»</h3>
+<p style="margin: 0; font-size: 16px">Para que te vean, sí. Para que te encuentren en Google, sepan tu horario y te escriban con un toque, hace falta una web. Las dos cosas se ayudan.</p>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #ffffff; border-radius: 4px; padding: 32px">
+<h3 style="margin: 0 0 8px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; line-height: 1.2">«Por ese precio no puede quedar bien.»</h3>
+<p style="margin: 0; font-size: 16px">Queda bien porque el diseño ya está hecho. Lo que pagas en una agencia son las horas de decidir colores, letras, orden y textos. Esas decisiones vienen tomadas; tú pones tu negocio.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PRECIO -->
+<div id="precio" class="k-noche" style="color: #ffffff">
+<div style="max-width: 1120px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 56px); display: flex; flex-wrap: wrap; gap: 56px">
+<div style="flex: 1 1 380px; min-width: 0">
+<p style="margin: 0 0 14px; font-family: 'DM Mono', monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A8C8F8">Precio</p>
+<h2 style="margin: 0 0 28px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4.6vw, 52px); line-height: 1.1">Un pago, y es tuyo</h2>
+<p style="margin: 0; font-family: 'DM Sans', system-ui, sans-serif; font-weight: 600; font-size: clamp(64px, 9vw, 104px); line-height: 1; font-variant-numeric: lining-nums tabular-nums">[149 €]</p>
+<p style="margin: 14px 0 28px; color: #A8C8F8">Pago único, sin IVA. Sin cuotas ni suscripción a amable.</p>
+<ul style="margin: 0 0 32px; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px">
+<li>El kit completo, para instalar en Claude</li>
+<li>4 diseños de web y 9 estilos de marca</li>
+<li>Guía de instalación paso a paso</li>
+<li>Soporte por correo</li>
+</ul>
+<a href="#precio" class="k-btn" style="display: inline-flex; align-items: center; justify-content: center; min-height: 58px; padding: 0 32px; background: #FCB0F8; color: #111111; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 17px">Quiero el kit · [149 €]</a>
+</div>
+<div style="flex: 1 1 380px; min-width: 0">
+<h3 style="margin: 0 0 8px; font-family: 'DM Mono', monospace; font-weight: 500; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A8C8F8">Lo que necesitas aparte</h3>
+<div style="border-top: 1px solid rgba(255,255,255,0.25); padding: 20px 0">
+<h4 style="margin: 0 0 4px; font-size: 19px; font-weight: 600">Una cuenta de Claude</h4>
+<p style="margin: 0; font-size: 16px; color: #EEF3FB">La versión gratuita sirve. Tiene un límite de uso, así que quizá tengas que repartir los pasos en dos o tres ratos. Con la de pago (unos 20 $ al mes, la cancelas cuando quieras) lo haces del tirón.</p>
+</div>
+<div style="border-top: 1px solid rgba(255,255,255,0.25); padding: 20px 0">
+<h4 style="margin: 0 0 4px; font-size: 19px; font-weight: 600">Publicar la web</h4>
+<p style="margin: 0; font-size: 16px; color: #EEF3FB">El kit te deja la web terminada. Para que esté en una dirección tuya, tipo minegocio.es, hacen falta esa dirección y un sitio donde viva, que se pagan aparte.</p>
+</div>
+<div style="border-top: 1px solid rgba(255,255,255,0.25); border-bottom: 1px solid rgba(255,255,255,0.25); padding: 20px 0">
+<h4 style="margin: 0 0 4px; font-size: 19px; font-weight: 600">Si no quieres ocuparte</h4>
+<p style="margin: 0; font-size: 16px; color: #EEF3FB">Te la publicamos nosotras por [PRECIO DEL EXTRA].</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- QUIÉN ESTÁ DETRÁS -->
+<div style="max-width: 1120px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 56px)">
+<div style="display: flex; flex-wrap: wrap; gap: 24px 56px">
+<div style="flex: 1 1 300px; min-width: 0">
+<p style="margin: 0 0 14px; font-family: 'DM Mono', monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #004833">Quién está detrás</p>
+<h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4.6vw, 52px); line-height: 1.1; color: #004833">Hola, soy Laura</h2>
+</div>
+<div style="flex: 2 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0">Soy diseñadora de producto. Llevo [X AÑOS] diseñando aplicaciones y webs para empresas como [LAS QUE QUIERAS NOMBRAR], donde cada botón se prueba hasta que la gente lo entiende a la primera.</p>
+<p style="margin: 0">Monté amable porque los negocios locales que conozco trabajan muy bien y se enseñan muy mal. No por dejadez: una web hecha con cariño costaba más de lo que tenía sentido pagar.</p>
+<p style="margin: 0">Este kit es mi manera de hacer las cosas, puesta en una herramienta: las preguntas que hago antes de diseñar, los estilos que sé que funcionan y los diseños que usaría yo. Lo único que no podía meter dentro es tu negocio. Eso lo pones tú.</p>
+<p style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-size: 20px; color: #004833">Laura Sampedro · amable</p>
+</div>
+</div>
+<h3 style="margin: 64px 0 6px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 26px; color: #004833">Lo que dicen quienes han trabajado conmigo</h3>
+<p style="margin: 0 0 28px; font-size: 15px; color: #3d4753; max-width: 44em">Recomendaciones de clientes y compañeros sobre mi trabajo como diseñadora, publicadas en mi LinkedIn. El kit es nuevo: las primeras opiniones de quienes lo usen irán aquí.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 1 1 230px; min-width: 0; background: #EEF3FB; border-radius: 4px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 22px">
+<p style="margin: 0; font-size: 16px">«Tiene una atención al detalle extrema […]. Hace las preguntas adecuadas, responde muy rápido y diseña pensando siempre en el cliente.»</p>
+<p style="margin: 0; font-size: 14px; color: #3d4753"><strong style="color: #111111">Ahmed El-Sharkasy</strong><br>Director de producto · cliente</p>
+</div>
+<div style="flex: 1 1 230px; min-width: 0; background: #EEF3FB; border-radius: 4px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 22px">
+<p style="margin: 0; font-size: 16px">«Tiene unas excepcionales cualidades para el diseño […] mostraba siempre mucho interés por ayudar a otros ajustándose a las prioridades de éstos.»</p>
+<p style="margin: 0; font-size: 14px; color: #3d4753"><strong style="color: #111111">Jaime Guitart</strong><br>Coincidió con Laura en Just Eat España</p>
+</div>
+<div style="flex: 1 1 230px; min-width: 0; background: #EEF3FB; border-radius: 4px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 22px">
+<p style="margin: 0; font-size: 16px">«Tiene un alto nivel en los procesos de comunicación y de marketing, pero además, es alguien con quien da gusto trabajar.»</p>
+<p style="margin: 0; font-size: 14px; color: #3d4753"><strong style="color: #111111">Carlos Martínez</strong><br>Jefe de Artes Gráficas, Salesianos Atocha</p>
+</div>
+<div style="flex: 1 1 230px; min-width: 0; background: #EEF3FB; border-radius: 4px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 22px">
+<p style="margin: 0; font-size: 16px">«Piensa distinto, ejecuta rápido y colabora muchísimo.»</p>
+<p style="margin: 0; font-size: 14px; color: #3d4753"><strong style="color: #111111">Daniel Tallón</strong><br>Fue su responsable en Just Eat España</p>
+</div>
+</div>
+</div>
+
+<!-- PREGUNTAS FRECUENTES -->
+<div style="background: #EEF3FB">
+<div style="max-width: 1120px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 56px)">
+<h2 style="margin: 0 0 36px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4.6vw, 52px); line-height: 1.1; color: #004833">Preguntas frecuentes</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 0 56px">
+<div style="flex: 1 1 400px; min-width: 0">
+<div style="border-top: 1px solid #b9c5d8; padding: 22px 0">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 600">¿De verdad se hace en un día?</h3>
+<p style="margin: 0; font-size: 16px">Son unas dos horas de trabajo repartidas en cuatro pasos. Con la versión gratuita de Claude puede que tengas que hacer pausas entre pasos; aun así, en dos o tres ratos está hecho.</p>
+</div>
+<div style="border-top: 1px solid #b9c5d8; padding: 22px 0">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 600">¿Qué es Claude? ¿Tengo que pagarlo?</h3>
+<p style="margin: 0; font-size: 16px">Es un ayudante de inteligencia artificial con el que hablas por chat, desde el móvil o el ordenador. Tiene versión gratuita y el kit funciona con ella.</p>
+</div>
+<div style="border-top: 1px solid #b9c5d8; padding: 22px 0">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 600">¿La web es mía?</h3>
+<p style="margin: 0; font-size: 16px">Sí. Te llevas el archivo de tu web y puedes publicarla donde quieras. No dependes de amable para tenerla.</p>
+</div>
+<div style="border-top: 1px solid #b9c5d8; padding: 22px 0">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 600">¿Puedo cambiarla después?</h3>
+<p style="margin: 0; font-size: 16px">Sí. Abres una conversación, adjuntas tu ficha y pides el cambio: un precio nuevo, otro horario, una foto.</p>
+</div>
+</div>
+<div style="flex: 1 1 400px; min-width: 0">
+<div style="border-top: 1px solid #b9c5d8; padding: 22px 0">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 600">¿Sirve para una tienda online?</h3>
+<p style="margin: 0; font-size: 16px">No. El kit hace una web de presentación de una página. Si necesitas vender online o un sistema de reservas a medida, escríbenos y lo vemos aparte.</p>
+</div>
+<div style="border-top: 1px solid #b9c5d8; padding: 22px 0">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 600">¿Qué pasa con el aviso legal y la privacidad?</h3>
+<p style="margin: 0; font-size: 16px">La web deja el sitio preparado, pero esos textos llevan tus datos fiscales y tienes que completarlos tú o tu gestoría antes de publicar.</p>
+</div>
+<div style="border-top: 1px solid #b9c5d8; padding: 22px 0">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 600">¿Y si me atasco?</h3>
+<p style="margin: 0; font-size: 16px">Escribes a hola@amableagencia.com, nos dices en qué paso estás y te respondemos por correo.</p>
+</div>
+<div style="border-top: 1px solid #b9c5d8; padding: 22px 0">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 600">¿Hay devolución?</h3>
+<p style="margin: 0; font-size: 16px">[TU POLÍTICA DE DEVOLUCIONES]</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CIERRE -->
+<div class="k-hero" style="background-color: #004833; color: #ffffff">
+<div style="max-width: 1120px; margin: 0 auto; padding: clamp(72px, 10vw, 136px) clamp(20px, 5vw, 56px)">
+<h2 style="margin: 0 0 22px; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(34px, 5.4vw, 64px); line-height: 1.08; max-width: 16em">Puedes seguir diciendo «tengo que hacer la web». O puedes tenerla esta semana.</h2>
+<p style="margin: 0 0 32px; font-size: clamp(18px, 2vw, 21px); max-width: 32em; color: #EEF3FB">Dos horas de tu tiempo, tus propias palabras y un diseño que ya está pensado. Cuando alguien te busque, que encuentre algo a la altura de cómo trabajas.</p>
+<a href="#precio" class="k-btn" style="display: inline-flex; align-items: center; justify-content: center; min-height: 58px; padding: 0 32px; background: #FCB0F8; color: #111111; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 17px">Quiero el kit · [149 €]</a>
+<p style="margin: 16px 0 0; font-size: 15px; color: #A8C8F8">¿Tienes una duda antes de comprar? Escríbenos a hola@amableagencia.com.</p>
+</div>
+</div>
+
+</div>
+</div>
+<footer class="pie footer-simple" style="background:#004833;color:#fff">
+<link rel="stylesheet" href="/css/shared/footer.css">
+<div class="ftm"><div class="ftm-brand"><a class="ftm-logo" href="/" aria-label="Amable, inicio">amable<i></i></a><p>Diseño de producto, software a medida y automatización para empresas y negocios.</p></div>
+<nav class="ftm-links" aria-label="Pie de página"><a class="ftm-services" href="/servicios">Servicios</a><a href="/privacidad">Privacidad</a></nav></div>
+<div class="ftm-bottom"><span>© 2026 Amable · Laura Sampedro de la Rosa</span></div></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Web de ejemplo en grande">
+<div class="caja">
+<div class="barra"><b>Ejemplo</b><small>Negocio inventado</small><div class="cambio" role="group" aria-label="Tamaño de la vista"><button type="button" data-vista="ordenador" aria-pressed="true">Ordenador</button><button type="button" data-vista="movil" aria-pressed="false">Móvil</button></div><button type="button" class="cerrar">Cerrar</button></div>
+<div class="lienzo"><iframe src="about:blank" title="Web de ejemplo"></iframe></div>
+</div>
+</div>
+<script>
+(function(){
+  var nombres={restaurante:"Casa Brezo",clinica:"Fisioterapia Tramo",gestoria:"Olmo Asesores"};
+  var modal=document.getElementById("modal"),marco=modal.querySelector("iframe"),titulo=modal.querySelector(".barra b");
+  var botones=modal.querySelectorAll(".cambio button"),cerrar=modal.querySelector(".cerrar"),origen=null;
+  function vista(v){modal.classList.toggle("movil",v==="movil");botones.forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.vista===v))})}
+  function abrir(k,desde){origen=desde;titulo.textContent=nombres[k]||"Ejemplo";marco.src="ejemplos/"+k+".html";marco.title="Web de ejemplo: "+(nombres[k]||"");vista("ordenador");modal.classList.add("abierta");document.body.style.overflow="hidden";cerrar.focus()}
+  function cerrarModal(){modal.classList.remove("abierta");marco.src="about:blank";document.body.style.overflow="";if(origen)origen.focus()}
+  document.querySelectorAll("[data-ej]").forEach(function(b){b.addEventListener("click",function(){abrir(b.dataset.ej,b)})});
+  botones.forEach(function(b){b.addEventListener("click",function(){vista(b.dataset.vista)})});
+  cerrar.addEventListener("click",cerrarModal);
+  modal.addEventListener("click",function(e){if(e.target===modal)cerrarModal()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&modal.classList.contains("abierta"))cerrarModal()});
+})();
+
+(function(){
+  if(!("IntersectionObserver" in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("en");io.unobserve(e.target)}})},{rootMargin:"0px 0px -6% 0px"});
+  document.querySelectorAll("#kit>div:not(:first-child)>div>*").forEach(function(el){el.classList.add("kr");io.observe(el)});
+})();
+</script>
+<script src="/js/page-language-switch.js"></script><script src="/menu.js" defer></script>
+<script src="/analytics-consent.js?v=3" defer></script>
+</body></html>

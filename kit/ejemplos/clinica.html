@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fisioterapia Tramo · Fisioterapeutas en Chamberí, Madrid</title>
+<meta name="description" content="Fisioterapia para dolor de espalda, lesiones deportivas y suelo pélvico en Chamberí. Sesiones de una hora. Pide cita por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- MARCA · letras -->
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== MARCA: cambia solo esto ===== */
+:root{
+  --fondo:#F9F8F5;       /* fondo claro */
+  --tinta:#120C08;       /* texto */
+  --gris:#66625C;        /* texto secundario */
+  --principal:#F08A4B;   /* acento: solo en el botón principal */
+  --sobre-principal:#120C08;
+  --linea:rgba(18,12,8,.13);
+  --letra-titulos:"Instrument Serif",Georgia,serif;
+  --letra-texto:"DM Sans",system-ui,sans-serif;
+}
+/* ===== fin MARCA ===== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--letra-texto);color:var(--tinta);background:var(--fondo);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:var(--letra-titulos);font-weight:400;line-height:1.04;letter-spacing:-.012em;text-wrap:balance}
+em{font-style:italic}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.gris{color:var(--gris)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:12px;background:#fff;color:var(--tinta);text-decoration:none;font-size:14.5px;font-weight:500;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.btn.main{background:var(--principal);color:var(--sobre-principal)}
+.btn.oscuro{background:var(--tinta);color:#fff}
+
+/* arriba del todo */
+.hero{position:relative;height:100svh;min-height:600px;color:#fff;background:#3b342e;overflow:hidden}
+.hero>img{position:absolute;inset:0}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,12,8,.34),rgba(18,12,8,.16) 40%,rgba(18,12,8,.5))}
+.hero nav{position:absolute;z-index:2;top:14px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.hero nav .grupo{display:flex;align-items:center;gap:4px;background:#fff;color:var(--tinta);border-radius:14px;padding:4px;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.hero nav .grupo a{display:flex;align-items:center;min-height:36px;padding:0 12px;border-radius:10px;text-decoration:none;font-size:14px}
+.hero nav .grupo a.logo{font-family:var(--letra-titulos);font-size:21px;gap:7px;padding-right:14px}
+.hero nav .grupo a.logo i{width:9px;height:9px;border-radius:50%;background:var(--principal)}
+.hero nav .grupo .sec{display:none}
+.hero nav .acc{display:flex;gap:6px}
+.hero nav .acc .btn{min-height:44px;border-radius:14px}
+.hero .centro{position:absolute;z-index:2;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px}
+.hero h1{font-size:clamp(46px,9.4vw,96px)}
+.hero .sub{margin-top:20px;font-size:16.5px}
+.hero .dato{margin-top:10px;font-size:14.5px;opacity:.85;display:flex;align-items:center;gap:8px}
+.hero .dato::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--principal)}
+.hero .abajo{position:absolute;z-index:2;left:0;right:0;bottom:26px;display:flex;justify-content:center;gap:8px;padding:0 20px;flex-wrap:wrap}
+
+section{padding:84px 0}
+.titulo{text-align:center;font-size:clamp(40px,7vw,68px);max-width:14em;margin:0 auto}
+
+/* bloques de servicio: texto y panel de foto con una tarjeta flotando */
+.bloque{margin-top:64px}
+.bloque h3{font-size:clamp(28px,3.6vw,34px);margin-bottom:8px}
+.bloque p{max-width:44ch;font-size:15.5px}
+.panel{position:relative;margin-top:22px;aspect-ratio:4/5;border-radius:26px;overflow:hidden;background:#d8d3ca}
+.panel .ficha{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(86%,360px);background:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 12px 40px rgba(18,12,8,.18);font-size:14.5px}
+.ficha b{display:block;font-weight:500;font-size:15.5px;margin-bottom:8px}
+.ficha div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--linea)}
+.ficha div span:first-child{color:var(--gris)}
+
+/* cifra */
+.cifra{text-align:center}
+.cifra b{font-family:var(--letra-titulos);font-weight:400;font-size:clamp(110px,24vw,230px);line-height:.9;letter-spacing:-.03em;display:block}
+.cifra p{font-family:var(--letra-titulos);font-size:clamp(24px,3.4vw,32px);line-height:1.15;margin-top:10px}
+.cifra small{display:block;margin-top:12px;font-size:15px}
+
+/* cómo funciona */
+.pasos{display:grid;gap:34px;margin-top:54px}
+.pasos span{font-size:12px;letter-spacing:.08em;color:var(--gris)}
+.pasos h3{font-size:28px;margin:10px 0 6px}
+.pasos p{font-size:15.5px;max-width:34ch}
+
+/* equipo */
+.equipo{display:grid;gap:40px}
+.equipo figure{aspect-ratio:5/4;border-radius:26px;overflow:hidden}
+.equipo h2{font-size:clamp(34px,5vw,50px);margin-bottom:14px}
+.equipo ul{list-style:none;margin-top:26px;border-top:1px solid var(--linea)}
+.equipo li{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--linea);font-size:15px}
+.equipo li b{font-family:var(--letra-titulos);font-weight:400;font-size:23px;line-height:1.1}
+
+/* preguntas */
+.faq{max-width:720px;margin:44px auto 0}
+details{border-top:1px solid var(--linea)}
+details:last-child{border-bottom:1px solid var(--linea)}
+summary{list-style:none;cursor:pointer;padding:20px 34px 20px 0;position:relative;font-size:17px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:2px;top:15px;font-size:24px;font-weight:400;color:var(--gris)}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 20px;max-width:56ch;font-size:15.5px}
+
+/* cierre */
+.cierre{position:relative;border-radius:26px;overflow:hidden;min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:60px 22px;background:#3b342e}
+.cierre img{position:absolute;inset:0}
+.cierre::after{content:"";position:absolute;inset:0;background:rgba(18,12,8,.42)}
+.cierre>*:not(img){position:relative;z-index:1}
+.cierre h2{font-size:clamp(40px,7vw,68px);max-width:12em}
+.cierre p{margin:14px 0 26px;font-size:16px;opacity:.92}
+
+footer{padding:56px 0 30px;font-size:14.5px}
+footer .cols{display:grid;grid-template-columns:1fr 1fr;gap:34px 20px}
+footer .logo{font-family:var(--letra-titulos);font-size:30px;grid-column:1/-1}
+footer h4{font-size:12px;font-weight:400;letter-spacing:.08em;color:var(--gris);margin-bottom:10px}
+footer a{display:block;text-decoration:none;padding:3px 0}
+footer .fin{margin-top:44px;padding-top:18px;border-top:1px solid var(--linea);font-size:13px;color:var(--gris);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
+
+@media(min-width:820px){
+  body{font-size:17px}
+  .hero nav{top:20px;left:22px;right:22px}
+  .hero nav .grupo .sec{display:flex}
+  section{padding:128px 0}
+  .bloque{margin-top:96px}
+  .panel{aspect-ratio:16/9;border-radius:32px}
+  .pasos{grid-template-columns:repeat(3,1fr);gap:40px}
+  .equipo{grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+  .equipo figure,.cierre{border-radius:32px}
+  .cierre{min-height:560px}
+  footer .cols{grid-template-columns:2fr 1fr 1fr 1fr}
+  footer .logo{grid-column:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ARRIBA DEL TODO: una persona real, una frase y el botón -->
+<header class="hero">
+  <img src="https://images.pexels.com/photos/5793788/pexels-photo-5793788.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Una fisioterapeuta trabaja el brazo de una paciente en una sala con luz natural">
+  <nav>
+    <div class="grupo">
+      <a class="logo" href="#"><i></i>Tramo</a>
+      <a class="sec" href="#servicios">Servicios</a>
+      <a class="sec" href="#equipo">Equipo</a>
+      <a class="sec" href="#preguntas">Preguntas</a>
+    </div>
+    <div class="acc">
+      <a class="btn" href="#">Llamar</a>
+      <a class="btn main" href="#cita">Pedir cita</a>
+    </div>
+  </nav>
+  <div class="centro">
+    <h1>El dolor de espalda<br><em>no organiza tu semana.</em></h1>
+    <p class="sub">Fisioterapia en Chamberí, sin prisas.</p>
+    <p class="dato">Primera cita en 48 horas</p>
+  </div>
+  <div class="abajo">
+    <a class="btn" href="#">Pedir cita por WhatsApp</a>
+  </div>
+</header>
+
+<!-- SERVICIOS: un bloque por servicio, con su foto y sus datos -->
+<section id="servicios">
+  <div class="wrap">
+    <h2 class="titulo">Una hora entera, y siempre la misma fisio</h2>
+
+    <div class="bloque">
+      <h3>Espalda y cuello</h3>
+      <p class="gris">Contracturas, lumbalgias y cervicales de muchas horas sentada. Terapia manual y ejercicios para casa.</p>
+      <div class="panel">
+        <img loading="lazy" src="https://images.pexels.com/photos/5793917/pexels-photo-5793917.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Tratamiento manual de espalda">
+        <div class="ficha"><b>Espalda y cuello</b><div><span>Duración</span><span>60 minutos</span></div><div><span>Precio</span><span>55 €</span></div></div>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>Lesiones deportivas</h3>
+      <p class="gris">Esguinces, sobrecargas y vuelta a correr después de un parón, con un plan por semanas.</p>
+      <div class="panel">
+        <img loading="lazy" src="https://images.pexels.com/photos/20860587/pexels-photo-20860587.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Una fisioterapeuta ayuda a un paciente a estirar la pierna">
+        <div class="ficha"><b>Tu plan de vuelta</b><div><span>Semana 1</span><span>Movilidad</span></div><div><span>Semana 2</span><span>Fuerza</span></div><div><span>Semana 3</span><span>Trote suave</span></div></div>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>Suelo pélvico</h3>
+      <p class="gris">Embarazo, posparto y pérdidas de orina. Valoración inicial en consulta individual.</p>
+      <div class="panel">
+        <img loading="lazy" src="https://images.pexels.com/photos/5793792/pexels-photo-5793792.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Una fisioterapeuta guía un ejercicio a una paciente">
+        <div class="ficha"><b>Primera valoración</b><div><span>Duración</span><span>75 minutos</span></div><div><span>Precio</span><span>65 €</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIFRA: solo si es un dato real. Si no, se quita. -->
+<section class="cifra" style="padding-top:0">
+  <div class="wrap">
+    <b>60 min</b>
+    <p>dura cada sesión</p>
+    <small class="gris">Abrimos la consulta en 2014 porque no nos gustaban las de veinte minutos.</small>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA: tres pasos, para quitar el miedo a la primera vez -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="titulo">Así es venir a Tramo</h2>
+    <div class="pasos">
+      <div><span>01</span><h3>Nos cuentas qué te pasa</h3><p class="gris">Por WhatsApp o por teléfono. Te decimos con quién y cuándo.</p></div>
+      <div><span>02</span><h3>Primera sesión</h3><p class="gris">Valoramos, tratamos y te explicamos qué tienes con palabras normales.</p></div>
+      <div><span>03</span><h3>Te llevas un plan</h3><p class="gris">Tres o cuatro ejercicios en vídeo para hacer en casa.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section id="equipo" style="padding-top:0">
+  <div class="wrap equipo">
+    <figure><img loading="lazy" src="https://images.pexels.com/photos/20860590/pexels-photo-20860590.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Una fisioterapeuta sonríe mientras trata a un paciente"></figure>
+    <div>
+      <h2>Dos fisios, y siempre la misma para ti</h2>
+      <p class="gris">Aquí te atiende la misma persona de principio a fin. Sabe qué te pasó la última vez y no hay que volver a contarlo.</p>
+      <ul>
+        <li><b>Irene Solana</b><span class="gris">Espalda y suelo pélvico</span></li>
+        <li><b>Dani Otero</b><span class="gris">Lesiones deportivas</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PREGUNTAS DE SIEMPRE -->
+<section id="preguntas" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="titulo">Lo que nos preguntan siempre</h2>
+    <div class="faq">
+      <details open><summary>¿Trabajáis con seguros?</summary><p class="gris">No trabajamos con aseguradoras, pero te damos factura para que la presentes a la tuya si te reembolsa.</p></details>
+      <details><summary>¿Qué llevo a la primera sesión?</summary><p class="gris">Ropa cómoda y, si tienes, informes o pruebas recientes. Nada más.</p></details>
+      <details><summary>¿Puedo cancelar una cita?</summary><p class="gris">Sí, avisando con 24 horas. Por WhatsApp vale.</p></details>
+      <details><summary>¿Hay bonos?</summary><p class="gris">Bono de cinco sesiones por 250 €, sin fecha de caducidad.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE Y CONTACTO -->
+<div class="wrap" id="cita">
+  <div class="cierre">
+    <img loading="lazy" src="https://images.pexels.com/photos/3248690/pexels-photo-3248690.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="La sala de tratamiento">
+    <h2>Un respiro para tu espalda</h2>
+    <p>Escríbenos y te contestamos en el día.</p>
+    <a class="btn main" href="#">Pedir cita por WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div class="logo">Tramo</div>
+      <div><h4>VISÍTANOS</h4><span>Calle del Ejemplo 8, 1.º B<br>28010 Madrid</span><a href="#" style="text-decoration:underline;text-underline-offset:3px;margin-top:6px">Cómo llegar</a></div>
+      <div><h4>HORARIO</h4><span>Lunes a viernes, 9:00 – 20:30<br>Sábado, 10:00 – 14:00</span></div>
+      <div><h4>CONTACTO</h4><a href="#">910 000 000</a><a href="#">Instagram</a></div>
+    </div>
+    <div class="fin"><span><a href="#" style="display:inline;margin-right:16px">Aviso legal</a><a href="#" style="display:inline">Privacidad</a></span><span>Ejemplo ficticio creado con el kit de amable. Fisioterapia Tramo no existe.</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

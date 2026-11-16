@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Brezo · Vermut y raciones en Madrid</title>
+<meta name="description" content="Vermut de grifo, raciones de siempre y cocina abierta todo el día en Madrid. Reserva por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- MARCA · letras -->
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== MARCA: cambia solo esto ===== */
+:root{
+  --fondo:#F3EEE6;       /* fondo claro */
+  --tinta:#1C1A17;       /* texto y bloques oscuros */
+  --principal:#A4472D;   /* acento: se usa muy poco */
+  --linea:rgba(28,26,23,.16);
+  --letra-titulos:"Newsreader",Georgia,serif;
+  --letra-texto:"Inter Tight",system-ui,sans-serif;
+}
+/* ===== fin MARCA ===== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--letra-texto);color:var(--tinta);background:var(--fondo);font-size:16px;line-height:1.55;padding-bottom:58px;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:var(--letra-titulos);font-weight:300;line-height:1.1;letter-spacing:-.012em;text-wrap:balance}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.mini{font-size:11.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase}
+
+/* arriba del todo */
+.hero{position:relative;height:calc(100svh - 58px);min-height:520px;color:#fff;background:var(--tinta);overflow:hidden}
+.hero img{position:absolute;inset:0;opacity:.82;animation:lento 26s ease-out both}
+@keyframes lento{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.08) 34%,rgba(0,0,0,.38) 100%)}
+.hero nav{position:absolute;z-index:2;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:20px 22px;font-size:14.5px}
+.hero nav .logo{font-family:var(--letra-titulos);font-size:21px;text-decoration:none}
+.hero nav div{display:flex;gap:22px}
+.hero nav div a{text-decoration:none;opacity:.95}
+.hero .centro{position:absolute;z-index:2;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 22px}
+.hero h1{font-size:clamp(58px,13vw,132px);line-height:.98}
+.hero p{margin-top:18px;font-size:15.5px;letter-spacing:.01em}
+
+/* barra fija: la acción principal */
+.barra{position:fixed;z-index:9;left:0;right:0;bottom:0;height:58px;background:var(--fondo);border-top:1px solid var(--linea);display:flex;align-items:center;justify-content:center;font-family:var(--letra-titulos);font-size:21px;text-decoration:none}
+.barra:hover{background:var(--tinta);color:var(--fondo)}
+
+section{padding:76px 0}
+.dos{display:grid;gap:44px}
+.grande{font-size:clamp(27px,4.2vw,40px);line-height:1.18}
+.grande em{font-style:italic}
+
+/* tabla de datos */
+dl{border-top:1px solid var(--linea)}
+dl div{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:15px 0;border-bottom:1px solid var(--linea);font-size:15px}
+dt{opacity:.55}
+dd a{text-decoration-thickness:1px;text-underline-offset:3px}
+
+/* tira de fotos */
+.tira{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,31%);gap:12px;overflow-x:auto;padding:0 22px 6px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.tira::-webkit-scrollbar{display:none}
+.tira figure{aspect-ratio:4/5;border-radius:3px;overflow:hidden;scroll-snap-align:start;background:#d9d2c6}
+.tira figure.ancha{aspect-ratio:auto;grid-column:span 1}
+
+/* carta */
+.carta h2{font-size:clamp(36px,6vw,62px)}
+.carta .grupo{margin-bottom:44px}
+.carta .grupo:last-child{margin-bottom:0}
+.carta h3{font-family:var(--letra-texto);font-size:11.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;opacity:.55;padding-bottom:12px;border-bottom:1px solid var(--tinta)}
+.plato{display:flex;align-items:baseline;gap:16px;padding:17px 0;border-bottom:1px solid var(--linea)}
+.plato b{font-family:var(--letra-titulos);font-weight:400;font-size:23px;line-height:1.15;display:block}
+.plato small{display:block;font-size:14.5px;opacity:.6;margin-top:2px}
+.plato u{margin-left:auto;text-decoration:none;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:15px}
+.nota{font-size:13.5px;opacity:.55;margin-top:18px}
+
+/* nosotros */
+.oscuro{background:var(--tinta);color:var(--fondo)}
+.oscuro figure{aspect-ratio:4/5;border-radius:3px;overflow:hidden}
+.oscuro .grande{margin-bottom:22px}
+.oscuro p{max-width:38ch;opacity:.82;margin-bottom:14px}
+.firma{font-family:var(--letra-titulos);font-style:italic;font-size:22px;opacity:1!important;margin-top:26px}
+
+/* opiniones */
+.voces blockquote{font-family:var(--letra-titulos);font-weight:300;font-style:italic;font-size:clamp(24px,3.4vw,34px);line-height:1.22;padding:28px 0;border-top:1px solid var(--linea)}
+.voces blockquote:last-child{border-bottom:1px solid var(--linea)}
+.voces cite{display:block;font-family:var(--letra-texto);font-style:normal;font-size:13.5px;opacity:.55;margin-top:12px}
+
+/* visítanos */
+.visita h2{font-size:clamp(36px,6vw,62px);margin-bottom:26px}
+.pildora{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border:1px solid var(--tinta);border-radius:99px;font-size:11.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;text-decoration:none;margin:22px 8px 0 0}
+.pildora:hover,.pildora.llena{background:var(--tinta);color:var(--fondo)}
+
+footer{padding:56px 0 34px;border-top:1px solid var(--linea)}
+footer .nombre{font-family:var(--letra-titulos);font-weight:300;font-size:clamp(64px,17vw,220px);line-height:.9;letter-spacing:-.03em}
+footer .fila{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;margin-top:30px;font-size:13.5px;opacity:.6}
+footer .fila a{margin-right:18px}
+
+@media(min-width:860px){
+  body{font-size:17px}
+  .hero nav{padding:26px 40px}
+  .wrap{padding:0 40px}
+  .tira{padding:0 40px 6px;grid-auto-columns:minmax(300px,24%)}
+  section{padding:120px 0}
+  .dos{grid-template-columns:1.25fr 1fr;gap:96px;align-items:start}
+  .carta .dos{grid-template-columns:.8fr 1.2fr}
+  .carta .pega{position:sticky;top:40px}
+  .oscuro .dos{grid-template-columns:.9fr 1.1fr;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ARRIBA DEL TODO: la foto y el nombre. Nada más. -->
+<header class="hero">
+  <img src="https://images.pexels.com/photos/24596510/pexels-photo-24596510.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="La barra, con las raciones del día">
+  <nav>
+    <a class="logo" href="#">Casa Brezo</a>
+    <div><a href="#carta">Carta</a><a href="#nosotros">Nosotros</a><a href="#visita">Visítanos</a></div>
+  </nav>
+  <div class="centro">
+    <h1>Casa Brezo</h1>
+    <p>Vermut de grifo y raciones · Madrid</p>
+  </div>
+</header>
+
+<!-- QUÉ ES + DATOS PRÁCTICOS -->
+<section>
+  <div class="wrap dos">
+    <p class="serif grande">Vermut de grifo y raciones <em>de las de antes</em>. Cocina abierta todo el día, barra larga y mesas para quedarse. En el mismo sitio desde 2011.</p>
+    <dl>
+      <div><dt>Dirección</dt><dd>Calle del Ejemplo 12, 28025 Madrid</dd></div>
+      <div><dt>Horario</dt><dd>Miércoles a domingo, desde las 12:00</dd></div>
+      <div><dt>Teléfono</dt><dd><a href="#">910 000 000</a></dd></div>
+      <div><dt>Reservas</dt><dd><a href="#">Por WhatsApp</a></dd></div>
+      <div><dt>Instagram</dt><dd><a href="#">@casabrezo</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- TIRA DE FOTOS: cuatro o cinco fotos reales. Sin fotos, se quita. -->
+<div class="tira" aria-label="Fotos del local y de la carta">
+  <figure><img loading="lazy" src="https://images.pexels.com/photos/38681146/pexels-photo-38681146.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Gildas de la casa"></figure>
+  <figure><img loading="lazy" src="https://images.pexels.com/photos/13012150/pexels-photo-13012150.jpeg?auto=compress&cs=tinysrgb&w=900" alt="El comedor"></figure>
+  <figure><img loading="lazy" src="https://images.pexels.com/photos/17166774/pexels-photo-17166774.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Una mesa después del aperitivo"></figure>
+  <figure><img loading="lazy" src="https://images.pexels.com/photos/28490819/pexels-photo-28490819.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Bravas"></figure>
+  <figure><img loading="lazy" src="https://images.pexels.com/photos/14009277/pexels-photo-14009277.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Raciones para compartir"></figure>
+</div>
+
+<!-- SERVICIOS O PRODUCTOS -->
+<section class="carta" id="carta">
+  <div class="wrap dos">
+    <div class="pega">
+      <h2>Lo que más sale</h2>
+      <p style="margin-top:16px;max-width:30ch;opacity:.7">La carta cambia poco, a propósito. Esto es lo que piden los de siempre.</p>
+    </div>
+    <div>
+      <div class="grupo">
+        <h3>Para empezar</h3>
+        <div class="plato"><div><b>Gilda de la casa</b><small>Anchoa, piparra y aceituna gordal</small></div><u>2,20 €</u></div>
+        <div class="plato"><div><b>Ensaladilla</b><small>Con ventresca y picos</small></div><u>7,50 €</u></div>
+        <div class="plato"><div><b>Torreznos</b><small>De Soria, hechos al momento</small></div><u>8,00 €</u></div>
+      </div>
+      <div class="grupo">
+        <h3>Para compartir</h3>
+        <div class="plato"><div><b>Bravas Brezo</b><small>Salsa casera, pican lo justo</small></div><u>6,50 €</u></div>
+        <div class="plato"><div><b>Oreja a la plancha</b><small>Con ajo y pimentón</small></div><u>9,00 €</u></div>
+        <div class="plato"><div><b>Callos</b><small>Solo los jueves, hasta que se acaban</small></div><u>11,00 €</u></div>
+      </div>
+      <div class="grupo">
+        <h3>De beber</h3>
+        <div class="plato"><div><b>Vermut de grifo</b><small>Rojo o blanco, con su sifón</small></div><u>2,80 €</u></div>
+        <div class="plato"><div><b>Caña bien tirada</b></div><u>1,90 €</u></div>
+        <p class="nota">Pregunta por los alérgenos en barra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS: la historia corta, en primera persona -->
+<section class="oscuro" id="nosotros">
+  <div class="wrap dos">
+    <figure><img loading="lazy" src="https://images.pexels.com/photos/7270393/pexels-photo-7270393.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Vermut rojo y blanco servidos"></figure>
+    <div>
+      <p class="mini" style="opacity:.6;margin-bottom:22px">Nosotros</p>
+      <p class="serif grande">Catorce años detrás de la misma barra.</p>
+      <p>Abrimos en 2011 con una idea sencilla: tener cerca de casa un sitio donde tomar un vermut bien puesto, sin ir al centro.</p>
+      <p>Seguimos comprando en el mercado de al lado y friendo los torreznos al momento. Lo que ha cambiado es que ahora hay que reservar los sábados.</p>
+      <p class="firma">Marta y Quique</p>
+    </div>
+  </div>
+</section>
+
+<!-- OPINIONES: solo frases reales de clientes. Si no hay, borra esta sección entera. -->
+<section class="voces">
+  <div class="wrap">
+    <p class="mini" style="opacity:.55;margin-bottom:26px">Lo que dicen los de siempre</p>
+    <blockquote>«La mejor ensaladilla de Madrid, y no acepto discusión.»<cite>Lola</cite></blockquote>
+    <blockquote>«Vengo por el vermut y me acabo quedando a comer.»<cite>Andrés</cite></blockquote>
+    <blockquote>«Los jueves de callos son sagrados en casa.»<cite>Pilar y Ramón</cite></blockquote>
+  </div>
+</section>
+
+<!-- DÓNDE ESTAMOS Y CONTACTO -->
+<section class="visita" id="visita" style="padding-top:0">
+  <div class="wrap dos">
+    <div>
+      <h2>Ven cuando quieras</h2>
+      <p style="max-width:34ch;opacity:.75">A dos minutos del metro. Los sábados conviene reservar: escríbenos y te guardamos mesa.</p>
+      <a class="pildora llena" href="#">Reservar mesa</a>
+      <a class="pildora" href="#">Cómo llegar</a>
+    </div>
+    <dl>
+      <div><dt>Lun y mar</dt><dd>Cerrado</dd></div>
+      <div><dt>Mié a vie</dt><dd>12:00 – 00:00</dd></div>
+      <div><dt>Sábado</dt><dd>11:00 – 01:00</dd></div>
+      <div><dt>Domingo</dt><dd>11:00 – 17:00</dd></div>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="nombre">Casa Brezo</div>
+    <div class="fila">
+      <span><a href="#">Instagram</a><a href="#">Aviso legal</a><a href="#">Privacidad</a></span>
+      <span>Ejemplo ficticio creado con el kit de amable. Casa Brezo no existe.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Barra fija: la acción que más se usa -->
+<a class="barra" href="#">Reservar mesa</a>
+
+</body>
+</html>
