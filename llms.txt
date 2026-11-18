@@ -81,6 +81,7 @@ Laura trabaja en remoto con empresas de toda España y, en Madrid, también en p
 - [Cuánto cuesta un community manager (y qué deberías recibir)](https://amableagencia.com/cuanto-cuesta-un-community-manager)
 - [Cómo conseguir que ChatGPT y otras IA recomienden tu negocio](https://amableagencia.com/como-aparecer-en-chatgpt)
 - [Cómo hacer la web de tu negocio con IA en un día](https://amableagencia.com/como-hacer-la-web-de-tu-negocio-con-ia): qué hace bien la IA y qué no, los cuatro pasos (entrevista, marca, textos, web), cómo evitar que suene a robot y cuánto cuesta.
+- [Diseñar una app con IA no es tan fácil como suena](https://amableagencia.com/disenar-una-app-con-ia): los ocho sombreros que hay que llevar (producto, diseño, textos, código, pruebas, privacidad, publicación y mantenimiento), qué hace bien la IA y qué decides tú.
 - [¿Hacer tu web tú mismo o encargarla? Cómo decidir](https://amableagencia.com/hacer-la-web-tu-mismo-o-encargarla): comparación de tres caminos (constructor de webs, kit con IA por 200 €, encargarla desde 800 €) en dinero y en tiempo.
 
 ## Contacto
@@ -115,6 +116,7 @@ The whole site is also available in English under https://amableagencia.com/en/ 
 - [Case study: brand and packaging for an olive oil (Vereda)](https://amableagencia.com/en/case-olive-oil-brand)
 - [Case study: local SEO analysis for an estate agency in Austria (Ram² Immobilien)](https://amableagencia.com/en/case-seo-ram2-immobilien)
 - [Rebrand or brand refresh: which one does your business need?](https://amableagencia.com/en/rebrand-or-brand-refresh)
+- [Designing an app with AI isn’t as easy as it sounds](https://amableagencia.com/en/designing-an-app-with-ai): the eight hats you have to wear (product, design, copy, code, testing, privacy, release and aftercare), what AI does well and what you decide.
 - [What a hair salon website needs](https://amableagencia.com/en/what-a-hair-salon-website-needs)
 - [Commission-free online booking for your business](https://amableagencia.com/en/commission-free-online-booking)
 - [How to set up your business's Google Business Profile](https://amableagencia.com/en/google-business-profile)
