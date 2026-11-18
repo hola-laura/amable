@@ -433,3 +433,8 @@ html body nav.nav .logo{padding:10px 0!important}
 .mz-vi.web .mz-tel:nth-child(2){left:auto;right:0;top:4%;width:54%;--k:110;z-index:1}
 .mz-vi.web .mz-tel:nth-child(3){left:13%;right:auto;top:auto;bottom:6%;width:56%;--k:170;z-index:2;rotate:-9deg}
 @media (max-width:860px){.mz-vi.web{min-height:430px}.mz-vi.web .mz-tel:nth-child(3){bottom:10%}}
+.yo-mz{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 22px;margin:26px 0 8px!important;padding-top:16px;border-top:1px solid color-mix(in srgb,currentColor 22%,transparent);font-size:16px!important}
+.yo-mz .mono{flex-basis:100%;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+.yo-mz a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;transition:text-decoration-color .2s}
+.yo-mz a::after{content:"→";display:inline-block;margin-left:.3em;transition:transform .3s var(--punto,ease)}
+.yo-mz a:hover::after{transform:translateX(4px)}
