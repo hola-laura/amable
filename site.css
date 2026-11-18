@@ -459,3 +459,14 @@ html.js .opi.r{transition-delay:calc(var(--i,0)*80ms)}
 .opi:nth-child(4) .opi-av{background:#fff}
 @media (max-width:820px){.opis-l{grid-template-columns:minmax(0,1fr)}}
 @media (prefers-reduced-motion:reduce){.opi figure{transition:none}.opi:hover figure{transform:none}}
+/* logos: mismo tono y mismo peso óptico; color al pasar el ratón (18/11/2026) */
+.logo-item img{width:auto;max-width:200px;filter:grayscale(1) brightness(0);opacity:.42;transition:opacity .3s var(--punto),filter .3s var(--punto)}
+.logo-item:hover img{filter:none;opacity:1}
+.logo-item img[alt="Monzo"]{height:26px}
+.logo-item img[alt="Just Eat"]{height:30px}
+.logo-item img[alt="RLDatix"]{height:30px}
+.logo-item img[alt="intu"]{height:34px}
+.logo-item img[alt="Correcto"]{height:22px}
+.logo-item img[alt="Vereda"]{height:32px}
+.logo-item img[alt="Skippr"]{height:30px}
+.logo-item img[alt="Salesianos"]{height:36px}
