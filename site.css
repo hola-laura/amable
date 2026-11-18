@@ -453,7 +453,7 @@ html.js .opi.r{transition-delay:calc(var(--i,0)*80ms)}
 .opi figcaption{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--line);font-size:15px}
 .opi figcaption b{display:block;font-weight:500;font-size:16px;color:var(--ink)}
 .opi figcaption b+span{color:var(--mut)}
-.opi-av{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:400 16px/1 var(--serif);background:var(--soft);color:var(--a)}
+.opi-av{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:400 13px/1 var(--serif);letter-spacing:.02em;background:var(--soft);color:var(--a)}
 .opi:nth-child(2) .opi-av{background:var(--c3)}
 .opi:nth-child(3) .opi-av{background:var(--a);color:#fff}
 .opi:nth-child(4) .opi-av{background:#fff}
