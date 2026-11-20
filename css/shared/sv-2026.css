@@ -68,17 +68,12 @@
 .sv-rows i{justify-self:end;transition:transform .35s var(--ease)}
 .sv-rows a:hover i{transform:translate(3px,-3px)}
 
-/* sectores: muro de palabras */
-.sv-wall{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 0}
-.sv-wall li{display:inline-flex;align-items:baseline}
-.sv-wall li::after{content:"·";font:400 clamp(28px,4.6vw,64px)/1.12 var(--serif);color:rgba(255,255,255,.35);margin:0 .28em}
-.sv-wall li:last-child::after{content:""}
-.sv-wall a{position:relative;font:400 clamp(28px,4.6vw,64px)/1.12 var(--serif);letter-spacing:-.03em;transition:color .25s}
-.sv-wall a i{display:inline-block;font:400 .38em var(--sans);vertical-align:super;margin-left:.15em;opacity:0;transform:translate(-6px,6px);transition:opacity .25s,transform .35s var(--ease)}
-.sv-wall a:hover,.sv-wall a:focus-visible{color:var(--rosa)}
-.sv-wall a:hover i,.sv-wall a:focus-visible i{opacity:1;transform:none}
-.sv-wall a::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:2px;background:var(--rosa);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
-.sv-wall a:hover::after,.sv-wall a:focus-visible::after{transform:none}
+/* sectores: enlaces en píldora */
+.sv-wall{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.sv-wall a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);font:500 15px var(--sans);transition:background .25s,color .25s,border-color .25s}
+.sv-wall a i{font-size:12px;opacity:.6;transition:transform .35s var(--ease)}
+.sv-wall a:hover,.sv-wall a:focus-visible{background:#fff;color:var(--ink);border-color:#fff}
+.sv-wall a:hover i{transform:translate(2px,-2px);opacity:1}
 
 /* artículos */
 .sv-feat{display:grid;grid-template-columns:1.45fr 1fr;grid-template-rows:1fr 1fr;gap:12px;margin:0 0 clamp(40px,5vw,64px)}
