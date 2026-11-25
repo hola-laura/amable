@@ -48,7 +48,7 @@ Laura trabaja en remoto con empresas de toda España y, en Madrid, también en p
 - [Web para reformas y carpintería](https://amableagencia.com/web-para-reformas-madrid)
 
 ## Guías y casos
-- [Hola, soy Laura](https://amableagencia.com/sobre-laura)
+- [Sobre amable](https://amableagencia.com/sobre-laura)
 - [Qué debe tener la web de una peluquería](https://amableagencia.com/que-debe-tener-la-web-de-una-peluqueria)
 - [Reservas online sin comisiones para tu negocio](https://amableagencia.com/reservas-online-sin-comisiones)
 - [Cómo crear el Perfil de Empresa de Google de tu negocio](https://amableagencia.com/perfil-de-empresa-google)
@@ -116,7 +116,7 @@ The whole site is also available in English under https://amableagencia.com/en/ 
 - [Websites, booking and automation for businesses in Madrid](https://amableagencia.com/en/businesses)
 - [Custom software and AI automation for companies](https://amableagencia.com/en/companies)
 - [Design, website and app projects](https://amableagencia.com/en/projects)
-- [Laura Sampedro, product designer in Madrid](https://amableagencia.com/en/about)
+- [About amable](https://amableagencia.com/en/about)
 - [Privacy · amable.](https://amableagencia.com/en/privacy)
 - [Web design for small businesses in Madrid](https://amableagencia.com/en/web-design-madrid)
 - [Logo and brand design for businesses in Madrid](https://amableagencia.com/en/logo-design-madrid)
