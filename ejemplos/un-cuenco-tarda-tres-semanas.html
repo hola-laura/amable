@@ -85,7 +85,7 @@ h2{font:300 clamp(40px,6.4vw,84px)/1 var(--serif);letter-spacing:-.02em;font-sty
 .trio{cursor:ew-resize;touch-action:pan-y;-webkit-user-select:none;user-select:none}
 #b4{cursor:ns-resize}#b5{cursor:grab;touch-action:pan-y;-webkit-user-select:none;user-select:none}#b5:active{cursor:grabbing}
 .bowl .rawp{fill:var(--raw,#D6B79E)}
-.crack{position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none}.kiln.broken .crack{opacity:1}.kiln.broken .bowl{animation:tiembla .45s}
+.fractured-piece{display:none}.broken .whole-piece{display:none}.broken .fractured-piece{display:inline}.broken .loose-shard{transform-origin:4px 153px;transform:translate(3px,1px) rotate(2deg);animation:shard-settles .38s ease-out both}@keyframes shard-settles{0%{transform:none}48%{transform:translate(4px,1px) rotate(2.7deg)}100%{transform:translate(3px,1px) rotate(2deg)}}@media(prefers-reduced-motion:reduce){.broken .loose-shard{animation:none}}
 @keyframes tiembla{20%{transform:translateX(-5px)}45%{transform:translateX(5px)}70%{transform:translateX(-3px)}}
 /* 02 encoge */
 .shrink{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.9fr);gap:clamp(32px,6vw,88px);align-items:end;margin-top:clamp(40px,6vw,72px)}
@@ -262,7 +262,7 @@ input[type=range]:focus-visible{outline:1px solid currentColor;outline-offset:4p
 <div class="tabs mono" style="margin-top:16px"><button type="button" id="play">▶ encender el horno</button><button type="button" id="open">abrir el horno</button></div>
 </div>
 <div>
-<div class="kiln" id="kiln"><div class="glow" id="glow"></div><svg class="bowl" id="b3" viewBox="-170 -40 340 215" aria-hidden="true"></svg><svg class="crack" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M53 41l-4 11 6 9-5 12 3 13M50 61l-7 6" fill="none" stroke="#1E1D1B" stroke-width="1.1" vector-effect="non-scaling-stroke"/></svg></div>
+<div class="kiln" id="kiln"><div class="glow" id="glow"></div><svg class="bowl" id="b3" viewBox="-170 -40 340 215" aria-hidden="true"></svg></div>
 <p class="temp" id="temp" aria-live="polite">573<small>°C</small></p>
 <p class="mono" id="thora" style="color:var(--ceniza)">hora 6</p>
 <div class="what" id="what" aria-live="polite"></div>
@@ -394,7 +394,19 @@ fin.addEventListener('input',shrink);shrink();
 
 /* 03 · fuego */
 const F=[[[0,20],[2,120],[6,573],[6.6,600],[10.5,1000],[10.8,1000],[13,720],[16,470],[20,280],[25,150],[30,80],[36,40]],[[0,20],[2.5,250],[5.5,573],[6,620],[9.5,1150],[12,1280],[12.4,1280],[14.5,960],[17.5,640],[21,400],[26,220],[31,110],[36,55]]];
-const mob=matchMedia('(max-width:860px)').matches,ML=mob?96:58,VH=mob?600:430,PB=mob?58:42;const X=h=>ML+h/36*(780-ML),Y=t=>VH-PB-t/1400*(VH-PB-22),ch=$('#chart'),b3=$('#b3');bowl(b3,{});let fi=0;
+const mob=matchMedia('(max-width:860px)').matches,ML=mob?96:58,VH=mob?600:430,PB=mob?58:42;const X=h=>ML+h/36*(780-ML),Y=t=>VH-PB-t/1400*(VH-PB-22),ch=$('#chart'),b3=$('#b3');bowl(b3,{});
+/* Both fragments share the original glaze, lip and throwing marks. */
+const kilnSurface=b3.querySelector('g.scale');
+kilnSurface.id='kiln-surface';
+const split='M13 18 L13 30 L11.8 33.3 L12.6 35 L9.4 39 L8.8 43 L6 47 L7 51 L3.6 55 L2.8 60.4 L4 63 L2.5 69 L3.6 71 L1.5 77 L2 80 L-1 86 L-2 92 L-4.8 95 L-5 99 L-9 105 L-8 108 L-10.4 114 L-9.5 118 L-12 124 L-11.3 131 L-13.5 137 L-13 144 L-15 151 L-14 160';
+b3.querySelector('defs').insertAdjacentHTML('beforeend','<clipPath id="kiln-left"><path d="'+split+' H-175 V18 Z"/></clipPath><clipPath id="kiln-right"><path d="'+split+' H175 V18 Z"/></clipPath>');
+kilnSurface.insertAdjacentHTML('afterend','<g class="fractured-piece"><g clip-path="url(#kiln-left)"><use href="#kiln-surface"/><path d="M2.8 60.4 L3.6 64 L1.2 70 L2 72 L0 78 L.9 82 L-2 87 L-2 92 L-1 86 L2 80 L1.5 77 L3.6 71 L2.5 69 L4 63 Z" fill="#bd9478"/><path d="M-5 99 Q-11 102 -14 107 L-18 109 Q-21 116 -26 118 Q-21 114 -18.8 108.5 L-15 106 Z" fill="#4b3e31" opacity=".75"/></g><g class="loose-shard"><g clip-path="url(#kiln-right)"><use href="#kiln-surface"/><path d="M2.8 60.4 L6.3 61.5 L5.4 64.2 L2.5 69 L4 63 Z M-9 105 L-6.1 105.5 L-7.8 111.2 L-10.4 114 L-8 108 Z" fill="#d1ac88"/></g></g></g>');
+const whole=document.createElementNS('http://www.w3.org/2000/svg','use');
+whole.setAttribute('href','#kiln-surface');
+whole.setAttribute('class','whole-piece');
+b3.querySelector('defs').append(kilnSurface);
+b3.append(whole);
+let fi=0;
 const at=(p,h)=>{for(let i=1;i<p.length;i++)if(h<=p[i][0]){const[a,b]=[p[i-1],p[i]];return a[1]+(b[1]-a[1])*(h-a[0])/(b[0]-a[0])}return p[p.length-1][1]};
 const line=p=>'M'+p.map(q=>X(q[0]).toFixed(1)+' '+Y(q[1]).toFixed(1)).join('L');
 function chart(){let g='';
