@@ -177,12 +177,14 @@ input[type=range]:focus-visible{outline:1px solid currentColor;outline-offset:4p
 </style><style>
 .hero{display:grid;grid-template-columns:1fr .85fr;grid-template-areas:"copy wheel";align-items:center;gap:4vw}.hero>div{grid-area:copy}.hero-lathe{grid-area:wheel;justify-self:center;text-align:center;margin:0;color:#fff7ea}.hero-lathe button{width:clamp(190px,30vw,430px);aspect-ratio:1;display:block;position:relative;border:0;padding:0;border-radius:50%;background:#574c43;box-shadow:0 6px 0 #5a493f,0 16px 30px #20130d85;cursor:grab;touch-action:pan-y;user-select:none;-webkit-tap-highlight-color:transparent}.hero-lathe button:active{cursor:grabbing}.hero-lathe button:focus-visible{outline:3px solid #fff;outline-offset:5px}.platter,.wet-clay{position:absolute;border-radius:50%;pointer-events:none}.platter{inset:0;background:repeating-radial-gradient(circle,transparent 0 7%,#4f423744 7.4%,#fff6 7.8%,transparent 8.3%),conic-gradient(from 21deg,#b4a898,#e0d6c6 24%,#9d9080 37%,#cabeac 58%,#a29381 81%,#b4a898)}.platter:before{content:"";position:absolute;inset:5%;border-radius:50%;background:var(--grano);opacity:.7}.wet-clay{inset:17% 18% 18% 17%;border-radius:48% 52% 50% 49%;background:repeating-radial-gradient(ellipse at 48% 52%,transparent 0 5%,#4c241b3d 5.8%,#ffc59f52 6.6%,transparent 7.6%),radial-gradient(ellipse at 46% 48%,#743b28 8%,#a46043 50%,#ce926b 60%,#ecc39b 65%,#985a3f 69%,#78442e 85%);box-shadow:0 2px 6px #43241788}.wet-clay:after{content:"";position:absolute;top:9%;left:36%;width:20%;height:2%;border-radius:100%;background:#f6ceaa99;transform:rotate(-8deg)}.hero-lathe figcaption{margin-top:18px;text-shadow:0 1px 4px #21160e;font-size:15px}
 @media(max-width:760px){.hero{grid-template-columns:1fr;grid-template-areas:"wheel" "copy";gap:22px;padding-top:74px}.hero-lathe button{width:clamp(152px,49vw,245px)}.hero-lathe figcaption{margin-top:12px}}
+</style><style>
+.hero-lathe .studio-sound{display:inline-block;width:auto;aspect-ratio:auto;min-height:44px;border:1px solid #ffffff80;border-radius:24px;background:#312720e6;color:#fff1de;box-shadow:none;margin-top:8px;padding:6px 16px;cursor:pointer;font:inherit;font-size:13px}.studio-sound[aria-pressed=true]{border-color:#efd0a6}.tile i{transition:transform .28s ease-out,background .5s}.tile:active i{transform:scale(.94)}@media(prefers-reduced-motion:no-preference){.tile[aria-pressed=true] i{animation:sample-settle .36s ease-out}@keyframes sample-settle{0%{transform:scale(.94)}62%{transform:scale(1.035)}100%{transform:scale(1)}}}
 </style></head>
 <body>
 <div class="prog" id="prog"></div>
 <div class="top"><span class="wm">Barro</span><a class="mono" href="https://amableagencia.com/infografias-interactivas" target="_top">hecha por amable ↗</a></div>
 
-<header class="sec dark hero"><picture><source media="(max-width:600px)" srcset="https://images.pexels.com/photos/8063876/pexels-photo-8063876.jpeg?auto=compress&cs=tinysrgb&w=780"><img fetchpriority="high" alt="Manos dando forma al borde de un cuenco en el torno" src="https://images.pexels.com/photos/8063876/pexels-photo-8063876.jpeg?auto=compress&cs=tinysrgb&w=1600"></picture><figure class="hero-lathe"><button type="button" id="spin-wheel" aria-label="Impulsar el torno" aria-describedby="wheel-tip"><span class="platter"><span class="wet-clay"></span></span></button><figcaption id="wheel-tip">Desliza para girar el torno</figcaption></figure><div><h1>Un cuenco tarda <em>tres semanas.</em></h1><p>El torno gira durante minutos. El barro sigue cambiando durante días.</p><a href="#dias">Explorar los 21 días ↓</a></div></header>
+<header class="sec dark hero"><picture><source media="(max-width:600px)" srcset="https://images.pexels.com/photos/8063876/pexels-photo-8063876.jpeg?auto=compress&cs=tinysrgb&w=780"><img fetchpriority="high" alt="Manos dando forma al borde de un cuenco en el torno" src="https://images.pexels.com/photos/8063876/pexels-photo-8063876.jpeg?auto=compress&cs=tinysrgb&w=1600"></picture><figure class="hero-lathe"><button type="button" id="spin-wheel" aria-label="Impulsar el torno" aria-describedby="wheel-tip"><span class="platter"><span class="wet-clay"></span></span></button><figcaption id="wheel-tip">Desliza para girar el torno</figcaption><button type="button" class="studio-sound" id="studio-sound" aria-pressed="false">Sonido del taller · apagado</button></figure><div><h1>Un cuenco tarda <em>tres semanas.</em></h1><p>El torno gira durante minutos. El barro sigue cambiando durante días.</p><a href="#dias">Explorar los 21 días ↓</a></div></header>
 
 <nav class="chapters" aria-label="Secciones del taller"><a href="#dias">Calendario</a><a href="#encoge">Medidas</a><a href="#fuego">Horno</a><a href="#color">Esmalte</a><a href="#tuyo">Tu pieza</a></nav><section class="sec" id="dias"><div class="in">
 <p class="kick mono"><svg viewBox="-110 -46 220 92"><use href="#rimshape"/></svg>01 · veintiún días</p>
@@ -449,15 +451,39 @@ color();
 <script>(()=>{
  const button=document.querySelector('#spin-wheel'),disc=button.firstElementChild;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ const soundButton=document.querySelector('#studio-sound');
+ const AudioEngine=window.AudioContext||window.webkitAudioContext;
+ let audio=null,soundOn=false,lastTick=-Infinity;
+ soundButton.hidden=!AudioEngine;
+ if(!AudioEngine)soundButton.style.display='none';
+ function tone(pitch,duration,level){
+   if(!soundOn||audio?.state!=='running')return;
+   const start=audio.currentTime,voice=audio.createOscillator(),gain=audio.createGain();
+   voice.type='sine';voice.frequency.setValueAtTime(pitch,start);
+   gain.gain.setValueAtTime(.0001,start);gain.gain.exponentialRampToValueAtTime(level,start+.006);gain.gain.exponentialRampToValueAtTime(.0001,start+duration);
+   voice.connect(gain);gain.connect(audio.destination);voice.onended=()=>{voice.disconnect();gain.disconnect()};voice.start(start);voice.stop(start+duration);
+ }
+ function soundState(on){soundOn=on;soundButton.setAttribute('aria-pressed',String(on));soundButton.textContent='Sonido del taller · '+(on?'activado':'apagado')}
+ soundButton.addEventListener('click',async()=>{
+   if(soundOn){soundState(false);return}
+   try{audio??=new AudioEngine();soundState(true);await audio.resume();tone(480,.14,.07)}catch{soundState(false)}
+ });
+ function pulse(ms){if(typeof navigator.vibrate==='function')navigator.vibrate(ms)}
+ document.querySelector('#tiles').addEventListener('click',e=>{
+   const sample=e.target.closest('.tile');if(!sample)return;
+   const pitch=[392,440,494,523,587,659][Number(sample.dataset.i)];
+   pulse(9);tone(pitch,.23,.085);tone(pitch*2.63,.09,.018);
+ });
+ function wheelTick(){const now=performance.now();if(now-lastTick<90)return;lastTick=now;tone(145,.055,.052)}
  let angle=0,speed=0,frame=0,previous=0,drag=null,suppressClick=false;
- function paint(){disc.style.transform='rotate('+angle+'deg)'}
+ let sector=0;function paint(){disc.style.transform='rotate('+angle+'deg)';const next=Math.floor(angle/45);if(next!==sector){sector=next;wheelTick()}}
  function halt(){cancelAnimationFrame(frame);frame=0;speed=0}
  function coast(t){const dt=Math.min(48,t-previous);previous=t;angle=(angle+speed*dt)%360;paint();speed*=Math.exp(-dt/740);if(Math.abs(speed)>.008)frame=requestAnimationFrame(coast);else halt()}
  function release(v){halt();if(reduced.matches||Math.abs(v)<.008)return;speed=Math.max(-1.5,Math.min(1.5,v));previous=performance.now();frame=requestAnimationFrame(coast)}
- button.addEventListener('pointerdown',e=>{if(!e.isPrimary||e.button!==0)return;halt();suppressClick=false;drag={id:e.pointerId,x:e.clientX,total:0,time:e.timeStamp,v:0};button.setPointerCapture(e.pointerId)});
+ button.addEventListener('pointerdown',e=>{if(!e.isPrimary||e.button!==0)return;halt();pulse(7);suppressClick=false;drag={id:e.pointerId,x:e.clientX,total:0,time:e.timeStamp,v:0};button.setPointerCapture(e.pointerId)});
  button.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;const dx=e.clientX-drag.x;if(!dx)return;const delta=dx*220/button.clientWidth;drag.total+=Math.abs(dx);angle+=delta;paint();drag.v=delta/Math.max(8,e.timeStamp-drag.time);drag.x=e.clientX;drag.time=e.timeStamp});
  button.addEventListener('pointerup',e=>{if(!drag||drag.id!==e.pointerId)return;suppressClick=drag.total>4;if(suppressClick)release(e.timeStamp-drag.time<100?drag.v:0);drag=null});
  button.addEventListener('lostpointercapture',()=>{drag=null});
- button.addEventListener('click',e=>{if(e.detail&&suppressClick){suppressClick=false;return}angle+=reduced.matches?30:5;paint();release(.65)});
+ button.addEventListener('click',e=>{if(e.detail&&suppressClick){suppressClick=false;return}wheelTick();angle+=reduced.matches?30:5;paint();release(.65)});
 })();</script>
 </body></html>
