@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Un cuenco tarda tres semanas · barro</title>
+<meta name="description" content="Propuesta de amable para barro.studio: una infografía interactiva sobre los 21 días que pasan entre el torno y la mesa.">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1E1D1B">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--hollin:#1E1D1B;--grafito:#3A3836;--tierra:#8A5A44;--ceniza:#A8A096;--salvia:#9DA393;--arena:#CDBBA3;--piedra:#D8D2C7;--hueso:#EEEAE3;
+--serif:"Newsreader",Georgia,serif;--sans:"Inter",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,monospace;--g:clamp(22px,5vw,72px);
+--grano:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--hueso);color:var(--hollin);font:400 15px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,p,figure{margin:0}button,input{font:inherit;color:inherit}
+.mono{font:400 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:lowercase}
+.sec{position:relative;padding:clamp(88px,12vw,168px) var(--g)}
+.sec::before{content:"";position:absolute;inset:0;background:var(--grano);background-size:240px;opacity:.35;mix-blend-mode:multiply;pointer-events:none}
+.sec>*{position:relative}
+.dark{background:var(--hollin);color:var(--hueso)}.dark::before{mix-blend-mode:soft-light;opacity:.55}
+.piedra{background:var(--piedra)}.arena{background:#DDD0BD}
+.in{max-width:1120px;margin:0 auto}
+.kick{display:flex;align-items:center;gap:14px;color:var(--tierra);margin-bottom:26px}
+.dark .kick{color:var(--arena)}
+.kick svg{width:44px;height:18px;flex:none}
+h2{font:300 clamp(40px,6.4vw,84px)/1 var(--serif);letter-spacing:-.02em;font-style:italic;max-width:14ch;text-wrap:balance}
+.lead{max-width:34em;margin-top:26px;color:var(--grafito);font-size:16px}.dark .lead{color:var(--piedra)}
+.note{color:#6c665e;margin-top:18px;max-width:46em}.dark .note{color:var(--ceniza)}
+/* barra de progreso */
+.prog{position:fixed;left:0;top:0;height:2px;width:100%;background:var(--tierra);transform-origin:0 50%;transform:scaleX(0);z-index:20}
+.top{position:absolute;z-index:19;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:16px var(--g);color:var(--hueso);pointer-events:none}
+.top a{pointer-events:auto;color:inherit;text-decoration:none}
+.wm{font:300 13px/1 var(--serif);letter-spacing:.34em;text-transform:uppercase}
+/* portada */
+.hero{min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;padding-top:96px;padding-bottom:96px}
+.hero .rim{width:min(42vw,240px);display:block;margin:0 auto 34px}
+.hero .wm{font-size:clamp(20px,2.6vw,30px);display:block;margin-bottom:clamp(44px,7vw,84px);padding-left:.34em}
+.hero h1{font:300 clamp(44px,8.6vw,124px)/.98 var(--serif);font-style:italic;letter-spacing:-.025em;max-width:11ch;margin:0 auto;text-wrap:balance}
+.hero p{max-width:30em;margin:30px auto 0;color:var(--piedra)}
+.hero .down{display:inline-flex;flex-direction:column;align-items:center;gap:12px;margin-top:clamp(44px,7vw,80px);color:var(--ceniza)}
+.hero .down i{width:1px;height:46px;background:currentColor;transform-origin:50% 0;animation:baja 2.4s ease-in-out infinite}
+@keyframes baja{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.rim .tr{stroke-dasharray:700;stroke-dashoffset:700;animation:pinta 2.2s .3s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes pinta{to{stroke-dashoffset:0}}
+.hero .wm,.hero h1,.hero p,.hero .down{opacity:0;animation:sube 1.2s forwards}
+.hero .wm{animation-delay:1.5s;letter-spacing:.6em;animation-name:cierra}.hero h1{animation-delay:2.2s}.hero p{animation-delay:2.6s}.hero .down{animation-delay:3s}
+@keyframes sube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes cierra{from{opacity:0;letter-spacing:.6em}to{opacity:1;letter-spacing:.34em}}
+/* cuenco */
+.bowl{display:block;width:100%;height:auto;overflow:visible}
+.bowl .body,.bowl .lip{fill:var(--c,#8A5A44);transition:fill .9s ease}
+.bowl .scale{transition:transform .9s cubic-bezier(.3,0,.2,1);transform-origin:0 150px;transform-box:view-box}
+/* 01 días */
+.scrolly{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:clamp(32px,6vw,96px);margin-top:clamp(40px,6vw,72px)}
+.stage{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:center;gap:22px;align-self:start}
+.stage .bowl{max-width:520px;margin:0 auto;max-height:48vh}
+.read{display:flex;justify-content:space-between;gap:16px;border-top:1px solid rgba(30,29,27,.25);padding-top:14px;color:var(--grafito)}
+.read b{font-weight:400;color:var(--hollin)}
+.days{display:grid;grid-template-columns:repeat(21,1fr);gap:3px}
+.days button{height:26px;background:rgba(30,29,27,.1);transition:background .5s,transform .2s;position:relative;border:0;padding:0;cursor:pointer}.days button:hover{transform:scaleY(1.25)}.days button:focus-visible{outline:1px solid var(--hollin);outline-offset:2px}
+.days button.w{background:var(--ceniza)}.days button.h{background:var(--tierra)}
+.days button.now::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:var(--hollin)}
+.dlab{display:flex;justify-content:space-between;color:#6c665e}
+.key{display:flex;gap:18px;color:#6c665e}.key span::before{content:"";display:inline-block;width:9px;height:9px;margin-right:7px;background:var(--ceniza)}.key span:first-child::before{background:var(--tierra)}
+.steps{padding:30vh 0 20vh}
+.step{min-height:78vh;opacity:.28;transition:opacity .5s}
+.step.on{opacity:1}
+.step .mono{color:var(--tierra);display:block;margin-bottom:14px}
+.step h3{font:400 clamp(26px,3vw,36px)/1.12 var(--serif);letter-spacing:-.01em;margin-bottom:14px}
+.step p{color:var(--grafito);max-width:30em}
+.step .hands{margin-top:16px;color:var(--hollin)}
+.hours{margin-top:clamp(24px,5vw,56px);border-top:1px solid rgba(30,29,27,.25);padding-top:clamp(28px,4vw,44px)}
+.hours p.big{font:300 clamp(28px,4.2vw,54px)/1.1 var(--serif);max-width:20ch;text-wrap:balance}
+.hours p.big em{color:var(--tierra)}
+.hbar{height:44px;background:var(--piedra);margin:44px 0 10px;position:relative}.hbar b{position:absolute;top:-6px;bottom:0;width:1px;background:var(--hollin)}.hbar b::after{content:"tu respuesta";position:absolute;bottom:100%;left:0;transform:translateX(-50%);white-space:nowrap;font:400 10px var(--mono);letter-spacing:.06em;padding-bottom:5px}.hbar b.r::after{transform:translateX(-100%)}
+.hbar i{position:absolute;left:0;top:0;bottom:0;width:.28%;min-width:3px;background:var(--tierra);transform-origin:0 50%}
+.opts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.opts button,.act{border:1px solid rgba(30,29,27,.45);background:none;border-radius:99px;padding:13px 20px;cursor:pointer;font:400 11px/1.2 var(--mono);letter-spacing:.08em;text-transform:lowercase;transition:background .2s,color .2s}
+.opts button:hover,.act:hover{background:var(--hollin);color:var(--hueso)}
+.hint{color:#6c665e;margin-top:14px;text-align:center}
+.cen{background:none;border:0;padding:14px 20px;display:block;margin:0 auto 20px;cursor:grab;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;color:inherit}
+.cen:active{cursor:grabbing}.cen .rim{margin:0!important;pointer-events:none;will-change:transform}.cen:focus-visible{outline:1px solid var(--ceniza);outline-offset:4px}
+.trio{cursor:ew-resize;touch-action:pan-y;-webkit-user-select:none;user-select:none}
+#b4{cursor:ns-resize}#b5{cursor:grab;touch-action:pan-y;-webkit-user-select:none;user-select:none}#b5:active{cursor:grabbing}
+.bowl .rawp{fill:var(--raw,#D6B79E)}
+.crack{position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none}.kiln.broken .crack{opacity:1}.kiln.broken .bowl{animation:tiembla .45s}
+@keyframes tiembla{20%{transform:translateX(-5px)}45%{transform:translateX(5px)}70%{transform:translateX(-3px)}}
+/* 02 encoge */
+.shrink{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.9fr);gap:clamp(32px,6vw,88px);align-items:end;margin-top:clamp(40px,6vw,72px)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,2vw,24px);align-items:end}
+.trio figure{text-align:center}.trio .bowl .scale{transition:transform .35s}
+.trio figcaption{margin-top:12px;white-space:nowrap;color:var(--grafito)}.trio .rule{display:block;height:9px;margin:10px auto 0;border:solid rgba(30,29,27,.6);border-width:0 1px;background:linear-gradient(rgba(30,29,27,.6),rgba(30,29,27,.6)) 0 50%/100% 1px no-repeat;transition:width .35s}
+.trio figcaption b{display:block;font:300 clamp(24px,3vw,38px)/1.1 var(--serif);color:var(--hollin);letter-spacing:-.01em;text-transform:none}
+.ctrl label{display:block;margin-bottom:10px;color:var(--grafito)}
+.ctrl output{font:300 clamp(54px,8vw,104px)/1 var(--serif);font-style:italic;display:block;letter-spacing:-.03em}
+.ctrl output small{font:400 14px var(--mono);font-style:normal;letter-spacing:.06em;margin-left:8px}
+.ctrl .res{margin-top:22px;font:400 clamp(19px,2vw,24px)/1.3 var(--serif)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:none;margin:10px 0 0;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:1px;background:currentColor}
+input[type=range]::-moz-range-track{height:1px;background:currentColor}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--tierra);border:0;margin-top:-11px}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--tierra);border:0}
+input[type=range]:focus-visible{outline:1px solid currentColor;outline-offset:4px}
+/* 03 fuego */
+.fire{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);margin-top:clamp(40px,6vw,72px);align-items:start}
+.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.tabs button,.pill{border:1px solid rgba(238,234,227,.35);background:none;padding:9px 16px;border-radius:99px;cursor:pointer;transition:background .25s,color .25s}
+.tabs button[aria-pressed=true]{background:var(--hueso);color:var(--hollin);border-color:var(--hueso)}
+.chart{width:100%;height:auto;display:block;touch-action:pan-y;cursor:crosshair}
+.chart text{font:400 10px var(--mono);fill:var(--ceniza);letter-spacing:.06em}
+.chart .grid{stroke:rgba(238,234,227,.12)}.chart .curve{fill:none;stroke:var(--arena);stroke-width:2}
+.chart .ghost{fill:none;stroke:rgba(238,234,227,.22);stroke-width:1;stroke-dasharray:3 5}
+.chart .mark{stroke:var(--tierra);stroke-dasharray:2 4}.chart .cur{stroke:var(--hueso)}
+.kiln{position:relative}
+.kiln .glow{position:absolute;inset:-12% -10% 0;border-radius:50%;background:radial-gradient(closest-side,var(--gl,transparent),transparent);opacity:var(--go,0);filter:blur(10px)}
+.kiln .bowl .body,.kiln .bowl .lip{transition:fill .15s}
+.temp{font:300 clamp(54px,7vw,92px)/1 var(--serif);font-style:italic;letter-spacing:-.03em;margin-top:8px}
+.temp small{font:400 14px var(--mono);font-style:normal;letter-spacing:.06em;margin-left:6px}
+.what{margin-top:16px;min-height:7.5em;color:var(--piedra)}
+.what b{display:block;font:400 21px/1.25 var(--serif);color:var(--hueso);margin-bottom:6px}
+/* 04 color */
+.color{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,6vw,88px);align-items:center;margin-top:clamp(40px,6vw,72px)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.6vw,18px)}
+.tile{border:0;padding:0;background:none;cursor:pointer;text-align:left}
+.tile i{display:block;aspect-ratio:3/4;background:var(--t);transition:background .9s,transform .3s;position:relative;box-shadow:0 14px 22px -16px rgba(30,29,27,.55)}
+.tile i::before{content:"";position:absolute;inset:0;background:var(--grano);background-size:160px;mix-blend-mode:multiply;opacity:.7}
+.tile i::after{content:"";position:absolute;left:50%;top:9%;width:9px;height:9px;margin-left:-4px;border-radius:50%;background:var(--hueso);box-shadow:inset 0 1px 2px rgba(0,0,0,.35)}
+.tile:hover i{transform:translateY(-4px)}.tile[aria-pressed=true] i{outline:1px solid var(--hollin);outline-offset:5px}
+.tile span{display:block;margin-top:14px;color:var(--grafito)}.tile span b{display:block;font-weight:400;color:var(--hollin)}
+.sw{display:inline-flex;border:1px solid rgba(30,29,27,.4);border-radius:99px;padding:3px;margin-bottom:26px}
+.sw button{border:0;background:none;padding:8px 18px;border-radius:99px;cursor:pointer}
+.sw button[aria-pressed=true]{background:var(--hollin);color:var(--hueso)}
+/* 05 tu cuenco */
+.make{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center;margin-top:clamp(40px,6vw,72px)}
+.make .ctrl label{display:flex;justify-content:space-between;margin:22px 0 0}
+.card{background:var(--hueso);padding:clamp(22px,3vw,34px);margin-top:34px;box-shadow:0 26px 40px -30px rgba(30,29,27,.6);position:relative}
+.card::before{content:"";position:absolute;inset:0;background:var(--grano);background-size:200px;mix-blend-mode:multiply;opacity:.4}
+.card>*{position:relative}
+.card .wm{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(30,29,27,.3);padding-bottom:14px;margin-bottom:6px}
+.card dl{margin:0;display:grid;grid-template-columns:auto 1fr;font:400 12px/1 var(--mono);letter-spacing:.05em;text-transform:lowercase}
+.card dt,.card dd{margin:0;padding:11px 0;border-bottom:1px solid rgba(30,29,27,.12)}.card dd{text-align:right;color:var(--hollin)}.card dt{color:#6c665e}
+.card p{font:400 italic 19px/1.3 var(--serif);margin-top:18px}
+.again{margin-top:22px;border:1px solid rgba(30,29,27,.45);background:none;border-radius:99px;padding:11px 20px;cursor:pointer}
+.again:hover{background:var(--hollin);color:var(--hueso)}
+/* cierre */
+.end{text-align:center}.end .rim{width:120px;margin:0 auto 36px;display:block}
+.end h2{margin:0 auto;max-width:12ch}
+.src{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,5vw,72px);text-align:left;margin-top:clamp(64px,9vw,120px);border-top:1px solid rgba(238,234,227,.22);padding-top:36px;color:var(--ceniza);font-size:13.5px}
+.src h3{font:400 11px var(--mono);letter-spacing:.08em;text-transform:lowercase;color:var(--arena);margin-bottom:14px}
+.src a{color:var(--piedra);text-underline-offset:3px}.src ol{margin:0;padding-left:1.2em}.src li{margin-bottom:8px}
+.cta{display:inline-block;margin-top:44px;border:1px solid var(--hueso);border-radius:99px;padding:14px 26px;color:var(--hueso);text-decoration:none;transition:background .25s,color .25s}
+.cta:hover{background:var(--hueso);color:var(--hollin)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s,transform .9s}.rv.in-v{opacity:1;transform:none}
+@media (max-width:860px){
+.scrolly{display:block}.stage{height:auto;top:0;padding:54px 0 14px;background:var(--hueso);z-index:2;gap:12px}
+.stage .bowl{max-height:27vh;max-width:300px}.days button{height:18px}.key{display:none}
+.steps{padding:8vh 0 4vh}.step{min-height:62vh}
+.shrink,.fire,.color,.make,.src{grid-template-columns:1fr}
+.fire>div:last-child{order:-1}.kiln{max-width:190px}.what{min-height:8.5em}.chart text{font-size:21px}.trio figcaption{font-size:9.5px;letter-spacing:.02em}.stage{padding-top:20px}
+}
+@media (max-height:720px) and (min-width:861px){.hero{padding-top:64px;padding-bottom:110px;align-items:start}.hero .rim{width:150px;margin-bottom:20px}.hero .wm{margin-bottom:30px}.hero h1{font-size:clamp(40px,6.4vw,84px);max-width:none}.hero p,.hero .down{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}html{scroll-behavior:auto}}
+</style></head>
+<body>
+<div class="prog" id="prog"></div>
+<div class="top"><span class="wm">Barro</span><a class="mono" href="https://amableagencia.com/infografias-interactivas" target="_top">hecha por amable ↗</a></div>
+
+<header class="sec dark hero"><div>
+<button type="button" class="cen" id="cen" aria-label="Mantén pulsado para centrar el barro"><svg class="rim" viewBox="-110 -46 220 92" aria-hidden="true"><defs><mask id="m1"><ellipse class="tr" rx="100" ry="36" fill="none" stroke="#fff" stroke-width="14" pathLength="700"/></mask></defs><path mask="url(#m1)" fill="#EEEAE3" fill-rule="evenodd" d="M-100 0a100 36 0 1 0 200 0a100 36 0 1 0 -200 0ZM-97.6 -1.6a97.6 32.2 0 1 0 195.2 0a97.6 32.2 0 1 0 -195.2 0Z"/></svg></button>
+<span class="wm">Barro</span>
+<h1>Un cuenco tarda tres semanas.</h1>
+<p>Una infografía interactiva sobre lo que pasa entre el torno y la mesa: veintiún días, dos fuegos y un par de centímetros que desaparecen por el camino.</p>
+<span class="down mono"><span id="cenh">mantén pulsado el borde para centrarlo</span><i></i></span>
+</div></header>
+
+<section class="sec" id="dias"><div class="in">
+<p class="kick mono"><svg viewBox="-110 -46 220 92"><use href="#rimshape"/></svg>01 · veintiún días</p>
+<h2 class="rv">La mayor parte del trabajo es esperar.</h2>
+<p class="lead rv">Sigue un cuenco desde el primer día. Mientras bajas, cambia de color, de tamaño y de nombre. Toca cualquier día de la tira para saltar a él.</p>
+<div class="scrolly">
+<div class="stage">
+<svg class="bowl" id="b1" viewBox="-170 -40 340 215" role="img" aria-label="El cuenco en la fase actual"></svg>
+<div class="read mono"><span id="r-fase"><b>día 1</b> · torno</span><span id="r-diam">ø <b>17,0 cm</b></span></div>
+<div class="days" id="days" role="group" aria-label="Los 21 días; toca uno para ir a su fase"></div>
+<div class="dlab mono"><span>día 1</span><span class="key"><span>manos</span><span>espera</span></span><span>día 21</span></div>
+</div>
+<div class="steps" id="steps">
+<article class="step" data-d="1-1"><span class="mono">día 1 · torno</span><h3>Todo empieza por centrar el barro.</h3><p>Se amasa para sacar el aire, se centra la pella en el torno y se sube la pared. Recién hecho, el cuenco es blando, oscuro y más grande de lo que será.</p><p class="hands mono">manos · 40 min</p></article>
+<article class="step" data-d="2-2"><span class="mono">día 2 · retorneado</span><h3>Un día después, se le da la vuelta.</h3><p>Cuando el barro tiene la dureza del cuero, se coloca boca abajo y se tornea el pie. Aquí se estampa el sello en la base.</p><p class="hands mono">manos · 20 min</p></article>
+<article class="step" data-d="3-14"><span class="mono">días 3–14 · secado</span><h3>Doce días sin tocarlo.</h3><p>El agua sale poco a poco y el cuenco encoge y se aclara. Si se seca deprisa, se agrieta: por eso no se le mete prisa.</p><p class="hands mono">manos · 0 min</p></article>
+<article class="step" data-d="15-16"><span class="mono">días 15–16 · primera cocción</span><h3>A unos 1.000 °C deja de ser barro.</h3><p>Es el bizcocho: un día de horno y otro de enfriado. Sale duro, poroso y ya no se deshace en agua. Esa porosidad es la que absorbe el esmalte.</p><p class="hands mono">manos · 0 min</p></article>
+<article class="step" data-d="17-17"><span class="mono">día 17 · esmaltado</span><h3>Un baño de polvo claro.</h3><p>Se sumerge en el esmalte y se limpia el pie. En crudo es mate y pálido: todavía no se parece a su color.</p><p class="hands mono">manos · 15 min</p></article>
+<article class="step" data-d="18-20"><span class="mono">días 18–20 · segunda cocción</span><h3>El gres se cierra a 1.280 °C.</h3><p>El esmalte funde, el cuerpo vitrifica y el cuenco vuelve a encoger. Después, enfriar despacio: el horno no se abre hasta que está casi frío.</p><p class="hands mono">manos · 0 min</p></article>
+<article class="step" data-d="21-21"><span class="mono">día 21 · a la mesa</span><h3>Se lija la base y se mira a la luz.</h3><p>Cada pieza se revisa una a una. Ninguna sale idéntica a la anterior, y esa es la idea.</p><p class="hands mono">manos · 10 min</p></article>
+</div>
+</div>
+<div class="hours rv" id="hours">
+<div id="guess"><p class="big">Antes de verlo: de las 504 horas que tarda, ¿cuántas pasa el cuenco en las manos?</p>
+<div class="opts" role="group" aria-label="Tu respuesta"><button type="button" data-h="2">menos de 2 horas</button><button type="button" data-h="24">un día entero</button><button type="button" data-h="40">una semana de trabajo · 40 h</button><button type="button" data-h="250">la mitad · 250 h</button></div></div>
+<div id="reveal" hidden><p class="mono" id="g-fb" style="color:var(--tierra);margin-bottom:14px" aria-live="polite"></p>
+<p class="big">De las 504 horas, las manos tocan el cuenco <em>1 h 25 min</em>.</p>
+<div class="hbar" role="img" aria-label="Barra de 504 horas; la parte de trabajo con las manos es el 0,28 %"><i></i><b id="g-mk" hidden></b></div>
+<div class="dlab mono"><span>manos · 0,28 %</span><span>secado, horno y enfriado · 99,72 %</span></div></div>
+</div>
+</div></section>
+
+<section class="sec piedra" id="encoge"><div class="in">
+<p class="kick mono"><svg viewBox="-110 -46 220 92"><use href="#rimshape"/></svg>02 · encoge</p>
+<h2 class="rv">Hay que tornearlo más grande de lo que será.</h2>
+<p class="lead rv">Al secar y al cocer, el gres pierde tamaño. Elige el cuenco que quieres en la mesa, con el control o arrastrando los cuencos hacia los lados, y mira de qué medida tiene que salir del torno.</p>
+<div class="shrink">
+<div class="ctrl">
+<label class="mono" for="fin">diámetro que quieres en la mesa</label>
+<output id="finv" for="fin">15<small>cm</small></output>
+<input id="fin" type="range" min="8" max="30" step="1" value="15">
+<p class="res" id="finr">Hay que tornearlo de 17,0 cm. Por el camino se pierden 2,0 cm.</p>
+</div>
+<div class="trio">
+<figure><svg class="bowl" id="s1" viewBox="-140 12 280 160" aria-hidden="true"></svg><i class="rule" id="s1r"></i><figcaption class="mono">en el torno<b id="s1v">17,0 cm</b></figcaption></figure>
+<figure><svg class="bowl" id="s2" viewBox="-140 12 280 160" aria-hidden="true"></svg><i class="rule" id="s2r"></i><figcaption class="mono">seco · −6,5 %<b id="s2v">15,9 cm</b></figcaption></figure>
+<figure><svg class="bowl" id="s3" viewBox="-140 12 280 160" aria-hidden="true"></svg><i class="rule" id="s3r"></i><figcaption class="mono">cocido · −5,5 %<b id="s3v">15,0 cm</b></figcaption></figure>
+</div>
+</div>
+<p class="note mono">contracción de la ficha técnica de un gres chamotado cocido a 1.280 °C · cada pasta tiene la suya</p>
+</div></section>
+
+<section class="sec dark" id="fuego"><div class="in">
+<p class="kick mono"><svg viewBox="-110 -46 220 92"><use href="#rimshape" fill="#CDBBA3"/></svg>03 · el fuego</p>
+<h2 class="rv">Dos veces al horno, y ninguna con prisa.</h2>
+<p class="lead rv">Recorre la curva con el dedo o el ratón, o enciende el horno y míralo cocer. Después decide tú cuándo abrirlo: ahí se pierden las hornadas.</p>
+<div class="fire">
+<div>
+<div class="tabs mono" role="group" aria-label="Cocción"><button type="button" data-f="0" aria-pressed="true">primera · bizcocho</button><button type="button" data-f="1" aria-pressed="false">segunda · gres</button></div>
+<svg class="chart" id="chart" viewBox="0 0 800 430" role="img" aria-label="Curva de temperatura del horno a lo largo de 36 horas"></svg>
+<label class="mono" for="hora" style="display:block;margin-top:8px;color:var(--ceniza)">hora de la cocción</label>
+<input id="hora" type="range" min="0" max="36" step="0.05" value="6">
+<div class="tabs mono" style="margin-top:16px"><button type="button" id="play">▶ encender el horno</button><button type="button" id="open">abrir el horno</button></div>
+</div>
+<div>
+<div class="kiln" id="kiln"><div class="glow" id="glow"></div><svg class="bowl" id="b3" viewBox="-170 -40 340 215" aria-hidden="true"></svg><svg class="crack" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M53 41l-4 11 6 9-5 12 3 13M50 61l-7 6" fill="none" stroke="#1E1D1B" stroke-width="1.1" vector-effect="non-scaling-stroke"/></svg></div>
+<p class="temp" id="temp" aria-live="polite">573<small>°C</small></p>
+<p class="mono" id="thora" style="color:var(--ceniza)">hora 6</p>
+<div class="what" id="what" aria-live="polite"></div>
+</div>
+</div>
+<p class="note mono">curvas tipo, orientativas · cada horno y cada taller tienen las suyas</p>
+</div></section>
+
+<section class="sec" id="color"><div class="in">
+<p class="kick mono"><svg viewBox="-110 -46 220 92"><use href="#rimshape"/></svg>04 · el color</p>
+<h2 class="rv">El color lo decide el horno.</h2>
+<p class="lead rv">En crudo, muchos esmaltes parecen el mismo polvo claro. Elige una placa de prueba, cambia entre antes y después del fuego y toca el cuenco a la altura hasta la que quieres bañarlo.</p>
+<div class="color">
+<div>
+<div class="sw mono" role="group" aria-label="Estado del esmalte"><button type="button" data-s="0" aria-pressed="false">crudo</button><button type="button" data-s="1" aria-pressed="true">cocido</button></div>
+<div class="tiles" id="tiles"></div>
+</div>
+<div><svg class="bowl" id="b4" viewBox="-170 -40 340 215" role="img" aria-label="Cuenco con el esmalte elegido"></svg>
+<p class="read mono" style="margin-top:18px"><span id="c-name"><b>salvia</b> · cocido</span><span id="c-hex">#9DA393</span></p>
+<div class="ctrl"><label class="mono" for="dip" style="display:flex;justify-content:space-between;margin-top:22px"><span>hasta dónde lo bañas</span><span id="dipv">entero</span></label><input id="dip" type="range" min="20" max="100" step="1" value="100"></div></div>
+</div>
+</div></section>
+
+<section class="sec arena" id="tuyo"><div class="in">
+<p class="kick mono"><svg viewBox="-110 -46 220 92"><use href="#rimshape"/></svg>05 · tu cuenco</p>
+<h2 class="rv">Ahora, haz el tuyo.</h2>
+<p class="lead rv">Arrastra el cuenco para abrirlo o subirlo, o usa los controles. Saldrá un poco torcido: a mano, siempre sale así.</p>
+<div class="make">
+<div><svg class="bowl" id="b5" viewBox="-170 -40 340 215" role="img" aria-label="Tu cuenco"></svg><p class="hint mono">arrastra · a los lados, la boca · arriba y abajo, la altura</p></div>
+<div class="ctrl">
+<label class="mono" for="m-d"><span>boca</span><span id="m-dv">15 cm</span></label><input id="m-d" type="range" min="9" max="24" step="1" value="15">
+<label class="mono" for="m-h"><span>altura</span><span id="m-hv">7 cm</span></label><input id="m-h" type="range" min="4" max="12" step="1" value="7">
+<label class="mono" for="m-k"><span>curva</span><span id="m-kv">media</span></label><input id="m-k" type="range" min="0" max="100" step="1" value="55">
+<div class="card" aria-live="polite">
+<div class="wm"><span>Barro</span><span class="mono" id="f-n">pieza nº 214</span></div>
+<dl><dt>en la mesa</dt><dd id="f-fin">ø 15 × 7 cm</dd><dt>en el torno</dt><dd id="f-wet">ø 17,0 × 7,9 cm</dd><dt>esmalte</dt><dd id="f-col">salvia</dd><dt>baño</dt><dd id="f-dip">entero</dd><dt>si se tornea hoy</dt><dd id="f-date">—</dd></dl>
+<p>Hecho a mano, sin prisa.</p>
+</div>
+<button type="button" class="again mono" id="again">tornear otra vez ↻</button>
+</div>
+</div>
+</div></section>
+
+<footer class="sec dark end"><div class="in">
+<svg class="rim" viewBox="-110 -46 220 92" aria-hidden="true"><path id="rimshape" fill="currentColor" fill-rule="evenodd" d="M-100 0a100 36 0 1 0 200 0a100 36 0 1 0 -200 0ZM-97.6 -1.6a97.6 32.2 0 1 0 195.2 0a97.6 32.2 0 1 0 -195.2 0Z"/></svg>
+<h2>Lo imperfecto, a propósito.</h2>
+<a class="cta mono" href="https://amableagencia.com/infografias-interactivas" target="_top">cómo hacemos una así para tu negocio ↗</a>
+<div class="src">
+<div><h3>sobre esta pieza</h3><p>Propuesta de amable para <a href="https://barro.studio/" target="_blank" rel="noopener">barro.studio</a>.</p><p style="margin-top:12px">Los 21 días y los minutos de trabajo son tiempos orientativos de un taller de gres. Las temperaturas y la contracción vienen de las fuentes; las curvas de cocción son curvas tipo.</p><p style="margin-top:12px">Diseño, datos y desarrollo: <a href="https://amableagencia.com" target="_top">amable</a>. Hecha con HTML, SVG y JavaScript, sin librerías.</p></div>
+<div><h3>fuentes</h3><ol>
+<li><a href="https://cdn.shopify.com/s/files/1/0662/6594/0236/files/FT_GRES_CT.pdf" target="_blank" rel="noopener">Ficha técnica de un gres chamotado (GRES CT)</a>: contracción de secado 6,5 %, de cocción 5,5 %, cocción a 1.280 °C.</li>
+<li><a href="https://www.uv.es/uimcv/Castellano/ModuloMatCeramicos/Unidad%207.pdf" target="_blank" rel="noopener">Universitat de València, Química de Materiales Cerámicos, tema 7</a>: el gres se cuece entre 1.220 y 1.300 °C.</li>
+<li><a href="https://ceramicartsnetwork.org/ceramics-monthly/ceramics-monthly-article/techno-file--bisque-firing" target="_blank" rel="noopener">Ceramics Monthly, «Techno File: Bisque Firing»</a>: temperatura del bizcocho e inversión del cuarzo a 573 °C.</li>
+<li><a href="https://digitalfire.com/glossary/firing%2Bschedule" target="_blank" rel="noopener">Digitalfire, «Firing Schedule»</a>: duración de una cocción de bizcocho, entre 10 y 13 horas.</li>
+</ol></div>
+</div>
+</div></footer>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const nf=(n,d=1)=>n.toLocaleString('es-ES',{minimumFractionDigits:d,maximumFractionDigits:d});
+const DRY=.065,FIRE=.055,K=(1-DRY)*(1-FIRE);
+const GL=[['hollín','#1E1D1B','#B9B4AD'],['tierra','#8A5A44','#D9CFC6'],['salvia','#9DA393','#DCDAD2'],['arena','#CDBBA3','#E4DDD2'],['ceniza','#A8A096','#D6D2CB'],['hueso','#EEEAE3','#E9E5DF']];
+let glaze=2,fired=1,dip=1;const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const pt=(el,e)=>{const p=el.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(el.getScreenCTM().inverse())};
+const dipN=()=>dip>=1?'entero':dip>.66?'tres cuartos':dip>.42?'hasta la mitad':'solo el borde';
+const shade=(hex,f)=>{const n=parseInt(hex.slice(1),16),c=[n>>16,n>>8&255,n&255].map(v=>Math.max(0,Math.min(255,Math.round(v*f))));return'rgb('+c.join(',')+')'};
+let uid=0;
+/* dibuja un cuenco de perfil: R radio de boca, H altura, k curva 0..1, a asimetría, t giro */
+function bowl(el,o){
+  const R=o.R||120,H=o.H||105,k=o.k==null?.55:o.k,a=o.a||0,t=o.t||0,foot=o.foot!==false,id='g'+(++uid);
+  const RL=R*(1+a),RR=R*(1-a),f=R*.36,y0=150-H,ry=R*.13;
+  const wall=(s,Rx)=>`C${s*Rx} ${y0+H*(.35+.6*k)} ${s*(f+(Rx-f)*(.75-.45*k))} 150 ${s*f} 150`;
+  const body=`M${-RL} ${y0}${wall(-1,RL)}${foot?`L${-f*.94} 157L${f*.94} 157`:''}L${f} 150`+`C${f+(RR-f)*(.75-.45*k)} 150 ${RR} ${y0+H*(.35+.6*k)} ${RR} ${y0}Z`;
+  let marks='';for(let i=1;i<6;i++){const y=y0+H*i/6.4;marks+=`<path d="M${-R*1.1} ${y}Q0 ${y+ry*1.3} ${R*1.1} ${y}" fill="none" stroke="#000" stroke-opacity=".07" stroke-width="1"/>`}
+  el.innerHTML=`<defs><linearGradient id="${id}" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".1"/><stop offset=".45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient><clipPath id="${id}c"><path d="${body}"/></clipPath><filter id="${id}b" x="-50%" y="-200%" width="200%" height="500%"><feGaussianBlur stdDeviation="7"/></filter></defs>
+  <ellipse cx="6" cy="160" rx="${R*.62}" ry="7" fill="#1E1D1B" opacity=".38" filter="url(#${id}b)" class="scale"/>
+  <g class="scale"><g transform="rotate(${t} 0 ${y0})"><path class="body" d="${body}"/>${o.dip!=null&&o.dip<1?`<path class="rawp" clip-path="url(#${id}c)" d="M-220 ${y0+H*o.dip}Q0 ${y0+H*o.dip+ry*1.5} 220 ${y0+H*o.dip}L220 220L-220 220Z"/>`:''}<g clip-path="url(#${id}c)">${marks}</g><path d="${body}" fill="url(#${id})"/>
+  <ellipse class="lip" cx="${(RR-RL)/2}" cy="${y0}" rx="${R}" ry="${ry}"/><ellipse cx="${(RR-RL)/2}" cy="${y0+1.6}" rx="${R-4.5}" ry="${ry-2.6}" fill="#000" opacity=".34"/><ellipse cx="${(RR-RL)/2}" cy="${y0+ry*.55}" rx="${R*.6}" ry="${ry*.4}" fill="#000" opacity=".12"/></g></g>`;
+}
+const setC=(el,c)=>el.style.setProperty('--c',c);
+const setS=(el,s)=>el.querySelectorAll('.scale').forEach(g=>g.style.transform=`scale(${s})`);
+
+/* progreso */
+const prog=$('#prog');addEventListener('scroll',()=>{const h=document.documentElement;prog.style.transform=`scaleX(${h.scrollTop/(h.scrollHeight-h.clientHeight||1)})`},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-v');io.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});$$('.rv').forEach(e=>io.observe(e));
+
+/* portada · centrar el barro */
+const cen=$('#cen'),rs=cen.querySelector('svg');let A=.3,hold=0,done=rm?1:0;
+const fin0=()=>{done=1;A=0;rs.style.transform='';$('#cenh').textContent='centrado · ahora baja despacio';cen.setAttribute('aria-label','Barro centrado')};
+function spin(t){const x=t/1000;if(hold)A-=.012;else A=Math.min(1,A+.004);if(hold&&A<=0)return fin0();A=Math.max(0,A);
+  rs.style.transform=`translateX(${Math.sin(x*7)*13*A}px) rotate(${Math.sin(x*5.3)*5*A}deg) scaleX(${1+Math.sin(x*9)*.05*A})`;requestAnimationFrame(spin)}
+if(rm)fin0();else setTimeout(()=>requestAnimationFrame(spin),2700);
+cen.addEventListener('pointerdown',e=>{hold=1;try{cen.setPointerCapture(e.pointerId)}catch(_){}});['pointerup','pointercancel','lostpointercapture','blur'].forEach(ev=>cen.addEventListener(ev,()=>hold=0));
+cen.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();hold=1}});cen.addEventListener('keyup',()=>hold=0);cen.addEventListener('contextmenu',e=>e.preventDefault());
+
+/* 01 · días */
+const b1=$('#b1');bowl(b1,{});
+const days=$('#days');days.innerHTML='<button type="button"></button>'.repeat(21);const cells=[...days.children];
+const HAND=[1,2,17,21];
+const ST=[{c:'#7A4E3A',s:1,f:'torno',d:17},{c:'#8A5A44',s:1,f:'retorneado',d:17},{c:'#CDBBA3',s:1-DRY,f:'secado',d:17*(1-DRY)},{c:'#D6B79E',s:1-DRY-.005,f:'bizcocho',d:17*(1-DRY)},{c:'#E6E1D8',s:1-DRY-.005,f:'esmaltado',d:17*(1-DRY)},{c:'#9DA393',s:K,f:'gres',d:17*K},{c:'#9DA393',s:K,f:'a la mesa',d:17*K}];
+const steps=$$('.step');
+function go(i){
+  steps.forEach((s,j)=>s.classList.toggle('on',j===i));
+  const st=ST[i],[a,b]=steps[i].dataset.d.split('-').map(Number);
+  setC(b1,i>=5?GL[glaze][1]:st.c);setS(b1,st.s);
+  cells.forEach((c,j)=>{const d=j+1;c.className=d<=b?(HAND.includes(d)?'h':'w'):'';if(d===b)c.classList.add('now')});
+  $('#r-fase').innerHTML=`<b>${a===b?'día '+a:'días '+a+'–'+b}</b> · ${st.f}`;$('#r-diam').innerHTML=`ø <b>${nf(st.d)} cm</b>`;
+}
+let cur=0;go(0);
+cells.forEach((c,j)=>{const d=j+1,i=steps.findIndex(s=>{const[a,b]=s.dataset.d.split('-').map(Number);return d>=a&&d<=b});c.setAttribute('aria-label','Día '+d+': '+ST[i].f);c.title='día '+d+' · '+ST[i].f;c.addEventListener('click',()=>steps[i].scrollIntoView({block:'center',behavior:rm?'auto':'smooth'}))});
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){cur=steps.indexOf(e.target);go(cur)}}),{rootMargin:'-48% 0px -48% 0px'});steps.forEach(s=>so.observe(s));
+const hb=$('.hbar i');hb.style.transform='scaleX(0)';hb.style.transition='transform 1.2s .3s';
+$$('#guess button').forEach(bt=>bt.addEventListener('click',()=>{const h=+bt.dataset.h,ok=h===2;$('#guess').hidden=true;$('#reveal').hidden=false;
+  $('#g-fb').textContent=ok?'exacto':'dijiste «'+bt.textContent+'» · son bastantes menos';const mk=$('#g-mk');if(!ok){mk.hidden=false;mk.style.left=(h/504*100)+'%';mk.classList.toggle('r',h>200)}
+  requestAnimationFrame(()=>requestAnimationFrame(()=>hb.style.transform='none'))}));
+
+/* 02 · encoge */
+const s=[$('#s1'),$('#s2'),$('#s3')];s.forEach(e=>bowl(e,{}));setC(s[0],'#7A4E3A');setC(s[1],'#CDBBA3');setC(s[2],GL[glaze][1]);
+const fin=$('#fin');
+function shrink(){const d=+fin.value,w=d/K,dr=w*(1-DRY),b=.5+.5*(w/(30/K));
+  [1,1-DRY,K].forEach((m,i)=>{setS(s[i],b*m);$('#s'+(i+1)+'r').style.width=(b*m*70.6)+'%'});
+  $('#finv').firstChild.textContent=d;$('#s1v').textContent=nf(w)+' cm';$('#s2v').textContent=nf(dr)+' cm';$('#s3v').textContent=nf(d)+' cm';
+  $('#finr').textContent=`Hay que tornearlo de ${nf(w)} cm. Por el camino se pierden ${nf(w-d)} cm.`}
+fin.addEventListener('input',shrink);shrink();
+{const tr=$('.trio');let d0=null;tr.addEventListener('pointerdown',e=>{d0=[e.clientX,+fin.value];try{tr.setPointerCapture(e.pointerId)}catch(_){}});tr.addEventListener('pointermove',e=>{if(d0){fin.value=Math.round(d0[1]+(e.clientX-d0[0])/13);shrink()}});['pointerup','pointercancel'].forEach(ev=>tr.addEventListener(ev,()=>d0=null))}
+
+/* 03 · fuego */
+const F=[[[0,20],[2,120],[6,573],[6.6,600],[10.5,1000],[10.8,1000],[13,720],[16,470],[20,280],[25,150],[30,80],[36,40]],[[0,20],[2.5,250],[5.5,573],[6,620],[9.5,1150],[12,1280],[12.4,1280],[14.5,960],[17.5,640],[21,400],[26,220],[31,110],[36,55]]];
+const mob=matchMedia('(max-width:860px)').matches,ML=mob?96:58,VH=mob?600:430,PB=mob?58:42;const X=h=>ML+h/36*(780-ML),Y=t=>VH-PB-t/1400*(VH-PB-22),ch=$('#chart'),b3=$('#b3');bowl(b3,{});let fi=0;
+const at=(p,h)=>{for(let i=1;i<p.length;i++)if(h<=p[i][0]){const[a,b]=[p[i-1],p[i]];return a[1]+(b[1]-a[1])*(h-a[0])/(b[0]-a[0])}return p[p.length-1][1]};
+const line=p=>'M'+p.map(q=>X(q[0]).toFixed(1)+' '+Y(q[1]).toFixed(1)).join('L');
+function chart(){let g='';
+  ch.setAttribute('viewBox','0 0 800 '+VH);(mob?[0,400,800,1200]:[0,200,400,600,800,1000,1200,1400]).forEach(t=>g+=`<line class="grid" x1="${ML}" x2="780" y1="${Y(t)}" y2="${Y(t)}"/><text x="${ML-10}" y="${Y(t)+(mob?7:3)}" text-anchor="end">${t?nf(t,0):0}</text>`);
+  (mob?[0,12,24,36]:[0,6,12,18,24,30,36]).forEach(h=>g+=`<text x="${X(h)}" y="${VH-PB+(mob?34:22)}" text-anchor="${h==36?'end':h?'middle':'start'}">${h} h</text>`);
+  g+=`<text x="${ML}" y="${mob?16:12}">°c</text><line class="mark" x1="${ML}" x2="780" y1="${Y(573)}" y2="${Y(573)}"/><text x="776" y="${Y(573)-7}" text-anchor="end" style="fill:#CDBBA3">${mob?'573 °c':'573 °c · inversión del cuarzo'}</text>`;
+  g+=`<path class="ghost" d="${line(F[1-fi])}"/><path class="curve" d="${line(F[fi])}"/><line class="cur" id="cx" y1="22" y2="${VH-PB}"/><circle id="cd" r="6" fill="#EEEAE3"/>`;ch.innerHTML=g}
+const hot=t=>{const stops=[[450,[58,36,30]],[650,[120,40,22]],[900,[205,92,40]],[1100,[238,160,80]],[1300,[250,226,176]]];if(t<=450)return null;for(let i=1;i<stops.length;i++)if(t<=stops[i][0]){const[a,b]=[stops[i-1],stops[i]],u=(t-a[0])/(b[0]-a[0]);return'rgb('+a[1].map((v,j)=>Math.round(v+(b[1][j]-v)*u)).join(',')+')'}return'rgb(250,226,176)'};
+function what(t,h){const peak=fi?12:10.5,up=h<=peak+.4;
+  if(!up)return t>573+25?['Empieza a enfriar','El horno se apaga y la temperatura baja sola. Enfriar lleva más horas que cocer.']:t>545?['El cuarzo vuelve a su forma','Pasa otra vez por los 573 °C, ahora encogiendo. Un enfriado brusco aquí puede rajar la pieza.']:t>120?['Sigue bajando','Puerta cerrada. Abrir antes de tiempo es el error más caro del taller.']:['Casi frío','Ahora sí se puede abrir.'+(fi?' Y ver, por fin, de qué color ha salido.':' Sale el bizcocho, listo para esmaltar.')];
+  if(t<130)return['Sale el agua que quedaba','Aunque parezca seco, el barro guarda humedad. Se sube muy despacio para que el vapor no reviente la pieza.'];
+  if(t<545)return['Subida lenta','Se va quemando la materia orgánica del barro. Todavía no brilla nada dentro del horno.'];
+  if(t<600)return['Inversión del cuarzo','A 573 °C el cuarzo cambia de estructura y se dilata de golpe. Es el punto delicado de toda cocción.'];
+  if(t<980)return['El barro se vuelve cerámica','El cambio ya no tiene vuelta atrás: esto no volverá a deshacerse en agua. El horno empieza a verse rojo.'];
+  if(!fi)return['Bizcocho','En torno a 1.000 °C. Duro para manejarlo, poroso para que absorba el esmalte.'];
+  if(t<1220)return['El esmalte empieza a fundir','El polvo claro se convierte en una capa de vidrio y aparece el color.'];
+  return['Gres','Entre 1.220 y 1.300 °C el cuerpo vitrifica: se cierra y deja de absorber agua.']}
+const hora=$('#hora');
+const kiln=$('#kiln'),play=$('#play');let run=0;
+function fire(){const h=+hora.value,t=at(F[fi],h),c=hot(t);kiln.classList.remove('broken');
+  $('#cx').setAttribute('x1',X(h));$('#cx').setAttribute('x2',X(h));$('#cd').setAttribute('cx',X(h));$('#cd').setAttribute('cy',Y(t));
+  $('#temp').firstChild.textContent=nf(Math.round(t),0);{const m=Math.round(h%1*60);$('#thora').textContent='hora '+Math.floor(h)+(m?' · '+m+' min':'')}
+  const base=fi?(h>12?GL[glaze][1]:'#E6E1D8'):(h>7?'#D6B79E':'#CDBBA3');setC(b3,c||base);
+  const gl=$('#glow');gl.style.setProperty('--gl',c||'transparent');gl.style.setProperty('--go',c?Math.min(.8,(t-450)/900):0);
+  const w=what(t,h);$('#what').innerHTML=`<b>${w[0]}</b>${w[1]}`}
+const pick=e=>{const r=ch.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*800;hora.value=Math.max(0,Math.min(36,Math.round((x-ML)/(780-ML)*36*4)/4));fire()};
+const stop=()=>{run=0;play.textContent='▶ encender el horno'};
+ch.addEventListener('pointermove',e=>{if(!run)pick(e)});ch.addEventListener('pointerdown',e=>{stop();pick(e)});hora.addEventListener('input',()=>{stop();fire()});
+function tick(){if(!run)return;const h=+hora.value+.06;if(h>=36){hora.value=36;fire();return stop()}hora.value=h;fire();requestAnimationFrame(tick)}
+play.addEventListener('click',()=>{if(run)return stop();if(+hora.value>=35.5)hora.value=0;run=1;play.textContent='❚❚ pausar';requestAnimationFrame(tick)});
+$('#open').addEventListener('click',()=>{stop();const h=+hora.value,t=at(F[fi],h),peak=fi?12:10.5;let m,bad=0;
+  if(h<=peak+.4)m=['Todavía está cociendo','Abrir ahora es perder la hornada: las piezas aún no han llegado a su temperatura. Sigue esperando.'];
+  else if(t>250){bad=1;m=['Demasiado pronto','A '+nf(Math.round(t),0)+' °C el aire frío entra de golpe y la pieza se raja. Hay que dejar que baje sola.']}
+  else if(t>125)m=['Casi','Todavía quema, y con este salto de temperatura el esmalte puede cuartearse. Un poco más.'];
+  else m=['Ahora sí',fi?'El horno está casi frío. Se abre y, por fin, se ve de qué color ha salido.':'El horno está casi frío. Sale el bizcocho, listo para esmaltar.'];
+  $('#what').innerHTML=`<b>${m[0]}</b>${m[1]}`;kiln.classList.remove('broken');if(bad){void kiln.offsetWidth;kiln.classList.add('broken')}});
+$$('.tabs button[data-f]').forEach(b=>b.addEventListener('click',()=>{stop();fi=+b.dataset.f;$$('.tabs button[data-f]').forEach(x=>x.setAttribute('aria-pressed',x===b));chart();fire()}));
+chart();fire();
+
+/* 04 · color */
+const b4=$('#b4');bowl(b4,{});const tiles=$('#tiles');
+tiles.innerHTML=GL.map((g,i)=>`<button type="button" class="tile" data-i="${i}" aria-pressed="${i===glaze}"><i></i><span class="mono"><b>${g[0]}</b><em style="font-style:normal"></em></span></button>`).join('');
+function color(){$$('.tile').forEach((t,i)=>{t.querySelector('i').style.setProperty('--t',GL[i][fired?1:2]);t.querySelector('em').textContent=fired?GL[i][1]:'en crudo';t.setAttribute('aria-pressed',i===glaze)});
+  const g=GL[glaze];bowl(b4,{dip});setC(b4,g[fired?1:2]);$('#dipv').textContent=dipN();$('#f-dip').textContent=dipN();$('#c-name').innerHTML=`<b>${g[0]}</b> · ${fired?'cocido':'crudo'}`;$('#c-hex').textContent=fired?g[1]:'el mismo polvo claro';
+  setC(s[2],g[1]);if(cur>=5)setC(b1,g[1]);$('#f-col').textContent=g[0];make();fire()}
+tiles.addEventListener('click',e=>{const t=e.target.closest('.tile');if(t){glaze=+t.dataset.i;color()}});
+const dipI=$('#dip');dipI.addEventListener('input',()=>{dip=dipI.value/100;color()});
+const setDip=e=>{dip=Math.max(.2,Math.min(1,(pt(b4,e).y-45)/105));if(dip>.94)dip=1;dipI.value=Math.round(dip*100);color()};
+b4.addEventListener('pointerdown',setDip);b4.addEventListener('pointermove',e=>{if(e.buttons&&e.pointerType==='mouse')setDip(e)});
+$$('.sw button').forEach(b=>b.addEventListener('click',()=>{fired=+b.dataset.s;$$('.sw button').forEach(x=>x.setAttribute('aria-pressed',x===b));color()}));
+
+/* 05 · tu cuenco */
+const b5=$('#b5'),md=$('#m-d'),mh=$('#m-h'),mk=$('#m-k');let wob={a:.018,t:-.9},num=214;
+function make(){const d=+md.value,h=+mh.value,k=+mk.value/100;
+  bowl(b5,{R:58+d*4.1,H:38+h*9,k,a:wob.a,t:wob.t,dip});setC(b5,GL[glaze][1]);
+  $('#m-dv').textContent=d+' cm';$('#m-hv').textContent=h+' cm';$('#m-kv').textContent=k<.34?'abierta':k<.67?'media':'cerrada';
+  $('#f-fin').textContent=`ø ${d} × ${h} cm`;$('#f-wet').textContent=`ø ${nf(d/K)} × ${nf(h/K)} cm`;$('#f-n').textContent='pieza nº '+num;
+  const dt=new Date();dt.setDate(dt.getDate()+21);$('#f-date').textContent='lista el '+dt.toLocaleDateString('es-ES',{day:'numeric',month:'long'})}
+[md,mh,mk].forEach(i=>i.addEventListener('input',make));
+{let g0=null;b5.addEventListener('pointerdown',e=>{const p=pt(b5,e);g0=[Math.abs(p.x),p.y,+md.value,+mh.value,p.x<0?-1:1];try{b5.setPointerCapture(e.pointerId)}catch(_){}});
+b5.addEventListener('pointermove',e=>{if(!g0)return;const p=pt(b5,e);md.value=Math.round(g0[2]+(p.x*g0[4]-g0[0])/4.1);if(e.pointerType==='mouse')mh.value=Math.round(g0[3]+(g0[1]-p.y)/9);make()});['pointerup','pointercancel'].forEach(ev=>b5.addEventListener(ev,()=>g0=null))}
+$('#again').addEventListener('click',()=>{wob={a:(Math.random()-.5)*.07,t:(Math.random()-.5)*4.4};num=100+Math.floor(Math.random()*899);make()});
+color();
+})();
+</script>
+</body></html>
