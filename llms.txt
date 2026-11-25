@@ -20,7 +20,7 @@ Laura trabaja en remoto con empresas de toda España y, en Madrid, también en p
 - [Webs, reservas y automatización para negocios](https://amableagencia.com/negocios)
 - [Software a medida y automatización con IA para empresas](https://amableagencia.com/empresas)
 - [Diseño web](https://amableagencia.com/diseno-web-madrid)
-- [Logos y marca](https://amableagencia.com/diseno-logos-madrid)
+- [Logos y marca](https://amableagencia.com/diseno-logos)
 - [Reservas online](https://amableagencia.com/reservas-online-negocios-madrid)
 - [Automatización](https://amableagencia.com/automatizacion-negocios-madrid)
 - [Aplicaciones a medida](https://amableagencia.com/aplicaciones-a-medida-madrid)
@@ -61,6 +61,7 @@ Laura trabaja en remoto con empresas de toda España y, en Madrid, también en p
 - [Caso: cambiar de hipoteca desde la app de Monzo](https://amableagencia.com/caso-monzo-hipotecas)
 - [Caso: Spending Block, una pausa antes de comprar](https://amableagencia.com/caso-monzo-spending-block)
 - [Caso: marca y packaging para un aceite de oliva (Vereda)](https://amableagencia.com/caso-marca-aceite-vereda)
+- [Caso: lo que podemos hacer con tu marca (trabajo de la fundadora para Just Eat)](https://amableagencia.com/caso-marca-just-eat)
 - [Caso: app y marca para un estudio de pilates (sua)](https://amableagencia.com/caso-app-pilates-sua)
 - [Caso: análisis de SEO local para una inmobiliaria en Austria (Ram² Immobilien)](https://amableagencia.com/caso-seo-ram2-immobilien)
 
