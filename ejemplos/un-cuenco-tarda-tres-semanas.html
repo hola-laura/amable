@@ -162,6 +162,11 @@ input[type=range]:focus-visible{outline:1px solid currentColor;outline-offset:4p
 }
 @media (max-height:720px) and (min-width:861px){.hero{padding-top:64px;padding-bottom:110px;align-items:start}.hero .rim{width:150px;margin-bottom:20px}.hero .wm{margin-bottom:30px}.hero h1{font-size:clamp(40px,6.4vw,84px);max-width:none}.hero p,.hero .down{display:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}html{scroll-behavior:auto}}
+</style><style>
+.hero{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:5vw;text-align:left;align-items:center;padding:110px max(6vw,24px) 64px;background:#29231f;color:#f9efe3}
+.hero>div,.hero figure{width:100%}.hero h1{margin:0;font-size:clamp(48px,7.8vw,118px);max-width:10ch}.hero p{display:block;margin:22px 0;color:#decfc0}.hero h1,.hero p{animation:none;opacity:1}.hero .cen,.hero .down,.hero .wm{display:none}.hero a{color:inherit;text-underline-offset:5px}
+.wheel{margin:0;position:relative;color:#35271e;background:#e6d3b7;border-radius:48% 48% 5px 5px;padding:13% 7% 6%;box-sizing:border-box}.wheel svg{display:block;width:100%;background:repeating-radial-gradient(ellipse at 50% 82%,transparent 0 17px,#87674733 18px,transparent 19px 33px);border-radius:50%}.wheel figcaption{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:6px 16px;margin-top:12px}.wheel output{font:italic clamp(32px,4vw,64px)/1 var(--serif)}.wheel strong{text-align:right}.wheel label,.wheel input{grid-column:1/-1}.wheel input{width:100%;accent-color:#76391e;min-height:36px;cursor:pointer}
+@media(max-width:760px){.hero{grid-template-columns:1fr;gap:30px;padding:90px 22px 40px}.hero h1{font-size:clamp(44px,12vw,80px);max-width:13ch}.wheel{max-width:450px;justify-self:center;padding:36px 22px 14px}.hero p{margin:14px 0}}
 </style></head>
 <body>
 <div class="prog" id="prog"></div>
@@ -173,7 +178,7 @@ input[type=range]:focus-visible{outline:1px solid currentColor;outline-offset:4p
 <h1>Un cuenco tarda tres semanas.</h1>
 <p>Una infografía interactiva sobre lo que pasa entre el torno y la mesa: veintiún días, dos fuegos y un par de centímetros que desaparecen por el camino.</p>
 <span class="down mono"><span id="cenh">mantén pulsado el borde para centrarlo</span><i></i></span>
-</div></header>
+<a href="#dias">Entrar al taller ↓</a></div><figure class="wheel"><svg id="opening-bowl" class="bowl" viewBox="-180 -24 360 220" aria-hidden="true"></svg><figcaption><output for="opening-day" id="opening-count">Día 1</output><strong id="opening-phase">Torno</strong><label for="opening-day">Desliza para recorrer las tres semanas</label><input type="range" id="opening-day" min="1" max="21" value="1"></figcaption></figure></header>
 
 <section class="sec" id="dias"><div class="in">
 <p class="kick mono"><svg viewBox="-110 -46 220 92"><use href="#rimshape"/></svg>01 · veintiún días</p>
@@ -434,6 +439,22 @@ function make(){const d=+md.value,h=+mh.value,k=+mk.value/100;
 b5.addEventListener('pointermove',e=>{if(!g0)return;const p=pt(b5,e);md.value=Math.round(g0[2]+(p.x*g0[4]-g0[0])/4.1);if(e.pointerType==='mouse')mh.value=Math.round(g0[3]+(g0[1]-p.y)/9);make()});['pointerup','pointercancel'].forEach(ev=>b5.addEventListener(ev,()=>g0=null))}
 $('#again').addEventListener('click',()=>{wob={a:(Math.random()-.5)*.07,t:(Math.random()-.5)*4.4};num=100+Math.floor(Math.random()*899);make()});
 color();
+const openingDay=document.querySelector('#opening-day');
+const openingBowl=document.querySelector('#opening-bowl');
+function drawOpening(){
+ const day=Number(openingDay.value);
+ const drying=Math.min(1,Math.max(0,(day-2)/12));
+ const clay=[109,74,54].map((value,i)=>Math.round(value+drying*[97,79,69][i]));
+ const phase=day===1?'Torno':day===2?'Retorneado':day<=14?'Secado':day<=16?'Primera cocción':day===17?'Esmaltado':day<=20?'Segunda cocción':'A la mesa';
+ const pigment=day<=14?'rgb('+clay.join(',')+')':day<=16?'#d5ab89':day===17?'#eae0ca':day===18?'#d58944':day===19?'#ad5935':GL[glaze][1];
+ bowl(openingBowl,{R:142-12*drying-(day>=18?6:0),H:99-7*drying,foot:day>1,t:day===1?-3:0});
+ setC(openingBowl,pigment);
+ document.querySelector('#opening-count').textContent='Día '+day;
+ document.querySelector('#opening-phase').textContent=phase;
+ openingDay.setAttribute('aria-valuetext','Día '+day+' · '+phase);
+}
+openingDay.addEventListener('input',drawOpening);
+drawOpening();
 })();
 </script>
 </body></html>
