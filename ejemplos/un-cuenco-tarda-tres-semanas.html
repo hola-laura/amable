@@ -167,31 +167,28 @@ input[type=range]:focus-visible{outline:1px solid currentColor;outline-offset:4p
 .hero>div,.hero figure{width:100%}.hero h1{margin:0;font-size:clamp(48px,7.8vw,118px);max-width:10ch}.hero p{display:block;margin:22px 0;color:#decfc0}.hero h1,.hero p{animation:none;opacity:1}.hero .cen,.hero .down,.hero .wm{display:none}.hero a{color:inherit;text-underline-offset:5px}
 .wheel{margin:0;position:relative;color:#35271e;background:#e6d3b7;border-radius:48% 48% 5px 5px;padding:13% 7% 6%;box-sizing:border-box}.wheel svg{display:block;width:100%;background:repeating-radial-gradient(ellipse at 50% 82%,transparent 0 17px,#87674733 18px,transparent 19px 33px);border-radius:50%}.wheel figcaption{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:6px 16px;margin-top:12px}.wheel output{font:italic clamp(32px,4vw,64px)/1 var(--serif)}.wheel strong{text-align:right}.wheel label,.wheel input{grid-column:1/-1}.wheel input{width:100%;accent-color:#76391e;min-height:36px;cursor:pointer}
 @media(max-width:760px){.hero{grid-template-columns:1fr;gap:30px;padding:90px 22px 40px}.hero h1{font-size:clamp(44px,12vw,80px);max-width:13ch}.wheel{max-width:450px;justify-self:center;padding:36px 22px 14px}.hero p{margin:14px 0}}
+</style><style>
+.hero{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:min(840px,90svh);padding:clamp(32px,7vw,105px);overflow:hidden}.hero picture,.hero picture:after,.hero img{position:absolute;inset:0;width:100%;height:100%;z-index:-1}.hero img{object-fit:cover;object-position:50% 50%}.hero picture:after{content:"";background:linear-gradient(90deg,#21160ee0,transparent 85%),linear-gradient(0deg,#21160ec2,transparent 75%)}.hero h1{max-width:12ch;font-style:normal;color:#fff6e7}.hero h1 em{color:#efc7a2}.hero p{color:#fff6ed;display:block}.hero a{display:inline-flex;background:#fff2dc;color:#31251b;border-radius:99px;padding:14px 22px;text-decoration:none;margin-top:18px}.chapters{display:flex;justify-content:center;position:sticky;top:0;background:#30271f;color:white;z-index:8}.chapters a{color:inherit;text-decoration:none;padding:14px clamp(5px,2vw,28px);font:500 clamp(12px,2.6vw,16px)/1.4 sans-serif}.chapters a:focus-visible,.chapters a:hover{text-decoration:underline}.sec[id]{scroll-margin-top:50px}.scrolly{align-items:center}.stage{position:static;height:auto;gap:10px;padding:0;background:transparent}.stage .bowl{width:100%;max-height:205px}.days{grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.days button{height:44px;font:500 16px/1 var(--mono);color:#30241c;border-radius:4px}.days button.waiting{background:#dcd3c5}.days button.manual{background:#e4ab8a}.days button[aria-pressed=true]{outline:2px solid #443326;outline-offset:-3px;font-weight:bold}.key{display:flex}.steps{padding:22px;background:#e7dfd2;border-radius:4px}.step{display:none;min-height:0;opacity:1}.step.on{display:block}.rv{opacity:1;transform:none}input[type=range]{min-height:44px}.tabs button,.sw button,.pill{min-height:44px}
+@media(max-width:860px){.hero{min-height:70svh;padding:88px 22px 36px}.hero h1{font-size:clamp(52px,13vw,88px)}.hero picture:after{background:linear-gradient(0deg,#21160ef2,rgba(33,22,14,.55) 65%,transparent)}.chapters{justify-content:space-evenly}.scrolly{display:grid;grid-template-columns:1fr;gap:14px}.stage .bowl{max-height:130px}.step{min-height:0}.step .mono{margin-bottom:8px}.step h3{font-size:25px}.steps{padding:18px}.key{display:flex}.sec[id]{padding:48px 18px}.tile i{aspect-ratio:1}.fire>div:last-child{order:0}.what{min-height:0}.kiln{max-width:230px}.color,.make,.fire,.shrink{gap:20px}.read{padding-top:7px}}
 </style></head>
 <body>
 <div class="prog" id="prog"></div>
 <div class="top"><span class="wm">Barro</span><a class="mono" href="https://amableagencia.com/infografias-interactivas" target="_top">hecha por amable ↗</a></div>
 
-<header class="sec dark hero"><div>
-<button type="button" class="cen" id="cen" aria-label="Mantén pulsado para centrar el barro"><svg class="rim" viewBox="-110 -46 220 92" aria-hidden="true"><defs><mask id="m1"><ellipse class="tr" rx="100" ry="36" fill="none" stroke="#fff" stroke-width="14" pathLength="700"/></mask></defs><path mask="url(#m1)" fill="#EEEAE3" fill-rule="evenodd" d="M-100 0a100 36 0 1 0 200 0a100 36 0 1 0 -200 0ZM-97.6 -1.6a97.6 32.2 0 1 0 195.2 0a97.6 32.2 0 1 0 -195.2 0Z"/></svg></button>
-<span class="wm">Barro</span>
-<h1>Un cuenco tarda tres semanas.</h1>
-<p>Una infografía interactiva sobre lo que pasa entre el torno y la mesa: veintiún días, dos fuegos y un par de centímetros que desaparecen por el camino.</p>
-<span class="down mono"><span id="cenh">mantén pulsado el borde para centrarlo</span><i></i></span>
-<a href="#dias">Entrar al taller ↓</a></div><figure class="wheel"><svg id="opening-bowl" class="bowl" viewBox="-180 -24 360 220" aria-hidden="true"></svg><figcaption><output for="opening-day" id="opening-count">Día 1</output><strong id="opening-phase">Torno</strong><label for="opening-day">Desliza para recorrer las tres semanas</label><input type="range" id="opening-day" min="1" max="21" value="1"></figcaption></figure></header>
+<header class="sec dark hero"><picture><source media="(max-width:600px)" srcset="https://images.pexels.com/photos/8063876/pexels-photo-8063876.jpeg?auto=compress&cs=tinysrgb&w=780"><img fetchpriority="high" alt="Manos dando forma al borde de un cuenco en el torno" src="https://images.pexels.com/photos/8063876/pexels-photo-8063876.jpeg?auto=compress&cs=tinysrgb&w=1600"></picture><div><h1>Un cuenco tarda <em>tres semanas.</em></h1><p>El torno gira durante minutos. El barro sigue cambiando durante días.</p><a href="#dias">Explorar los 21 días ↓</a></div></header>
 
-<section class="sec" id="dias"><div class="in">
+<nav class="chapters" aria-label="Secciones del taller"><a href="#dias">Calendario</a><a href="#encoge">Medidas</a><a href="#fuego">Horno</a><a href="#color">Esmalte</a><a href="#tuyo">Tu pieza</a></nav><section class="sec" id="dias"><div class="in">
 <p class="kick mono"><svg viewBox="-110 -46 220 92"><use href="#rimshape"/></svg>01 · veintiún días</p>
 <h2 class="rv">La mayor parte del trabajo es esperar.</h2>
-<p class="lead rv">Sigue un cuenco desde el primer día. Mientras bajas, cambia de color, de tamaño y de nombre. Toca cualquier día de la tira para saltar a él.</p>
+<p class="lead rv">Elige un día en el calendario del taller. Cada casilla muestra qué le ocurre al cuenco y cuándo vuelven a tocarlo las manos.</p>
 <div class="scrolly">
 <div class="stage">
 <svg class="bowl" id="b1" viewBox="-170 -40 340 215" role="img" aria-label="El cuenco en la fase actual"></svg>
 <div class="read mono"><span id="r-fase"><b>día 1</b> · torno</span><span id="r-diam">ø <b>17,0 cm</b></span></div>
 <div class="days" id="days" role="group" aria-label="Los 21 días; toca uno para ir a su fase"></div>
-<div class="dlab mono"><span>día 1</span><span class="key"><span>manos</span><span>espera</span></span><span>día 21</span></div>
+<div class="dlab mono"><span> </span><span class="key"><span>manos</span><span>espera</span></span><span></span></div>
 </div>
-<div class="steps" id="steps">
+<div class="steps" id="steps" aria-live="polite">
 <article class="step" data-d="1-1"><span class="mono">día 1 · torno</span><h3>Todo empieza por centrar el barro.</h3><p>Se amasa para sacar el aire, se centra la pella en el torno y se sube la pared. Recién hecho, el cuenco es blando, oscuro y más grande de lo que será.</p><p class="hands mono">manos · 40 min</p></article>
 <article class="step" data-d="2-2"><span class="mono">día 2 · retorneado</span><h3>Un día después, se le da la vuelta.</h3><p>Cuando el barro tiene la dureza del cuero, se coloca boca abajo y se tornea el pie. Aquí se estampa el sello en la base.</p><p class="hands mono">manos · 20 min</p></article>
 <article class="step" data-d="3-14"><span class="mono">días 3–14 · secado</span><h3>Doce días sin tocarlo.</h3><p>El agua sale poco a poco y el cuenco encoge y se aclara. Si se seca deprisa, se agrieta: por eso no se le mete prisa.</p><p class="hands mono">manos · 0 min</p></article>
@@ -293,7 +290,7 @@ input[type=range]:focus-visible{outline:1px solid currentColor;outline-offset:4p
 <h2>Lo imperfecto, a propósito.</h2>
 <a class="cta mono" href="https://amableagencia.com/infografias-interactivas" target="_top">cómo hacemos una así para tu negocio ↗</a>
 <div class="src">
-<div><h3>sobre esta pieza</h3><p>Propuesta de amable para <a href="https://barro.studio/" target="_blank" rel="noopener">barro.studio</a>.</p><p style="margin-top:12px">Los 21 días y los minutos de trabajo son tiempos orientativos de un taller de gres. Las temperaturas y la contracción vienen de las fuentes; las curvas de cocción son curvas tipo.</p><p style="margin-top:12px">Diseño, datos y desarrollo: <a href="https://amableagencia.com" target="_top">amable</a>. Hecha con HTML, SVG y JavaScript, sin librerías.</p></div>
+<div><h3>sobre esta pieza</h3><p>Fotografía del torno en <a href="https://www.pexels.com/photo/person-making-a-clay-bowl-8063876/">Pexels</a>. Propuesta de amable para <a href="https://barro.studio/" target="_blank" rel="noopener">barro.studio</a>.</p><p style="margin-top:12px">Los 21 días y los minutos de trabajo son tiempos orientativos de un taller de gres. Las temperaturas y la contracción vienen de las fuentes; las curvas de cocción son curvas tipo.</p><p style="margin-top:12px">Diseño, datos y desarrollo: <a href="https://amableagencia.com" target="_top">amable</a>. Hecha con HTML, SVG y JavaScript, sin librerías.</p></div>
 <div><h3>fuentes</h3><ol>
 <li><a href="https://cdn.shopify.com/s/files/1/0662/6594/0236/files/FT_GRES_CT.pdf" target="_blank" rel="noopener">Ficha técnica de un gres chamotado (GRES CT)</a>: contracción de secado 6,5 %, de cocción 5,5 %, cocción a 1.280 °C.</li>
 <li><a href="https://www.uv.es/uimcv/Castellano/ModuloMatCeramicos/Unidad%207.pdf" target="_blank" rel="noopener">Universitat de València, Química de Materiales Cerámicos, tema 7</a>: el gres se cuece entre 1.220 y 1.300 °C.</li>
@@ -334,14 +331,6 @@ const prog=$('#prog');addEventListener('scroll',()=>{const h=document.documentEl
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-v');io.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});$$('.rv').forEach(e=>io.observe(e));
 
 /* portada · centrar el barro */
-const cen=$('#cen'),rs=cen.querySelector('svg');let A=.3,hold=0,done=rm?1:0;
-const fin0=()=>{done=1;A=0;rs.style.transform='';$('#cenh').textContent='centrado · ahora baja despacio';cen.setAttribute('aria-label','Barro centrado')};
-function spin(t){const x=t/1000;if(hold)A-=.012;else A=Math.min(1,A+.004);if(hold&&A<=0)return fin0();A=Math.max(0,A);
-  rs.style.transform=`translateX(${Math.sin(x*7)*13*A}px) rotate(${Math.sin(x*5.3)*5*A}deg) scaleX(${1+Math.sin(x*9)*.05*A})`;requestAnimationFrame(spin)}
-if(rm)fin0();else setTimeout(()=>requestAnimationFrame(spin),2700);
-cen.addEventListener('pointerdown',e=>{hold=1;try{cen.setPointerCapture(e.pointerId)}catch(_){}});['pointerup','pointercancel','lostpointercapture','blur'].forEach(ev=>cen.addEventListener(ev,()=>hold=0));
-cen.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();hold=1}});cen.addEventListener('keyup',()=>hold=0);cen.addEventListener('contextmenu',e=>e.preventDefault());
-
 /* 01 · días */
 const b1=$('#b1');bowl(b1,{});
 const days=$('#days');days.innerHTML='<button type="button"></button>'.repeat(21);const cells=[...days.children];
@@ -355,9 +344,17 @@ function go(i){
   cells.forEach((c,j)=>{const d=j+1;c.className=d<=b?(HAND.includes(d)?'h':'w'):'';if(d===b)c.classList.add('now')});
   $('#r-fase').innerHTML=`<b>${a===b?'día '+a:'días '+a+'–'+b}</b> · ${st.f}`;$('#r-diam').innerHTML=`ø <b>${nf(st.d)} cm</b>`;
 }
-let cur=0;go(0);
-cells.forEach((c,j)=>{const d=j+1,i=steps.findIndex(s=>{const[a,b]=s.dataset.d.split('-').map(Number);return d>=a&&d<=b});c.setAttribute('aria-label','Día '+d+': '+ST[i].f);c.title='día '+d+' · '+ST[i].f;c.addEventListener('click',()=>steps[i].scrollIntoView({block:'center',behavior:rm?'auto':'smooth'}))});
-const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){cur=steps.indexOf(e.target);go(cur)}}),{rootMargin:'-48% 0px -48% 0px'});steps.forEach(s=>so.observe(s));
+let cur=0;
+function chooseDay(day){
+ cur=steps.findIndex(step=>{const [start,end]=step.dataset.d.split('-').map(Number);return day>=start&&day<=end});
+ go(cur);
+ const fraction=Math.min(1,Math.max(0,(day-2)/12));
+ if(cur===2){setS(b1,1-DRY*fraction);setC(b1,'rgb('+[138,90,68].map((c,i)=>Math.round(c+fraction*[67,97,95][i])).join(',')+')');$('#r-diam').textContent='ø '+nf(17*(1-DRY*fraction))+' cm'}
+ $('#r-fase').textContent='Día '+day+' · '+ST[cur].f;
+ cells.forEach((cell,i)=>{cell.className=HAND.includes(i+1)?'manual':'waiting';cell.textContent=i+1;cell.setAttribute('aria-label','Día '+(i+1)+(HAND.includes(i+1)?', trabajo manual':', espera'));cell.setAttribute('aria-pressed',i+1===day)});
+}
+cells.forEach((cell,i)=>cell.addEventListener('click',()=>chooseDay(i+1)));
+chooseDay(1);
 const hb=$('.hbar i');hb.style.transform='scaleX(0)';hb.style.transition='transform 1.2s .3s';
 $$('#guess button').forEach(bt=>bt.addEventListener('click',()=>{const h=+bt.dataset.h,ok=h===2;$('#guess').hidden=true;$('#reveal').hidden=false;
   $('#g-fb').textContent=ok?'exacto':'dijiste «'+bt.textContent+'» · son bastantes menos';const mk=$('#g-mk');if(!ok){mk.hidden=false;mk.style.left=(h/504*100)+'%';mk.classList.toggle('r',h>200)}
@@ -439,22 +436,6 @@ function make(){const d=+md.value,h=+mh.value,k=+mk.value/100;
 b5.addEventListener('pointermove',e=>{if(!g0)return;const p=pt(b5,e);md.value=Math.round(g0[2]+(p.x*g0[4]-g0[0])/4.1);if(e.pointerType==='mouse')mh.value=Math.round(g0[3]+(g0[1]-p.y)/9);make()});['pointerup','pointercancel'].forEach(ev=>b5.addEventListener(ev,()=>g0=null))}
 $('#again').addEventListener('click',()=>{wob={a:(Math.random()-.5)*.07,t:(Math.random()-.5)*4.4};num=100+Math.floor(Math.random()*899);make()});
 color();
-const openingDay=document.querySelector('#opening-day');
-const openingBowl=document.querySelector('#opening-bowl');
-function drawOpening(){
- const day=Number(openingDay.value);
- const drying=Math.min(1,Math.max(0,(day-2)/12));
- const clay=[109,74,54].map((value,i)=>Math.round(value+drying*[97,79,69][i]));
- const phase=day===1?'Torno':day===2?'Retorneado':day<=14?'Secado':day<=16?'Primera cocción':day===17?'Esmaltado':day<=20?'Segunda cocción':'A la mesa';
- const pigment=day<=14?'rgb('+clay.join(',')+')':day<=16?'#d5ab89':day===17?'#eae0ca':day===18?'#d58944':day===19?'#ad5935':GL[glaze][1];
- bowl(openingBowl,{R:142-12*drying-(day>=18?6:0),H:99-7*drying,foot:day>1,t:day===1?-3:0});
- setC(openingBowl,pigment);
- document.querySelector('#opening-count').textContent='Día '+day;
- document.querySelector('#opening-phase').textContent=phase;
- openingDay.setAttribute('aria-valuetext','Día '+day+' · '+phase);
-}
-openingDay.addEventListener('input',drawOpening);
-drawOpening();
 })();
 </script>
 </body></html>
